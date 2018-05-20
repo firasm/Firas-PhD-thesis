@@ -56,9 +56,9 @@
 \usepackage[scaled=.92]{helvet}
 
 %% Math or theory people may want to include the handy AMS macros
-%\usepackage{amssymb}
-%\usepackage{amsmath}
-%\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
 
 %% The pifont package provides access to the elements in the dingbat font.   
 %% Use \ding{##} for a particular dingbat (see p7 of psnfss2e.pdf)
@@ -305,12 +305,12 @@
 %% Document meta-data: be sure to also change the \hypersetup information
 %%
 
-\title{On the Use of the \texttt{ubcdiss} Template}
+\title{Exploring the tumour microenvironment with non-invasive Magnetic Resonance Imaging techniques}
 %\subtitle{If you want a subtitle}
 
-\author{Johnny Canuck}
-\previousdegree{B. Basket Weaving, University of Illustrious Arts, 1991}
-\previousdegree{M. Silly Walks, Another University, 1994}
+\author{Firas Moosvi}
+\previousdegree{Master of Science, University of Toronto, 2012}
+\previousdegree{Bachelor of Science, University of British Columbia, 2009}
 
 % What is this dissertation for?
 \degreetitle{Doctor of Philosophy}
@@ -318,17 +318,17 @@
 \institution{The University of British Columbia}
 \campus{Vancouver}
 
-\faculty{The Faculty of XXX}
-\department{Basket Weaving}
-\submissionmonth{April}
-\submissionyear{2192}
+\faculty{The Faculty of Science}
+\department{Physics \& Astronomy}
+\submissionmonth{November}
+\submissionyear{2018}
 
 %% hyperref package provides support for embedding meta-data in .PDF
 %% files
 \hypersetup{
-  pdftitle={Change this title!  (DRAFT: \today)},
-  pdfauthor={Johnny Canuck},
-  pdfkeywords={Your keywords here}
+  pdftitle={Exploring the tumour microenvironment with non-invasive Magnetic Resonance Imaging techniques (DRAFT: \today)},
+  pdfauthor={Firas Moosvi},
+  pdfkeywords={MRI, Cancer, tumours, CEST, HPG, contrast agents, oxygen enhanced MRI}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -400,13 +400,13 @@
 \acresetall	% reset all acronyms used so far
 
 %    1. Introduction
-\include{intro}
+\include{intro/intro}
 
 %    2. Main body
 % Generally recommended to put each chapter into a separate file
-%\include{relatedwork}
-%\include{model}
-%\include{impl}
+\include{cest/cest}
+\include{hpg/hpg}
+\include{oemri/oemri}
 %\include{discussion}
 %\include{conclusions}
 

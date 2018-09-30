@@ -88,7 +88,7 @@
 			]
 		]
 	],
-	"build_varint": "PdfLaTeX",
+	"build_varint": "",
 	"command_palette":
 	{
 		"height": 392.0,
@@ -167,12 +167,12 @@
 		"/phd/Dropbox (UBC PhD)/thesis/phd/Thesis",
 		"/phd/Dropbox (UBC PhD)/thesis/phd/Thesis/cest",
 		"/phd/Dropbox (UBC PhD)/thesis/phd/Thesis/cest/cest-images",
-		"/phd/Dropbox (UBC PhD)/thesis/phd/Thesis/hpg",
 		"/phd/Dropbox (UBC PhD)/thesis/phd/Thesis/intro",
 		"/phd/Dropbox (UBC PhD)/thesis/phd/Thesis/oemri"
 	],
 	"file_history":
 	[
+		"/phd/Dropbox (UBC PhD)/thesis/phd/Thesis/cest/cest.tex",
 		"/phd/Dropbox (UBC PhD)/thesis/phd/Thesis/intro/intro.tex",
 		"/phd/Dropbox (UBC PhD)/thesis/phd/Thesis/diss.tex",
 		"/usr/local/texlive/2016/texmf-dist/tex/latex/natbib/natbib.sty",
@@ -299,12 +299,11 @@
 		"/Users/fmoosvi/Desktop/IDP/IDP",
 		"/phd/Dropbox/thesis/phd/Proposal/proposal.sublime-workspace",
 		"/phd/Dropbox/thesis/phd/Proposal/proposal.sublime-project",
-		"/phd/Dropbox/thesis/phd/Proposal/proposal.tex",
-		"/phd/Dropbox/thesis/phd/Proposal/oldProposal.tex"
+		"/phd/Dropbox/thesis/phd/Proposal/proposal.tex"
 	],
 	"find":
 	{
-		"height": 43.0
+		"height": 30.0
 	},
 	"find_in_files":
 	{
@@ -465,7 +464,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 43.0
+		"height": 30.0
 	},
 	"input":
 	{
@@ -510,7 +509,7 @@
 	"project": "phdthesis.sublime-project",
 	"replace":
 	{
-		"height": 78.0
+		"height": 56.0
 	},
 	"save_all_on_build": true,
 	"select_file":

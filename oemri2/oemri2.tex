@@ -1,90 +1,12 @@
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% A template for Wiley article submissions.
-% Developed by Overleaf. 
-%
-% Please note that whilst this template provides a 
-% preview of the typeset manuscript for submission, it 
-% will not necessarily be the final publication layout.
-%
-% Usage notes:
-% The "blind" option will make anonymous all author, affiliation, correspondence and funding information.
-% Use "num-refs" option for numerical citation and references style.
-% Use "alpha-refs" option for author-year citation and references style.
+%% The following is a directive for TeXShop to indicate the main file
+%%!TEX root = ../diss.tex
 
-\documentclass[num-refs]{wiley-article}
-% \documentclass[blind,alpha-refs]{wiley-article}
+\chapter{Oxygen enhanced MRI - Applications}
+\label{ch:oemri}
 
-% Add additional packages here if required
-\usepackage{siunitx}
-% This is to highlight todos for myself
-\usepackage[textwidth=1.25in]{todonotes}
-% Add package to ensure citations in captions and tables don't get done first
+\section{Preface}
 
-% \todonotes
-%\textwidth 5.in
-\marginparwidth = 1.25in
-%\textwidth = 5in
-\paperwidth=\dimexpr \paperwidth + 2in\relax
-\setlength{\oddsidemargin}{0.5in}
-\setlength{\evensidemargin}{0.5in}
-%\setlength{\voffset}{-1in}
-%\setlength{\hoffset}{-1in}
-%\setlength{\textwidth}{156mm}
-%\setlength{\topmargin}{4mm}
-%\setlength{\headheight}{10mm}
-%\setlength{\headsep}{12mm}
-%\setlength{\topskip}{0mm}
-%\setlength{\textheight}{228mm}
-
-% %\paperwidth=\dimexpr \paperwidth + 6cm\relax
-%\oddsidemargin=\dimexpr\oddsidemargin + 3cm\relax
-%\evensidemargin=\dimexpr\evensidemargin + 3cm\relax
-%\marginparwidth=\dimexpr \marginparwidth + 3cm\relax
-
-
-% Update article type if known
-\papertype{Original Article}
-% Include section in journal if known, otherwise delete
-\paperfield{Journal Section}
-
-\title{Detection of Avastin-induced changes in hypoxia in SCCVII tumours using dynamic oxygen enhanced MRI}
-% List abbreviations here, if any. Please note that it is preferred that abbreviations be defined at the first instance they appear in the text, rather than creating an abbreviations list.
-%\abbrevs{ABC, a black cat; DEF, doesn't ever fret; GHI, goes home immediately.}
-
-% Include full author names and degrees, when required by the journal.
-% Use the \authfn to add symbols for additional footnotes and present addresses, if any. Usually start with 1 for notes about author contributions; then continuing with 2 etc if any author has a different present address.
-\author[1]{Firas Moosvi}
-\author[2]{Jennifer H.E. Baker}
-\author[2]{Andrew I. Minchinton}
-\author[1\authfn{1}]{Stefan A. Reinsberg}
-
-%\contrib[\authfn{1}]{Equally contributing authors.}
-
-% Include full affiliation details for all authors
-\affil[1]{Department of Physics \& Astronomy, University of British Columbia, Vancouver, Canada}
-\affil[2]{Radiation Biology Unit, British Columbia Cancer Research Centre, Vancouver, Canada}
-\affil[3]{MRI Research Centre, University of British Columbia, Vancouver, Canada}
-\corraddress{Stefan Reinsberg PhD, Dept of Physics \& Astronomy, University of British Columbia, Vancouver, Canada}
-\corremail{stefan@phas.ubc.ca}
-
-%\presentadd[\authfn{2}]{Department, Institution, City, State or Province, Postal Code, Country}
-
-%\fundinginfo{Funder One, Funder One Department, Grant/Award Number: 123456, 123457 and 123458; Funder Two, Funder Two Department, Grant/Award Number: 123459}
-
-% Include the name of the author that should appear in the running header
-\runningauthor{Moosvi et al.}
-
-\begin{document}
-
-\maketitle
-
-% ======================================================================
-% Abstract
-% ======================================================================
-\begin{abstract}
-Hello
-\keywords{}
-\end{abstract}
+Stuff about contributions 
 % ======================================================================
 \section{Introduction}
 % ======================================================================
@@ -214,7 +136,7 @@ A reference sampling frequency should be chosen and in this study, it was chosen
 
 %\begin{figure}[htbp]
 %   \centering
-%   \includegraphics[width=0.6\textwidth]{images/schematic.png} % requires the graphicx package
+%   \includegraphics[width=0.6\textwidth]{oemri2/oemri2-images/schematic.png} % requires the graphicx package
 %   \caption{example caption}
 %   \label{dOEMRImaps}
 %\end{figure}
@@ -229,7 +151,7 @@ A normalized~\todo{still debating between normalized or not} histogram of all vo
 
 \begin{figure}[htbp]
    \centering
-   \includegraphics[width=\textwidth]{images/1_aarts3_b20_dOEMRI.png} % requires the graphicx package
+   \includegraphics[width=\textwidth]{oemri2/oemri2-images/1_aarts3_b20_dOEMRI.png} % requires the graphicx package
    \caption{Normalized weighting factor maps obtained from ICA (dOE-MRI maps) are shown for control tumours as well as those treated with 5mg/kg B20 and imaged 48 hours later.
    Of the 10-16 slices for each animal, a representative slice was chosen.
    As indicated by the distribution of purple voxels, control tumours show considerably less response to oxygen than the treated tumours.
@@ -239,7 +161,7 @@ A normalized~\todo{still debating between normalized or not} histogram of all vo
 
 \begin{figure}[htbp]
    \centering
-   \includegraphics[width=0.7\textwidth]{images/2_aarts3_b20_boxplot_dOEMRI.png} % requires the graphicx package
+   \includegraphics[width=0.7\textwidth]{oemri2/oemri2-images/2_aarts3_b20_boxplot_dOEMRI.png} % requires the graphicx package
    \caption{A) Group differences of the normalized mean component weighting factors from dOE-MRI are shown in a box plot.
    Each dot on the boxplot indicates the mean value of each mouse with the controls in blue and the treated in green.
    The differences are statistically significantly different (p=0.0092) with a large effect size (Hedge's g = 1.08).
@@ -251,7 +173,7 @@ A normalized~\todo{still debating between normalized or not} histogram of all vo
 
 \begin{figure}[htbp]
    \centering
-   \includegraphics[width=\textwidth]{images/3_imsc_zoomed.png} % requires the graphicx package
+   \includegraphics[width=\textwidth]{oemri2/oemri2-images/3_imsc_zoomed.png} % requires the graphicx package
    \caption{example caption}
    \label{imsc}
 \end{figure}
@@ -275,7 +197,7 @@ There was a statistically significant difference in mean component weighting fac
 
 \begin{figure}[htbp]
    \centering
-   \includegraphics[width=\textwidth]{images/4_oep8_IMSC_b20_sanitized_dOEMRI.png} % requires the graphicx package
+   \includegraphics[width=\textwidth]{oemri2/oemri2-images/4_oep8_IMSC_b20_sanitized_dOEMRI.png} % requires the graphicx package
    \caption{\textbf{A)} Boxplot with four groups, 5mg/kg B20 treated and control mice with both SC and IM tumours.
    Differences between control SC and IM tumours, as well as control SC and treated SC tumours are statistically significant (Mann-WhitneyU test; p <0.005, marked as **).
    There was no significantly difference in treated and control IM tumours.
@@ -286,7 +208,7 @@ There was a statistically significant difference in mean component weighting fac
 
 \begin{figure}[htbp]
    \centering
-   \includegraphics[width=\textwidth]{images/5_oep8_imsc_histo.png} % requires the graphicx package
+   \includegraphics[width=\textwidth]{oemri2/oemri2-images/5_oep8_imsc_histo.png} % requires the graphicx package
    \caption{Representative histological sections from 16 total tumours of all four groups: 5mg/kg B20 treated and control mice with SC and IM tumours.
    Hypoxia marker pimonidazole staining is shown in green, and purple indicates the presence of blood vessels stained by CD31.}
    \label{allHisto}
@@ -343,7 +265,7 @@ For N data points, each $t_i = \frac{ia}{N}$.
 The FastICA algorithm places a condition on the norm of the extracted component $y(t)$,
 
 \begin{equation}
-\sqrt{\sum_{i=1}^{N} \Bigl|y(t_i)\Bigr|^2} \coloneqq 1.
+\sqrt{\sum_{i=1}^{N} \Bigl|y(t_i)\Bigr|^2} %\coloneqq 1.
 \end{equation}
 
 Simplifying the expression above for our $y(t)$, we have:
@@ -362,10 +284,10 @@ s = \frac{\sqrt{198}}{\sqrt{N}}
 This scaling factor was applied to all dOE-MRI maps used in this study to retain information about the level of response to the supplied oxygen across scans with different sampling frequencies.
 
 % ======================================================================
- \section{References}
+ %\section{References}
 % ======================================================================
-\bibliography{oemri2}
+%\bibliography{oemri2}
 
 %\bibliographystyle{vancouver-authoryear}
 
-\end{document}
+%\end{document}

@@ -1,12 +1,9 @@
 %% The following is a directive for TeXShop to indicate the main file
 %%!TEX root = ../diss.tex
 
-\chapter{Oxygen enhanced MRI - Applications}
-\label{ch:oemri}
+\chapter{Oxygen enhanced MRI - Applications 3}
+\label{ch:oemri3}
 
-\section{Preface}
-
-Stuff about contributions 
 % ======================================================================
 \section{Introduction}
 % ======================================================================
@@ -21,7 +18,7 @@ In this study, we apply dOE-MRI to mice bearing tumour xenografts to assess the 
 
 Aberrant angiogenesis, poor blood perfusion, a chaotic vascular network all limit oxygen delivery to cells and contribute to formation of hypoxic regions in tumours.
 The binding of vascular endothelial growth factors (VEGF) to the VEGF receptor is a key driver of angiogenesis.
-Bevacizumab (Avastin) is a monoclonal antibody that binds VEGF extracellularly, preventing the interaction of of VEGF to its receptors and inhibits angiogenesis 
+Bevacizumab (Avastin) is a monoclonal antibody that binds VEGF extracellularly, preventing the interaction of of VEGF to its receptors and inhibits angiogenesis. 
 Avastin has been used clinically to treat breast, colon, colorectal, lung, brain, ovarian, cervical, and other cancers~\cite{AvastinIndications}\todo{cite Genentech}%https://www.gene.com/download/pdf/avastin_prescribing.pdf]. 
 VEGF ablation has been shown to at least temporarily reduce vascular permeability and increase tumour oxygenation in some models~\cite{OConnor:2012iea}\todo{this review has lots of relevant refs, better to cite directly than a review}. 
 We hypothesized that dOE-MRI with groupICA can detect VEGF ablation-induced changes to oxygenation of SCCVII tumours 48 hours following treatment.
@@ -85,9 +82,9 @@ General methods common to both experiments have been described above, below are 
 \noindent\textbf{Animals}: This experiment comprised thirteen total mice in total. 
 3 mice were implanted with SCCVII in the dorsal subcutaneous (SC) region.
 10 mice were implanted in both the dorsal subcutaneous (SC) as well as the right~\todo{left?} hind limb intramuscular (IM) regions.
-To account for the accelerated rate of growth for tumours implanted in the IM region, implanted cell concentration was halved\todo{Need to check this: http://bit.ly/2Q2qOgV}.
+To account for the accelerated rate of growth for tumours implanted intramuscularly, one-fifth of the cells were implanted IM (1x10$^5$ cells in 50$\mu$l serum-free media).
 Separate ROIs were drawn on the T2W images to outline both the SC and IM tumours.
-5 mice were treated with 5mg/kg B20 and 8 were untreated controls. 
+5 mice were treated with 5mg/kg B20 24 hours prior to imaging and 8 were untreated controls.\todo{24h treatment group} 
 
 \noindent\textbf{MRI}: Coronal images were acquired to enable simultaneous imaging of both tumours in the same field of view.
 All dOE-MRI scans were acquired using a 2D FLASH based sequence with TE = 2.67ms, spatial resolution 0.3mm x 0.3 mm x 1mm and flip angle $\alpha$=40$^\circ$.
@@ -102,44 +99,13 @@ Experiment & Mice & TR & Slices & Repetitions (temporal resolution) \\
  2 & 5 & 133ms & 16 &  110 (8.5ms)  \\
  2 & 8 & 83ms & 10 & 140 (6.7ms) \\
 \end{tabular}
+\caption{Scan Parameters Table}
 \label{scanparams}
 \end{table}
 
-%\subsection{Study 3: Intermittent Perfusion}
-%\noindent\textbf{MRI}: In this experiment, 2 animals were scanned for an extended period (385 repetitions) while the inhaled air was cycled between 20\% and 100\% oxygen in ten two minute cycles. 
-%
-%\noindent\textbf{Analysis}: The effect of intermittent perfusion was evaluated by comparing the dOE-MRI maps produced with segments of three cycles (group) of switching.
-%The first three cycles was used as the reference group and each subsequent group was used as the oxygenation status at that time point.
-%%A Bland-Altman plot was used to visualize the oxygenation status differences in each group compared to the reference. 
-
 % ======================================================================
-\section{Results}
+\section{Results} 
 % ======================================================================
-
-\subsection{Comparing oxygen responsiveness with dOE-MRI across experiments}
-\label{res1}
-We have previously~\cite{Moosvi:2018ca} relied on computing fractions of positively responding and negatively responding voxels as a surrogate for assessing oxygen responsiveness in tumours with dOE-MRI.
-However, this semi-quantitative metric relies on a binary classification of voxels as either O$_2$ positive or O$_2$-negative.
-Calculating fractions is sufficient to broadly categorize tumours as oxygenated or not but consequently, rich information about the level of response is lost.
-In this study, we present a new dOE-MRI analysis method that captures the level of response and furthermore, allows direct comparison of data acquired at varying temporal resolutions.
-
-Since each extracted ICA component is scaled such that its norm is one ($||c_i||=1, \forall i $), weighting factor maps are only directly comparable between scans if dOE-MRI images are acquired at the same sampling frequency over the duration of the cycling oxygen (14 minutes).
-However, holding the sampling frequency fixed over different experiments is not practical as imaging tumours of different sizes require modification of the field of view and consequently, temporal and spatial resolutions.
-A scaling factor (equation~\label{correctionfactor}; derived in the Appendix) must be applied to scale component map values so they can be compared between scans of different temporal resolutions,
-
-\begin{equation}
-s = \frac{\sqrt{N_{ref}}}{\sqrt{N}}
-\label{correctionfactor}
-\end{equation}
-
-A reference sampling frequency should be chosen and in this study, it was chosen to be 0.24s$^{-1}$ (corresponding to N=198 images over the cycling oxygen).
-
-%\begin{figure}[htbp]
-%   \centering
-%   \includegraphics[width=0.6\textwidth]{oemri2/oemri2-images/schematic.png} % requires the graphicx package
-%   \caption{example caption}
-%   \label{dOEMRImaps}
-%\end{figure}
 
 \subsection{SCCVII tumours treated with B20 are more responsive to oxygen than controls}
 
@@ -151,7 +117,7 @@ A normalized~\todo{still debating between normalized or not} histogram of all vo
 
 \begin{figure}[htbp]
    \centering
-   \includegraphics[width=\textwidth]{oemri2/oemri2-images/1_aarts3_b20_dOEMRI.png} % requires the graphicx package
+   \includegraphics[width=\textwidth]{oemri_thesis3/oemri_thesis3-images/1_aarts3_b20_dOEMRI.png} % requires the graphicx package
    \caption{Normalized weighting factor maps obtained from ICA (dOE-MRI maps) are shown for control tumours as well as those treated with 5mg/kg B20 and imaged 48 hours later.
    Of the 10-16 slices for each animal, a representative slice was chosen.
    As indicated by the distribution of purple voxels, control tumours show considerably less response to oxygen than the treated tumours.
@@ -161,7 +127,7 @@ A normalized~\todo{still debating between normalized or not} histogram of all vo
 
 \begin{figure}[htbp]
    \centering
-   \includegraphics[width=0.7\textwidth]{oemri2/oemri2-images/2_aarts3_b20_boxplot_dOEMRI.png} % requires the graphicx package
+   \includegraphics[width=0.7\textwidth]{oemri_thesis3/oemri_thesis3-images/2_aarts3_b20_boxplot_dOEMRI.png} % requires the graphicx package
    \caption{A) Group differences of the normalized mean component weighting factors from dOE-MRI are shown in a box plot.
    Each dot on the boxplot indicates the mean value of each mouse with the controls in blue and the treated in green.
    The differences are statistically significantly different (p=0.0092) with a large effect size (Hedge's g = 1.08).
@@ -173,7 +139,7 @@ A normalized~\todo{still debating between normalized or not} histogram of all vo
 
 \begin{figure}[htbp]
    \centering
-   \includegraphics[width=\textwidth]{oemri2/oemri2-images/3_imsc_zoomed.png} % requires the graphicx package
+   \includegraphics[width=\textwidth]{oemri_thesis3/oemri_thesis3-images/3_imsc_zoomed.png} % requires the graphicx package
    \caption{example caption}
    \label{imsc}
 \end{figure}
@@ -197,7 +163,7 @@ There was a statistically significant difference in mean component weighting fac
 
 \begin{figure}[htbp]
    \centering
-   \includegraphics[width=\textwidth]{oemri2/oemri2-images/4_oep8_IMSC_b20_sanitized_dOEMRI.png} % requires the graphicx package
+   \includegraphics[width=\textwidth]{oemri_thesis3/oemri_thesis3-images/4_oep8_IMSC_b20_sanitized_dOEMRI.png} % requires the graphicx package
    \caption{\textbf{A)} Boxplot with four groups, 5mg/kg B20 treated and control mice with both SC and IM tumours.
    Differences between control SC and IM tumours, as well as control SC and treated SC tumours are statistically significant (Mann-WhitneyU test; p <0.005, marked as **).
    There was no significantly difference in treated and control IM tumours.
@@ -208,17 +174,68 @@ There was a statistically significant difference in mean component weighting fac
 
 \begin{figure}[htbp]
    \centering
-   \includegraphics[width=\textwidth]{oemri2/oemri2-images/5_oep8_imsc_histo.png} % requires the graphicx package
+   \includegraphics[width=\textwidth]{oemri_thesis3/oemri_thesis3-images/5_oep8_imsc_histo.png} % requires the graphicx package
    \caption{Representative histological sections from 16 total tumours of all four groups: 5mg/kg B20 treated and control mice with SC and IM tumours.
    Hypoxia marker pimonidazole staining is shown in green, and purple indicates the presence of blood vessels stained by CD31.}
    \label{allHisto}
 \end{figure}
+
+% \subsection{Comparing DCE-MRI perfusion patterns with dOE-MRI oxygenation patterns}
+
+One SCCVII and one HCT-116 tumor-bearing mouse were catheterized and injected with 30mM solution of Gd-DTPA for DCE-MRI at a rate of 1mL/min using a power injector at a dose of 5$\mu$L/g.
+
+
+\noindent\textbf{Perfusion maps:} Signal intensity timecourse from the DCE-MRI map was first normalized to the mean signal intensity pre-injection.
+Area under the first 60 seconds of the normalized signal intensity enhancement curve after the injection was calculated (IAUC$_{60}$) using the composite Simpson's Rule (\texttt{scipy.integrate.simps}).
+A binary ground-truth perfusion map was constructed by classifying all voxels with IAUC$_{60} > 0$ as perfused and everything else as unperfused.
+
+
+
+
+
+% Where dOE-MRI and DCE-MRI scans were acquired in the same SCCVII and HCT-116 tumor-bearing mice,  maps of oxygenation status were compared to IAUC$_{60}$ perfusion maps, as shown in Figure~\ref{fig_perfusion}.
+% Mean IAUC$_{60}$ for the well-perfused SCCVII tumor was 22 $\pm$ 16 \%$\cdot$s and for the comparatively poorly perfused HCT-116 tumor was 7$\pm$ 7 \%$\cdot$s.
+% Well-oxygenated O$_2$-positive regions generally correspond to perfused, high IAUC$_{60}$ areas in both SCCVII and HCT-116 tumors.
+% A large patch of necrosis, as identified in histological section, in the HCT-116 tumor was also extremely poorly perfused; such large patches of necrosis were not present in the SCCVII tumor.
+
+% \begin{figure}[htbp]
+%    \centering
+%    \includegraphics[width=\textwidth]{oemri_thesis3-images/fig_perfusion.eps} % requires the graphicx package
+%    \caption{dOE-MRI maps and DCE-MRI IAUC$_{60}$maps and slice-matched histology sections of SCCVII and HCT-116 tumors. Large regions marked as purple in the dOE-MRI maps are O$_2$-positive and also correspond to regions that have high IAUC$_{60}$ values (yellow). Green or O$_2$-negative regions from the dOE-MRI map are often consistent with unperfused regions in the IAUC$_{60}$ (black), but there are regions of mismatch. Histology images stained with pimonidazole (green) and CD31 (purple) are shown for corresponding sections.
+%    \label{fig_perfusion}}
+% \end{figure}
+
+
 
 \newpage
 
 % ======================================================================
 \section{Discussion}
 % ======================================================================
+
+Bevacizumab is a monocolonal antibody that targets the VEGF receptors on tumours and its effects have been widely reported~\cite{refs}.
+Briefly, tumour xenografts receiving monocolonal antibodies to VEGF have consistently shown reductions in quantitative perfusion parameters from a variety of non-invasive imaging modalities including dynamic contrast enhanced (DCE) ultrasound (US)~\cite{Wang:2015bb}, DCE-MRI~\cite{OConnor:2009cg}, and micro PET~\cite{Nagengast:2007hx}.
+For DCE-US, Wang et al. reported a significant reduction in peak enhancement, area under the curve, relative blood volume, and relative blood flow just 24 hours after a treatment of 10mg/kg of bevacizumab~\cite{Wang:2015bb} .  
+With microPET, -----~\todo{get details from nagegast reference}
+Several DCE-MRI animal and human studies have shown reductions in Ktrans, vp, and ve after administration of antiangiogenic agents, including bevacizumab~\cite{mri}. \todo{cite also MR imaging biomarkers evaluating vascular normalization window after anti-vessel treatment}
+Tumour growth delay data also clearly indicates that tumour growth is slowed after treatment with bevacizumab~\cite{growthdelay:junyang} and other similar VEGF inhibitors~\cite{sunitinib}.\todo{This does not sound right, is it really a vegf inhibitor?}
+
+\textbf{discuss oxygenation effect of B20 on tumours}
+
+
+\textbf{discuss IM vs. SC tumours}
+
+
+\textbf{}
+
+
+
+
+
+It has also been shown that tumour T1 is reduced following treatment with bevacizumab. 
+However, to our knowledge, this is the first study showing oxygenation changes in tumours non-invasively using MRI. 
+
+
 Sketch of Discussion:
 
 \begin{itemize}
@@ -235,59 +252,11 @@ Sketch of Discussion:
 
 \subsection{random snippets}
 O$_2$ positive or O$_2$-negative fractions are immune to this phenomenon, information about the level of response can be retained simply by applying the scaling factor when comparing scans at different temporal resolutions
+
+
 % ======================================================================
 \section{Conclusions}
 % ======================================================================
 Hello
 
-% ======================================================================
-\section{Acknowledgments}
-% ======================================================================
 
-This work was supported by NSERC and CIHR.
-
-% ======================================================================
-\section{Appendix}
-% ======================================================================
-Gas delivered to mice switches between room air and 100\% oxygen in two minute cycles, for a total of 14 minutes.
-ICA extracts the tissue response to the delivered oxygen, and four periods of room air interspersed with three periods of oxygen can be modelled mathematically using a general Heaviside function:
-
-\begin{equation}
-y(t) =
-  \begin{cases}
-                                   +b & \text{if $t\geq \frac{3a}{7}$} \\
-                                   -b & \text{if $t< \frac{4a}{7}$} \\
-  \end{cases},
-\end{equation}
-
-For N data points, each $t_i = \frac{ia}{N}$.
-
-The FastICA algorithm places a condition on the norm of the extracted component $y(t)$,
-
-\begin{equation}
-\sqrt{\sum_{i=1}^{N} \Bigl|y(t_i)\Bigr|^2} %\coloneqq 1.
-\end{equation}
-
-Simplifying the expression above for our $y(t)$, we have:
-\begin{align}
-1 = \sqrt{b^2 \sum_{i=1}^{N} 1^2} \nonumber \\
-b = N^{-\frac{1}{2}}
-\end{align}
-
-With this, we can compute the scaling factor directly using b$_{ref}$ =198 repetitions as the reference:
-
-\begin{align}
-s = \frac{b_{N}}{b_{ref}} \nonumber \\
-s = \frac{\sqrt{198}}{\sqrt{N}} 
-\end{align}
-
-This scaling factor was applied to all dOE-MRI maps used in this study to retain information about the level of response to the supplied oxygen across scans with different sampling frequencies.
-
-% ======================================================================
- %\section{References}
-% ======================================================================
-%\bibliography{oemri2}
-
-%\bibliographystyle{vancouver-authoryear}
-
-%\end{document}

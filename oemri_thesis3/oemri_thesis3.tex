@@ -43,7 +43,7 @@ Adjacent microscope fields of view were tiled such that images of entire tumour 
 Using anatomical landmarks and accumulated thicknesses of serial-step sections as estimates of distances from the edges of whole tumours, sections were chosen to match the MR slices. 
 ImageJ and user-supplied algorithms were used to super impose digital images which were then manually cropped to tumour tissue boundaries with staining artifacts removed. 
 A threshold was applied to images to identify positive pimonidazole staining, and the number of positive pixels was determined as a percentage of the total number of pixels in the tumour image. 
-Overlaid greyscale images were converted to false colour for visualization with pimonidazole as green and CD31 as magenta~\todo{need to make sure final colours are consistent}.
+Overlaid greyscale images were converted to false colour for visualization with pimonidazole as green and CD31 as magenta~\todo[backgroundcolor=green]{need to make sure final colours are consistent}.
 
 \subsection{MR Imaging}
 Imaging was performed using a 7T scanner (Bruker Biospec) with a transmit quadrature volume coil and a custom built surface receive coil. 
@@ -144,8 +144,8 @@ A normalized~\todo[backgroundcolor=green]{still debating between normalized or n
    \label{imsc}
 \end{figure}
 
-The location of tumour cell implants in a mouse has a large bearing on the microenvironment of the resulting  xenograft, as access to surrounding normal tissue vasculature, and the overall growth environment plays a large role in tumour progression [refs]~\todo{need refs here}. 
-For the same concentration of cells implanted, IM tumours typically~\todo{Question about this posed in Mattermost: http://bit.ly/2S79mKm} grow much faster,~\todo{You'd expect there'd be larger too but the controls are actually smaller than SC controls according to number of MR voxels. Fewer cells were implanted in the IM location?} have a more stable vascular architecture, less hypoxia (pimo staining), and increased vessel density (CD31 \%).
+The location of tumour cell implants in a mouse has a large bearing on the microenvironment of the resulting  xenograft, as access to surrounding normal tissue vasculature, and the overall growth environment plays a large role in tumour progression [refs]~\todo[backgroundcolor=green]{need refs here}. 
+For the same concentration of cells implanted, IM tumours typically~\todo[backgroundcolor=green]{Question about this posed in Mattermost: http://bit.ly/2S79mKm} grow much faster,~\todo[backgroundcolor=green]{You'd expect there'd be larger too but the controls are actually smaller than SC controls according to number of MR voxels. Fewer cells were implanted in the IM location?} have a more stable vascular architecture, less hypoxia (pimo staining), and increased vessel density (CD31 \%).
 Fig.~\ref{imsc} highlights some of these differences in representative SCCVII  tumours implanted SC and IM. 
 To evaluate whether oxygen responsiveness is altered as a consequence of these features, dOE-MRI was employed in mice bearing both SC and IM tumours.
 Untreated mice with IM tumours were statistically significantly (Mann-WhitneyU test, p = 0.003) more responsive to oxygen compared to the subcutaneous tumours in the same mice (Fig.~\ref{OEP8boxplot}) and the effect size was moderate with Hedge's \emph{g}= 0.44.
@@ -155,7 +155,7 @@ Untreated mice with IM tumours were statistically significantly (Mann-WhitneyU t
 Mean normalized component weighting factors from B20-treated IM tumours was 0.137$\pm$0.018, and control IM tumours was 0.146$\pm$0.017 and the groups were not statistically significantly different (Mann-WhitneyU test, p=0.42). 
 Thus, the B20 treatment did not have a measurable effect on improving responsiveness to oxygen in IM tumours with a higher baseline oxygen responsiveness compared to subcutaneous tumours.
 Histological data (Fig.~\ref{allHisto}) also indicates that control IM tumours have significantly less pimonidazole staining compared to SC controls.
-Furthermore, reduction in pimonidazole staining between control and treated IM tumours is much lower than in SC tumours~\todo{I should probably do more than a cursory check to make sure single SC tumours were similar to double SC tumours}. 
+Furthermore, reduction in pimonidazole staining between control and treated IM tumours is much lower than in SC tumours~\todo[backgroundcolor=green]{I should probably do more than a cursory check to make sure single SC tumours were similar to double SC tumours}. 
 This provides clear evidence that the effects of B20 are highly dependent on the tumour microenvironment, which can be appropriately assessed \emph{in vivo} using dOE-MRI.
 To ensure the SC tumours from mice with a double implant were similar to mice with only a single implant, three mice were implanted with subcutaneous tumours.
 No differences were found (data not shown), so the SC tumours from this experiment were pooled together.
@@ -216,7 +216,7 @@ A binary ground-truth perfusion map was constructed by classifying all voxels wi
 Bevacizumab is a monocolonal antibody that targets the VEGF receptors on tumours and its effects have been widely reported~\cite{refs}.
 Briefly, tumour xenografts receiving monocolonal antibodies to VEGF have consistently shown reductions in quantitative perfusion parameters from a variety of non-invasive imaging modalities including dynamic contrast enhanced (DCE) ultrasound (US)~\cite{Wang:2015bb}, DCE-MRI~\cite{OConnor:2009cg}, and micro PET~\cite{Nagengast:2007hx}.
 For DCE-US, Wang et al. reported a significant reduction in peak enhancement, area under the curve, relative blood volume, and relative blood flow just 24 hours after a treatment of 10mg/kg of bevacizumab~\cite{Wang:2015bb} .  
-With microPET, -----~\todo{get details from nagegast reference}
+With microPET, -----~\todo[backgroundcolor=green]{get details from nagegast reference}
 Several DCE-MRI animal and human studies have shown reductions in Ktrans, vp, and ve after administration of antiangiogenic agents, including bevacizumab~\cite{mri}. \todo{cite also MR imaging biomarkers evaluating vascular normalization window after anti-vessel treatment}
 Tumour growth delay data also clearly indicates that tumour growth is slowed after treatment with bevacizumab~\cite{growthdelay:junyang} and other similar VEGF inhibitors~\cite{sunitinib}.\todo{This does not sound right, is it really a vegf inhibitor?}
 

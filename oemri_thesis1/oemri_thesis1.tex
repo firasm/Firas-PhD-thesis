@@ -2,11 +2,12 @@
 %%!TEX root = ../diss.tex
 
 \chapter{Oxygen enhanced MRI}
-\label{ch:oemri}
+\label{ch:oemri1}
 
 \section{Preface}
 
-Stuff about contributions 
+With the exception of Sections~\ref{sec:numComponents},~\ref{sec:correctionfactor}, and \ref{sec:interleave} material presented in this chapter was published in the \textit{Journal of Magnetic Resonance in Medicine}.
+Details of co-author contributions appear in the Preface (~\ref{ch:preface}).
 
 % ======================================================================
 \section{Introduction}
@@ -67,10 +68,10 @@ This paradigm continued for three cycles over a total of fourteen minutes; gases
 \textbf{dOE-MRI maps:} A suite of in-house software was developed using the python machine learning library scikit-learn~\cite{Pedregosa:2011tv}, specifically \texttt{sklearn.decomposition.FastICA} based on the technique described by Hyvarinen~\cite{Hyvarinen:2000vk}.
 The FastICA algorithm is applied to serially acquired T$_1$W images and the output is a paired set of components and weighting factors for each voxel in the dataset.
 Extracted independent components are not ordered and while the component selection can be automated, in this study an observer was assigned to select the appropriate component (Figure~\ref{technique}).
-The number of independent components for each imaging session was chosen by the operator and ranged from 4-9 to ensure the cyclic behavior of the T$_1$W signal intensity corresponding to the gas challenge appeared in only one component. 
+The number of independent components for each imaging session was chosen by the operator and ranged from 4-9 to ensure the cyclic behaviour of the T$_1$W signal intensity corresponding to the gas challenge appeared in only one component. 
 The dOE-MRI maps were obtained by dividing the ICA weighting-factor maps by the mean signal-intensity maps to obtain a spatial map for the strength of a particular voxel's contribution to the component of interest ($c_4$ in Figure~\ref{technique}).
-In these dOE-MRI maps, voxels are colored to indicate the amount by which a given pixel intensity timecourse is modulated by the oxygen-related component.  
-The green-white-purple color spectrum depicts the degree to which voxels respond to the cycled gas challenge.
+In these dOE-MRI maps, voxels are coloured to indicate the amount by which a given pixel intensity timecourse is modulated by the oxygen-related component.  
+The green-white-purple colour spectrum depicts the degree to which voxels respond to the cycled gas challenge.
 Purple indicates O$_2$-positive voxels whose timecourse exhibits a higher and more positive contribution from the corresponding ICA component, representing an increase in T$_1$W signal intensity in response to the supplied 100 \% oxygen, and corresponding to areas with excess dissolved oxygen. 
 O$_2$-negative voxels that show a decrease in T$_1$W signal intensity with a negative contribution from the corresponding ICA component under 100 \% oxygen breathing are depicted as green. 
 Regions whose T$_1$W signal intensity timecourses responds only weakly or not at all to the gas challenge are shown in white hues.
@@ -120,6 +121,20 @@ Green voxels in the dOE-MRI map have a strong contribution of the inverse extrac
    \label{fig_correlation}}
 \end{figure}
 
+\subsection{Extracting the cycling component via ICA is independent of number of components}
+\label{sec:numComponents}
+dOE-MRI maps from ICA applied serially after varying the number of components ($m$) from 3 to 12 are shown in Figure~\ref{numComponents}.
+The component of the signal that corresponds to the T$_1$W signal intensity increase due to the cycling oxygen is quite prominent and independent of the number of components selected.
+Two examples are shown, with a low and high degree of variability measured in the extracted components.
+In both cases, the corresponding dOE-MRI maps show the same O$_2$-positive and O$_2$-negative regions.
+
+\begin{figure}[htbp]
+   \centering
+   \includegraphics[width=\textwidth]{oemri_thesis1/oemri_thesis1-images/technical_numComponents.pdf} % requires the graphicx package
+   \caption{Two animals were chosen to demonstrate the effect of the number of components ($m$) on the dOE-MRI maps. The low variability example shows no discernible difference in the extracted component anywhere from $m=3$ to $m=12$. The high variability example shows shows considerably more noise in the extracted component, but the same overall trend. The corresponding dOE-MRI maps for both the low variability and high variability examples show almost no difference in the oxygenation maps.}
+   \label{numComponents}
+\end{figure}
+
 \subsection{Variability of response in individual oxygen cycles}
 
 A full dOE-MRI sequence involved three cycles of oxygen but to assess the potential for shortening the sequence we also separately applied ICA to each of the three oxygen cycles independently.
@@ -136,32 +151,12 @@ Voxel-wise plots of each map are correlated to the full dataset and a linear reg
    \label{fig_repeatability}}
 \end{figure}
 
-\subsection{Extracting the cycling component via ICA is independent of number of components}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ullamcorper pretium neque, elementum pulvinar justo. Pellentesque aliquet, enim nec pulvinar scelerisque, erat risus convallis nibh, eget finibus diam massa ut diam. Sed eget dictum ex, at pellentesque sem. Mauris quis tincidunt turpis. Vestibulum ultrices lorem quis ex accumsan finibus. Sed mollis erat vitae magna fermentum pulvinar. Mauris orci odio, ullamcorper vitae eros porta, blandit ornare orci. Suspendisse potenti. \todo{should quantify the difference in maps and plots somehow}
-
-Mauris ultrices, nibh in rutrum eleifend, nisl sapien suscipit ipsum, finibus imperdiet metus tellus in nunc. Fusce eget tellus tincidunt lectus convallis elementum quis sed ante. Nullam nisl tellus, gravida nec arcu nec, bibendum finibus ipsum. Proin eu turpis quam. Sed faucibus, urna id consequat placerat, enim ligula porttitor velit, id congue eros elit a eros. Sed pharetra nunc rutrum massa auctor iaculis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc quis sapien lacus. Morbi suscipit sed ante id.
-
-\begin{figure}[htbp]
-   \centering
-   \includegraphics[width=\textwidth]{oemri_thesis1/oemri_thesis1-images/technical_numComponents.pdf} % requires the graphicx package
-   \caption{Two animals were chosen to demonstrate the effect of the number of components ($m$) on the dOE-MRI maps. The low variability example shows no discernible difference in the extracted component anywhere from $m=3$ to $m=11$. The high variability example shows shows considerably more noise in the extracted component, but the same overall trend. The corresponding dOE-MRI maps for both the low variability and high variability examples show almost no difference in the oxygenation maps.}
-   \label{numComponents}
-\end{figure}
-
-\begin{figure}[htbp]
-   \centering
-   \includegraphics[width=0.6\textwidth]{oemri_thesis1/oemri_thesis1-images/technical_ScoredExtractions.pdf} % requires the graphicx package
-   \caption{Each trace plot is the extracted ICA component corresponding to the oxygen response. The components are scored by the observer from a score of 1 to 5, with 1 barely corresponding to the oxygen challenge with a lot of noise and 5 corresponding extremely well to the oxygen challenge and very little noise. Note very few animals are in the lowest group, and many more are of extraction quality 4 and 5.}
-   \label{extractions}
-\end{figure}
-
 \subsection{Comparing oxygen responsiveness with dOE-MRI across experiments}
-\label{res1}
-We have previously~\cite{Moosvi:2018ca}\todo{this will need to change} relied on computing fractions of positively responding and negatively responding voxels as a surrogate for assessing oxygen responsiveness in tumours with dOE-MRI.
+\label{sec:correctionfactor}
+It is possible to compute fractions of positively responding and negatively responding voxels as a surrogate for oxygen responsiveness in tumours with dOE-MRI.
 However, this semi-quantitative metric relies on a binary classification of voxels as either O$_2$ positive or O$_2$-negative.
 Calculating fractions is sufficient to broadly categorize tumours as oxygenated or not but consequently, rich information about the level of response is lost.
-In this study, we present a new dOE-MRI analysis method that captures the level of response and furthermore, allows direct comparison of data acquired at varying temporal resolutions.
+Here we present a new dOE-MRI analysis method that captures the level of response and furthermore, allows direct comparison of data acquired at varying temporal resolutions.
 
 Since each extracted ICA component is scaled such that its norm is one ($||c_i||=1, \forall i $), weighting factor maps are only directly comparable between scans if dOE-MRI images are acquired at the same sampling frequency over the duration of the cycling oxygen (14 minutes).
 However, holding the sampling frequency fixed over different experiments is not practical as imaging tumours of different sizes require modification of the field of view and consequently, temporal and spatial resolutions.
@@ -263,7 +258,11 @@ Dr. Martin McKeown provided assistance in understanding the utility of ICA in th
 
 \section{Appendix}
 
-\subsection{Components}
+\subsection{Other independent components extracted}
+
+Figure~\ref{Sfig_components} shows the extracted independent components and their corresponding weighting factor maps for an application of ICA on a OE-MRI scan.
+Extracted components typically have a mix of high and low frequency responses and may include temperature drifts, breathing artefacts and other motion. 
+Additional physiological monitoring data is needed for a more thorough analysis of the other independent components and whether they can aid our understanding of the mechanism of action.
 
 \begin{figure}[htbp]
    \centering
@@ -273,7 +272,7 @@ Dr. Martin McKeown provided assistance in understanding the utility of ICA in th
 \end{figure}
 
 \subsection{Subsampling - can interleave with T2*}
-
+\label{sec:interleave}
 Another example showing the dOE-MRI maps extracted using ICA using a subset of the same source data.
 This example more clearly highlights the low variation 
 

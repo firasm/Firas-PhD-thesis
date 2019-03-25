@@ -2,7 +2,7 @@
 %%!TEX root = ../diss.tex
 
 \chapter{Oxygen enhanced MRI - Validation of method in animals}
-\label{ch:oemri}
+\label{ch:oemri2}
 
 \section{Preface}
 
@@ -81,9 +81,12 @@ To compare dOE-MRI maps between mice with different temporal resolutions, a scal
 \section{Results}
 % ======================================================================
 
+
+
 %%%%%%%%%%%%%%%%% ############ BEGIN section from paper 1 ############ 
 
 \subsection{ICA enabled dOE-MRI detects variable oxygenation in a range of tumour models}
+\label{sec:rangeModels}
 tumours of human and murine origin and comprising a variety of tumour microenvironments were imaged, including fast growing, highly vascularized murine squamous cell (SCCVII) and human ovarian carcinomas (SKOV3), slower growing and well vascularized human breast cancer (BT-474), as well as a relatively fast growing but more poorly vascularized human colon colorectal carcinoma (HCT-116).
 The inter-model heterogeneity of the tumours is reflected in the mean fraction of negative voxels in the dOE-MRI maps, which were 46 $\pm$ 6\% for BT-474, 36$\pm$3\% for HCT-116, 31$\pm$5\% for SCCVII, and 14$\pm$4\% for SKOV3 tumours. 
 Considerable intra-tumour heterogeneity is also observed within some models, particularly the BT474.
@@ -96,8 +99,15 @@ Bottom: The box-whisker plot shows the quartiles of percent negative dOE-MRI vox
 \label{versatile}}
 \end{figure}
 
-\subsection{dOE-MRI maps correspond to matched histology sections}
+\begin{figure}[htbp]
+   \centering
+   \includegraphics[width=\textwidth]{oemri_thesis2/oemri_thesis2-images/technical_ScoredExtractions.png} % requires the graphicx package
+   \caption{Each trace plot is the extracted ICA component corresponding to the oxygen response. The components are scored by the observer from a score of 1 to 5, with 1 barely corresponding to the oxygen challenge with a lot of noise and 5 corresponding extremely well to the oxygen challenge and very little noise. Note very few animals are in the lowest group, and many more are of extraction quality 4 and 5.}
+   \label{extractions}
+\end{figure}
 
+\subsection{dOE-MRI maps correspond to matched histology sections}
+\label{sec:histoSections}
 tumour tissue cryosections obtained to match MR imaging slices were stained for vasculature (CD31) and regions of pimonidazole-labeled hypoxia and are compared side-by-side; Figures~\ref{fig_sccvii} and~\ref{fig_hct116} provide five examples for each of SCCVII and HCT-116 tumour models for detailed review.
 Generally, in corresponding dOE-MRI maps for both tumour models O$_2$-positive voxels align with the most oxygenated regions of histology sections, where pimonidazole labeling is absent, however many areas of mismatch are also observed. 
 More consistent is that O$_2$-positive voxels do not typically correspond to tissues identified as hypoxic in the histology sections (i.e. labeled with pimonidazole).

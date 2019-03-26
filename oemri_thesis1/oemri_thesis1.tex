@@ -65,7 +65,7 @@ The spatial resolution and geometry for all scans in the imaging session were ma
 This paradigm continued for three cycles over a total of fourteen minutes; gases were switched manually and each switch took about five seconds to complete.
 
 \subsection{MRI Data Analysis}
-\textbf{dOE-MRI maps:} A suite of in-house software was developed using the python machine learning library scikit-learn~\cite{Pedregosa:2011tv}, specifically \texttt{sklearn.decomposition.FastICA} based on the technique described by Hyvarinen~\cite{Hyvarinen:2000vk}.
+\textbf{dOE-MRI maps:} A suite of in-house software was developed using the python machine learning library scikit-learn~\cite{Pedregosa:2011tv}, specifically \texttt{sklearn.decomposition.FastICA}\todo[backgroundcolor=green]{Have to figure out how to line break properly here} based on the technique described by Hyvarinen~\cite{Hyvarinen:2000vk}.
 The FastICA algorithm is applied to serially acquired T$_1$W images and the output is a paired set of components and weighting factors for each voxel in the dataset.
 Extracted independent components are not ordered and while the component selection can be automated, in this study an observer was assigned to select the appropriate component (Figure~\ref{technique}).
 The number of independent components for each imaging session was chosen by the operator and ranged from 4-9 to ensure the cyclic behaviour of the T$_1$W signal intensity corresponding to the gas challenge appeared in only one component. 
@@ -227,7 +227,7 @@ Maps from other extracted components (Appendix Figure~\ref{Sfig_components}) exh
 For example, even moderate shifts in temperature could drive a measurable change in T$_1$W signal during the timecourse, and a physiological monitoring system that is time-synced to the MR acquisition could illuminate this confounding variable. 
 Nevertheless, we have established reliability of the technique by comparing maps from each cycle of the gas challenge to the map incorporating data from all three oxygen-cycles and have found no significant differences.
 In fact, the strong correlations between dOE-MRI maps from each of the individual cycles of the gas challenge (Figure~\ref{fig_repeatability}) show that it is feasible to assess tissue oxygenation within 6 minutes.
-Performing this analysis again with three-fold temporally under-sampled data suggests that there is sufficient SNR to successfully extract the oxygen responsive component (Figure~\ref{fig_repeatability}) with even a subset of the data.\todo[backgroundcolor=blue]{link this back to the new figure showing you can go up to 6}
+Performing this analysis again with three-fold temporally under-sampled data suggests that there is sufficient SNR to successfully extract the oxygen responsive component (Figure~\ref{fig_repeatability}) with even a subset of the data.\todo[backgroundcolor=green]{link this back to the new figure showing you can go up to 6}
 
 dOE-MRI offers a versatile technique where the duration of the cycles and gas challenge, temporal resolution and desired signal-to-noise can be modified based on the imaging objectives, which could include investigating intermittent perfusion or intervention-mediated changes in the tumour microenvironment. 
 Of note, supplying excess oxygen to hypoxic tumour cells over time has the potential for increasing the baseline oxygen concentration, effectively reducing the hypoxic fraction and altering the tumour microenvironment~\cite{Linnik:2013hf}.
@@ -247,18 +247,29 @@ Future work to evaluate the utility of dOE-MRI will ultimately depend on its con
 % ======================================================================
 In this study we extend existing oxygen-enhanced MRI techniques by adding a cycling element to the respiratory challenge and using a blind-source separation signal processing technique (ICA) to extract the oxygen responsive component and responding voxels.
 This dOE-MRI method presents significant improvements to the sensitivity and applicability of OE-MRI where small changes in T$_1$W signal intensity arising from cycling respiratory challenges can be separated robustly. Traditional quantitative T$_1$ mapping techniques have longer imaging times and are impractical for OE-MRI due to SNR and time constraints.
-dOE-MRI with ICA is clinically translatable as the sequence acquisition is relatively short and most centers already have access to dynamic T$_1$W MRI acquisitions that many patients already routinely receive. 
+dOE-MRI with ICA is clinically translatable as the sequence acquisition is relatively short and most centres already have access to dynamic T$_1$W MRI acquisitions that many patients already routinely receive. 
 Therefore dOE-MRI is an exciting, non-invasive and widely available technique for assessing tumour oxygenation that could provide a crucial tool in the field of radiation oncology and in the development of treatments targeting the tumour microenvironment.
-
-% ======================================================================
-\section{Acknowledgments}
-% ======================================================================
-
-Dr. Martin McKeown provided assistance in understanding the utility of ICA in the given context. Dr. Alastair Kyle undertook foundational work by designing and building the microscope and histology acquisition system. 
 
 \section{Appendix}
 
-\subsection{Other independent components extracted}
+\subsection{dOE-MRI can be extended by interleaving other scans between each repetition}
+\label{sec:interleave}
+To investigate the subsampling limit of ICA, Figure~\ref{subSample} shows the dOE-MRI maps for progressively more severe undersampling.
+O$_2$-positive and O$_2$-negative regions are repeatable for all maps (plot in Figure~\ref{subSample}) until subsample 5, where only 40 of the 200 available data points were used.
+The original data was acquired at a temporal resolution of 4.3s but at subsample 5, the effective temporal resolution goes to 21.3s. 
+In other words, temporal resolution could be sacrificed for SNR simply by averaging.
+More usefully, the additional time can be repurposed to interleave other scans for multi-parametric imaging within a dOE-MRI scan.
+Details of this are discussed in section~\ref{sec:futureWork}~\todo[backgroundcolor=green]{Link this to future work about T2*}. 
+
+\begin{figure}[htbp]
+   \centering
+   \includegraphics[width=\textwidth]{oemri_thesis1/oemri_thesis1-images/technical_subsample.pdf} % requires the graphicx package
+   \caption{dOE-MRI maps and associated component traces of differently sampled data. To achieve different levels of subsampling, the raw data was spliced and then ICA was applied. The oxygenation maps look very similar between different subsample factors. Temporal resolution and number of points were 4.3 s and 200 points (subsample 1), 8.5 s and 100 points (subsample 2), 12.8s and 67 points (subsample 3), 17.1s and 50 points (subsample 4), 21.3s and 40 points (subsample 5), and 25.12s and 34 points (subsample 6).}
+   \label{subSample}
+\end{figure}
+
+
+\subsection{Exploring other independent components extracted using ICA}
 
 Figure~\ref{Sfig_components} shows the extracted independent components and their corresponding weighting factor maps for an application of ICA on a OE-MRI scan.
 Extracted components typically have a mix of high and low frequency responses and may include temperature drifts, breathing artefacts and other motion. 
@@ -271,19 +282,10 @@ Additional physiological monitoring data is needed for a more thorough analysis 
    \label{Sfig_components}}
 \end{figure}
 
-\subsection{Subsampling - can interleave with T2*}
-\label{sec:interleave}
-Another example showing the dOE-MRI maps extracted using ICA using a subset of the same source data.
-This example more clearly highlights the low variation 
+% ======================================================================
+\section{Acknowledgments}
+% ======================================================================
 
-
-Mauris ultrices, nibh in rutrum eleifend, nisl sapien suscipit ipsum, finibus imperdiet metus tellus in nunc. Fusce eget tellus tincidunt lectus convallis elementum quis sed ante. Nullam nisl tellus, gravida nec arcu nec, bibendum finibus ipsum. Proin eu turpis quam. Sed faucibus, urna id consequat placerat, enim ligula porttitor velit, id congue eros elit a eros. Sed pharetra nunc rutrum massa auctor iaculis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc quis sapien lacus. Morbi suscipit sed ante id.
-
-\begin{figure}[htbp]
-   \centering
-   \includegraphics[width=\textwidth]{oemri_thesis1/oemri_thesis1-images/technical_subsample.pdf} % requires the graphicx package
-   \caption{dOE-MRI maps and associated component traces of differently sampled data. To achieve different levels of subsampling, the raw data was spliced and then ICA was applied. The oxygenation maps look very similar between different subsample factors. Temporal resolution and number of points were 4.3 s and 200 points (subsample 1), 8.5 s and 100 points (subsample 2), 12.8s and 67 points (subsample 3), 17.1s and 50 points (subsample 4), 21.3s and 40 points (subsample 5), and 25.12s and 34 points (subsample 6).}
-   \label{subSample}
-\end{figure}
+Dr. Martin McKeown provided assistance in understanding the utility of ICA in the given context. Dr. Alastair Kyle undertook foundational work by designing and building the microscope and histology acquisition system. 
 
 \endinput

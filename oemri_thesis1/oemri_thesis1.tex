@@ -15,7 +15,7 @@ Details of co-author contributions appear in the Preface (~\ref{ch:preface}).
 
 Hypoxia is a well-established component of the tumour microenvironment, arising most often as tumour cell proliferation outpaces the growth of new vasculature.
 tumour hypoxia is an indicator of poor prognosis and is responsible for tumour resistance to radiotherapy and some chemotherapies, but is also a potentially useful target for novel anti-cancer drugs~\cite{Wilson:2011jp}.
-Assessing tumour hypoxia in the clinical setting is challenging largely due to the invasive nature of biopsy-dependent techniques and the limited capacity and high expense of the more favored, non-invasive PET imaging of hypoxia tracers~\cite{Horsman:2012kw}.
+Assessing tumour hypoxia in the clinical setting is challenging largely due to the invasive nature of biopsy-dependent techniques and the limited capacity and high expense of the more favoured, non-invasive PET imaging of hypoxia tracers~\cite{Horsman:2012kw}.
 The utility of screening patients for hypoxia was demonstrated retrospectively in trials of the hypoxic cytotoxin tirapazamine, where those patients with greater PET-imaged hypoxia experienced greater benefit ~\cite{Rischin:2006fz}.
 However, subsequent trials of drugs targeting hypoxia, including those for evofosfamide that failed to show clinical benefit, have not used hypoxia imaging to stratify patients.
 A practical, widely applicable, and non-invasive imaging method is urgently required as a biomarker to monitor tumour hypoxia in many contexts, and is crucial to the development and clinical evaluation of future hypoxia-targeting drugs.
@@ -142,6 +142,7 @@ Separate dOE-MRI maps, as well as voxel-wise correlation plots of a representati
 Pearson's r ranged from 0.79 to 0.87 for a similar analysis in a representative HCT-116 tumour.
 
 The stability of the independent component extraction was assessed by undersampling the full timecourse threefold prior to application of ICA, and a high correlation between the dOE-MRI maps from full and three-fold undersampled timecourses is observed (Figure~\ref{fig_repeatability}E; Pearson's r = 0.84). 
+In Appendix~\ref{sec:interleave}, further undersampling up to a factor of six is shown with minor differences in the dOE-MRI map.
 
 \begin{figure}[htbp]
    \centering
@@ -227,7 +228,7 @@ Maps from other extracted components (Appendix Figure~\ref{Sfig_components}) exh
 For example, even moderate shifts in temperature could drive a measurable change in T$_1$W signal during the timecourse, and a physiological monitoring system that is time-synced to the MR acquisition could illuminate this confounding variable. 
 Nevertheless, we have established reliability of the technique by comparing maps from each cycle of the gas challenge to the map incorporating data from all three oxygen-cycles and have found no significant differences.
 In fact, the strong correlations between dOE-MRI maps from each of the individual cycles of the gas challenge (Figure~\ref{fig_repeatability}) show that it is feasible to assess tissue oxygenation within 6 minutes.
-Performing this analysis again with three-fold temporally under-sampled data suggests that there is sufficient SNR to successfully extract the oxygen responsive component (Figure~\ref{fig_repeatability}) with even a subset of the data.\todo[backgroundcolor=green]{link this back to the new figure showing you can go up to 6}
+Performing this analysis again with three-fold (Figure~\ref{fig_repeatability}) and six-fold (Appendix~\ref{sec:interleave}) temporally under-sampled data suggests that there is sufficient SNR to successfully extract the oxygen responsive component  with even a subset of the data.
 
 dOE-MRI offers a versatile technique where the duration of the cycles and gas challenge, temporal resolution and desired signal-to-noise can be modified based on the imaging objectives, which could include investigating intermittent perfusion or intervention-mediated changes in the tumour microenvironment. 
 Of note, supplying excess oxygen to hypoxic tumour cells over time has the potential for increasing the baseline oxygen concentration, effectively reducing the hypoxic fraction and altering the tumour microenvironment~\cite{Linnik:2013hf}.

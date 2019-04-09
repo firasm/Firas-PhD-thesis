@@ -36,7 +36,7 @@ Adjacent microscope fields of view were tiled such that images of entire tumour 
 Using anatomical landmarks and accumulated thicknesses of serial-step sections as estimates of distances from the edges of whole tumours, sections were chosen to match the MR slices. 
 ImageJ and user-supplied algorithms were used to super impose digital images which were then manually cropped to tumour tissue boundaries with staining artifacts removed. 
 A threshold was applied to images to identify positive pimonidazole staining, and the number of positive pixels was determined as a percentage of the total number of pixels in the tumour image. 
-Overlaid greyscale images were converted to false colour for visualization with pimonidazole as green and CD31 as magenta~\todo[backgroundcolor=green]{need to make sure final colours are consistent}.
+Overlaid greyscale images were converted to false colour for visualization with pimonidazole as green and CD31 as magenta.
 
 \subsection{MR Imaging}
 Imaging was performed using a 7T scanner (Bruker Biospec) with a transmit quadrature volume coil and a custom built surface receive coil. 
@@ -62,8 +62,18 @@ Regions whose T$_1$W signal intensity time courses responds only weakly or not a
 A feature of FastICA is that the norm of each component is normalized to 1 ($||c_i||=1, \forall I$) and the corresponding weighting factor map carries the scaling factor.
 To compare dOE-MRI maps between mice with different temporal resolutions, a scaling factor was applied (see section~\ref{sec:correctionfactor}).
 
-\subsection{MR Imaging}
+\subsection{Fitting to lognormal perfusion model}
 
+Blood flow in a vascular network has been modelled with a fractal branching geometry of a vascular tree and the distribution of vessel sizes and corresponding flow rates is given by a lognormal velocity distribution~\cite{Qian:2000ca}.
+
+
+
+%%%% Equation 4 from Hudson paper, not really that relevant.
+%\begin{equation}
+%P(v) = \frac{1}{\sigma_f\sqrt{2\pi}} \cdot \frac{1}{v} exp\left[\frac{-\left(\frac{ln(v)-\mu_f}{\sigma_f}\right)^2}{2}   \right]
+%\end{equation}
+%
+%where $P(v)$ is the probability density function of the velocity ($v$), $\mu_f$ and $\sigma_f$ are the distribution mean and standard deviation of the normal random variable $ln(v)$. 
 
 % ======================================================================
 \section{Results}
@@ -94,7 +104,7 @@ Bottom: The box-whisker plot shows the quartiles of percent negative dOE-MRI vox
 
 \subsection{dOE-MRI maps correspond to matched histology sections}
 \label{sec:histoSections}
-tumour tissue cryosections obtained to match MR imaging slices were stained for vasculature (CD31) and regions of pimonidazole-labeled hypoxia and are compared side-by-side; Figures~\ref{fig_sccvii} and~\ref{fig_hct116} provide five examples for each of SCCVII and HCT-116 tumour models for detailed review.
+Tumour tissue cryosections obtained to match MR imaging slices were stained for vasculature (CD31) and regions of pimonidazole-labeled hypoxia and are compared side-by-side; Figures~\ref{fig_sccvii} and~\ref{fig_hct116} provide five examples for each of SCCVII and HCT-116 tumour models for detailed review.
 Generally, in corresponding dOE-MRI maps for both tumour models O$_2$-positive voxels align with the most oxygenated regions of histology sections, where pimonidazole labeling is absent, however many areas of mismatch are also observed. 
 More consistent is that O$_2$-positive voxels do not typically correspond to tissues identified as hypoxic in the histology sections (i.e. labeled with pimonidazole).
 In general, the more necrotic HCT-116 tumours have fewer oxygenated (O$_2$-positive) regions and significantly more hypoxic (O$_2$-negative) regions in the dOE-MRI maps, compared to the SCCVII tumours that have no necrosis. 
@@ -104,7 +114,7 @@ For SCCVII tumours (n=9) there was an excellent correlation, with Pearson's r = 
 However the correlation in the HCT-116 tumours (n=6) was poor, with r=0.13 (\textit{p}=0.81). 
 
 \begin{figure}[htbp]
-   \includegraphics[width=\textwidth]{oemri_thesis1/oemri_thesis1-images/fig5_histocorrelation.pdf} % requires the graphicx package
+   \includegraphics[width=0.6\textwidth]{oemri_thesis1/oemri_thesis1-images/fig5_histocorrelation.pdf} % requires the graphicx package
    \caption{The proportion of negative dOE-MRI voxels is plotted against the histological hypoxic fractions with Pearson's r = 0.91 for SCCVII tumours and r = 0.13 for HCT-116 tumours.
    \label{histo_correlations}}
 \end{figure}
@@ -128,17 +138,16 @@ However the correlation in the HCT-116 tumours (n=6) was poor, with r=0.13 (\tex
 \subsection{Fitting to lognormal perfusion model}
 % ======================================================================
 
-%%%%%%%%%%%%%%%%% ############ BEGIN section about fitting ############ 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ullamcorper pretium neque, elementum pulvinar justo. Pellentesque aliquet, enim nec pulvinar scelerisque, erat risus convallis nibh, eget finibus diam massa ut diam. Sed eget dictum ex, at pellentesque sem. Mauris quis tincidunt turpis. Vestibulum ultrices lorem quis ex accumsan finibus. Sed mollis erat vitae magna fermentum pulvinar. Mauris orci odio, ullamcorper vitae eros porta, blandit ornare orci. Suspendisse potenti. 
-
-Mauris ultrices, nibh in rutrum eleifend, nisl sapien suscipit ipsum, finibus imperdiet metus tellus in nunc. Fusce eget tellus tincidunt lectus convallis elementum quis sed ante. Nullam nisl tellus, gravida nec arcu nec, bibendum finibus ipsum. Proin eu turpis quam. Sed faucibus, urna id consequat placerat, enim ligula porttitor velit, id congue eros elit a eros. Sed pharetra nunc rutrum massa auctor iaculis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc quis sapien lacus. Morbi suscipit sed ante id.
-
 \begin{figure}[htbp]
    \centering
    \includegraphics[width=0.5\textwidth]{oemri_thesis2/oemri_thesis2-images/technical_SampleFit.png} % requires the graphicx package
    \caption{}
    \label{subSample}
 \end{figure}
+
+%%%%%%%%%%%%%%%%% ############ BEGIN section about fitting ############ 
+
+
 
 \begin{figure}[htbp]
    \centering

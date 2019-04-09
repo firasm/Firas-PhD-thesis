@@ -11,31 +11,17 @@ Stuff about contributions
 \section{Introduction}
 % ======================================================================
 
-Dynamic oxygen enhanced MRI (dOE-MRI) has recently been proposed by our group to assess tumour oxygenation in vivo using MRI~\cite{Moosvi:2018ca}. 
-This technique measures T1-weighted changes in tissues in response to a cycling oxygen challenge, with the responsive signals detected using independent component analysis (ICA). 
-Briefly, oxygenation can be assessed \emph{in vivo} by administering a simple gas challenge (switching between two-minute periods of medical air and 100\% O$_2$) during the dOE-MRI scan and then using ICA to extract the tissue response.
-ICA is a blind-source separation algorithm that separates multiple signal sources by maximizing statistical independence of individual components~\cite{Hyvarinen:2000vk}.
-Various flavours of oxygen-enhanced MRI (OE-MRI) have been proposed but all essentially leverage the paramagnetic properties of inhaled oxygen.
-White et al. has shown that OE-MRI may be very relevant in developing prognostic factors to predict tumour response to hypofractionation by stratifying tumours that may benefit from oxygen breathing during irradiation~\cite{White:2016fz}.
-In this study, we apply dOE-MRI to mice bearing tumour xenografts to assess the effect of a common antiangiogenic agent.
-
-Aberrant angiogenesis, poor blood perfusion, a chaotic vascular network all limit oxygen delivery to cells and contribute to formation of hypoxic regions in tumours.
-The binding of vascular endothelial growth factors (VEGF) to the VEGF receptor is a key driver of angiogenesis.
-Bevacizumab (Avastin) is a monoclonal antibody that binds VEGF extracellularly, preventing the interaction of of VEGF to its receptors and inhibits angiogenesis 
-Avastin has been used clinically to treat breast, colon, colorectal, lung, brain, ovarian, cervical, and other cancers~\cite{AvastinIndications}\todo{cite Genentech}%https://www.gene.com/download/pdf/avastin_prescribing.pdf]. 
-VEGF ablation has been shown to at least temporarily reduce vascular permeability and increase tumour oxygenation in some models~\cite{OConnor:2012iea}\todo{this review has lots of relevant refs, better to cite directly than a review}. 
-We hypothesized that dOE-MRI with groupICA can detect VEGF ablation-induced changes to oxygenation of SCCVII tumours 48 hours following treatment.
-
-% ======================================================================
-\section{Derivation of lognormal perfusion}
-% ======================================================================
+Dynamic oxygen enhanced MRI (dOE-MRI) has recently been proposed by our group to assess tumour oxygenation in vivo using MRI~\cite{Moosvi:2018ca}.
+In this chapter we first validate the method in tumour xenografts and compare dOE-MRI maps to slice-matched histological sections.
+Next we present a model that phenomenologically describes the kinetics of the oxygen response in tumours. 
+This model is then fit to the extracted ICA components from all imaged animals to assess the feasibility of using the fit parameters as biomarkers of oxygen response.
 
 % ======================================================================
 \section{Methods}
 % ======================================================================
 \subsection{Animals}
 Female NRG (NOD rag gamma) mice were implanted with murine squamous cell carcinoma (SCCVII; 5x10$^5$ cells in 50$\mu$l serum-free media; cells provided by Dr. J. Evans) in the dorsal subcutaneous region.
-Approximately X \todo{how many days?} days later, tumours were imaged when their largest diameters reached approximately 8-10 mm.
+Approximately X \todo[backgroundcolor=green]{how many days?} days later, tumours were imaged when their largest diameters reached approximately 8-10 mm.
 All mice were injected with 60 mg/kg pimonidazole hydrochloride (HypoxyProbe) 30 min prior to imaging to label hypoxic cells and were euthanized within 15 min of imaging completion.
 Mice were anesthetized with isoflurane using 1.5-2.0\% isoflurane for the duration of MR imaging sessions until euthanasia, and were positioned supine on the custom surface coil apparatus.
 Throughout the imaging session, a small animal monitoring system (SAII Instruments, Stony Brook, NY, USA) was used to monitor respiration rate, varying between 80-100 breaths per minute, and body temperature, maintained at 36.8 $\pm$ 0.5$^\circ$C using a continuous airflow heater. 
@@ -50,11 +36,11 @@ Adjacent microscope fields of view were tiled such that images of entire tumour 
 Using anatomical landmarks and accumulated thicknesses of serial-step sections as estimates of distances from the edges of whole tumours, sections were chosen to match the MR slices. 
 ImageJ and user-supplied algorithms were used to super impose digital images which were then manually cropped to tumour tissue boundaries with staining artifacts removed. 
 A threshold was applied to images to identify positive pimonidazole staining, and the number of positive pixels was determined as a percentage of the total number of pixels in the tumour image. 
-Overlaid greyscale images were converted to false colour for visualization with pimonidazole as green and CD31 as magenta~\todo{need to make sure final colours are consistent}.
+Overlaid greyscale images were converted to false colour for visualization with pimonidazole as green and CD31 as magenta~\todo[backgroundcolor=green]{need to make sure final colours are consistent}.
 
 \subsection{MR Imaging}
 Imaging was performed using a 7T scanner (Bruker Biospec) with a transmit quadrature volume coil and a custom built surface receive coil. 
-An axial RARE image was acquired to localize the tumour (TE/TR=10.7/4250ms, RARE factor 8) and a T$_1$ map was acquired using the Look-Locker method.
+An axial RARE image was acquired to localize the tumour (T$_E$/T$_R$=10.7/4250ms, RARE factor 8) and a T$_1$ map was acquired using the Look-Locker method.
 Dynamic oxygen enhanced MRI (dOE-MRI) scans were acquired with a 2D multi-slice FLASH-based sequence for a total scan time of about 14 minutes.
 During the dOE-MRI scan, breathing gas was alternated between medical air and 100\% oxygen every 2 minutes using a 3-channel gas mixer (CWE, Philadelphia, USA) for a total of 3 air-oxygen-air cycles.
 All scans were acquired with the same spatial resolution and geometry and an experienced operator outlined the tumour on each slice of the RARE image to construct the region of interest (ROI) for each animal and then transferred to all other scans.
@@ -69,19 +55,19 @@ The dOE-MRI maps were obtained by dividing the ICA weighting-factor maps by the 
 In these dOE-MRI maps, voxels are coloured to indicate the amount by which a given pixel intensity time course is modulated by the oxygen-related component. 
 Final normalized dOE-MRI maps were obtained by dividing each pixel of the component map for each animal with the mean signal-intensity over time of the corresponding pixel in the dOE-MRI scan. 
 Mean values are reported as a marker for tumour oxygenation with high values indicating increased oxygenation while negative values suggest decreased oxygenation or increased levels of hypoxia. 
-Mann-WhitneyU parametric t-tests are used to assess the difference between experimental groups and Hedge's g was calculated to determine effect size when the t-test was significant (p$<$0.05).
 The green-white-purple colour spectrum depicts the degree to which voxels respond to the cycled gas challenge.
 Purple indicates O$_2$-positive voxels whose time course exhibits a higher and more positive contribution from the corresponding ICA component, representing an increase in T$_1$W signal intensity in response to the supplied 100 \% oxygen, and corresponding to areas with excess dissolved oxygen. 
 O$_2$-negative voxels that show a decrease in T$_1$W signal intensity with a negative contribution from the corresponding ICA component under 100 \% oxygen breathing are depicted as green. 
 Regions whose T$_1$W signal intensity time courses responds only weakly or not at all to the gas challenge are shown in white hues.
 A feature of FastICA is that the norm of each component is normalized to 1 ($||c_i||=1, \forall I$) and the corresponding weighting factor map carries the scaling factor.
-To compare dOE-MRI maps between mice with different temporal resolutions, a scaling factor was applied (see section~\ref{res1} and the Appendix).
+To compare dOE-MRI maps between mice with different temporal resolutions, a scaling factor was applied (see section~\ref{sec:correctionfactor}).
+
+\subsection{MR Imaging}
+
 
 % ======================================================================
 \section{Results}
 % ======================================================================
-
-
 
 %%%%%%%%%%%%%%%%% ############ BEGIN section from paper 1 ############ 
 
@@ -138,9 +124,11 @@ However the correlation in the HCT-116 tumours (n=6) was poor, with r=0.13 (\tex
 
 %%%%%%%%%%%%%%%%% ############ END section from paper 1########### 
 
-%%%%%%%%%%%%%%%%% ############ BEGIN section about fitting ############ 
-\subsection{Fitting the cycling component with the lognormal replenishment model}
+% ======================================================================
+\subsection{Fitting to lognormal perfusion model}
+% ======================================================================
 
+%%%%%%%%%%%%%%%%% ############ BEGIN section about fitting ############ 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ullamcorper pretium neque, elementum pulvinar justo. Pellentesque aliquet, enim nec pulvinar scelerisque, erat risus convallis nibh, eget finibus diam massa ut diam. Sed eget dictum ex, at pellentesque sem. Mauris quis tincidunt turpis. Vestibulum ultrices lorem quis ex accumsan finibus. Sed mollis erat vitae magna fermentum pulvinar. Mauris orci odio, ullamcorper vitae eros porta, blandit ornare orci. Suspendisse potenti. 
 
 Mauris ultrices, nibh in rutrum eleifend, nisl sapien suscipit ipsum, finibus imperdiet metus tellus in nunc. Fusce eget tellus tincidunt lectus convallis elementum quis sed ante. Nullam nisl tellus, gravida nec arcu nec, bibendum finibus ipsum. Proin eu turpis quam. Sed faucibus, urna id consequat placerat, enim ligula porttitor velit, id congue eros elit a eros. Sed pharetra nunc rutrum massa auctor iaculis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc quis sapien lacus. Morbi suscipit sed ante id.

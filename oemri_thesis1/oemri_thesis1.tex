@@ -39,7 +39,7 @@ With the application of a cycling oxygen challenge and processing the data using
 \subsection{Mice and tumours}
 
 All animal experimental procedures were carried out in compliance with the guidelines of the Canadian Council for Animal Care and were approved by the institutional Animal Care Committee. 
-Female NRG mice were implanted with murine squamous cell carcinoma SCCVII tumours (5 x 10$^5 $cells in 50 $\mu$l serum-free media; cells provided by Dr. J Evans) or with human colorectal carcinoma HCT-116, human ovarian carcinoma SKOV3 or human breast carcinoma BT-474 tumours (each as 10 x 10$^6 $cells in 50 $\mu$l serum-free media; cell lines obtained from the American Type Culture Collection) and were imaged when the largest tumour diameters reached approximately 8-10 mm.
+Female NRG mice were implanted with murine squamous cell carcinoma SCCVII tumours (5 x 10$^5 $cells in 50 $\mu$l serum-free media; cells provided by Dr. J Evans) or with human colorectal carcinoma HCT-116, human ovarian carcinoma SKOV3 or human breast carcinoma BT-474 tumours (each as 10 x 10$^6$ cells in 50 $\mu$l serum-free media; cell lines obtained from the American Type Culture Collection) and were imaged when the largest tumour diameters reached approximately 8-10 mm.
 Mice were anesthetized with isoflurane for the duration of imaging sessions until euthanasia, and were positioned supine on the custom surface coil apparatus.
 Throughout the imaging session, a small animal monitoring system (SAII Instruments, Stony Brook, NY, USA) was used to monitor respiration rate, varying between 80-100 breaths per minute, and body temperature, maintained at 36.8 $\pm$ 0.5$^\circ$C using a continuous airflow heater.
 All animals were injected with 60 mg/kg pimonidazole hydrochloride (HypoxyProbe) 30 min prior to imaging to label hypoxic cells and were euthanized within 15 min of imaging completion.
@@ -55,6 +55,7 @@ tumours were embedded and frozen in optimum cutting temperature medium (OCT; Tis
 %Overlaid greyscale images were converted to false color for visualization with pimonidazole as green and CD31 as magenta. 
 
 \subsection{MRI Data Acquisition}
+\label{doemri_mrianalysis1}
 All MRI experiments were performed at the UBC MRI Research Centre on a 7T Bruker BioSpec 70/30 scanner at room temperature with a volume transmit coil and custom surface receive coil.
 Each imaging session began with pilot axial and coronal T$_2$W scans for tumour localization and slice prescription.
 Eight contiguous axial slices (1mm thickness) were acquired with an in-plane field of view of 3.84 cm x 1.92 cm and a matrix size of 128 x 64.
@@ -65,6 +66,7 @@ The spatial resolution and geometry for all scans in the imaging session were ma
 This paradigm continued for three cycles over a total of fourteen minutes; gases were switched manually and each switch took about five seconds to complete.
 
 \subsection{MRI Data Analysis}
+\label{doemri_mrianalysis2}
 \textbf{dOE-MRI maps:} A suite of in-house software was developed using the python machine learning library scikit-learn~\cite{Pedregosa:2011tv}, specifically \texttt{sklearn.decomposition.FastICA}\todo[backgroundcolor=green]{Have to figure out how to line break properly here} based on the technique described by Hyvarinen~\cite{Hyvarinen:2000vk}.
 The FastICA algorithm is applied to serially acquired T$_1$W images and the output is a paired set of components and weighting factors for each voxel in the dataset.
 Extracted independent components are not ordered and while the component selection can be automated, in this study an observer was assigned to select the appropriate component (Figure~\ref{technique}).
@@ -222,7 +224,6 @@ Second, a repeating signal modulation enables further improved sensitivity throu
 While it is possible to generate correlation maps of the oxygen cycling paradigm with T$_1$W signal changes that appear very similar to dOE-MRI maps, an \emph{a-priori} assumption of a response function is required for this approach (Figure~\ref{fig_correlation}).
 Furthermore, presupposing a particular oxygen response function biases the identification of responding O$_2$-positive voxels (Figure~\ref{fig_correlation}) underscoring the need for a model-free approach to extracting the oxygen-responding component.
 
-The improved sensitivity of our technique results in broader applicability of dOE-MRI, as we found that an oxygen-enhancing component was extracted successfully in all imaged animals across a range of tumour models and environments (Figure~\ref{versatile}).
 The unambiguous match of the identified component with the periods of the gas cycles increases the confidence that the small T$_1$W signal changes result from increased oxygen dissolved in the plasma and interstitial tissue fluids.
 Maps from other extracted components (Appendix Figure~\ref{Sfig_components}) exhibit spatial patterns that could provide clues to the signal sources but associating meaning to them is challenging and would require additional data.
 For example, even moderate shifts in temperature could drive a measurable change in T$_1$W signal during the timecourse, and a physiological monitoring system that is time-synced to the MR acquisition could illuminate this confounding variable. 

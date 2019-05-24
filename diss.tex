@@ -132,8 +132,9 @@
 %% as recommended by Bringhurst.
 \renewcommand{\acsfont}[1]{{\scshape \MakeTextLowercase{#1}}}
 
-\newcommand{\abbr}[1]{\pdftooltip{\ac*{#1}{\acl{#1}}\protect{\acused{#1}}}}
-\newcommand{\abbrIC}[1]{\pdftooltip{\ac*{#1}}{\acl{#1}}}
+%% Commented out at stefan's behest for tooltip abbreviations
+%\newcommand{\abbr}[1]{\pdftooltip{\ac*{#1}{\acl{#1}}\protect{\acused{#1}}}}
+%\newcommand{\abbrIC}[1]{\pdftooltip{\ac*{#1}}{\acl{#1}}}
 
 %% color: add support for expressing colour models.  Grey can be used
 %% to great effect to emphasize other parts of a graphic or text.
@@ -329,8 +330,11 @@
 \hypersetup{
   pdftitle={Exploring the tumour microenvironment with non-invasive Magnetic Resonance Imaging techniques (DRAFT: \today)},
   pdfauthor={Firas Moosvi},
-  pdfkeywords={MRI, Cancer, tumours, CEST, HPG, contrast agents, oxygen enhanced MRI}
+  pdfkeywords={MRI, Cancer, tumours, HPG, contrast agents, oxygen enhanced MRI}
 }
+
+\usepackage{pdfcomment}
+\newcommand{\abbr}[1]{\pdftooltip{\ac*{#1}}{\acl*{#1}}\acused{#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -387,6 +391,8 @@
 
 %   10. Glossary (optional)
 \input{glossary}	% always input, since other macros may rely on it
+%\input{acroGlossary}	% always input, since other macros may rely on it
+
 
 \textspacing		% begin one-half or double spacing
 
@@ -398,7 +404,7 @@
 % Body of Thesis (not all sections may apply)
 \mainmatter
 
-\acresetall	% reset all acronyms used so far
+%\acresetall	% reset all acronyms used so far
 
 %    1. Introduction
 \include{intro/intro}
@@ -409,6 +415,7 @@
 \include{oemri_thesis1/oemri_thesis1}
 \include{oemri_thesis2/oemri_thesis2}
 \include{oemri_thesis3/oemri_thesis3}
+\include{futurework/futurework}
 %\include{cest/cest}
 %\include{meltingpot/meltingpot}
 

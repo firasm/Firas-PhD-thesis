@@ -16,6 +16,61 @@ In this chapter we first validate the method in tumour xenografts and compare dO
 Next we present a model that phenomenologically describes the kinetics of the oxygen response in tumours. 
 This model is then fit to the extracted ICA components from all imaged animals to assess the feasibility of using the fit parameters as biomarkers of oxygen response.
 
+\subsection{Theory: Modeling oxygen response}
+
+A vascular network is a collection of multiple vessels including large arteries feeding smaller arterioles that ultimately deliver oxygen and nutrients to tissue via capillaries.
+This complex vascular tree is modeled by assuming a fractal branching geometry with the distribution of vessel sizes and flow rates given by a lognormal velocity distribution~\cite{Qian:2000ca}:
+
+\begin{equation}
+P(v)=\frac{1}{\sigma_{f} \sqrt{2 \pi}} \cdot \frac{1}{v} \cdot \exp \left(-\frac{1}{2}\left(\frac{\ln (v)-u_{f}}{\sigma_{f}}\right)^{2}\right)
+\end{equation}
+
+Where $P(v)$ is the probability density function of the velocity $v$, $\mu_f$ and $\sigma_f$ are the mean and standard deviation of the distribution for the normally distributed random variable $ln(v)$.
+The mean of a lognormal distribution are known quantities,
+
+\begin{equation}
+\operatorname{Mean}(v)=\exp \left(\mu_{f}+\frac{\sigma_{f}^{2}}{2}\right)
+\end{equation}
+
+\begin{equation}
+\operatorname{Var}(v)=\exp \left(2 \mu_{f}+\sigma_{f}^{2}\right)\cdot \left(\exp \left(\sigma_{f}^{2}\right)-1\right)
+\end{equation}
+
+\begin{figure}[htbp]
+   \centering
+   \includegraphics[width=\textwidth]{oemri_thesis2/oemri_thesis2-images/lognormal.png} % requires the graphicx package
+   \caption{From Hudson et al 2009~\cite{Hudson:2009jv}; need to adapt and create or ask for permission to re-use}
+   \label{lognormal}
+\end{figure}
+
+Figure~\ref{lognormal} shows a schematic of the vascular network modeled as a representative single vessel with a lognormal distribution of velocity profiles.
+Therefore the flow function for a vascular network is given by,
+
+\begin{equation}
+F(z, t)=\frac{A}{2} \cdot \operatorname{erfc}\left(\frac{\ln (z / t)-u_{f}}{\sigma_{f} \sqrt{2}}\right)
+\end{equation}
+
+Where A is defined as the total vascular area, z represents the spatial displacement of oxygen through the blood stream, $\mu_f$ is the mean velocity and $\sigma_f$ is the standard deviation of the velocity distributions. 
+The velocity $v$ has been transformed to $z/t$ for convenience and ease of interpretation.
+
+This lognormal flow profile model has been used to describe the replenishment of microbubbles injected into the blood stream in dynamic contrast enhanced ultrasound (DCE-US)~\cite{Hudson:2009jv}.
+The generalized representation of the replenishment time-intensity signal requires two components: an ultrasound beam-specific profile that is weighted in the z-direction due to a non-uniform slice profile and the flow profile. 
+The expression is,
+
+\begin{equation}
+S(t) = \int_{V} B(x,y,z) \cdot F(x,y,z,t) \cdot dV
+\end{equation}
+
+where $B(x,y,z) = 1$ in MRI because of relatively uniform slice profiles. 
+Integrating over the imaging plane (x,y) and assuming a slice thickness of 1mm (z), the final model for fitting dOE-MRI data becomes,
+
+\begin{equation}
+S(t)= \left[\frac{A}{2}\left(z \operatorname{erfc}\left(\frac{\ln \left(z/t\right)-\mu_f}{\sqrt{2} \sigma_f}\right)-t e^{\sigma_f^{2} / 2+\mu_f} \operatorname{erf}\left(\frac{\sigma_f^{2}+\mu_f-\log \left(z/t\right)}{\sqrt{2} \sigma_f}\right)\right)\right]_{z=0}^{z=1mm}
+\label{lognormalFitEquation}
+\end{equation}
+
+Where A is defined as the total vascular area, $\mu_f$ is the mean velocity and $\sigma_f$ is the standard deviation of the velocity distributions. 
+
 % ======================================================================
 \section{Methods}
 % ======================================================================
@@ -39,51 +94,34 @@ A threshold was applied to images to identify positive pimonidazole staining, an
 Overlaid greyscale images were converted to false colour for visualization with pimonidazole as green and CD31 as magenta.
 
 \subsection{MR Imaging}
-Imaging was performed using a 7T scanner (Bruker Biospec) with a transmit quadrature volume coil and a custom built surface receive coil. 
-An axial RARE image was acquired to localize the tumour (T$_E$/T$_R$=10.7/4250ms, RARE factor 8) and a T$_1$ map was acquired using the Look-Locker method.
-Dynamic oxygen enhanced MRI (dOE-MRI) scans were acquired with a 2D multi-slice FLASH-based sequence for a total scan time of about 14 minutes.
-During the dOE-MRI scan, breathing gas was alternated between medical air and 100\% oxygen every 2 minutes using a 3-channel gas mixer (CWE, Philadelphia, USA) for a total of 3 air-oxygen-air cycles.
-All scans were acquired with the same spatial resolution and geometry and an experienced operator outlined the tumour on each slice of the RARE image to construct the region of interest (ROI) for each animal and then transferred to all other scans.
+As previously described in Section~\ref{doemri_mrianalysis1}.
 
 \subsection{dOE-MRI Analysis}
-A suite of in-house software was developed using the python machine learning library scikit-learn~\cite{Pedregosa:2011tv}, specifically \texttt{sklearn.decomposition.FastICA} based on the technique described by Hyvarinen~\cite{Hyvarinen:2000vk}.
-The FastICA algorithm is applied to serially acquired T$_1$W images and the output is a paired set of components and weighting factors for each voxel in the dataset.
-The deflation-based FastICA (python package scikit.sklearn v0.17.1) was used to analyze the data. 
-Extracted independent components are not ordered and while the component selection can be automated, in this study an observer was assigned to select the appropriate component.
-The number of independent components for each imaging session was chosen by the operator and ranged from 4-9 to ensure the cyclic behaviour of the T$_1$W signal intensity corresponding to the gas challenge appeared in only one component. 
-The dOE-MRI maps were obtained by dividing the ICA weighting-factor maps by the mean signal-intensity maps to obtain a spatial map for the strength of a particular voxel's contribution to the component of interest.
-In these dOE-MRI maps, voxels are coloured to indicate the amount by which a given pixel intensity time course is modulated by the oxygen-related component. 
-Final normalized dOE-MRI maps were obtained by dividing each pixel of the component map for each animal with the mean signal-intensity over time of the corresponding pixel in the dOE-MRI scan. 
-Mean values are reported as a marker for tumour oxygenation with high values indicating increased oxygenation while negative values suggest decreased oxygenation or increased levels of hypoxia. 
-The green-white-purple colour spectrum depicts the degree to which voxels respond to the cycled gas challenge.
-Purple indicates O$_2$-positive voxels whose time course exhibits a higher and more positive contribution from the corresponding ICA component, representing an increase in T$_1$W signal intensity in response to the supplied 100 \% oxygen, and corresponding to areas with excess dissolved oxygen. 
-O$_2$-negative voxels that show a decrease in T$_1$W signal intensity with a negative contribution from the corresponding ICA component under 100 \% oxygen breathing are depicted as green. 
-Regions whose T$_1$W signal intensity time courses responds only weakly or not at all to the gas challenge are shown in white hues.
-A feature of FastICA is that the norm of each component is normalized to 1 ($||c_i||=1, \forall I$) and the corresponding weighting factor map carries the scaling factor.
-To compare dOE-MRI maps between mice with different temporal resolutions, a scaling factor was applied (see section~\ref{sec:correctionfactor}).
 
-\subsection{Fitting to lognormal perfusion model}
+As previously described in Section~\ref{doemri_mrianalysis2}.
 
-Blood flow in a vascular network has been modelled with a fractal branching geometry of a vascular tree and the distribution of vessel sizes and corresponding flow rates is given by a lognormal velocity distribution~\cite{Qian:2000ca}.
+\subsection{Model Fitting}
+Equation~\ref{lognormalFitEquation} was fit to the first 100 seconds of the ICA component trace after oxygen was first delivered to the mouse. 
+Model fitting was done with the \texttt{LMFIT} package~\cite{Newville:2014jt} using the Levenberg-Marquardt method.
+A free fit parameter was added corresponding to a vertical offset to account for the ICA component starting below 0. 
+For each fit, three parameters describe the shape of the oxygen response: A (vascular area), $\mu_f$ (mean velocity) and $\sigma_f$ (standard deviation) of the velocity distributions.
+A sample fit using equation~\ref{lognormalFitEquation} is shown in figure~\ref{fig:lognormal_sample}.
 
-
-
-%%%% Equation 4 from Hudson paper, not really that relevant.
-%\begin{equation}
-%P(v) = \frac{1}{\sigma_f\sqrt{2\pi}} \cdot \frac{1}{v} exp\left[\frac{-\left(\frac{ln(v)-\mu_f}{\sigma_f}\right)^2}{2}   \right]
-%\end{equation}
-%
-%where $P(v)$ is the probability density function of the velocity ($v$), $\mu_f$ and $\sigma_f$ are the distribution mean and standard deviation of the normal random variable $ln(v)$. 
+\begin{figure}[htbp]
+   \centering
+   \includegraphics[width=0.5\textwidth]{oemri_thesis2/oemri_thesis2-images/technical_SampleFit.png} % requires the graphicx package
+   \caption{Fit of equation~\ref{lognormalFitEquation} to an oxygen response curve with the residuals plotted along the x-axis for each point.
+   For this fit, $A= 0.18$, $v_f = 0.66 mm/s$, and $\sigma_f = 0.58 mm/s$.}
+   \label{fig:lognormal_sample}
+\end{figure}
 
 % ======================================================================
 \section{Results}
 % ======================================================================
-
-%%%%%%%%%%%%%%%%% ############ BEGIN section from paper 1 ############ 
-
+%%%%%%%%%%%%%%%%% ############ BEGIN *versatile* section from paper 1 ############ 
 \subsection{ICA enabled dOE-MRI detects variable oxygenation in a range of tumour models}
 \label{sec:rangeModels}
-tumours of human and murine origin and comprising a variety of tumour microenvironments were imaged, including fast growing, highly vascularized murine squamous cell (SCCVII) and human ovarian carcinomas (SKOV3), slower growing and well vascularized human breast cancer (BT-474), as well as a relatively fast growing but more poorly vascularized human colon colorectal carcinoma (HCT-116).
+Tumours of human and murine origin and comprising a variety of tumour microenvironments were imaged, including fast growing, highly vascularized murine squamous cell (SCCVII) and human ovarian carcinomas (SKOV3), slower growing and well vascularized human breast cancer (BT-474), as well as a relatively fast growing but more poorly vascularized human colon colorectal carcinoma (HCT-116).
 The inter-model heterogeneity of the tumours is reflected in the mean fraction of negative voxels in the dOE-MRI maps, which were 46 $\pm$ 6\% for BT-474, 36$\pm$3\% for HCT-116, 31$\pm$5\% for SCCVII, and 14$\pm$4\% for SKOV3 tumours. 
 Considerable intra-tumour heterogeneity is also observed within some models, particularly the BT474.
 dOE-MRI maps representing the mean fraction of negative voxels are shown for each tumour type in Figure~\ref{versatile}.
@@ -94,13 +132,32 @@ dOE-MRI maps representing the mean fraction of negative voxels are shown for eac
 Bottom: The box-whisker plot shows the quartiles of percent negative dOE-MRI voxels for all imaged tumours.
 \label{versatile}}
 \end{figure}
+%%%%%%%%%%%%%%%%% ############ END *versatile* section from paper 1########### 
+
+%%%%%%%%%%%%%%%%% ############ BEGIN section about fitting ############
+
+\subsection{Vascular area $A$ and mean velocity $v_f$ do not vary across tumour models, but $\sigma_f$ differentiates between tumours}
+% Analysis notebook: 
+% http://localhost:8889/user/fmoosvi/notebooks/OxygenMRI/Thesis%20Exploring/OEMRI%20chapter%202%20-%20lognormal%20fitting%20aggregations.ipynb
+Equation~\ref{lognormalFitEquation} was fit to the oxygen response kinetics for three tumour models (SCCVII, HCT-116, and BT474).
+Figure~\ref{fig:lognormal_CHB} shows the raw data and the fit for each animal. 
+Group averages for each of the three parameters $A$, $v_f$ and $\sigma_f$ are shown in box plots.
+The parameter $\sigma_f$ discriminated between tumour types in this analysis and $\sigma_f$ for SCCVII tumours ($\sigma_f$ = 0.30 $\pm$ 0.09 mm/s) was statistically significantly lower than the HCT-116 tumours ($\sigma_f$ = 0.52 $\pm$ 0.12 mm/s; p = 0.047) as well as the BT474 tumours ($\sigma_f$ = 0.76 $\pm$ 0.19 mm/s; p = 0.044).
+The effect size for both comparisons was quite small: Hedge's g = 0.05 for SCCVII vs. HCT-116 tumours and $g$ = 0.02 for SCCVII vs. BT474. 
+No significant difference was found when comparing $\sigma_f$ of HCT-116 and BT474 tumours.
+High intratumour variability was present in all tumours, but particularly in the BT474 tumour models.
+The SKOV3 tumours were not considered as part of this analysis due to a low sample size (N=3). 
 
 \begin{figure}[htbp]
    \centering
-   \includegraphics[width=\textwidth]{oemri_thesis2/oemri_thesis2-images/technical_ScoredExtractions.png} % requires the graphicx package
-   \caption{Each trace plot is the extracted ICA component corresponding to the oxygen response. The components are scored by the observer from a score of 1 to 5, with 1 barely corresponding to the oxygen challenge with a lot of noise and 5 corresponding extremely well to the oxygen challenge and very little noise. Note very few animals are in the lowest group, and many more are of extraction quality 4 and 5.}
-   \label{extractions}
+   \includegraphics[width=\textwidth]{oemri_thesis2/oemri_thesis2-images/lognormalFittingAgg_CHB.png} % requires the graphicx package
+   \caption{Top: Individual fits to the oxygen response curve for each animal and tumour type.
+   Bottom: Box plots showing the median value and quartiles for $A$, $v_f$m and $\sigma_f$ across the three tumour models.}
+   \label{fig:lognormal_CHB}
 \end{figure}
+%%%%%%%%%%%%%%%%% ############ END section about fitting ############ 
+
+%%%%%%%%%%%%%%%%% ############ BEGIN *histo validation* section from paper 1 ############ 
 
 \subsection{dOE-MRI maps correspond to matched histology sections}
 \label{sec:histoSections}
@@ -114,7 +171,7 @@ For SCCVII tumours (n=9) there was an excellent correlation, with Pearson's r = 
 However the correlation in the HCT-116 tumours (n=6) was poor, with r=0.13 (\textit{p}=0.81). 
 
 \begin{figure}[htbp]
-   \includegraphics[width=0.6\textwidth]{oemri_thesis1/oemri_thesis1-images/fig5_histocorrelation.pdf} % requires the graphicx package
+   \includegraphics[width=\textwidth]{oemri_thesis1/oemri_thesis1-images/histocorrel2.png} % requires the graphicx package % note for Firas: I changed the aspect ratio of this figure slightly
    \caption{The proportion of negative dOE-MRI voxels is plotted against the histological hypoxic fractions with Pearson's r = 0.91 for SCCVII tumours and r = 0.13 for HCT-116 tumours.
    \label{histo_correlations}}
 \end{figure}
@@ -132,36 +189,23 @@ However the correlation in the HCT-116 tumours (n=6) was poor, with r=0.13 (\tex
    \label{fig_hct116}}
 \end{figure}
 
-%%%%%%%%%%%%%%%%% ############ END section from paper 1########### 
+%%%%%%%%%%%%%%%%% ############ END *histo validation* section from paper 1########### 
 
-% ======================================================================
-\subsection{Fitting to lognormal perfusion model}
-% ======================================================================
-
-\begin{figure}[htbp]
-   \centering
-   \includegraphics[width=0.5\textwidth]{oemri_thesis2/oemri_thesis2-images/technical_SampleFit.png} % requires the graphicx package
-   \caption{}
-   \label{subSample}
-\end{figure}
-
-%%%%%%%%%%%%%%%%% ############ BEGIN section about fitting ############ 
-
-
-
-\begin{figure}[htbp]
-   \centering
-   \includegraphics[width=\textwidth]{oemri_thesis2/oemri_thesis2-images/technical_dOE-MRIfits.pdf} % requires the graphicx package
-   \caption{}
-   \label{subSample}
-\end{figure}
-
-%%%%%%%%%%%%%%%%% ############ END section about fitting ############ 
 
 % ======================================================================
 \section{Discussion}
 % ======================================================================
 
+The improved sensitivity of our dOE-MRI technique results in broader applicability of dOE-MRI, as we found that an oxygen-enhancing component was extracted successfully in all imaged animals across a range of tumour models and environments (Figure~\ref{versatile}).
+In this study we also modelled the oxygen response curves in the tumour vasculature by deploying models developed in DCE-US and adapting them for dOE-MRI.
+Fitting equation~\ref{lognormalFitEquation} to the oxygen response curves results in three physiologically relevant parameters.
+Unsurprisingly, the vascular area $A$ and the mean velocity $v_f$ do not appear to be vary between the three tumour models studied(Figure~\ref{fig:lognormal_CHB}).
+The third parameter $\sigma_f$ is the standard deviation of the velocity distribution and is related to the structural organization and morphology of the vascular network~{\cite{Hudson:2009jv}.
+Thus, we hypothesized that the oxygen response curves and in particular, $\sigma_f$ may capture information about the vascular organization in different tumour models.
+The SCCVII tumour is a very aggressive and fast growing tumour~\todo{would be nice to have a ref here}, which implies a chaotic vascular network with a low degree of fractality (propensity to branch in a fractal pattern with large arteries branching to smaller arterioles, leading to extremely small capillaries).
+This behaviour would result in a narrow range of vessel sizes and velocity profiles in our lognormal velocity profile,  and manifests in a low $\sigma_f$ value for SCCVII tumours relative to the other tumour lines.
+While only $\sigma_f$ appears to be useful in delineating tumour models, $v_f$ and $A$ may be useful metrics to quantify the oxygen response curves of tumours after drug interventions. 
+  
 A limitation of OE-MRI is the difficulty in interpreting areas that do not show a reduction in T$_1$ as they may be either dead tissues that are \textit{unperfused and not oxygenated} or living, viable tissues that are \textit{perfused but not oxygenated} due to poor oxygen content of the supplying vessels. 
 The latter population are of greater interest to the oncology community as it is these hypoxic but viable cells that have significant influence on treatment outcomes~\cite{Horsman:2016go}. 
 The dOE-MRI technique presented here successfully correlates tumour oxygenation dOE-MRI and histology measures in SCCVII tumours but, despite improvements to sensitivity, a similar quantitative comparison in the HCT-116 tumour line showed poorer association (Fig.~\ref{histo_correlations}). 
@@ -200,15 +244,18 @@ O$_2$-positive regions in dOE-MRI maps are generally in good agreement with well
 Voxels exhibiting signal reduction with the O$_2$ stimulus in dOE-MRI maps (O$_2$-negative, green) typically correspond with histology (pimonidazole, green) but not all pimonidazole-labeled regions appear as O$_2$-negative voxels.
 Similarly, CD31-stained tumour regions are not exclusively O$_2$-positive in the dOE-MRI maps because not all tumour vessels are perfused.
 In fact many perfused blood vessels are only intermittently perfused and consequently, the measurement of hypoxia is time-sensitive.
-Mismatches between dOE-MRI and histology may be attributed in part to the different sensitivities and detection thresholds for measuring hypoxia and oxygenation in the dOE-MRI and histology-based modalities, as well as potential mismatch between the timing of pimonidazole-labeling and dOE-MRI data acquisition . 
+Mismatches between dOE-MRI and histology may be attributed in part to the different sensitivities and detection thresholds for measuring hypoxia and oxygenation in the dOE-MRI and histology-based modalities, as well as potential mismatch between the timing of pimonidazole-labeling and dOE-MRI data acquisition. 
 
-\subsection{random snippets}
-O$_2$ positive or O$_2$-negative fractions are immune to this phenomenon, information about the level of response can be retained simply by applying the scaling factor when comparing scans at different temporal resolutions
+%\subsection{random snippets}
+%O$_2$ positive or O$_2$-negative fractions are immune to this phenomenon, information about the level of response can be retained simply by applying the scaling factor when comparing scans at different temporal resolutions
 % ======================================================================
 \section{Conclusions}
 % ======================================================================
-Hello
 
+In this chapter, we have validated the dOE-MRI technique by comparing oxygenation maps with pimonidazole stained histology images. 
+The versatility of the technique was apparent due to its applicability in multiple tumour models; though, the presence of large necrotic areas in tumours poses some challenges when comparing oxygenation status with pimonidazole staining.
+We have also shown that the lognormal velocity profile model from DCE-US is applicable to oxygen response curves obtained from ICA and dOE-MRI and the parameter $\sigma_f$ is useful in quantifying the vascular morphology of tumours.
+dOE-MRI assesses tumour oxygenation fairly reliably \emph{in vivo} and the next application is to see whether the technique is sensitive to oxygenation changes brought on by chemotherapies.
 % ======================================================================
 \section{Acknowledgments}
 % ======================================================================

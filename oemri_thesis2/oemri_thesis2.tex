@@ -4,9 +4,6 @@
 \chapter{Oxygen enhanced MRI - Validation of method in animals}
 \label{ch:oemri2}
 
-\section{Preface}
-
-Stuff about contributions 
 % ======================================================================
 \section{Introduction}
 % ======================================================================
@@ -16,10 +13,10 @@ In this chapter we first validate the method in tumour xenografts and compare dO
 Next we present a model that phenomenologically describes the kinetics of the oxygen response in tumours. 
 This model is then fit to the extracted ICA components from all imaged animals to assess the feasibility of using the fit parameters as biomarkers of oxygen response.
 
-\subsection{Theory: Modeling oxygen response}
-
+\subsection{Theory: Modelling oxygen response}
+\label{sec:lognormalfitting_theory}
 A vascular network is a collection of multiple vessels including large arteries feeding smaller arterioles that ultimately deliver oxygen and nutrients to tissue via capillaries.
-This complex vascular tree is modeled by assuming a fractal branching geometry with the distribution of vessel sizes and flow rates given by a lognormal velocity distribution~\cite{Qian:2000ca}:
+This complex vascular tree is modelled by assuming a fractal branching geometry with the distribution of vessel sizes and flow rates given by a lognormal velocity distribution~\cite{Qian:2000ca}:
 
 \begin{equation}
 P(v)=\frac{1}{\sigma_{f} \sqrt{2 \pi}} \cdot \frac{1}{v} \cdot \exp \left(-\frac{1}{2}\left(\frac{\ln (v)-u_{f}}{\sigma_{f}}\right)^{2}\right)
@@ -39,11 +36,11 @@ The mean of a lognormal distribution are known quantities,
 \begin{figure}[htbp]
    \centering
    \includegraphics[width=\textwidth]{oemri_thesis2/oemri_thesis2-images/lognormal.png} % requires the graphicx package
-   \caption{From Hudson et al 2009~\cite{Hudson:2009jv}; need to adapt and create or ask for permission to re-use}
+   \caption{Schematic representation of the complex vascular network modelled as a representative single vessel with multiple flow profiles, from Hudson et al 2009~\cite{Hudson:2009jv}. The distribution of velocity profiles of the representative single vessel is the lognormal distribution.}
    \label{lognormal}
 \end{figure}
 
-Figure~\ref{lognormal} shows a schematic of the vascular network modeled as a representative single vessel with a lognormal distribution of velocity profiles.
+Figure~\ref{lognormal} shows a schematic of the vascular network modelled as a representative single vessel with a lognormal distribution of velocity profiles~\todo{Need to adapt and re-create or ask for permission to re-use?}.
 Therefore the flow function for a vascular network is given by,
 
 \begin{equation}
@@ -76,11 +73,10 @@ Where A is defined as the total vascular area, $\mu_f$ is the mean velocity and 
 % ======================================================================
 \subsection{Animals}
 Female NRG (NOD rag gamma) mice were implanted with murine squamous cell carcinoma (SCCVII; 5x10$^5$ cells in 50$\mu$l serum-free media; cells provided by Dr. J. Evans) in the dorsal subcutaneous region.
-Approximately X \todo[backgroundcolor=green]{how many days?} days later, tumours were imaged when their largest diameters reached approximately 8-10 mm.
 All mice were injected with 60 mg/kg pimonidazole hydrochloride (HypoxyProbe) 30 min prior to imaging to label hypoxic cells and were euthanized within 15 min of imaging completion.
 Mice were anesthetized with isoflurane using 1.5-2.0\% isoflurane for the duration of MR imaging sessions until euthanasia, and were positioned supine on the custom surface coil apparatus.
 Throughout the imaging session, a small animal monitoring system (SAII Instruments, Stony Brook, NY, USA) was used to monitor respiration rate, varying between 80-100 breaths per minute, and body temperature, maintained at 36.8 $\pm$ 0.5$^\circ$C using a continuous airflow heater. 
-tumours were embedded and frozen in optimum cutting temperature medium (OCT; Tissue-TEK).
+Tumours were embedded and frozen in optimum cutting temperature medium (OCT; Tissue-TEK) with their largest diameter 8-10 mm.
 All animal experimental procedures were carried out in compliance with the guidelines of the Canadian Council for Animal Care and were approved by the institutional Animal Care Committee.
 
 \subsection{Immunohistochemistry}
@@ -101,6 +97,7 @@ As previously described in Section~\ref{doemri_mrianalysis1}.
 As previously described in Section~\ref{doemri_mrianalysis2}.
 
 \subsection{Model Fitting}
+\label{sec:lognormalfitting_methods}
 Equation~\ref{lognormalFitEquation} was fit to the first 100 seconds of the ICA component trace after oxygen was first delivered to the mouse. 
 Model fitting was done with the \texttt{LMFIT} package~\cite{Newville:2014jt} using the Levenberg-Marquardt method.
 A free fit parameter was added corresponding to a vertical offset to account for the ICA component starting below 0. 
@@ -109,7 +106,7 @@ A sample fit using equation~\ref{lognormalFitEquation} is shown in figure~\ref{f
 
 \begin{figure}[htbp]
    \centering
-   \includegraphics[width=0.5\textwidth]{oemri_thesis2/oemri_thesis2-images/technical_SampleFit.png} % requires the graphicx package
+   \includegraphics[width=\textwidth]{oemri_thesis2/oemri_thesis2-images/technical_SampleFit.png} % requires the graphicx package
    \caption{Fit of equation~\ref{lognormalFitEquation} to an oxygen response curve with the residuals plotted along the x-axis for each point.
    For this fit, $A= 0.18$, $v_f = 0.66 mm/s$, and $\sigma_f = 0.58 mm/s$.}
    \label{fig:lognormal_sample}
@@ -137,6 +134,7 @@ Bottom: The box-whisker plot shows the quartiles of percent negative dOE-MRI vox
 %%%%%%%%%%%%%%%%% ############ BEGIN section about fitting ############
 
 \subsection{Vascular area $A$ and mean velocity $v_f$ do not vary across tumour models, but $\sigma_f$ differentiates between tumours}
+\label{sec:lognormalfitting_results}
 % Analysis notebook: 
 % http://localhost:8889/user/fmoosvi/notebooks/OxygenMRI/Thesis%20Exploring/OEMRI%20chapter%202%20-%20lognormal%20fitting%20aggregations.ipynb
 Equation~\ref{lognormalFitEquation} was fit to the oxygen response kinetics for three tumour models (SCCVII, HCT-116, and BT474).
@@ -146,7 +144,7 @@ The parameter $\sigma_f$ discriminated between tumour types in this analysis and
 The effect size for both comparisons was quite small: Hedge's g = 0.05 for SCCVII vs. HCT-116 tumours and $g$ = 0.02 for SCCVII vs. BT474. 
 No significant difference was found when comparing $\sigma_f$ of HCT-116 and BT474 tumours.
 High intratumour variability was present in all tumours, but particularly in the BT474 tumour models.
-The SKOV3 tumours were not considered as part of this analysis due to a low sample size (N=3). 
+The SKOV3 tumours were not considered as part of this analysis due to low sample size (N=3). 
 
 \begin{figure}[htbp]
    \centering
@@ -190,7 +188,6 @@ However the correlation in the HCT-116 tumours (n=6) was poor, with r=0.13 (\tex
 \end{figure}
 
 %%%%%%%%%%%%%%%%% ############ END *histo validation* section from paper 1########### 
-
 
 % ======================================================================
 \section{Discussion}

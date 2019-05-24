@@ -125,12 +125,12 @@
 %%   we *must* use the `nohyperlinks' option -- it causes errors with
 %%   hyperref otherwise.  See Section 5.2 in the ``LaTeX 2e for Class
 %%   and Package Writers Guide'' (clsguide.pdf) for details.
-\usepackage[printonlyused,nohyperlinks]{acronym}
+\usepackage[printonlyused]{acronym}
 %% The ubcdiss.cls loads the `textcase' package which provides commands
 %% for upper-casing and lower-casing text.  The following causes
 %% the acronym package to typeset acronyms in small-caps
 %% as recommended by Bringhurst.
-\renewcommand{\acsfont}[1]{{\scshape \MakeTextLowercase{#1}}}
+%\renewcommand{\acsfont}[1]{{\scshape \MakeTextLowercase{#1}}}
 
 %% Commented out at stefan's behest for tooltip abbreviations
 %\newcommand{\abbr}[1]{\pdftooltip{\ac*{#1}{\acl{#1}}\protect{\acused{#1}}}}
@@ -322,8 +322,8 @@
 
 \faculty{The Faculty of Science}
 \department{Physics \& Astronomy}
-\submissionmonth{November}
-\submissionyear{2018}
+\submissionmonth{May}
+\submissionyear{2019}
 
 %% hyperref package provides support for embedding meta-data in .PDF
 %% files
@@ -404,24 +404,20 @@
 % Body of Thesis (not all sections may apply)
 \mainmatter
 
-%\acresetall	% reset all acronyms used so far
+\acresetall	% reset all acronyms used so far
 
 %    1. Introduction
-%\include{intro/intro}
+\include{intro/intro}
 
 %    2. Main body
 % Generally recommended to put each chapter into a separate file
-%\include{hpg/hpg}
+\include{hpg/hpg}
 \include{oemri_thesis1/oemri_thesis1}
 \include{oemri_thesis2/oemri_thesis2}
-%\include{oemri_thesis3/oemri_thesis3}
-%\include{futurework/futurework}
+\include{oemri_thesis3/oemri_thesis3}
+\include{futurework/futurework}
 %\include{cest/cest}
 %\include{meltingpot/meltingpot}
-
-
-%\include{discussion}
-%\include{conclusions}
 
 %    3. Notes
 %    4. Footnotes

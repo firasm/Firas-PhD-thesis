@@ -3,40 +3,32 @@
 
 \chapter{Glossary}
 
-This glossary uses the handy \latexpackage{acroynym} package to automatically
-maintain the glossary.  It uses the package's \texttt{printonlyused}
-option to include only those acronyms explicitly referenced in the
-\LaTeX\ source.
-
 % use \acrodef to define an acronym, but no listing
 \acrodef{UI}{user interface}
 \acrodef{UBC}{University of British Columbia}
 
+\acrodef{DCE-US}{dynamic contrast enhanced ultrasound}
+\acrodef{ICA}{Independent Component Analysis}
+
+
 % The acronym environment will typeset only those acronyms that were
 % *actually used* in the course of the document
-\begin{acronym}[ANOVA]
-\acro{ANOVA}[ANOVA]{Analysis of Variance\acroextra{, a set of
-  statistical techniques to identify sources of variability between groups}}
-\acro{API}{application programming interface}
-\acro{CTAN}{\acroextra{The }Common \TeX\ Archive Network}
-\acro{DOI}{Document Object Identifier\acroextra{ (see
-    \url{http://doi.org})}}
-\acro{GPS}[GPS]{Graduate and Postdoctoral Studies}
-\acro{PDF}{Portable Document Format}
-\acro{RCS}[RCS]{Revision control system\acroextra{, a software
-    tool for tracking changes to a set of files}}
-\acro{TLX}[TLX]{Task Load Index\acroextra{, an instrument for gauging
-  the subjective mental workload experienced by a human in performing
-  a task}}
-\acro{UML}{Unified Modelling Language\acroextra{, a visual language
-    for modelling the structure of software artefacts}}
-\acro{URL}{Unique Resource Locator\acroextra{, used to describe a
-    means for obtaining some resource on the world wide web}}
-\acro{W3C}[W3C]{\acroextra{the }World Wide Web Consortium\acroextra{,
-    the standards body for web technologies}}
-\acro{XML}{Extensible Markup Language}
-\acro{organizational}{Does this really work?}
-\acro{UBC}{University of British Columbia}
+\begin{acronym}
+
+\acro{ICA}[ICA]{Independent Component Analysis; a blind source separation technique that splits a multi-source signal into its constituents}
+
+\acro{dOE-MRI}[dOE-MRI]{dynamic Oxygen Enhanced MRI; a technique that relies on the T$_1$-shortening property of oxygen and independent component analysis to identify regions that respond to an oxygen stimulus.}
+
+\acro{DCE-US}[DCE-US]{dynamic contrast enhanced ultrasound; an imaging technique that uses echogenic microbubbles to enhance contrast \emph{in vivo}.}
+
+\acro{CD31}[CD31]{cluster of differentiation 31 (CD31), also known as platelet endothelial cell adhesion molecule (PECAM) is a protein that is used in immunohistochemistry primarily to demonstrate the presence of endothelial cells.}
+
+\acro{Hoechst 33342}[bisbenzimide]{Hoechst 33342 (also known as bisbenzimide) is an organic compound used as a fluorescent stain for DNA}
+
+\acro{}[]{}
+
+\acro{}[]{}
+
 \end{acronym}
 
 % You can also use \newacro{}{} to only define acronyms

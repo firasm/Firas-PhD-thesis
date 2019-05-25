@@ -23,7 +23,7 @@ P(v)=\frac{1}{\sigma_{f} \sqrt{2 \pi}} \cdot \frac{1}{v} \cdot \exp \left(-\frac
 \end{equation}
 
 Where $P(v)$ is the probability density function of the velocity $v$, $\mu_f$ and $\sigma_f$ are the mean and standard deviation of the distribution for the normally distributed random variable $ln(v)$.
-The mean of a lognormal distribution are known quantities,
+The mean and standard deviation of a lognormal distribution are known quantities,
 
 \begin{equation}
 \operatorname{Mean}(v)=\exp \left(\mu_{f}+\frac{\sigma_{f}^{2}}{2}\right)
@@ -40,7 +40,7 @@ The mean of a lognormal distribution are known quantities,
    \label{lognormal}
 \end{figure}
 
-Figure~\ref{lognormal} shows a schematic of the vascular network modelled as a representative single vessel with a lognormal distribution of velocity profiles~\todo{Need to adapt and re-create or ask for permission to re-use?}.
+Figure~\ref{lognormal} shows a schematic of the vascular network modelled as a representative single vessel with a lognormal distribution of velocity profiles~\todo{Figure needs to be adapted and re-created or ask for permission to re-use?}.
 Therefore the flow function for a vascular network is given by,
 
 \begin{equation}
@@ -48,7 +48,7 @@ F(z, t)=\frac{A}{2} \cdot \operatorname{erfc}\left(\frac{\ln (z / t)-u_{f}}{\sig
 \end{equation}
 
 Where A is defined as the total vascular area, z represents the spatial displacement of oxygen through the blood stream, $\mu_f$ is the mean velocity and $\sigma_f$ is the standard deviation of the velocity distributions. 
-The velocity $v$ has been transformed to $z/t$ for convenience and ease of interpretation.
+The velocity $v$ was transformed for convenience to $z/t$ to facilitate integration over the slice thickness $z$.
 
 This lognormal flow profile model has been used to describe the replenishment of microbubbles injected into the blood stream in \ac{DCE-US}~\cite{Hudson:2009jv}.
 The generalized representation of the replenishment time-intensity signal requires two components: an ultrasound beam-specific profile that is weighted in the z-direction due to a non-uniform slice profile and the flow profile. 
@@ -59,7 +59,7 @@ S(t) = \int_{V} B(x,y,z) \cdot F(x,y,z,t) \cdot dV
 \end{equation}
 
 where $B(x,y,z) = 1$ in MRI because of relatively uniform slice profiles. 
-Integrating over the imaging plane (x,y) and assuming a slice thickness of 1mm (z), the final model for fitting \ac{dOE-MRI} data becomes,
+Integrating over the imaging plane ($x,y$) and assuming a slice thickness of 1mm ($z$), the final model for fitting \ac{dOE-MRI} data becomes,
 
 \begin{equation}
 S(t)= \left[\frac{A}{2}\left(z \operatorname{erfc}\left(\frac{\ln \left(z/t\right)-\mu_f}{\sqrt{2} \sigma_f}\right)-t e^{\sigma_f^{2} / 2+\mu_f} \operatorname{erf}\left(\frac{\sigma_f^{2}+\mu_f-\log \left(z/t\right)}{\sqrt{2} \sigma_f}\right)\right)\right]_{z=0}^{z=1mm}
@@ -72,7 +72,7 @@ Where A is defined as the total vascular area, $\mu_f$ is the mean velocity and 
 \section{Methods}
 % ======================================================================
 \subsection{Animals}
-Female NRG (NOD rag gamma) mice were implanted with murine squamous cell carcinoma (SCCVII; 5x10$^5$ cells in 50$\mu$l serum-free media; cells provided by Dr. J. Evans) in the dorsal subcutaneous region.
+Female NRG (NOD rag gamma) mice were implanted with murine squamous cell carcinoma (SCCVII; 5x10$^5$ cells in 50 $\mu$l serum-free media; cells provided by Dr. J. Evans) in the dorsal subcutaneous region.
 All mice were injected with 60 mg/kg pimonidazole hydrochloride (HypoxyProbe) 30 min prior to imaging to label hypoxic cells and were euthanized within 15 min of imaging completion.
 Mice were anesthetized with isoflurane using 1.5-2.0\% isoflurane for the duration of MR imaging sessions until euthanasia, and were positioned supine on the custom surface coil apparatus.
 Throughout the imaging session, a small animal monitoring system (SAII Instruments, Stony Brook, NY, USA) was used to monitor respiration rate, varying between 80-100 breaths per minute, and body temperature, maintained at 36.8 $\pm$ 0.5$^\circ$C using a continuous airflow heater. 

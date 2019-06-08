@@ -20,7 +20,7 @@ Inhalation of 100\% oxygen has also been shown to elicit strong T$_1$ effects in
 Subsequent oxygen-enhanced MRI (OE-MRI) efforts have included either acquisition of quantitative T$_1$ maps before and after oxygen breathing, or acquiring dynamic T$_1$-weighted (T1W) signal intensity images and calculating $\Delta$T$_1$ during periods of oxygen inhalation.
 The subtle but measurable influence of tissue oxygenation on T$_1$ in tumours has been reported by O'Connor~\cite{OConnor:2016ee,OConnor:2009ku,OConnor:2009bp,Little:2018iu}, Mason~\cite{Zhao:2015ez,White:2016fz,Hallac:2014cb}, Gallez~\cite{Jordan:2012do}, and others~\cite{Tadamura:1997vc,McGrath:2008kx,Kershaw:2010ha,Linnik:2013hf}. 
 However, due to the changes in T$_1$ that arise as oxygen dissolves in the plasma and interstitial fluid being quite small, T$_1$ maps have poor sensitivity and application of OE-MRI techniques in cancer has yielded mixed success.
-OE-MRI continues to suffer from low SNR and it has not found routine clinical use largely because isolating small signal changes due to dissolved O$_2$ is a challenge~\cite{OConnor:2016ee, Zhao:2015ez}.
+OE-MRI continues to suffer from low \ac{SNR} and it has not found routine clinical use largely because isolating small signal changes due to dissolved O$_2$ is a challenge~\cite{OConnor:2016ee, Zhao:2015ez}.
 
 Typical imaging times for existing OE-MRI methods range from 20-45 minutes often making it impractical for easy inclusion in experimental protocols. 
 An MRI technique measuring tumour oxygenation that is sensitive, fast, flexible, repeatable, and non-invasive has the potential to significantly impact the clinical fields of radiation biology and hypoxia drug targeting.
@@ -156,7 +156,7 @@ Voxel-wise plots of each map are correlated to the full dataset and a linear reg
 To investigate the subsampling limit of \ac{ICA}, Figure~\ref{subSample} shows the \ac{dOE-MRI} maps for progressively more severe undersampling.
 O$_2$-positive and O$_2$-negative regions are repeatable for all maps (plot in Figure~\ref{subSample}) until subsample 5, where only 40 of the 200 available data points were used.
 The original data was acquired at a temporal resolution of 4.3s but at subsample 5, the effective temporal resolution goes to 21.3s. 
-In other words, temporal resolution could be sacrificed for SNR simply by averaging.
+In other words, temporal resolution could be sacrificed for \ac{SNR} simply by averaging.
 More usefully, the additional time can be repurposed to interleave other scans for multi-parametric imaging within a \ac{dOE-MRI} scan.
 Details of this are discussed in section~\ref{sec:futureWork}~\todo[backgroundcolor=green]{Link this to future work about T2*}. 
 
@@ -256,7 +256,7 @@ Maps from other extracted components (Appendix Figure~\ref{Sfig_components}) exh
 For example, even moderate shifts in temperature could drive a measurable change in T$_1$W signal during the timecourse, and a physiological monitoring system that is time-synced to the MR acquisition could illuminate this confounding variable. 
 Nevertheless, we have established reliability of the technique by comparing maps from each cycle of the gas challenge to the map incorporating data from all three oxygen-cycles and have found no significant differences.
 In fact, the strong correlations between \ac{dOE-MRI} maps from each of the individual cycles of the gas challenge (Figure~\ref{fig_repeatability}) show that it is feasible to assess tissue oxygenation within 6 minutes.
-Performing this analysis again with three-fold (Figure~\ref{fig_repeatability}) and six-fold (Appendix~\ref{sec:interleave}) temporally under-sampled data suggests that there is sufficient SNR to successfully extract the oxygen responsive component  with even a subset of the data.
+Performing this analysis again with three-fold (Figure~\ref{fig_repeatability}) and six-fold (Appendix~\ref{sec:interleave}) temporally under-sampled data suggests that there is sufficient \ac{SNR} to successfully extract the oxygen responsive component  with even a subset of the data.
 
 dOE-MRI offers a versatile technique where the duration of the cycles and gas challenge, temporal resolution and desired signal-to-noise can be modified based on the imaging objectives, which could include investigating intermittent perfusion or intervention-mediated changes in the tumour microenvironment. 
 Of note, supplying excess oxygen to hypoxic tumour cells over time has the potential for increasing the baseline oxygen concentration, effectively reducing the hypoxic fraction and altering the tumour microenvironment~\cite{Linnik:2013hf}.
@@ -275,7 +275,7 @@ Future work to evaluate the utility of \ac{dOE-MRI} will ultimately depend on it
 \section{Conclusions}
 % ======================================================================
 In this study we extend existing oxygen-enhanced MRI techniques by adding a cycling element to the respiratory challenge and using a blind-source separation signal processing technique ( \ac{ICA}) to extract the oxygen responsive component and responding voxels.
-This \ac{dOE-MRI} method presents significant improvements to the sensitivity and applicability of OE-MRI where small changes in T$_1$W signal intensity arising from cycling respiratory challenges can be separated robustly. Traditional quantitative T$_1$-mapping techniques have longer imaging times and are impractical for OE-MRI due to SNR and time constraints.
+This \ac{dOE-MRI} method presents significant improvements to the sensitivity and applicability of OE-MRI where small changes in T$_1$W signal intensity arising from cycling respiratory challenges can be separated robustly. Traditional quantitative T$_1$-mapping techniques have longer imaging times and are impractical for OE-MRI due to \ac{SNR} and time constraints.
 \ac{dOE-MRI} with \ac{ICA} is clinically translatable as the sequence acquisition is relatively short and most centres already have access to dynamic T$_1$W MRI acquisitions that many patients already routinely receive. 
 Therefore \ac{dOE-MRI} is an exciting, non-invasive and widely available technique for assessing tumour oxygenation that could provide a crucial tool in the field of radiation oncology and in the development of treatments targeting the tumour microenvironment.
 

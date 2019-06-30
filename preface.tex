@@ -3,8 +3,11 @@
 
 \chapter{Preface}
 \label{ch:preface}
-The work presented in this thesis comprises development of MRI sequences, pre-clinical animal experiments, immunohistological staining and analysis, as well as post-acquisition MRI data analyses in collaboration with multiple researchers.
-Since different researchers played a part in different aspects of the works, the preface is divided into three subsections, one for each of the main bodies of work.
+
+The projects presented in this thesis would not have been possible without the help and support of multiple collaborators.
+There is also considerable technical expertise that the author was able to leverage on all of the projects presented here.
+The work presented in this thesis relies on development of MRI sequences, pre-clinical animal experiments, immunohistological staining and analysis, as well as post-acquisition MRI data analyses in collaboration with multiple researchers.
+Since different researchers played a part in different aspects of the works, the preface is divided by chapter to ensure adequate credit is provided to the people responsible.
 In general, Dr. Jennifer Baker working in the lab of Dr. Andrew Minchinton at the BC Cancer Research centre provided all of the tumour xenograft bearing mice used in experiments, and contributed extensive biological expertise and knowledge to the works presented in this thesis.
 The author's research supervisor Dr. Stefan Reinsberg has been instrumental in providing constant guidance, encouragement and made innumerable intellectual contributions to support and advance research in all areas.
 
@@ -17,22 +20,56 @@ The author's research supervisor Dr. Stefan Reinsberg has been instrumental in p
 %The initial interest in CEST-MRI was a carry-over from a side project the author participated in during his masters degree at the University of Toronto with Drs. Kim Desmond and Greg J. Stanisz. 
 %Dr. Stanisz was kind enough to provide the initial CEST sequence as well as MATLAB code to analyze the data which was used as the baseline to compare our improved technique against.
 
-\subsubsection{HPG - Chapters~\ref{ch:HPG} and \ref{HPG2}}
+\subsubsection{Chapter~\ref{ch:HPG} - \nameref{ch:HPG}}
 
-I acquired most of the MRI data presented here and analyzed all of it.
+Work presented in chapter~\ref{ch:HPG} has been published in its entirety in \emph{Contrast Media \& Molecular Imaging} with the manuscript titled ``Multi-modal magnetic resonance imaging and histology of vascular function in xenografts using macromolecular contrast agent hyperbranched polyglycerol (\acs{HPG-GdF})'~\cite{Baker:2015cob}.
+The author of this thesis is listed as the 3$^{rd}$ author on this manuscript.
+The following is a narrative describing contributions from many people involved in this complex and multi-dimensional project.
+
 Drs. Baker and Reinsberg initiated a collaboration with Drs. Katayoun Saatchi and Urs Hafeli from the Faculty of Pharmaceutical Sciences.
-Drs. Saatchi and Hafeli had synthesized a new hyper-branched poly-glycerol molecule that was biocompatible and could be used as a high molecular weight MRI contrast agent.
-During her masters degree at UBC, Dr. Kelly McPhee began work on this project doing initial pilot testing, QA to assess the viability of the molecule as an MRI contrast agent, as well as a acquisition and analysis of an MRI experiment.
-In collaboration with Dr. Baker, Dr. McPhee also acquired and analyzed MRI data for an experiment as part of her masters thesis. 
-A portion of the data acquired and some of the analysis for the publication presented in ChapterXX~\todo{get the author label} was done by Dr. McPhee.
-I conducted several follow-up experiments with a new MRI sequence and improved analysis methods in collaboration with Drs. Baker and Reinsberg. 
-Dr.  Reinsberg provided much guidance and support in the design of the experiment, development of the sequence, and in troubleshooting the myriad problems that arose during sequence development.
-The HPG project was a fairly large project and the author made major contributions to both works that have so far been published, as well as several experiments that will be published soon.
+Drs. Saatchi and Hafeli had synthesized a new hyper-branched poly-glycerol molecule (\acs{HPG-GdF}) that was biocompatible and could be used as a high molecular weight MRI contrast agent.
+During her masters degree at UBC, Dr. Kelly McPhee began work on this project to characterize the molecule. 
+She performed all pilot and phantom experiments to test and measure its relaxivity, as well as initial pilot testing, QA to assess the viability of the molecule as an MRI contrast agent, as well as acquisition and analysis of pilot animal data.
+The work described above is not a part of this thesis, but the development and validation was essential and provided a springboard for this author's work.
 
-\subsubsection{Oxygen-enhanced MRI (Chapter~\ref{ch:oemri1})}
+Following initial characterization of the molecule, in collaboration with Dr. Baker and Dr. Reinsberg, Dr. McPhee also acquired and analysed animal data from 10 mice. 
+Raw and some processed data (notably the calculated concentration-time curves) from this experiment were used in this manuscript by this author.
+The raw data was used to develop and present a new method to quantify \acs{HPG-GdF} concentration-time curves using a two-parameter linear model.
+To develop this method, several follow-up experiments with a new MRI sequence and improved analysis methods was done in collaboration with Drs. Baker and Reinsberg - this data is not part of this chapter but is instead presented in Chapters~\ref{ch:HPG2} and ~\ref{ch:HPG3}.
+Dr. Reinsberg provided much guidance and support in the design of the experiment, development of the sequence, and in troubleshooting the myriad problems that arose during sequence development.
+
+Initial draft of the manuscript was prepared primarily by Dr. Baker, with this author contributing to the MRI methods, MRI analysis, as well as the results sections. 
+In developing this manuscript, all analysis code was written by this author and all parameteric maps were generated using custom code written in Python.
+Code to read in generic MRI data was developed by Dr. Reinsberg with some assistance from Andrew Yung, a research scientist at the 7T research centre.
+All histology data presented in this paper, and all final figure preparation  including manuscript submission was done by Dr. Baker.
+Reviewer comments were addressed collaboratively with Dr. Baker, Dr. Reinsberg, and this author equally. 
+
+\subsubsection{Chapter~\ref{ch:HPG2} - \nameref{ch:HPG2}}
+
+my Contributions:
+
+- experimental design
+- data collection
+- all MRI analysis
+- figure preparation
+- results & discussion
+- written by JB, edited by FM
+
+\subsubsection{Chapter~\ref{ch:HPG3} - \nameref{ch:HPG3}}
+
+my Contributions:
+
+- experimental design
+- data collection
+- all MRI and some histo analysis
+- figure preparation
+- results & discussion
+- written by FM
+
+\subsubsection{Chapter~\ref{ch:oemri1} - \nameref{ch:oemri1}}
 
 With the exception of Sections~\ref{sec:numComponents},~\ref{sec:correctionfactor}, and \ref{sec:interleave} material presented in this chapter was published in the \textit{Journal of Magnetic Resonance in Medicine}~\cite{Moosvi:2018ca}. 
-I was the lead investigator, responsible for all major areas of MRI data collection, analysis, manuscript composition. 
+This author was the lead investigator, responsible for all major areas of MRI data collection, analysis, manuscript composition. 
 Dr. Baker initially approached us with the biological need to assess tumour hypoxia non-invasively using MRI and this prompted the lab delving into oxygen enhanced MRI; completed the immunohistochemistry staining and analysis for this project.
 Dr. Reinsberg was the supervisory author on this project and was involved throughout the project in concept formation and manuscript composition; he also came up with the initial idea to apply un-supervised machine learning techniques to our data. 
 Both Drs. Baker and Reinsberg were instrumental in editing of the manuscript and providing guidance on data presentation, visualization.
@@ -40,15 +77,16 @@ Dr. Martin McKeown provided assistance in understanding the utility of \ac{ICA} 
 Dr. Alastair Kyle undertook foundational work by designing and building the microscope and histology acquisition system. 
 All experiments presented here were approved by the University of British Columbia (UBC) Animal Care Committee (ACC).
 
-\subsubsection{Validating dynamic Oxygen Enhanced MRI (Chapter~\ref{ch:oemri2})}
+\subsubsection{Chapter~\ref{ch:oemri2} - \nameref{ch:oemri2}}
 Sections \ref{sec:rangeModels},\ref{sec:histoSections} have also been published as part of the first OE-MRI manuscript~\cite{Moosvi:2018ca}.
-Sections \ref{sec:lognormalfitting_theory}, \ref{sec:lognormalfitting_methods}, and \ref{sec:lognormalfitting_results} pertain to work that was completed after the first publication and will be combined with the work in Chapter~\ref{ch:oemri3} for a new manuscript to be submitted to \textit{NMR in Biomedicine} with me as lead author.
-The remaining sections of this chapter are unpublished and will likely not be published due to their ``QA/QI'' (quality assurance and improvement) nature.
+Sections \ref{sec:lognormalfitting_theory}, \ref{sec:lognormalfitting_methods}, and \ref{sec:lognormalfitting_results} pertain to work that was completed after the first publication and will be combined with the work in Chapter~\ref{ch:oemri3} for a new manuscript to be submitted to \textit{NMR in Biomedicine} with this author as principal author.
+The remaining sections of this chapter are unpublished and will remain so due to their ``QA/QI'' (quality assurance and improvement) nature.
 
-\subsubsection{Applying dynamic Oxygen Enhanced MRI (Chapter~\ref{ch:oemri3})}
+\subsubsection{Chapter~\ref{ch:oemri3} - \nameref{ch:oemri3}}
+
 This work was done in collaboration with Dr. Baker.
 I was responsible for all aspects of MRI data collection, analysis, interpretation, manuscript composition. 
-It was Dr. Baker's hypothesis that dOE-MRI could be used to assess tumour oxygenation after modulating it with an antiangiogenic compound. 
+It was Dr. Baker's hypothesis that dOE-MRI could be used to assess tumour oxygenation after modulating it with an anti-angiogenic compound. 
 Dr. Baker processed the immunohistochemistry staining, provided histological images, proposed the drug as well as its mechanism of action, and we collaboratively designed the experiments. 
 Dr. Reinsberg was the supervisory author on this project and was involved throughout the project in concept formation and manuscript composition. 
 Both Drs. Baker and Reinsberg were instrumental in editing of the manuscript and providing guidance on data presentation, visualization.

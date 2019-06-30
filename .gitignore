@@ -17,5 +17,5 @@
 *.dblite
 *~
 diss.pdf
-*.gz
+*.synctex.gz
 

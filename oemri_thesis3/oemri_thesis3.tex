@@ -4,6 +4,11 @@
 \chapter{Applications of oxygen enhanced MRI}
 \label{ch:oemri3}
 
+\section{Preface}
+
+A new term has been introduced in this chapter to compare what has previously been referred to as ``dOE-MRI values''.
+The normalized component weighting factor value is now shortened to be \acs{NCWF}.
+
 % ======================================================================
 \section{Introduction}
 % ======================================================================
@@ -15,7 +20,21 @@ Briefly, oxygenation can be assessed \emph{in vivo} by administering a simple ga
 Various flavours of oxygen-enhanced MRI (OE-MRI) have been proposed but all essentially leverage the paramagnetic properties of inhaled oxygen.
 White et al. has shown that OE-MRI may be very relevant in developing prognostic factors to predict tumour response to hypofractionation by stratifying tumours that may benefit from oxygen breathing during irradiation~\cite{White:2016fz}.
 In this study, we apply \ac{dOE-MRI} to mice bearing tumour xenografts to assess the effect of a common antiangiogenic agent.
-We hypothesized that \ac{dOE-MRI} with group\ac{ICA} can detect VEGF ablation-induced changes to oxygenation of SCCVII tumours 48 hours following treatment.
+We hypothesized that \ac{dOE-MRI} with group\ac{ICA} can detect \acs{VEGF} ablation-induced changes to oxygenation of SCCVII tumours 48 hours following treatment.
+
+\subsection{VEGF inhibition and Bevacizumab}
+
+Vascular endothelial growth factor (\acs{VEGF} is a key regulator of angiogenesis as the \acs{VEGF} molecule constitutes a rate-limiting step in normal and pathological growth of blood vessels.
+Bevacizumab is a monocolonal antibody that binds \acs{VEGF} and inhibits growth of blood vessels~\cite{Ferrara:2004fa} and inhibits tumour growth.
+It is marketed clinically under the name Avastin$^{\tiny{\textcopyright}}$ (Genentech) on tumours and its effects and outcomes have been widely reported~\cite{Keating:2014gt, Pavlidis:2013bj, Barnett:2013bt, Kumler:2014gb}.
+Tumour xenografts receiving monocolonal antibodies to VEGF have consistently shown reductions in quantitative perfusion parameters from a variety of non-invasive imaging modalities including dynamic contrast enhanced ultrasound~\cite{Wang:2015bb}, \acs{DCE-MRI}~\cite{OConnor:2009cg}, and micro PET~\cite{Nagengast:2007hx}.
+For \acs{DCE-US}, Wang et al. reported a significant reduction in peak enhancement, area under the curve, relative blood volume, and relative blood flow just 24 hours after a treatment of 10mg/kg of bevacizumab~\cite{Wang:2015bb} .  
+Several DCE-MRI animal and human studies have shown reductions in \acs{K$^{trans}$}, \acs{v$_p$}, and \acs{v$_e$} after administration of antiangiogenic agents, including bevacizumab~\cite{Yang:2018hz}.
+Tumour growth delay data also clearly indicates that tumour growth is slowed after treatment with bevacizumab~\cite{Yang:2018hz} and other similar \acs{VEGF}inhibitors~\cite{OConnor:2012ie}.
+
+It is well established that after treatment with antiangiogenic agents, the normalized vasculature is characterized by a reduction in vessel permeability, tortuosity, greater coverage by pericytes and a more normal basement membrane~\cite{Jain:2005gk}. 
+These morphological changes often result in functional changes as well including decreased interstitial fluid pressure, increased tumour oxygenation, and improved delivery of nutrients (and drugs)~\cite{Jain:2005gk}.
+In this study, we present an exciting application of our non-invasive imaging-based technique with no requirement for an exogenous contrast agent to assess tumour oxygenation before and after treatment with Bevacizumab.
 
 % ======================================================================
 \section{Methods}
@@ -55,14 +74,14 @@ The number of independent components for each imaging session was chosen by the 
 The \ac{dOE-MRI} maps were obtained by dividing the \ac{ICA} weighting-factor maps by the mean signal-intensity maps to obtain a spatial map for the strength of a particular voxel's contribution to the component of interest.
 In these \ac{dOE-MRI} maps, voxels are coloured to indicate the amount by which a given pixel intensity time course is modulated by the oxygen-related component. 
 Final normalized \ac{dOE-MRI} maps were obtained by dividing each pixel of the component map for each animal with the mean signal-intensity over time of the corresponding pixel in the \ac{dOE-MRI} scan. 
-Mean values are reported as a marker for tumour oxygenation with high values indicating increased oxygenation while negative values suggest decreased oxygenation or increased levels of hypoxia. 
+Mean normalized component weighting factor (\acs{NCWF}) are reported as a marker for tumour oxygenation with high values indicating increased oxygenation while negative values suggest decreased oxygenation or increased levels of hypoxia. 
 Mann-WhitneyU parametric t-tests are used to assess the difference between experimental groups and Hedge's g was calculated to determine effect size when the t-test was significant (p$<$0.05).
 The green-white-purple colour spectrum depicts the degree to which voxels respond to the cycled gas challenge.
-Purple indicates O$_2$-positive voxels whose time course exhibits a higher and more positive contribution from the corresponding \ac{ICA} component, representing an increase in T$_1$W signal intensity in response to the supplied 100 \% oxygen, and corresponding to areas with excess dissolved oxygen. 
+Purple indicates O$_2$-positive voxels whose time course exhibits a higher and more positive contribution from the corresponding \ac{ICA} component, representing an increase in T$_1$W signal intensity in response to the supplied 100 \% oxygen, and corresponding to areas with excess dissolved oxygen.
 O$_2$-negative voxels that show a decrease in T$_1$W signal intensity with a negative contribution from the corresponding \ac{ICA} component under 100 \% oxygen breathing are depicted as green. 
 Regions whose T$_1$W signal intensity time courses responds only weakly or not at all to the gas challenge are shown in white hues.
 A feature of Fast\ac{ICA} is that the norm of each component is normalized to 1 ($||c_i||=1, \forall I$) and the corresponding weighting factor map carries the scaling factor.
-To compare \ac{dOE-MRI} maps between mice with different temporal resolutions, a scaling factor was applied (see section~\ref{res1} and the Appendix).
+To compare \ac{dOE-MRI} maps between mice with different temporal resolutions, a scaling factor was applied (see section~\ref{res1} and the Appendix)~\todo{This needs to be fixed}.
 
 \subsection{Experiment Summaries}
 General methods common to both experiments have been described above, below are implementation details for each of the two separate experiments presented in this study.
@@ -72,12 +91,12 @@ General methods common to both experiments have been described above, below are 
 
 \noindent\textbf{MRI}: Axial \ac{dOE-MRI} scans were acquired with 90 repetitions using a 2D FLASH based sequence with TE/TR=2.67/133 ms, flip angle $\alpha$=40$^\circ$, 16 slices each 1mm thick, FOV of 3.84cm x 2.16 cm, encoding matrix of 128x72, and a temporal resolution of 9.6s for a total scan time of about 14 minutes.
 
-\subsubsection{Experiment 2: Assessing oxygenation changes in intramuscular and subcutaneous tumours Anti-VEGF ablation therapy in IM vs. SC tumours}
+\subsubsection{Experiment 2: Assessing oxygenation changes in intramuscular and subcutaneous tumours Anti-VEGF ablation therapy in \acs{IM} vs. \acs{SC} tumours}
 \noindent\textbf{Animals}: Thirteen (13) mice were used in this experiment. 
 3 mice were implanted with SCCVII in the dorsal subcutaneous (SC) region.
 10 mice were implanted in both the dorsal subcutaneous (SC) as well as in the hind limb intramuscular (IM) region.
-To account for the accelerated rate of growth for tumours implanted intramuscularly, one-fifth of the cells were implanted IM (1x10$^5$ cells in 50$\mu$l serum-free media).
-Separate ROIs were drawn on the T$_2$W images to outline both the SC and IM tumours.
+To account for the accelerated rate of growth for tumours implanted intramuscularly, one-fifth of the cells were implanted \acs{IM} (1x10$^5$ cells in 50$\mu$l serum-free media).
+Separate ROIs were drawn on the T$_2$W images to outline both the \acs{SC} and \acs{IM} tumours.
 5 mice were treated with 5mg/kg B20 24 hours prior to imaging and 8 were untreated controls.\todo[backgroundcolor=green]{24h treatment group} 
 
 \noindent\textbf{MRI}: Coronal images were acquired to enable simultaneous imaging of both tumours in the same field of view.
@@ -101,35 +120,53 @@ Experiment & Mice & TR & Slices & Repetitions (temporal resolution) \\
 \section{Results} 
 % ======================================================================
 
-\subsection{SCCVII tumours treated with B20 are more responsive to oxygen than controls}
+\subsection{Subcutaneously implanted SCCVII tumours treated with B20 are more responsive to oxygen than controls}
 
 Visual inspection of \ac{dOE-MRI} parameter maps in Figure~\ref{dOEMRImaps} show that treatment of SCCVII tumours with the anti-angiogenic agent B20 resulted in an increased oxygenation compared to untreated controls.
-Group differences are shown in Figure~\ref{aarts3boxplot} as a standard box plot; Eight control tumours had a mean normalized component weighting factor value of 0.037$\pm$0.011 and nine treated tumours had a mean of 0.094$\pm$0.037.
-This difference was statistically significantly different (Mann-WhitneyU test, p = 0.0092) and the effect size was large with Hedge's \emph{g}= 1.08.
-Despite the relatively clear group differences, considerable heterogeneity was observed between slices, between mice and within a single slice (Fig.~\ref{dOEMRImaps}, between slices.
-A normalized~\todo[backgroundcolor=green]{still debating between normalized or not} histogram of all voxels within tumour ROIs for all mice is shown in Fig.~\ref{aarts3boxplot}B.
+Tumours in this experiment were treated 48 hours prior to imaging.
+Group differences are shown in Figure~\ref{aarts3boxplot} as a standard box plot; Eight control tumours had a mean \acs{NCWF} value of 0.037$\pm$0.011 and nine treated tumours had a mean of 0.094$\pm$0.037.
+This difference was statistically significantly different (Mann-WhitneyU = 11 , p = 0.0092) and the effect size was large with Hedge's \emph{g}= 1.08.
+Considerable heterogeneity was observed between mice and within a single slice (Fig.~\ref{dOEMRImaps}.
+A histogram of voxels within tumour \acs{ROI}s for all mice is shown in Fig.~\ref{aarts3boxplot}B.
 
 \begin{figure}[htbp]
    \centering
-   \includegraphics[width=\textwidth]{oemri_thesis3/oemri_thesis3-images/1_aarts3_b20_dOEMRI.png} % requires the graphicx package
-   \caption{Normalized weighting factor maps obtained from \ac{ICA} (\ac{dOE-MRI} maps) are shown for control tumours as well as those treated with 5mg/kg B20 and imaged 48 hours later.
+   \includegraphics[width=\textwidth]{oemri_thesis3/oemri_thesis3-images/1_aarts3_b20_dOEMRI.pdf} % requires the graphicx package
+   \caption{A) \acs{NCWF} maps obtained from \ac{ICA} (\ac{dOE-MRI} maps) are shown for control tumours as well as those treated with 5mg/kg B20 and imaged 48 hours later.
    Of the 10-16 slices for each animal, a representative slice was chosen.
    As indicated by the distribution of purple voxels, control tumours show considerably less response to oxygen than the treated tumours.
-   Additionally, regions marked in green are considered to be hypoxic; these regions were not prevalent in the treated tumours.}
+   Additionally, regions marked in green are considered to be hypoxic; these regions were not prevalent in the treated tumours.
+   B) A representative histology slice from a control and a treated tumour is shown stained with pimonidazole (green) and CD31 (purple).}
    \label{dOEMRImaps}
 \end{figure}
 
 \begin{figure}[htbp]
    \centering
    \includegraphics[width=0.7\textwidth]{oemri_thesis3/oemri_thesis3-images/2_aarts3_b20_boxplot_dOEMRI.png} % requires the graphicx package
-   \caption{A) Group differences of the normalized mean component weighting factors from \ac{dOE-MRI} are shown in a box plot.
-   Each dot on the boxplot indicates the mean value of each mouse with the controls in blue and the treated in green.
+   \caption{A) Group differences of the normalized mean \acs{NCWF} are shown in a boxplot.
+   Each dot represents the mean value of a mouse with the controls in blue and treated in green.
    The differences are statistically significantly different (p=0.0092) with a large effect size (Hedge's g = 1.08).
-   B) Density distributions of all voxels shows treated tumours shifting towards increased responsiveness to delivered oxygen (higher component weighting factor).}
+   B) Density distributions of all voxels shows treated tumours shifting towards increased responsiveness to delivered oxygen (higher \acs{NCWF}).}
    \label{aarts3boxplot}
 \end{figure}
 
-\subsection{SCCVII tumours implanted intramuscularly exhibit features different from those implanted subcutaneously}
+\subsection{\acs{IM} tumours have a higher baseline oxygenation level than \acs{SC} tumours from the same cell line}
+
+Tumours implanted at the \acs{IM} site received only 20\% of the cells compared to the subcutaneous tumours to account for faster growth of \acs{IM} tumours.
+Figure~\ref{tumourVolumes} shows no statistically significant difference in tumour volumes for any of the groups, control or treated, \acs{IM} or \acs{SC}. 
+Across 10 animals and 23 tumours in total, the mean across all groups was $V = 424 \pm 41 mm^3$ (mean $\pm$ sem). 
+Histological sections of the \acs{IM} and \acs{SC} tumours show the microenvironments to be morphologically distinct (figure~\ref{imsc}).\todo{add a couple of sentences about differences in morphology}.
+
+\begin{figure}[htbp]
+   \centering
+   \includegraphics[width=\textwidth]{oemri_thesis3/oemri_thesis3-images/6_oep8_tumourVolumes.png} % requires the graphicx package
+   \caption{Calculated tumour volumes from each of the 4 groups is shown. There were no statistically significant differences in tumour volumes amongst any of the groups.}
+   \label{tumourVolumes}
+\end{figure}
+
+\ac{dOE-MRI} was applied to mice bearing both \acs{SC} and \acs{IM} tumours to evaluate whether tumour implant site affects baseline oxygenation. 
+As shown in figure~\ref{OEP8boxplot}, baseline \acs{NCWF} values in \acs{IM} tumours were significantly higher for \acs{IM} tumours compared to \acs{SC} tumours (MannWhitney U = 1.0, p = 0.003).
+The effect size was large with Hedge's \emph{g}= 1.38.
 
 \begin{figure}[htbp]
    \centering
@@ -138,115 +175,92 @@ A normalized~\todo[backgroundcolor=green]{still debating between normalized or n
    \label{imsc}
 \end{figure}
 
-The location of tumour cell implants in a mouse has a large bearing on the microenvironment of the resulting  xenograft, as access to surrounding normal tissue vasculature, and the overall growth environment plays a large role in tumour progression [refs]~\todo[backgroundcolor=green]{need refs here}. 
-For the same concentration of cells implanted, IM tumours typically~\todo[backgroundcolor=green]{Question about this posed in Mattermost: http://bit.ly/2S79mKm} grow much faster,~\todo[backgroundcolor=green]{You'd expect there'd be larger too but the controls are actually smaller than SC controls according to number of MR voxels. Fewer cells were implanted in the IM location?} have a more stable vascular architecture, less hypoxia (pimo staining), and increased vessel density (CD31 \%).
-Fig.~\ref{imsc} highlights some of these differences in representative SCCVII  tumours implanted SC and IM. 
-To evaluate whether oxygen responsiveness is altered as a consequence of these features, \ac{dOE-MRI} was employed in mice bearing both SC and IM tumours.
-Untreated mice with IM tumours were statistically significantly (Mann-WhitneyU test, p = 0.003) more responsive to oxygen compared to the subcutaneous tumours in the same mice (Fig.~\ref{OEP8boxplot}) and the effect size was moderate with Hedge's \emph{g}= 0.44.
+\subsection{Effects of B20 are dependent on the tumour microenvironment and baseline oxygenation}
 
-\subsection{IM tumours are not more responsiveness to oxygen after B20 treatment}
+We investigated whether the effects of antiangiogenic agents are dependent on different tumour microenvironments, mice were implanted with both \acs{IM} and \acs{SC} tumours. 
+Tumours in this experiment were treated 24 hours prior to imaging.
+To ensure the \acs{SC} tumours from mice with a double implant were similar to mice with only a single implant, three mice were implanted only with subcutaneous tumours.
+No differences were found (data not shown), so the \acs{SC} tumours from this experiment were pooled together.
 
-Mean normalized component weighting factors from B20-treated IM tumours was 0.137$\pm$0.018, and control IM tumours was 0.146$\pm$0.017 and the groups were not statistically significantly different (Mann-WhitneyU test, p=0.42). 
-Thus, the B20 treatment did not have a measurable effect on improving responsiveness to oxygen in IM tumours with a higher baseline oxygen responsiveness compared to subcutaneous tumours.
-Histological data (Fig.~\ref{allHisto}) also indicates that control IM tumours have significantly less pimonidazole staining compared to SC controls.
-Furthermore, reduction in pimonidazole staining between control and treated IM tumours is much lower than in SC tumours~\todo[backgroundcolor=green]{I should probably do more than a cursory check to make sure single SC tumours were similar to double SC tumours}. 
-This provides clear evidence that the effects of B20 are highly dependent on the tumour microenvironment, which can be appropriately assessed \emph{in vivo} using \ac{dOE-MRI}.
-To ensure the SC tumours from mice with a double implant were similar to mice with only a single implant, three mice were implanted with subcutaneous tumours.
-No differences were found (data not shown), so the SC tumours from this experiment were pooled together.
-There was a statistically significant difference in mean component weighting factors between control (0.073 $\pm$0.009) and B20-treated (0.119 $\pm$0.013) subcutaneous tumours with a moderate effect size: Hedge's \emph{g}=0.44 (Fig.~\ref{OEP8boxplot}).
+When comparing between \acs{SC} baseline and treated groups, there was a statistically significant difference (Mann-Whitney $U = 3.0, p = 0.007$) observed in mean \acs{NCWF} values for control (0.073 $\pm$0.009) vs. B20-treated tumours (0.119 $\pm$0.013) with a large effect size: Hedge's \emph{g}=1.77 (Fig.~\ref{OEP8boxplot}).
+However, no measurable difference in oxygenation was observed for the \acs{IM} tumours after B20 treatment (Mann-WhitneyU = 11.0, p = 0.42).
+Mean \acs{NCWF} from B20-treated \acs{IM} tumours was 0.137$\pm$0.018, and control \acs{IM} tumours was 0.146$\pm$0.017. 
+Histological images (Fig.~\ref{allHisto}) also suggests that control \acs{IM} tumours have significantly less pimonidazole staining compared to \acs{SC} controls.
+Furthermore, reduction in pimonidazole staining between control and treated \acs{IM} tumours is much lower compared to \acs{SC} tumours.
+This provides clear evidence that the effects of B20 are highly dependent on the tumour microenvironment, and \acs{dOE-MRI} is sensitive to these differences.
 
 \begin{figure}[htbp]
    \centering
    \includegraphics[width=\textwidth]{oemri_thesis3/oemri_thesis3-images/4_oep8_IMSC_b20_sanitized_dOEMRI.png} % requires the graphicx package
-   \caption{\textbf{A)} Boxplot with four groups, 5mg/kg B20 treated and control mice with both SC and IM tumours.
-   Differences between control SC and IM tumours, as well as control SC and treated SC tumours are statistically significant (Mann-WhitneyU test; p $<$0.005, marked as **).
-   There was no significantly difference in treated and control IM tumours.
-   \textbf{B)} Voxel density distributions of the normalized component weighting factors for SC (top) and IM (bottom) treated and control tumours.
-   Note the shift of the IM control tumours towards a higher component weighting factor.}
+   \caption{\textbf{A)} Boxplot with four groups, 5mg/kg B20 treated and control mice with both \acs{SC} and \acs{IM} tumours.
+   Differences between control \acs{SC} and \acs{IM} tumours, as well as control \acs{SC} and treated \acs{SC} tumours are statistically significant (Mann-WhitneyU test; p $<$0.005, marked as **).
+   There was no significantly difference in treated and control \acs{IM} tumours.
+   \textbf{B)} Voxel density distributions of \acs{NCWF} for \acs{SC} (top) and \acs{IM} (bottom) treated and control tumours.
+   Density distribution (i.e. normalized histograms) are shown rather than voxel counts due to uneven group size. 
+   Note the shift of the \acs{IM} control tumours towards a higher \acs{NCWF} value .}
    \label{OEP8boxplot}
 \end{figure}
 
 \begin{figure}[htbp]
    \centering
    \includegraphics[width=\textwidth]{oemri_thesis3/oemri_thesis3-images/5_oep8_imsc_histo.png} % requires the graphicx package
-   \caption{Representative histological sections from 16 total tumours of all four groups: 5mg/kg B20 treated and control mice with SC and IM tumours.
+   \caption{Representative histological sections from 16 total tumours of all four groups: 5mg/kg B20 treated and control mice with \acs{SC} and \acs{IM} tumours.
    Hypoxia marker pimonidazole staining is shown in green, and purple indicates the presence of blood vessels stained by CD31.}
    \label{allHisto}
 \end{figure}
-
-% \subsection{Comparing DCE-MRI perfusion patterns with \ac{dOE-MRI} oxygenation patterns}
-
-One SCCVII and one HCT-116 tumour-bearing mouse were catheterized and injected with 30mM solution of Gd-DTPA for DCE-MRI at a rate of 1mL/min using a power injector at a dose of 5$\mu$L/g.
-
-
-\noindent\textbf{Perfusion maps:} Signal intensity timecourse from the DCE-MRI map was first normalized to the mean signal intensity pre-injection.
-Area under the first 60 seconds of the normalized signal intensity enhancement curve after the injection was calculated (IAUC$_{60}$) using the composite Simpson's Rule (\texttt{scipy.integrate.simps}).
-A binary ground-truth perfusion map was constructed by classifying all voxels with IAUC$_{60} > 0$ as perfused and everything else as unperfused.
-
-
-
-
-
-% Where \ac{dOE-MRI} and DCE-MRI scans were acquired in the same SCCVII and HCT-116 tumour-bearing mice,  maps of oxygenation status were compared to IAUC$_{60}$ perfusion maps, as shown in Figure~\ref{fig_perfusion}.
-% Mean IAUC$_{60}$ for the well-perfused SCCVII tumour was 22 $\pm$ 16 \%$\cdot$s and for the comparatively poorly perfused HCT-116 tumour was 7$\pm$ 7 \%$\cdot$s.
-% Well-oxygenated O$_2$-positive regions generally correspond to perfused, high IAUC$_{60}$ areas in both SCCVII and HCT-116 tumours.
-% A large patch of necrosis, as identified in histological section, in the HCT-116 tumour was also extremely poorly perfused; such large patches of necrosis were not present in the SCCVII tumour.
-
-% \begin{figure}[htbp]
-%    \centering
-%    \includegraphics[width=\textwidth]{oemri_thesis3-images/fig_perfusion.eps} % requires the graphicx package
-%    \caption{\ac{dOE-MRI} maps and DCE-MRI IAUC$_{60}$maps and slice-matched histology sections of SCCVII and HCT-116 tumours. Large regions marked as purple in the \ac{dOE-MRI} maps are O$_2$-positive and also correspond to regions that have high IAUC$_{60}$ values (yellow). Green or O$_2$-negative regions from the \ac{dOE-MRI} map are often consistent with unperfused regions in the IAUC$_{60}$ (black), but there are regions of mismatch. Histology images stained with pimonidazole (green) and CD31 (purple) are shown for corresponding sections.
-%    \label{fig_perfusion}}
-% \end{figure}
-
-
-
-\newpage
 
 % ======================================================================
 \section{Discussion}
 % ======================================================================
 
-Bevacizumab is a monocolonal antibody that targets the VEGF receptors on tumours and its effects have been widely reported~\cite{refs}.
-Briefly, tumour xenografts receiving monocolonal antibodies to VEGF have consistently shown reductions in quantitative perfusion parameters from a variety of non-invasive imaging modalities including dynamic contrast enhanced (DCE) ultrasound (US)~\cite{Wang:2015bb}, DCE-MRI~\cite{OConnor:2009cg}, and micro PET~\cite{Nagengast:2007hx}.
-For DCE-US, Wang et al. reported a significant reduction in peak enhancement, area under the curve, relative blood volume, and relative blood flow just 24 hours after a treatment of 10mg/kg of bevacizumab~\cite{Wang:2015bb} .  
-With microPET, -----~\todo[backgroundcolor=green]{get details from nagegast reference}
-Several DCE-MRI animal and human studies have shown reductions in Ktrans, vp, and ve after administration of antiangiogenic agents, including bevacizumab~\cite{mri}. \todo{cite also MR imaging biomarkers evaluating vascular normalization window after anti-vessel treatment}
-Tumour growth delay data also clearly indicates that tumour growth is slowed after treatment with bevacizumab~\cite{growthdelay:junyang} and other similar VEGF inhibitors~\cite{sunitinib}.\todo{This does not sound right, is it really a vegf inhibitor?}
+% Bits and pieces from the latest grant pulled into this first paragraph
+Hypoxic tumour cells may arise due to proliferation of cancer cells outpacing the growth of new vasculature, increasing the separation between blood vessels and forcing cells beyond the diffusion distance of oxygen from the blood supply. 
+An alternative route to hypoxia is the consequence of poor flow, which can result in hypoxic tumour tissue due to depleted oxygen supply in the flowing blood or due to intermittent flow of poorly formed vessels. 
+Tumour microenvironments are dynamic and highly heterogeneous, with variable vascular function and patterns and degrees of hypoxia.
+However, the importance of hypoxia in tumours is well validated and undisputed; a meta-analysis of tumours from multiple origins found a consistent relationship between greater hypoxia in tumours and poorer outcomes with radiotherapy~\cite{Horsman:2012kw}.
+While many techniques exist for measuring hypoxia in tumours, none have become clinical routine mainly owing to their expense, poor sensitivity and specificity, limited availability or their invasive nature~\cite{Colliez:2017fc,Baumann:2016gr}. 
+For example, Eppendorf electrodes are sensitive and specific, and are a gold standard of measuring tissue hypoxia, but they are highly invasive, limited by sampling, and are not widely available. 
+The accelerated radiotherapy, carbogen and nicotinamide (ARCON) trial demonstrated benefit in hypoxic tumours assessed retroactively using pimonidazole labeling of biopsy samples~\cite{Kaanders:2002wl}. 
+However, immunohistochemical analyses of markers of hypoxia such as pimonidazole are invasive and do not sample the entire tumour.
+A more widely applicable hypoxia-measuring tool that overcomes the availability, expense, invasiveness, sensitivity and specificity hurdles would be of high value for stratifying patients in hypoxia-targeted trials, prognostic imaging as well as for monitoring response to treatment. 
 
-\textbf{discuss oxygenation effect of B20 on tumours}
+In this study we have demonstrated the utility of \acs{dOE-MRI} to assess tumour oxygenation changes after administration of B20.
+Though this is not the first report of tumour oxygenation improvements after antiangiogenic drug treatment using MRI methods, we provide clear evidence this change is measurable using only the switching of inhaled gas and no injectable contrast agents.
+Using electron paramagnetic resonance and an injectable paramagnetic tracer (triarylmethyl radical derivatives), Matsumoto et al. mapped increases in the partial pressure of oxygen in tumours after administration of the VEGF inhibiting antiangiogenic agent called Sunitinib.
+Two to four days following antiangiogenic treatment with Sunitinib, they reported a transient improvement in oxygenation~\cite{Matsumoto:2011iv}.
+Lemasson et al. obtained estimates of blood oxygen saturation using an ultrasmall superparamagnetic iron oxide (\acs{USPIO}) contrast agent in a rat gliosarcoma model.
+They reported that after sustained administration (>9 consecutive days) of the maximum dose of Sorafenib, oxygen saturation in treated tumours reduced compared to untreated control tumours~\cite{Lemasson2012-Barbier}.
+In this case, the dose and treatment schedule resulted in excessive pruning of the tumour vasculature to the point where drug and nutrient delivery became limited and tumour oxygenation actually reduced~\cite{Jain:2013jc}.
+In our experiments, with the dose (5 mg/kg) and treatment schedule (single administration 24 or 48h prior to imaging), we expected a vascular normalization effect corresponding to an increase in oxygenation~\cite{Chauhan:2012bm,Jain:2013jc,Huang:2012kn}.
+Despite heterogeneity in amount and levels of oxygen response in the \acs{SC} tumours, we observed an overall increase in oxygenation after administering B20 (figures~\ref{dOEMRImaps},~\ref{aarts3boxplot}, and~\ref{OEP8boxplot}.
+
+We also provided evidence that the location of tumour cell implants has a large impact on the microenvironment of the resulting solid tumour, as access to surrounding normal tissue vasculature, and the overall growth environment plays a large role in tumour progression~\cite{Arjona:2006ch}.
 
 
-\textbf{discuss IM vs. SC tumours}
+For the same concentration of cells implanted, \acs{IM} tumours typically grow much faster, have a more stable vascular architecture, less hypoxia (pimo staining), and increased vessel density (CD31 \%).
+Fig.~\ref{imsc} highlights some of these differences in representative SCCVII  tumours implanted \acs{SC} and \acs{IM}. 
+It was also shown that \acs{dOE-MRI} can assess increased baseline oxygenation in control tumours when the tumour site is changed from the dorsal subcutaneous region to the hind limb.
 
 
-\textbf{}
+Following treatment of \acs{IM} tumours with B20, no change in oxygenation was observed, likely because \acs{IM} tumours were already well-oxygenated. 
+
+
+
+
+
+
+
+
+
+Bevacizumab is an expensive drug with many adverse effects~\cite{Keating:2014gt} so selective targeting of patients that are most likely to benefit from it should improve its cost-effectiveness~\cite{Barnett:2013bt}.
+
+
 
 
 
 
 
 It has also been shown that tumour T1 is reduced following treatment with bevacizumab. 
-However, to our knowledge, this is the first study showing oxygenation changes in tumours non-invasively using MRI. 
-
-
-Sketch of Discussion:
-
-\begin{itemize}
-    \item Start with what's known about the effects of B20 on tumours
-    \item Discuss existing human studies with DCE-MRI parameters talking Ktrans reduction after treatment
-    \item Growth delays clearly show slowdown after B20 treatment, but it takes a few days
-    \item Our data clearly shows an oxygenation improvement after administering B20; normalization hypothesis (cite Rakesh)
-    \item Would be interesting to compare with DCE-MRI parameters and use multi-parametric MRI to try and understand what's going on 
-    \item Interesting that tumour site has such a large bearing on oxygenation, worth considering for future experiments. 
-    \item If the IM tumours were in patients and responded in such a way, one could conceivably not give them the drug which would have no effect and try a different one
-    \item Briefly mention problems with T1weighting which could be a confounding factor
-    \item Imperfect matches with pimonidazole
-\end{itemize}
-
-\subsection{random snippets}
-O$_2$ positive or O$_2$-negative fractions are immune to this phenomenon, information about the level of response can be retained simply by applying the scaling factor when comparing scans at different temporal resolutions
-
 
 % ======================================================================
 \section{Conclusions}

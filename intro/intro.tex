@@ -103,6 +103,65 @@ Talk about relaxivity and tumbling, water protons.
 \end{itemize}
 
 \subsection{Oxygen as a contrast agent}
+	\subsection{Theory}
+
+To explore the mechanism of action for the OE-MRI signal, it is useful to first understand the delivery of oxygen from inspired air to tissues. 
+The primary mode of oxygen delivery to tissue is the haemoglobin (Hb) molecule as it carries and delivers 98\% of the oxygen in the body. 
+Over 250 million Hb molecules are found in a typical red blood cell and each Hb molecule has four binding sites for oxygen molecules. 
+The binding affinity for ${O_2}$ drastically increases for subsequent oxygen molecules that bind to Hb as the conformation of the Hb molecule changes to increase binding affinity for the next oxygen, a phenomenon called cooperativity. 
+Similarly, when the local environment of the Hb molecule changes such that ${O_2}$ needs to be released, the reverse conformational changes occur so a proportionately lower drop in oxygen tension is required to release the next ${O_2}$ molecule. 
+The dissociation of oxygen from haemoglobin molecules is tightly regulated and well described by the oxygen-haemglobin dissociation curve (figure~\ref{HBdis}).
+
+	\begin{figure}
+		\begin{center}
+		\includegraphics[width=\textwidth]{./intro/intro-images/HBdis.png}
+		\caption{Sigmoidal curve illustrating the relationship between the haemoglobin saturation (y-axis) and the oxygen tension (x-axis). Note that the curve is very steep in the middle but it takes a large increase in oxygen tension to bind the last ${O_2}$ and similarly, a large decrease in oxygen tension to release the last  ${O_2}$~\cite{GomezCambronero:2001hu}.}
+		\label{HBdis}
+		\end{center}
+	\end{figure}	
+
+	Next, let's trace the oxygenated blood: upon inspiration of atmospheric air (p$_{O_2}$ = 160 mmHg), gas exchange in the pulmonary capillary beds occurs in the alveoli of the lungs~\ref{mmhg}.
+Incoming venous blood with a low oxygen tension (p$_{O_2}$ = 40 mmHg) is oxygenated as haemoglobin molecules readily bind available oxygen. 
+As the oxygenated blood leaves the alveoli and moves through the systemic arteries, it has an oxygen tension of 100 mmHg. 
+The oxygenated blood then travels from the arteries to the systemic capillary bed, the local oxygen tension drops from 100 to 40 mmHg and the Hb molecule undergoes a structural change releasing a molecule of ${O_2}$ from its first binding site.  
+The second release of the oxygen molecule occurs when the tension drops to 26mmHg~\cite{GomezCambronero:2001hu}. 
+The third and fourth molecules are released with consecutively smaller drops in oxygen tension as low oxygen tension indicates an oxygen starved environment. This important feature of Hb (cooperativity) ensures that small changes in p$_{O_2}$ have the right effect in the right places. 
+For instance, in the lung small changes should not affect the release of ${O_2}$ as tight binding is required so Hb can bind the ${O_2}$ needed to supply all the tissues. 
+Conversely, small changes in p$_{O_2}$ in capillary beds should result in easy release of ${O_2}$ so it can easily diffuse to oxygen-starved tissues. 
+Practically however, it is important to note that Hb molecules never release all four of the bound oxygen.
+
+	\begin{figure}
+		\begin{center}
+		\includegraphics[width=\textwidth]{./intro/intro-images/mmHg.png}
+		\caption{A schematic of the oxygen/Hb transport mechanism through the system blood stream. Photo credit: Pearson Education, Inc. 2013}
+		\label{mmhg}
+		\end{center}
+	\end{figure}
+
+\subsubsection{Origin of the OE-MRI Signal}
+
+Oxygen is a paramagnetic molecule because it has two unpaired electrons so it is widely assumed that the dominating effect in the OE-MRI signal is a T$_1$ decrease after concentrated oxygen gas (100\% O$_2$) is breathed in~\cite{OConnor:2016ee,Linnik:2014hf}. 
+The excess oxygen travels through the blood stream dissolved in plasma and diffuses through the vessel walls and dissolves in interstitial tissue fluid (figure~\ref{oemri}).
+The net increase in dissolved oxygen results in a dramatic and measurable decrease in T$_1$. 
+This change is reversed soon after the patient is switched back to breathing atmospheric air as excess oxygen is expelled or metabolized. 
+In tumour regions that are perfused (i.e regions that already have a high Hb-O saturation) will see a measurable decrease in T$_1$. 
+The perfused regions that do not show a decrease in T$_1$ must therefore be hypoxic~\cite{OConnor:2016ee}. 
+Importantly, OE-MRI does not yield any information about unperfused regions and in that region, there are likely to be pockets of viable (but hypoxic) tissue.
+
+The oxygen status of healthy tissue is fairly well regulated in normal tissue and every cell in the body is at most 150$\mu$m away from a blood vessel. 
+In tumours however, the vascular network is chaotic and the growth patterns of vessels are abnormal leading to a defective and leaky endothelium~\cite{McDonald:2002}. 
+Irregular diameters of tumour vessels, abnormal branching patterns and leaky vessel walls all contribute to an increase in vessel permeability and pockets of hypoxic tissue. 
+Unfortunately in hypoxic tissue the oxygen status cannot be well characterized as many factors can influence the oxygen dissociation curve including temperature, pH, and carbon dioxide concentration - all factors that persist unregulated in tumour hypoxic tissue. 
+Furthermore, these hypoxic regions are heterogeneous, transient, and drastically differ between tumour models. 
+Thanks to some excellent work with spectral imaging using an implanted window chamber in mice, it is known that upon breathing 100\% oxygen, the Hb saturation in the tumour vascular network increases from 20-30\% up to 70-80\% while the Hb saturation in the normal vascular network does not change appreciably~\cite{Sorg:2008eg}.
+
+	\begin{figure}
+		\begin{center}
+		\includegraphics[width=\textwidth]{./intro/intro-images/oemriDark.pdf}
+		\caption{A schematic representation of the origin of the OEMRI effect. In normoxic tissue, Hb is almost fully saturated and any excess breathed ${O_2}$ cannot bind to the Hb molecule. Consequently, ${O_2}$ dissolves in the blood plasma and as the excess oxygen diffuses out into the tissue, it also dissolves in the interstitial tissue fluid resulting in a net T$_1$ decrease. It is hypothesized that in the hypoxic tissue, Hb is not fully saturated with oxygen due to increased tissue demands and/or a poorly organized vascular network. The excess breathed oxygen in this case binds to the Hb molecule and does \textbf{not} dissolve in the plasma leading to no change in T$_1$.}
+		\label{oemri}
+		\end{center}
+	\end{figure}
 
 \section{Thesis structure}
 Ikljkl

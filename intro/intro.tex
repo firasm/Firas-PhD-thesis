@@ -55,7 +55,7 @@ Poor perfusion in the tumour due to a disorganized vascular network impairs the 
 %\begin{wrapfigure}{L}{0.65\textwidth} 
 \begin{figure}  
  \begin{center}  
- \includegraphics[width=4in]{intro/./intro-images/tumourVasculature.pdf}
+ \includegraphics[width=4in]{intro/intro-images/tumourVasculature.pdf}
  \caption{Schematic of the normal tissue (left) and tumour (right) vasculature network. 
  Note the hierarchical structure of oxygenated blood (red) passing through the arteries, arterioles, and deoxygenated blood leaving via the venules, veins. 
  In tumours, this structure is severely compromised and often, no clear flow patterns can be distinguished with many vessels ending in dead ends or looping back onto feeding vessels.}
@@ -82,6 +82,147 @@ MRI can also be used to measure additional information such as diffusion, tissue
 In this thesis, several techniques will be explored in a bid to improve our understanding of the tumour microenvironment.
 
 \section{Magnetic Resonance Imaging}
+
+%%%%%%%%%%%%%%%%%%%%%
+
+The phenomenon of nuclear magnetic resonance arises in atoms with an odd number of protons and/or an odd number of neutrons. 
+In biological specimens, water is the most abundant molecule in the body and the hydrogen atom in water, carbon and many other sources contribute to the overall signal. 
+
+Other MR-active atoms include $^{19}$F, $^{23}$Na and $^{31}$P. 
+These atoms possess a property known as spin angular momentum (a quantum-relativistic phenomenon), which arises from the odd number of protons and/or neutrons. 
+An ensemble population of atoms possessing angular momentum are referred to as a population of spins. 
+In the absence of an external magnetic field, a spin population is expected to point in all  directions and the net magnetic dipole moment sums to zero (figure ~\ref{spinsRest}). 
+If the spin population is exposed to an external magnetic field \textbf{B$_0$}, the spins will precess about \textbf{B$_0$} (Fig.~\ref{spinsB0}) and the nuclei will emit energy at a resonant frequency described by the Larmor equation,
+		
+\begin{equation}
+	\omega = \gamma \textbf{B}
+\end{equation}
+		
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=3in]{chapter1/images/spinsRest.png}
+%	\caption[Spins with no magnetic field]{Spins shown here are at rest with no magnetic field applied, leading to a 0 magnetization. 
+%Image credit: Hanson et al. (\cite{Hanson:2008tp})}
+%	\label{spinsRest}
+%\end{figure}
+
+where $\gamma$ is the gyromagnetic ratio, a known constant characteristic for each nucleus. 
+Despite the introduction of a strong magnetic field, the energies associated with the orientation of individual spins in \textbf{B$_0$} are much smaller than their thermal energies, so the spins only have a slight tendency to point along the direction of the field~\cite{Hanson:2008tp}. 
+Due to the large number of spins the slightly increased tendency of spins to point along the field results in the formation of a longitudinal equilibrium magnetization, \textbf{M} (Fig.~\ref{spinsB0}). 
+\textbf{M} can be decomposed into two components, the transverse component (M$_{xy}$, initially zero) and the longitudinal component (M$_{z}$, initially a constant $M_0$). 
+\textbf{M} is the signal that can be (indirectly) measured in MRI and can be manipulated to generate different contrast between species.
+ 
+The net magnetization vector \textbf{M} arising from spins is many orders of magnitude smaller than the external magnetic field so the MR signal cannot be measured when it is aligned with the external field. 
+Application of an RF pulse \textbf{B$_1$} can be interpreted as a torque applied to \textbf{M}, causing it to `tip' down into the transverse plane. 
+In the transverse plane, interacting spins exchange energy with both the surrounding spins, as well as the surrounding environment (lattice), and \textbf{M} relaxes back to its equilibrium value. 
+Relaxation of the longitudinal component (also called spin-lattice relaxation) of \textbf{M$_0$} from 0 back to the equilibrium value is characterized by the time T$_1$,
+
+\begin{equation}
+	M_z = M_z (1-e^{-t/T_1})
+	\label{T1}
+\end{equation}
+		
+		Similarly, decay of \textbf{M$_{xy}$} from \textbf{M$_0$} to 0 is characterized by the time T$_2$ (also called spin-spin relaxation).
+		
+\begin{equation}
+		M_{xy} = M_0 e^{-t/T_2}
+		\label{T2}
+\end{equation}
+			
+%	\begin{figure}
+%	\centering
+%	\includegraphics[width=3in]{chapter1/images/spinsB0.png}
+%	\caption[Spins in a magnetic field]{In the presence of a magnetic field B$_0$, a longitudinal magnetization forms (vertical arrow) as the spin distribution is skewed slightly towards the direction of the magnetic field. 
+%The net magnetization at equilibrium is stationary even though individual spins are precessing around B$_0$. 
+%Image credit: Hanson et al. 
+%(\cite{Hanson:2008tp})}
+%	\label{spinsB0}
+%\end{figure}
+	
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=3in]{chapter1/images/spinsB0B1.png}
+%	\caption[Spins getting tipped with an RF pulse]{The net magnetization vector M$_0$ is tipped to the transverse axis with an RF pulse so the signal can be measured. 
+%Image credit: Hanson et al. 
+%(\cite{Hanson:2008tp})}
+%	\label{spinsB0B1}
+%\end{figure}
+
+Signal detection in MRI takes advantage of several principles from electromagnetism: a rotating magnetic moment generates a rotating magnetic field, which is associated with an electric field. 
+If a wire coil is placed near the sample, then the electric field induces current in the wire, which can be measured as a voltage. 
+As the spins lose coherence, the rotating magnetic moment decreases in amplitude and the induced current also decays. 
+The decaying signal is referred to as a free induction decay (FID) and is refocused using gradients and pulses to generate measurable echoes, which then are used to form images.
+
+At a particular magnetic field, T$_1$ and T$_2$ values are intrinsic to each tissue type and depend on local environmental factors such as temperature, proton concentration, and molecular mobility. 
+Differences in T$_1$ and T$_2$ values are used to generate contrast between different tissues. 
+For example at 3T, brain white matter has a T$_1$ of 1084ms and grey matter has a T$_1$ of 1820 ms~\cite{Stanisz:2005fe}. 
+In a T$_1$ weighted image of the brain, imaging parameters are selected such that the T$_1$ recovery curves of the white matter and grey matter are maximally separated and the T$_1$ decay curves are minimally separated. 
+The resulting image will distinguish white and grey matter based on their respective T$_1$s, with white matter hyper-intense and grey matter hypo-intense. 
+On the other hand, in a T$_2$ weighted image of the brain, white matter is hypo-intense and grey-matter is hyper-intense as white matter T$_2$ decays faster (69ms) than grey matter T$_2$ (99ms). 
+Contrast agents in MRI are typically T$_1$ shortening and are designed to increase T$_1$ contrast.
+
+\subsubsection{Dynamic contrast enhanced MRI (\acs{DCE-MRI})}
+
+Tracer kinetic models are often applied to \acs{DCE-MRI} data to extract physiologically relevant information about the microcirculation. 
+\acs{DCE-MRI} is frequently used in the clinic to quantitatively asses the kinetics of a contrast agent bolus passing through the body. 
+The presence of this agent, typically a paramagnetic species such as Gadolinium, results in a decrease of the longitudinal relaxation time (T$_1$) proportional to the contrast agent concentration. 
+In a T$_1$ weighted image then, presence of a Gadolinium-based agent (for e.g., Gd-DTPA) yields an increase in signal intensity. 
+
+Gd-DTPA is a small molecule that readily traverses the endothelium but not the cell membrane~\cite{WalkerSamuel:2006ch}. 
+This property provides a mechanism by which the dynamics of vascular leakiness (exchange between capillary bed and the tissue) can be evaluated. 
+Choosing a kinetic model to fit the data requires some prior knowledge about the organ or system in question. 
+For instance, the presence of the blood brain barrier in the brain dramatically alters the contrast agent kinetics. 
+Similarly, in leaky tumours the extravascular contrast agents typically used in \acs{DCE-MRI} leak out (and back in) of vasculature considerably faster than other tissues. 
+Sourbron et al. indicate that choice of a tracer kinetic model should provide a link between relevant physiological parameters and measured data~\cite{Sourbron:2011ce}. 
+A number of models have been proposed and the most general of these is referred to as the standard two compartment exchange model (2CXM)~\cite{Tofts:1999we} summarized in Fig.~\ref{2CXM}.
+
+\begin{figure}[htbp]
+   \centering
+   \includegraphics[width=\textwidth]{intro/intro-images/2CXM.pdf}
+   \caption[Two compartment exchange model]{Graphical description of the two compartment exchange model. 
+An arterial input function (\acs{AIF}) governs the introduction of the tracer in the vascular compartment via a bolus intravenous injection. 
+The two transfer constants - \acs{K$^{trans}$} and \acs{k$_{ep}$} -describe the rate at which the tracer is exiting and re-entering, respectively, the vascular component.}
+   \label{2CXM}
+\end{figure}
+
+A principal assumption of the 2CXM is that the system of interest can be modelled as two compartments, the vasculature (blood plasma) and the extravascular extracellular space (EES). 
+A bolus intravenous injection delivers the contrast agent (or tracer) and is characterized by the arterial input function (\acs{AIF}). 
+This input function is used to calculate the tracer concentration in the blood plasma over time. 
+Because the tracer is small, exchange between the two components occurs readily. 
+The rate constant describing the transfer of the tracer from the blood plasma to the EES is termed \acs{K$^{trans}$} and the rate constant in the reverse direction (EES to blood plasma) is referred to as \acs{k$_{ep}$}. 
+\acs{K$^{trans}$} and \acs{k$_{ep}$} are related by the volume of the EES,
+
+\begin{equation}
+k_{e} = K^{trans} / v_{e},
+\label{ke}
+\end{equation}
+
+where v$_{e}$ is the volume of the extravascular extracellular space per unit volume of tissue. 
+The generalized kinetic model of the tracer in the tissue (C$_t$) is given as a differential equation,
+
+\begin{equation}
+\frac{dC_t}{dt} = K^{trans}C_p - k_{ep}C_t,
+\label{2CXMeq}
+\end{equation}
+
+where C$_p$ is the tracer concentration in the blood plasma and C$_t$, \acs{K$^{trans}$}, \acs{k$_{ep}$} are as described above. 
+Solving this differential equation requires an initial condition and the \acs{AIF} provides the tracer concentration at the arrival time, before any exchange in the system occurs (t=0). 
+Thus, modelling of \acs{DCE-MRI} data to produce quantitative and physiologically relevant values of \acs{K$^{trans}$}, \acs{k$_{ep}$} and v$_e$ requires an accurate calculation of the \acs{AIF}. 
+In clinical studies, determining the \acs{AIF} on a per-patient basis is already accepted as a clinical research standard. 
+Direct measurement of the \acs{AIF} is typically performed in an artery within the imaging field of view but such a vessel is not always present and when it is, partial volume, in-flow and signal saturation effects all contribute to confounding \acs{AIF} measurements. 
+Direct measurement of the \acs{AIF} is notoriously difficult in small animals using both invasive techniques (small total blood volume prohibits sampling) and non-invasive methods (requires high temporal and spatial resolution to accurately resolve the \acs{AIF}). 
+Current \acs{AIF} measurement methods include shunting blood from the carotid artery through a receiver coil and then back into the animal~\cite{Simpson:1999vl} and using a separate receiver coil around the chest~\cite{Pickup:2009ce} or tail~\cite{McIntyre:2004eh}. 
+Alternate strategies include using a published population \acs{AIF} from the literature or assuming a mathematical function that models the physiology~\cite{Yankeelov:2006dr}. 
+Unfortunately, these strategies are wrought with pitfalls as the inter-subject variability of the \acs{AIF} may be significant and parameters may vary up to 30\% depending on the selected \acs{AIF}~\cite{Simpson:1999vg}. 
+In particular for pre-clinical studies, published \acs{AIF}s are not representative of all mouse models as considerable physiological changes exist between species~\cite{Simpson:1999vg}. 
+Needless to say, these techniques are all complex, invasive, time consuming and resource intensive and ultimately, add another dimension to the project. 
+In this study, we have chosen a model-free approach to analyzing \acs{DCE-MRI} data. 
+The leading candidate for model-free analysis is the initial area under the enhancement curve (\acs{AUC}). 
+This parameter can be interpreted as a measure of the amount of contrast agent delivered to and retained by the tumour in a specific time period~\cite{Baert:2011uc}. 
+An example of a typical \acs{DCE-MRI} enhancement curve with \acs{AUC}$_{60}$ shaded in red is shown in Fig.~\ref{sampleMRcurve}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{T$_1$}
 \subsection{T$_2^*$}
 
@@ -164,12 +305,17 @@ Thanks to some excellent work with spectral imaging using an implanted window ch
 	\end{figure}
 
 \section{Thesis structure}
-Ikljkl
-\begin{enumerate}
-\item Introduction to Cancer and imaging
-\item MRI and histology of vascular function in xenografts using HPG - using a high MW contrast agent to explore vascular function [New contrast agent using HPG] 
-\item Heterogeneous distribution of trastuzumab in HER2-positive xenografts and metastases: role of the tumour microenvironment [Application of new agent HPG]
-\item Oxygen enhanced MRI - introduction to the technique
-\item Validating dOE-MRI
-\item Applying dOE-MRI
-\end{enumerate}
+
+In Chapter~\ref{ch:hpg} we begin by describing a new macromolecular contrast agent and explore its value in describing the tumour microenvironment.
+A two-parameter linear model was applied to the contrast agent enhancement curve and we obtained measures of vessel permeability and fractional plasma volume.
+These parameters were then used to distinguish between two tumour models.
+In Chapter~\ref{ch:hpg2}, we applied this technique to determine whether molecule size played a role in the distribution of a high molecular weight anti-cancer drug (Trastuzumab).
+Ultimately we showed that neither vessel permeability nor fractional plasma volume corresponded to presence of bound drug (determined via histological staining), suggesting other barriers that limit distribution of Trastuzumab.
+In Chapter~\ref{ch:hpg3} we considered another application of the new contrast agent: can we assess changes in vessel permeability after administering an anti-angiogenic drug?
+We discovered that vessel permeability is indeed reduced after drug treatment but along the way we also showed that histologically, hypoxia dramatically decreased after treatment. 
+This led us along the journey to develop a new method to assess tumour oxygenation~\emph{in vivo} using MRI.
+Chapter~\ref{ch:oemri} outlines the technique and how we used a blind source separation technique to increase sensitivity. 
+We validated the technique in Chapter~\ref{ch:oemri2} with histological staining, and demonstrated utility of a new parameter to separate oxygenation replenishment in different tumour models.
+Finally in Chapter~\ref{ch:oemri3} we showcase a typical application of the technique: detection of tumour oxygenation improvements after administering an anti-angiogenic agent. 
+We also showed that the tumour implant site has a large bearing on the tumour microenviroment, and no oxygenation improvements are observed if the baseline oxygenation is high.
+The thesis concludes with some interesting observations discovered that are worth future exploration and investigation.

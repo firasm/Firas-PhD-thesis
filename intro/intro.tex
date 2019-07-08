@@ -178,59 +178,25 @@ For instance, the blood-brain barrier in the dramatically alters the contrast ag
 Similarly, in leaky tumours the extravascular contrast agents typically used in \acs{DCE-MRI} leak out (and back in) of vasculature considerably faster than in other tissues. 
 Sourbron et al. indicate that choice of a tracer kinetic model should provide a link between relevant physiological parameters and measured data~\cite{Sourbron:2011ce}. 
 
-The most common tracer-kinetics model is the extended Toft's model 
+The most widely used model in \acs{DCE-MRI} is the extended Toft's model, which is valid in highly perfused tissues and weakly vascularized tissues with a well-mixed extravascular extracellular space ($v_e$)~\cite{Sourbron:2013jz}.
+Figure~\ref{XTofts} provides a graphical description of this two compartment model,and its mathematical representation is:
 
+\begin{equation}
+C(t) = v_p \cdot AIF(t) + K^{trans}e^{-t\frac{K^{trans}}{v_e}} * AIF(t)
+\end{equation}
 
-%%%%%%%%%
-A number of models have been proposed and the most general of these is referred to as the standard two compartment exchange model (2CXM)~\cite{Tofts:1999we} summarized in Fig.~\ref{2CXM}.
+where \acs{$v_p$} is the plasma volume, \acs{K$^{trans}$} is the volume transfer constant, and the \acs{AIF}(t) is the arterial input function which needs to be measured independently of the contrast agent kinetics.
+
 
 \begin{figure}[htbp]
    \centering
-   \includegraphics[width=\textwidth]{intro/intro-images/2CXM.pdf}
-   \caption[Two compartment exchange model]{Graphical description of the two compartment exchange model. 
-An arterial input function (\acs{AIF}) governs the introduction of the tracer in the vascular compartment via a bolus intravenous injection. 
-The two transfer constants - \acs{K$^{trans}$} and \acs{k$_{ep}$} -describe the rate at which the tracer is exiting and re-entering, respectively, the vascular component.}
-   \label{2CXM}
+   \includegraphics[width=\textwidth]{intro/intro-images/XTofts.pdf}
+   \caption[Extended Tofts Model]{Graphical description of the Extended Tofts Model. An arterial input function (\acs{AIF}) governs the introduction of the tracer (grey circles) in the vascular compartment (pink) via a bolus injection. Contrast agent molecules exchanges with the extravascular extracellular space ($v_e$, interstitial volume in blue) at a rate given by $PS$, the permeability-surface area product.}
+   \label{XTofts}
 \end{figure}
 
-A principal assumption of the 2CXM is that the system of interest can be modelled as two compartments, the vasculature (blood plasma) and the extravascular extracellular space (EES). 
-A bolus intravenous injection delivers the contrast agent (or tracer) and is characterized by the arterial input function (\acs{AIF}). 
-This input function is used to calculate the tracer concentration in the blood plasma over time. 
-Because the tracer is small, exchange between the two components occurs readily. 
-The rate constant describing the transfer of the tracer from the blood plasma to the EES is termed \acs{K$^{trans}$} and the rate constant in the reverse direction (EES to blood plasma) is referred to as \acs{k$_{ep}$}. 
-\acs{K$^{trans}$} and \acs{k$_{ep}$} are related by the volume of the EES,
-
-\begin{equation}
-k_{e} = K^{trans} / v_{e},
-\label{ke}
-\end{equation}
-
-where v$_{e}$ is the volume of the extravascular extracellular space per unit volume of tissue. 
-The generalized kinetic model of the tracer in the tissue (C$_t$) is given as a differential equation,
-
-\begin{equation}
-\frac{dC_t}{dt} = K^{trans}C_p - k_{ep}C_t,
-\label{2CXMeq}
-\end{equation}
-
-where C$_p$ is the tracer concentration in the blood plasma and C$_t$, \acs{K$^{trans}$}, \acs{k$_{ep}$} are as described above. 
-Solving this differential equation requires an initial condition and the \acs{AIF} provides the tracer concentration at the arrival time, before any exchange in the system occurs (t=0). 
-%%%%%%%
-
-
-Thus, modelling of \acs{DCE-MRI} data to produce quantitative and physiologically relevant values of \acs{K$^{trans}$}, \acs{k$_{ep}$} and v$_e$ requires an accurate calculation of the \acs{AIF}. 
-In clinical studies, determining the \acs{AIF} on a per-patient basis is already accepted as a clinical research standard. 
-Direct measurement of the \acs{AIF} is typically performed in an artery within the imaging field of view but such a vessel is not always present and when it is, partial volume, in-flow and signal saturation effects all contribute to confounding \acs{AIF} measurements. 
-Direct measurement of the \acs{AIF} is notoriously difficult in small animals using both invasive techniques (small total blood volume prohibits sampling) and non-invasive methods (requires high temporal and spatial resolution to accurately resolve the \acs{AIF}). 
-Current \acs{AIF} measurement methods include shunting blood from the carotid artery through a receiver coil and then back into the animal~\cite{Simpson:1999vl} and using a separate receiver coil around the chest~\cite{Pickup:2009ce} or tail~\cite{McIntyre:2004eh}. 
-Alternate strategies include using a published population \acs{AIF} from the literature or assuming a mathematical function that models the physiology~\cite{Yankeelov:2006dr}. 
-Unfortunately, these strategies are wrought with pitfalls as the inter-subject variability of the \acs{AIF} may be significant and parameters may vary up to 30\% depending on the selected \acs{AIF}~\cite{Simpson:1999vg}. 
-In particular for pre-clinical studies, published \acs{AIF}s are not representative of all mouse models as considerable physiological changes exist between species~\cite{Simpson:1999vg}. 
-Needless to say, these techniques are all complex, invasive, time consuming and resource intensive and ultimately, add another dimension to the project. 
-In this study, we have chosen a model-free approach to analyzing \acs{DCE-MRI} data. 
-The leading candidate for model-free analysis is the initial area under the enhancement curve (\acs{AUC}). 
-This parameter can be interpreted as a measure of the amount of contrast agent delivered to and retained by the tumour in a specific time period~\cite{Baert:2011uc}. 
-An example of a typical \acs{DCE-MRI} enhancement curve with \acs{AUC}$_{60}$ shaded in red is shown in Fig.~\ref{sampleMRcurve}.
+Thus, modelling of \acs{DCE-MRI} data to produce quantitative and physiologically relevant values of \acs{K$^{trans}$}, \acs{$v_p$} and \acs{v$_e$} requires an accurate calculation of the \acs{AIF}. 
+In this thesis, \acs{DCE-MRI} modeling using a traditional small molecule agent (\acs{Gd-DTPA} is used only in section~
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 

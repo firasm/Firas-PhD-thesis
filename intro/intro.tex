@@ -90,7 +90,7 @@ The molecular mass of a water molecule (H$_2$O) is approximately 18 g/mol and it
 Moving from macroscopic to microscopic, each molecule of water contains two hydrogen atoms and one oxygen atom.
 Within the nucleus of a hydrogen atom, there is a single proton, resulting in a net positive charge on the atom.
 An intrinsic property of fundamental particles such as the proton and neutron is that they posses spin angular momentum.
-Incidentally, spin is the only quantum mechanics required to understand the vast majority of MR principles~\cite{Hanson:2008il}.
+Incidentally, spin is the only quantum mechanics required to understand the vast majority of MR principles~\cite{Hanson:2008tp}.
 Nuclei ``inherit'' this quantum mechanical property from its constituent subatomic particles - in particular, neutrons and protons.
 The nucleus of a hydrogen atom has an odd number of protons (n=1) so there is a net spin angular momentum.
 This results in the nucleus having an intrinsic magnetic moment arising from the net nuclear spin angular momentum and net charge from the proton.
@@ -143,7 +143,7 @@ Similarly, the transverse magnetization $\mathbf{M_{x,y}}$ decays to 0 through t
 
 Although T$_1$ and T$_2$ values are affected by various factors including field-strength, and local environmental factors such as temperature, proton concentration, and molecular mobility. 
 Differences in T$_1$ and T$_2$ values are used to generate contrast between different tissues. 
-For example at 3T, brain white matter has a T$_1$ of 1084ms and grey matter has a T$_1$ of 1820 ms~\cite{Stanisz:2005fe}.~\todo{maybe add a tumour or normal tissue values here?}
+For example in study conducted with ten volunteers at 1.5T, the spleen ($T_1 = 919$ ms), liver ($T_1 = 616$ ms), muscle ($T_1 = 785$ ms), fat ($T_1 = 239$ ms), and renal cortex ($T_1 = 919$ ms) all had measurably different $T_1$ values~\cite{OConnor:2009ku}.
 Paramagnetic contrast agents are often used to increase the T$_1$ contrast between different species. 
 The following sections outline how dynamic contrast enhanced MRI or \acs{DCE-MRI} is used in the imaging of cancer.
 
@@ -191,44 +191,26 @@ where \acs{$v_p$} is the plasma volume, \acs{K$^{trans}$} is the volume transfer
 \begin{figure}[htbp]
    \centering
    \includegraphics[width=\textwidth]{intro/intro-images/XTofts.pdf}
-   \caption[Extended Tofts Model]{Graphical description of the Extended Tofts Model. An arterial input function (\acs{AIF}) governs the introduction of the tracer (grey circles) in the vascular compartment (pink) via a bolus injection. Contrast agent molecules exchanges with the extravascular extracellular space ($v_e$, interstitial volume in blue) at a rate given by $PS$, the permeability-surface area product.}
+   \caption[Extended Tofts Model]{Graphical description of the Extended Tofts Model. An arterial input function (\acs{AIF}) governs the introduction of the tracer (grey circles) in the vascular compartment (pink) via a bolus injection. Contrast agent molecules exchanges with the extravascular extracellular space (\acs{$v_e$}, interstitial volume in blue) at a rate given by $PS$, the permeability-surface area product.}
    \label{XTofts}
 \end{figure}
 
-Thus, modelling of \acs{DCE-MRI} data to produce quantitative and physiologically relevant values of \acs{K$^{trans}$}, \acs{$v_p$} and \acs{v$_e$} requires an accurate calculation of the \acs{AIF}. 
-In this thesis, \acs{DCE-MRI} modeling using a traditional small molecule agent (\acs{Gd-DTPA} is used only in section~
-
-%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{Contrast mechanisms}
-Split into two groups - there are others, but this is what's relevant for this thesis.
-
-Talk about relaxivity and tumbling, water protons.
-
-\subsubsection{Low-MW Agents}
-\begin{itemize}
-\item Gd-DTPA
-\item Modeling (Tofts)
-\end{itemize}
-
-\subsubsection{High-MW Agents}
-\begin{itemize}
-\item Dextran based agents
-\item Relaxivity
-\end{itemize}
+Thus, modelling of \acs{DCE-MRI} data to produce quantitative and physiologically relevant values of \acs{K$^{trans}$}, \acs{$v_p$} and \acs{$v_e$} requires an accurate calculation of the \acs{AIF}.
+In this thesis, \acs{DCE-MRI} modelling using a traditional small molecule agent (\acs{Gd-DTPA} is used only briefly in Chapter~\ref{ch:HPG} and the \acs{AIF} used in that modelling was measured and published by a former lab member~\cite{Moroz:2013ee}.
+Nevertheless, the concepts and introduction to \acs{DCE-MRI} are relevant for several portions of the thesis. 
 
 \section{Thesis structure}
 
-In Chapter~\ref{ch:hpg} we begin by describing a new macromolecular contrast agent and explore its value in describing the tumour microenvironment.
+In Chapter~\ref{ch:HPG} we begin by describing a new macromolecular contrast agent and explore its value in describing the tumour microenvironment.
 A two-parameter linear model was applied to the contrast agent enhancement curve and we obtained measures of vessel permeability and fractional plasma volume.
 These parameters were then used to distinguish between two tumour models.
-In Chapter~\ref{ch:hpg2}, we applied this technique to determine whether molecule size played a role in the distribution of a high molecular weight anti-cancer drug (Trastuzumab).
+In Chapter~\ref{ch:HPG2}, we applied this technique to determine whether molecule size played a role in the distribution of a high molecular weight anti-cancer drug (Trastuzumab).
 Ultimately we showed that neither vessel permeability nor fractional plasma volume corresponded to presence of bound drug (determined via histological staining), suggesting other barriers that limit distribution of Trastuzumab.
-In Chapter~\ref{ch:hpg3} we considered another application of the new contrast agent: can we assess changes in vessel permeability after administering an anti-angiogenic drug?
+In Chapter~\ref{ch:HPG3} we considered another application of the new contrast agent: can we assess changes in vessel permeability after administering an anti-angiogenic drug?
 We discovered that vessel permeability is indeed reduced after drug treatment but along the way we also showed that histologically, hypoxia dramatically decreased after treatment. 
-This led us along the journey to develop a new method to assess tumour oxygenation~\emph{in vivo} using MRI.
-Chapter~\ref{ch:oemri} outlines the technique and how we used a blind source separation technique to increase sensitivity. 
+This led us along the journey to develop a new method to assess tumour oxygenation~\emph{in vivo} using MRI and a brief interlude is inserted here to provide some more background information about oxygen and related physiology.
+Chapter~\ref{ch:oemri} outlines our technique and describes the use of a blind source separation technique to increase the sensitivity of existing methods. 
 We validated the technique in Chapter~\ref{ch:oemri2} with histological staining, and demonstrated utility of a new parameter to separate oxygenation replenishment in different tumour models.
 Finally in Chapter~\ref{ch:oemri3} we showcase a typical application of the technique: detection of tumour oxygenation improvements after administering an anti-angiogenic agent. 
-We also showed that the tumour implant site has a large bearing on the tumour microenviroment, and no oxygenation improvements are observed if the baseline oxygenation is high.
-The thesis concludes with some interesting observations discovered that are worth future exploration and investigation.
+We also showed that the tumour implant site has a large bearing on the tumour microenvironment, and no oxygenation improvements are observed if the baseline oxygenation is high.
+In Chapter~\ref{ch:futurework} some interesting observations are presented that may be useful starting points for future work in this field.

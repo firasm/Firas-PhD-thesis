@@ -4,6 +4,17 @@
 \chapter{Future Work}
 \label{ch:futurework}
 
+\section{GroupICA}
+
+%%% from ISMRM 2019 Abstract 
+Cohort data for groupICA was constructed by concatenating all 16 slices from the 17 subjects together in the z-dimension. The deflation-based FastICA (python package scikit.sklearn v0.17.1) was used to analyze the data. To ensure the cyclic behaviour of the T1W signal intensity corresponding to the gas challenge appeared in only one component, number of independent components was set to 9. Upon selection of the oxygen enhancing component, reshaping the resultant weighting-factor maps to the original matrix size provided inter-subject comparable data. Final normalized dOE-MRI maps were obtained by dividing each pixel of the component map for each animal with the mean signal-intensity over time of the corresponding pixel in the dOE-MRI scan.
+
+Application of ICA to the spatially concatenated data produced a single oxygen-enhancing component that matched the temporal pattern of the gas cycling paradigm (Figure 1). Corresponding dOE-MRI maps for all mice in a subset of slices are shown in Figure 2.
+
+Calhoun:2009jr
+Calhoun:2001jx
+
+%%% END ISMRM 2019 Abstract 
 \section{Exploring the link between perfusion and oxygenation}
 
 \subsection{Comparing DCE-MRI perfusion patterns with \ac{dOE-MRI} oxygenation patterns}
@@ -30,18 +41,29 @@ A large patch of necrosis, as identified in histological section, in the HCT-116
 
 %%% from the grant
 \todo{this is currently cribbed from the grant, it needs to be DRASTICALLY shortened, and edited for appropriateness, receptiveness, and overall style}
-An alternate approach is to simultaneously acquire R1-weighted and R2*-weighted data to improve specificity of the technique[21]. R2* imaging would utilize the Blood Oxygen Level Dependent (BOLD) effect, which can measure shifts in hemoglobin saturation through changes in R2* and therefore assess tumour perfusion without the need for injectable contrast agents. Applying an oxygen challenge also shifts the haemoglobin saturation and, thus, the R2* signal. A postulated biophysical mechanisms is shown in Appendix Fig A2. The expected behaviour of a joint change in R1 and R2* in response to a gas challenge, and how this can be interpreted to reflect tumour oxygenation is based on data from last year?s work by Little et al.[21] and Waterton et al.[23]. The altered R2* provides a robust measure of areas with functioning vasculature. Subsequently, dOE-MRI maps can be masked using the ?R2* maps to exclude unperfused regions and enable improved SNR for R1-weighted signals, resulting in a completely endogenous technique to assess tumour oxygenation. OE-MRI T1-weighted signal more directly reflects oxygen amounts in plasma and tissues and is more applicable for measuring tumour oxygenation as it relates to radiotherapy.
-Without sacrificing the information obtained from R1-weighted signal intensity in our current work, it is possible to extract both R1-weighted signal intensity and R2* simultaneously using a dynamic, multi-gradient echo in place of a dynamic FLASH sequence. We propose that our cycling gas challenge in combination with ICA improvement to R1-weighted OE-MR imaging may also be applicable to R2*, and we will test them in combination as an approach to improve the specificity of OE-MRI and therefore increase its capacity for clinical application. 
-We propose to further develop dOE-MRI as a biomarker of the tumour microenvironment using simultaneous R1 and R2* imaging: vector-dOE-MRI. This proposal is a logical continuation of the OE-MRI efforts in the Reinsberg and Minchinton labs. The expected outcomes are an important part of a wider hypoxia-targeting effort. A previous grant application with Minchinton as nominated PI has been significantly simplified and re-focussed on the method-development aspect.
+For a variety of reasons, the past 5-10 years have seen a gradual resurgence of oxygen-enhanced MRI and renewed interest to refine and better understand the mechanism of action.
+One important strategy to elucidate the mechanism of oxygen as a contrast agent is to rely on the \acs{BOLD} effect. 
+Little et al. have recently shown that simultaneous acquisition of T$_1$ and T$_2^*$ images improves the specificity of oxygen enhanced MRI~\cite{Little:2018iu}.
+Here we outline how our technique using \acs{ICA} can be expanded to include T$_2^*$ imaging, and what the additional information will be used for.
 
-%% from approaches & methods
+T$_2^*$ imaging would utilize the Blood Oxygen Level Dependent (\acs{BOLD}) effect, which can measure shifts in hemoglobin saturation through changes in T$_2^*$ and therefore assess tumour perfusion without the need for injectable contrast agents. 
+Applying an oxygen challenge also shifts the haemoglobin saturation and, thus, the T$_2^*$ signal. 
+A postulated biophysical mechanisms is shown in Appendix Fig A2\todo{figure out if this is needed}. 
+The expected behaviour of a joint change in T$_1$ and T$_2^*$ in response to a gas challenge, and how this can be interpreted to reflect tumour oxygenation is based on data from last year?s work by Little et al.~\cite{Little:2018iu} and Waterton et al.~\cite{OConnor:2019fc}. 
 
-In achieving Objective 1 we will prove that (hypothesis 1) 	our current ICA approach to extract R1-dOE-MRI can be applied to oxygenation-induced changes to R2* from the multi-gradient echo.
+The altered T$_2^*$ provides a robust measure of areas with functioning vasculature. 
+Subsequently, \acs{dOE-MRI} maps can be masked using the $\Delta$T$_2^*$ maps to exclude unperfused regions and enable improved \acs{SNR} for T$_1$-weighted signals, resulting in a completely endogenous technique to assess tumour oxygenation. 
+OE-MRI T$_1$-weighted signal more directly reflects oxygen amounts in plasma and tissues and is more applicable for measuring tumour oxygenation as it relates to radiotherapy.
+Without sacrificing the information obtained from T$_1$-weighted signal intensity in our current work, it is possible to extract both T$_1$-weighted signal intensity and T$_2^*$ simultaneously using a dynamic, multi-gradient echo in place of a dynamic FLASH sequence. 
+We anticipate that our cycling gas challenge in combination with \acs{ICA} improvement to T$_1$-weighted oxygen enhanced imaging will also be applicable to T$_2^*$.
 
-In preliminary work we have established that a multi-gradient echo (MGE) sequence is ideal to extend our current R1w dOE-MRI technique [3] to also acquire dynamic R2* data: Initial echoes from an MGE sequence are  R1w and as the echo time increases, the images become more R2*W. The R1w-dOE-MRI map will be calculated from the signal
-intensity of the first gradient echo image (minimal echo time TE=2.25 ms). The R2*- dOE-MRI map will be created by applying ICA to the mono-exponentially fitted multi-gradient echo data at each repetition. Fig 4 outlines our approach to obtain R1- and R2*-based dOE-MRI maps from a single multi-gradient echo sequence. Our current experience shows that while the temporal resolution of the multi-gradient echo technique is lower, the data quality of the R1w-dOE-MRI map is not compromised until subsampling exceeds six times the original temporal resolution when compared to that obtained with a FLASH sequence. Details on the impact of lower time resolution are in Appendix Fig A3.
-To test our hypothesis we will conduct an imaging study that pits our established FLASH acquisition and ICA technique against the new approach of multi-gradient echoes in a panel of tumour xenograft models exhibiting varying patterns of hypoxia and perfusion. Initially, a Look-Locker sequence to measure a baseline R1 map will be acquired (TE/TR=3.0ms/10000ms, individual inversion time=157ms repeated in 25 frames, geometry matched to subsequent image sequences: matrix=128x80, FoV 3.84cmx2.40cm). Each scan will be for a 30 min O2 challenge. For the first 15 minutes, data will be acquired using the standard R1w-dOE-MRI sequence (TE/TR = 2.67 ms/66.7 ms, ?=40°, temporal resolution of 4.3 s with 210 repetitions for a total scan time of about 15 minutes). Then we will acquire images using the multi-gradient echo sequence (first TE=2.25ms with eleven additional echoes every 2.5ms, TR=35ms, ?=15°, 8 slices, matrix 28x64, temporal resolution=18s, 50 repetitions for total scan time of 15min). We expect no difference between the independently acquired R1-dOE-MRI maps (FLASH vs. MGE) beyond the variability that can be observed in the temporal fluctuation during the 15 minutes experiment. For this comparison of FLASH- and MGE-derived R1-dOE-MRI map, we will follow our stability studies that were part of our initial development of the FLASH-based OE-MRI[3].
-The numerical data processing required for ICA will be carried out using a suite of in?house software we developed using the python machine learning library scikit?learn[24], specifically sklearn.decomposition.FastICA. Since ICA is a blind-source estimation and no input of an expected response functions is needed, one can take the successful extraction of a component that is temporally synchronized with the oxygen challenge as proof that tissue R2* is responding to the systemic administration of oxygen. While this provides a test for the hypothesis under Objective 1, physiological relevance will be addressed under Objective 3 using comparison with perfusion assessment and histological information.
+In preliminary work we established that a multi-gradient echo (\acs{MGE}) sequence is ideal to extend our current T$_1$ based dOE-MRI technique to also acquire dynamic T$_2^*$ weighted data.
+This is because initial echoes from an \acs{MGE} sequence are T$_1$ weighted and as the echo time increases, the images become more T$_2^*$ weighted. 
+The R1w-dOE-MRI map will be calculated from the signal intensity of the first gradient echo image (minimal echo time TE=2.25 ms). 
+The R2*- dOE-MRI map will be created by applying ICA to the mono-exponentially fitted multi-gradient echo data at each repetition. 
+Figure~\ref{MGE_schematic} outlines our approach to obtain T$_1$- and T$_2^*$-based \acs{dOE-MRI} maps from a single multi-gradient echo sequence. 
+Our current experience shows that while the temporal resolution of the multi-gradient echo technique is lower, the data quality of the R1w-dOE-MRI map is not compromised until subsampling exceeds six times the original temporal resolution when compared to that obtained with a \acs{FLASH} sequence (see Figure~\ref{sec:interleave}).
+Since ICA is a blind-source estimation and no input of an expected response functions is needed, one can take the successful extraction of a component that is temporally synchronized with the oxygen challenge as proof that tissue T$_2^*$ is responding to the systemic administration of oxygen. 
 
 \begin{figure}[htbp]
    \centering

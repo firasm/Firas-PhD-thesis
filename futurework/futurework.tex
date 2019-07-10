@@ -4,17 +4,56 @@
 \chapter{Future Work}
 \label{ch:futurework}
 
+The work presented in this chapter are a collection of preliminary results, alternative analysis methods, and proposed future work. 
+
 \section{GroupICA}
 
-%%% from ISMRM 2019 Abstract 
-Cohort data for groupICA was constructed by concatenating all 16 slices from the 17 subjects together in the z-dimension. The deflation-based FastICA (python package scikit.sklearn v0.17.1) was used to analyze the data. To ensure the cyclic behaviour of the T1W signal intensity corresponding to the gas challenge appeared in only one component, number of independent components was set to 9. Upon selection of the oxygen enhancing component, reshaping the resultant weighting-factor maps to the original matrix size provided inter-subject comparable data. Final normalized dOE-MRI maps were obtained by dividing each pixel of the component map for each animal with the mean signal-intensity over time of the corresponding pixel in the dOE-MRI scan.
+One of the principal limitations of \acs{ICA} is that it ``does not naturally generalize to a method suitable for drawing inferences about groups of subjects''~\cite{Calhoun:2009jr}.
+In this thesis, we developed a quantification method to mitigate this issue by comparing component weighting factor strength after normalization (Section~\ref{sec:correctionfactor}).
+Calhoun et al., has reviewed several methods for analyzing multiple subjects within a cohort using \acs{ICA} have been proposed~\cite{Calhoun:2009jr}.
+The approach that is most relevant in data collected for the experiments presented in this thesis (section~\ref{sec:B20_expt1}) is spatial concatenation~\cite{Calhoun:2001jx}.
+Briefly, cohort data for groupICA was constructed by concatenating all 16 slices from the 17 subjects together in the z-dimension.
+The same deflation-based \acs{FastICA} (python package \texttt{scikit.sklearn v0.17.1}) was used to analyze the data.
+To ensure the cyclic behaviour of the T$_1$ weighted signal intensity corresponding to the gas challenge appeared in only one component, number of independent components was set to 9.
+Application of \acs{ICA} to the spatially concatenated data produced a single oxygen-enhancing component that matched the temporal pattern of the gas cycling paradigm in all 17 animals(Figure~\ref{groupICA1}). 
+This component appears appears to be smoother than typical extracted oxygen enhancing components because it represents the group response rather than the individual features that exist in each mouse that responds somewhat differently.
 
-Application of ICA to the spatially concatenated data produced a single oxygen-enhancing component that matched the temporal pattern of the gas cycling paradigm (Figure 1). Corresponding dOE-MRI maps for all mice in a subset of slices are shown in Figure 2.
+\begin{figure}[htbp]
+   \centering
+   \includegraphics[width=\textwidth]{futurework/futurework-images/ISMRM2019_AARTS3_groupICA_OEcomponent.png} % requires the graphicx package
+   \caption{Extracted oxygen enhancing component from \acs{ICA} applied to the spatially concatenated cohort data. One major disadvantage of applying \acs{ICA} only once to multiple animals is that the extracted component averages out any individual features.
+   \label{groupICA1}}
+\end{figure}
 
-Calhoun:2009jr
-Calhoun:2001jx
+Upon selection of the single oxygen enhancing component, reshaping the resultant weighting-factor maps to the original matrix size provided inter-subject comparable data.
+Final normalized \acs{dOE-MRI} maps were obtained by dividing each pixel of the component map for each animal with the mean signal-intensity over time of the corresponding pixel in the dOE-MRI scan.
+Corresponding \acs{dOE-MRI} are comparable to the methods presented in Chapter~\ref{ch:oemri3} and conclusions of the B20 effect still hold with this analysis method.
 
-%%% END ISMRM 2019 Abstract 
+\subsection{Further QA of the time constant $\tau$}
+
+\subsection{dOE-MRI maps of 10 consecutive air/O$_2$ switches are stable}
+
+\begin{figure}[htbp]
+   \centering
+   \includegraphics[width=\textwidth]{futurework/futurework-images/6_longcycles.png} % requires the graphicx package
+   \caption{example caption}
+   \label{longcycles}
+\end{figure}
+
+%% 3-switch cycle figure; nixed, not mature enough.
+\begin{figure}[htbp]
+   \centering
+   \includegraphics[width=0.7\textwidth]{futurework/futurework-images/99_3_cychypox.png} % requires the graphicx package
+   \caption{example caption}
+   \label{}
+\end{figure}
+\begin{figure}[htbp]
+   \centering
+   \includegraphics[width=\textwidth]{futurework/futurework-images/99_4_OEP8_CyclingHypoxia.png} % requires the graphicx package
+   \caption{example caption}
+   \label{fig:example}
+\end{figure}
+
 \section{Exploring the link between perfusion and oxygenation}
 
 \subsection{Comparing DCE-MRI perfusion patterns with \ac{dOE-MRI} oxygenation patterns}

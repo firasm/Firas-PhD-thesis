@@ -11,7 +11,7 @@ The work presented in this chapter are a collection of preliminary results, alte
 One of the principal limitations of \acs{ICA} is that it ``does not naturally generalize to a method suitable for drawing inferences about groups of subjects''~\cite{Calhoun:2009jr}.
 In this thesis, we developed a quantification method to mitigate this issue by comparing component weighting factor strength after normalization (Section~\ref{sec:correctionfactor}).
 Calhoun et al., has reviewed several methods for analyzing multiple subjects within a cohort using \acs{ICA} have been proposed~\cite{Calhoun:2009jr}.
-The approach that is most relevant in data collected for the experiments presented in this thesis (section~\ref{sec:B20_expt1}) is spatial concatenation~\cite{Calhoun:2001jx}.
+The approach that is most relevant for the data collected for the experiments presented in this thesis (section~\ref{sec:B20_expt1}) is spatial concatenation~\cite{Calhoun:2001jx}.
 Briefly, cohort data for groupICA was constructed by concatenating all 16 slices from the 17 subjects together in the z-dimension.
 The same deflation-based \acs{FastICA} (python package \texttt{scikit.sklearn v0.17.1}) was used to analyze the data.
 To ensure the cyclic behaviour of the T$_1$ weighted signal intensity corresponding to the gas challenge appeared in only one component, number of independent components was set to 9.

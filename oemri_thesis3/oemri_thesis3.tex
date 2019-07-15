@@ -18,19 +18,19 @@ This technique measures T$_1$-weighted changes in tissues in response to a cycli
 Briefly, oxygenation can be assessed \emph{in vivo} by administering a simple gas challenge (switching between two-minute periods of medical air and 100\% O$_2$) during the \ac{dOE-MRI} scan and then using \ac{ICA} to extract the tissue response.
 \ac{ICA} is a blind-source separation algorithm that separates multiple signal sources by maximizing statistical independence of individual components~\cite{Hyvarinen:2000vk}.
 Various flavours of oxygen-enhanced MRI (OE-MRI) have been proposed but all essentially leverage the paramagnetic properties of inhaled oxygen.
-White et al. has shown that OE-MRI may be very relevant in developing prognostic factors to predict tumour response to hypofractionation by stratifying tumours that may benefit from oxygen breathing during irradiation~\cite{White:2016fz}.
+White et al.\ have shown that OE-MRI may be very relevant in developing prognostic factors to predict tumour response to hypofractionation by stratifying tumours that may benefit from oxygen breathing during irradiation~\cite{White:2016fz}.
 In this study, we apply \ac{dOE-MRI} to mice bearing tumour xenografts to assess the effect of a common antiangiogenic agent.
-We hypothesized that \ac{dOE-MRI} with group\ac{ICA} can detect \acs{VEGF} ablation-induced changes to oxygenation of SCCVII tumours 48 hours following treatment.
+We hypothesized that \ac{dOE-MRI} with group-\ac{ICA} can detect \ac{VEGF} ablation-induced changes to oxygenation of SCCVII tumours 48 hours following treatment.
 
 \subsection{VEGF inhibition and bevacizumab}
 
-Vascular endothelial growth factor (\acs{VEGF} is a key regulator of angiogenesis as the \acs{VEGF} molecule constitutes a rate-limiting step in normal and pathological growth of blood vessels.
+\acf{VEGF} is a key regulator of angiogenesis as the \ac{VEGF} molecule constitutes a rate-limiting step in normal and pathological growth of blood vessels.
 bevacizumab is a monocolonal antibody that binds \acs{VEGF} and inhibits growth of blood vessels~\cite{Ferrara:2004fa} and inhibits tumour growth.
 It is marketed clinically under the name Avastin$^{\tiny{\textrm{\textcopyright}}}$ (Genentech) on tumours and its effects and outcomes have been widely reported~\cite{Keating:2014gt, Pavlidis:2013bj, Barnett:2013bt, Kumler:2014gb}.
-Tumour xenografts receiving monocolonal antibodies to VEGF have consistently shown reductions in quantitative perfusion parameters from a variety of non-invasive imaging modalities including dynamic contrast-enhanced ultrasound~\cite{Wang:2015bb}, \acs{DCE-MRI}~\cite{OConnor:2009cg}, and micro PET~\cite{Nagengast:2007hx}.
-For \acs{DCE-US}, Wang et al. reported a significant reduction in peak enhancement, area under the curve, relative blood volume, and relative blood flow just 24 hours after a treatment of 10mg/kg of bevacizumab~\cite{Wang:2015bb} .  
-Several DCE-MRI animal and human studies have shown reductions in \acs{K$^{trans}$}, \acs{$v_p$}, and \acs{$v_e$} after administration of antiangiogenic agents, including bevacizumab~\cite{Yang:2018hz}.
-Tumour growth delay data also clearly indicates that tumour growth is slowed after treatment with bevacizumab~\cite{Yang:2018hz} and other similar \acs{VEGF}inhibitors~\cite{OConnor:2012ie}.
+Tumour xenografts receiving monocolonal antibodies to VEGF have consistently shown reductions in quantitative perfusion parameters from a variety of non-invasive imaging modalities including \acf{DCE-US}~\cite{Wang:2015bb}, \acf{DCE-MRI}~\cite{OConnor:2009cg}, and micro PET~\cite{Nagengast:2007hx}.
+For \ac{DCE-US}, Wang et al.\ reported a significant reduction in peak enhancement, area under the curve, relative blood volume, and relative blood flow just 24 hours after a treatment of 10~mg/kg of bevacizumab~\cite{Wang:2015bb} .  
+Several \ac{DCE-MRI} animal and human studies have shown reductions in \acs{K$^{trans}$}, \acs{$v_p$}, and \acs{$v_e$} after administration of antiangiogenic agents, including bevacizumab~\cite{Yang:2018hz}.
+Tumour growth delay data also clearly indicates that growth is slowed after treatment with bevacizumab~\cite{Yang:2018hz} and other similar \acs{VEGF}-inhibitors~\cite{OConnor:2012ie}.
 
 It is well established that after treatment with antiangiogenic agents, the normalized vasculature is characterized by a reduction in vessel permeability, tortuosity, greater coverage by pericytes and a more normal basement membrane~\cite{Jain:2005gk}. 
 These morphological changes often result in functional changes as well including decreased interstitial fluid pressure, increased tumour oxygenation, and improved delivery of nutrients (and drugs)~\cite{Jain:2005gk}.
@@ -41,19 +41,19 @@ In this study, we present an exciting application of our non-invasive imaging-ba
 \section{Methods}
 % ======================================================================
 \subsection{Animals}
-Female NRG (NOD rag gamma) mice were implanted with murine squamous cell carcinoma (SCCVII; 5x10$^5$ cells in 50$\mu$l serum-free media; cells provided by Dr.\ J. Evans) in the dorsal subcutaneous region.
-Tumours were imaged when their largest diameters reached approximately 8-10 mm.
-All mice were injected with 60 mg/kg pimonidazole hydrochloride (HypoxyProbe) 30-min prior to imaging to label hypoxic cells and were euthanized within 15-min of imaging completion.
+Female NRG (NOD rag gamma) mice were implanted with murine squamous cell carcinoma (SCCVII; $5\times 10^5$ cells in 50~$\mu$l serum-free media; cells provided by Dr.\ J.\ Evans) in the dorsal subcutaneous region.
+Tumours were imaged when their largest diameters reached approximately 8-10~mm.
+All mice were injected with 60~mg/kg pimonidazole hydrochloride (HypoxyProbe) 30~min prior to imaging to label hypoxic cells and were euthanized within 15~min of imaging completion.
 Mice were anesthetized with isoflurane using 1.5-2.0\% isoflurane for the duration of MR imaging sessions until euthanasia, and were positioned supine on the custom surface coil apparatus.
-Throughout the imaging session, a small animal monitoring system (SAII Instruments, Stony Brook, NY, USA) was used to monitor respiration rate, varying between 80-100 breaths per minute, and body temperature, maintained at 36.8 $\pm$ 0.5$^\circ$C using a continuous airflow heater. 
+Throughout the imaging session, a small animal monitoring system (SAII Instruments, Stony Brook, NY, USA) was used to monitor respiration rate, varying between 80-100~breaths per minute, and body temperature, maintained at ${36.8\pm 0.5^\circ}$C using a continuous airflow heater. 
 Tumours were embedded and frozen in optimum cutting temperature medium (OCT; Tissue-TEK).
 All animal experimental procedures were carried out in compliance with the guidelines of the Canadian Council for Animal Care and were approved by the institutional Animal Care Committee.
 
 \subsection{Immunohistochemistry}
-Co-planar MRI slices and histological sections were obtained by imaging perpendicular to the longest tumour axis in MRI and serial-step 10 $\mu m$ cryosections were cut at 0.5-mm intervals in the same plane.
-Slides were then fixed in acetone-methanol for 10-min and whole sections were immunohistochemically stained~\cite{Kalra:2017is} for CD31 (PECAM; visualized using secondaries labeled with Alexa 647nm) to label blood vessels, and for pimonidazole (HypoxyProbe-1; visualized using secondary labeled with Alexa 546nm) to label hypoxic cells. Sections were then stained using Hoechst 33342 (bisbenzimide) to label all cell nuclei.
-Whole-tumour sections were imaged using a robotic fluorescence microscope (Zeiss Axioimager Z1), a cooled, monochrome CCD camera (Retiga 4000R; QImaging), a motorized slide loader and x-y stage (Ludl Electronic Products) and customized ImageJ software~\cite{Collins:2007jr}. 
-Adjacent microscope fields of view were tiled such that images of entire tumour cryosections were captured at a resolution of 1.5 $\mu m$/pixel. 
+Co-planar MRI slices and histological sections were obtained by imaging perpendicular to the longest tumour axis in MRI and serial-step 10-$\mu m$ cryosections were cut at 0.5-mm intervals in the same plane.
+Slides were then fixed in acetone-methanol for 10~min and whole sections were immunohistochemically stained~\cite{Kalra:2017is} for CD31 (PECAM; visualized using secondaries labeled with Alexa 647~nm) to label blood vessels, and for pimonidazole (HypoxyProbe-1; visualized using secondary labeled with Alexa 546~nm) to label hypoxic cells. Sections were then stained using Hoechst 33342 (bisbenzimide) to label all cell nuclei.
+Whole-tumour sections were imaged using a robotic fluorescence microscope (Zeiss Axioimager Z1), a cooled, monochrome CCD camera (Retiga 4000R; QImaging), a motorized slide loader and xy stage (Ludl Electronic Products) and customized ImageJ software~\cite{Collins:2007jr}. 
+Adjacent microscope fields of view were tiled such that images of entire tumour cryosections were captured at a resolution of 1.5~$\mu$m/pixel. 
 Using anatomical landmarks and accumulated thicknesses of serial-step sections as estimates of distances from the edges of whole tumours, sections were chosen to match the MR slices. 
 ImageJ and user-supplied algorithms were used to super impose digital images which were then manually cropped to tumour tissue boundaries with staining artifacts removed. 
 A threshold was applied to images to identify positive pimonidazole staining, and the number of positive pixels was determined as a percentage of the total number of pixels in the tumour image. 
@@ -61,14 +61,14 @@ Overlaid greyscale images were converted to false colour for visualization with 
 
 \subsection{MR Imaging}
 Imaging was performed using a 7T scanner (Bruker Biospec) with a transmit quadrature volume coil and a custom built surface receive coil. 
-An axial RARE image was acquired to localize the tumour (T$_E$/T$_R$=10.7/4250ms, RARE factor 8) and a T$_1$ map was acquired using the Look-Locker method.
-Dynamic oxygen-enhanced MRI (\ac{dOE-MRI}) scans were acquired with a 2D multi-slice FLASH-based sequence for a total scan time of about 14 minutes.
+An axial RARE image was acquired to localize the tumour (T$_E$/T$_R$=10.7/4250, RARE factor 8) and a T$_1$ map was acquired using the Look-Locker method. We acquired
+\acf{dOE-MRI} scans using a 2D multi-slice FLASH-based sequence for a total scan time of about 14~min.
 During the \ac{dOE-MRI} scan, breathing gas was alternated between medical air and 100\% oxygen every 2 minutes using a 3-channel gas mixer (CWE, Philadelphia, USA) for a total of 3 air-oxygen-air cycles.
 All scans were acquired with the same spatial resolution and geometry and an experienced operator outlined the tumour on each slice of the RARE image to construct the region of interest (\acs{ROI}) for each animal and then transferred to all other scans.
-Tumour volumes were measured by multiplying individual voxel volume (0.3 x 0.3 x 0.1 mm) and the count of total number of voxels included within the manually drawn \acs{ROI}.
+Tumour volumes were measured by multiplying individual voxel volume ($0.3\times 0.3\times 0.1$~mm$^3$) and the count of total number of voxels included within the manually drawn \acs{ROI}.
 
 \subsection{\ac{dOE-MRI} Analysis}
-A suite of in-house software was developed using the python machine learning library scikit-learn~\cite{Pedregosa:2011tv}, specifically \texttt{sklearn.decomposition.Fast\ac{ICA}} based on the technique described by Hyvarinen~\cite{Hyvarinen:2000vk}.
+A suite of in-house software was developed using the python machine learning library scikit-learn~\cite{Pedregosa:2011tv}, specifically \texttt{sklearn.decomposition.FastICA} based on the technique described by Hyvarinen~\cite{Hyvarinen:2000vk}.
 The Fast\ac{ICA} algorithm is applied to serially acquired T$_1$W images and the output is a paired set of components and weighting factors for each voxel in the dataset.
 The deflation-based Fast\ac{ICA} (python package scikit.sklearn v0.17.1) was used to analyze the data. 
 Extracted independent components are not ordered and while the component selection can be automated, in this study an observer was assigned to select the appropriate component.
@@ -77,12 +77,12 @@ The \ac{dOE-MRI} maps were obtained by dividing the \ac{ICA} weighting-factor ma
 In these \ac{dOE-MRI} maps, voxels are coloured to indicate the amount by which a given pixel intensity time course is modulated by the oxygen-related component. 
 Final normalized \ac{dOE-MRI} maps were obtained by dividing each pixel of the component map for each animal with the mean signal-intensity over time of the corresponding pixel in the \ac{dOE-MRI} scan. 
 Mean normalized component weighting factor (\acs{NCWF}) are reported as a marker for tumour oxygenation with high values indicating increased oxygenation while negative values suggest decreased oxygenation or increased levels of hypoxia. 
-Mann-WhitneyU parametric t-tests are used to assess the difference between experimental groups and Hedge's g was calculated to determine effect size when the t-test was significant (p$<$0.05).
+Mann-WhitneyU parametric t-tests are used to assess the difference between experimental groups and Hedge's $g$ was calculated to determine effect size when the t-test was significant ($p<0.05$).
 The green-white-purple colour spectrum depicts the degree to which voxels respond to the cycled gas challenge.
-Purple indicates O$_2$-positive voxels whose time course exhibits a higher and more positive contribution from the corresponding \ac{ICA} component, representing an increase in T$_1$W signal intensity in response to the supplied 100 \% oxygen, and corresponding to areas with excess dissolved oxygen.
-O$_2$-negative voxels that show a decrease in T$_1$W signal intensity with a negative contribution from the corresponding \ac{ICA} component under 100 \% oxygen breathing are depicted as green. 
+Purple indicates O$_2$-positive voxels whose time course exhibits a higher and more positive contribution from the corresponding \ac{ICA} component, representing an increase in T$_1$W signal intensity in response to the supplied 100\% oxygen, and corresponding to areas with excess dissolved oxygen.
+O$_2$-negative voxels that show a decrease in T$_1$W signal intensity with a negative contribution from the corresponding \ac{ICA} component under 100\% oxygen breathing are depicted as green. 
 Regions whose T$_1$W signal intensity time courses responds only weakly or not at all to the gas challenge are shown in white hues.
-A feature of Fast\ac{ICA} is that the norm of each component is normalized to 1 ($||c_i||=1, \forall I$) and the corresponding weighting factor map carries the scaling factor.
+A feature of Fast\ac{ICA} is that the norm of each component is normalized to 1 ($||c_i||=1, \forall i$) and the corresponding weighting factor map carries the scaling factor.
 To compare \ac{dOE-MRI} maps between mice with different temporal resolutions, a scaling factor was applied as discussed previously (see section~\ref{sec:correctionfactor}).
 
 \subsection{Experiment Summaries}
@@ -103,19 +103,20 @@ Separate ROIs were drawn on the T$_2$W images to outline both the \acs{SC} and \
 5 mice were treated with 5mg/kg B20 24 hours prior to imaging and 8 were untreated controls.
 
 \noindent\textbf{MRI}: Coronal images were acquired to enable simultaneous imaging of both tumours in the same field of view.
-All \ac{dOE-MRI} scans were acquired using a 2D FLASH based sequence with TE = 2.67ms, spatial resolution 0.3mm x 0.3 mm x 1mm and flip angle $\alpha$=40$^\circ$.
+All \ac{dOE-MRI} scans were acquired using a 2D FLASH based sequence with TE = 2.67~ms, spatial resolution $0.3\times 0.3\times 1$~mm$^3$ and flip angle $\alpha=40^\circ$.
 To accommodate additional slices and image both tumours in the same scan while maintaining spatial resolution, not all imaging parameters in the \ac{dOE-MRI} scan could be fixed. 
 Table~\ref{scanparams} summarizes the key differences in the acquisition parameters for all \ac{dOE-MRI} sequences used in experiment 2.
 
 \begin{table}[]
 \centering
-\begin{tabular}{lllll}
-Experiment & Mice & TR & Slices & Repetitions (temporal resolution) \\
- 1 & 17 & 133ms & 16 & 90 (9.6s)  \\
- 2 & 5 & 133ms & 16 &  110 (8.5ms)  \\
- 2 & 8 & 83ms & 10 & 140 (6.7ms) \\
+\begin{tabular}{c|r|r|r|r|c}
+Experiment & Mice & TR/ms & Slices & Repetitions & temporal resolution/ms\\
+\hline
+ 1 & 17& 133 & 16 & 90  & 9.6  \\
+ 2 & 5 & 133 & 16 & 110 & 8.5  \\
+ 2 & 8 & 83  & 10 & 140 & 6.7 \\
 \end{tabular}
-\caption{Scan Parameters Table}
+\caption{Scan Parameters}
 \label{scanparams}
 \end{table}
 
@@ -128,8 +129,8 @@ Experiment & Mice & TR & Slices & Repetitions (temporal resolution) \\
 Visual inspection of \ac{dOE-MRI} parameter maps in Figure~\ref{dOEMRImaps} show that treatment of SCCVII tumours with the anti-angiogenic agent B20 resulted in an increased oxygenation compared to untreated controls.
 Tumours in this experiment were treated 48 hours prior to imaging.
 Group differences are shown in Figure~\ref{aarts3boxplot} as a standard box plot; Eight control tumours had a mean \acs{NCWF} value of 0.037$\pm$0.011 and nine treated tumours had a mean of 0.094$\pm$0.037.
-This difference was statistically significantly different (Mann-Whitney$U = 11 , p = 0.0092$) and the effect size was large with Hedge's \emph{g}= 1.08.
-Considerable heterogeneity was observed between mice and within a single slice (Fig.~\ref{dOEMRImaps}.
+This difference was statistically significantly different (Mann-Whitney$U = 11 , p = 0.0092$) and the effect size was large with Hedge's ${g=1.08}$.
+Considerable heterogeneity was observed between mice and within a single slice (Fig.~\ref{dOEMRImaps}).
 A histogram of voxels within tumour \acs{ROI}s for all mice is shown in Fig.~\ref{aarts3boxplot}B.
 
 \begin{figure}[htbp]
@@ -161,7 +162,7 @@ Across 10 animals and 23 tumours in total, the mean across all groups was $V = 4
 %Histological sections of the \acs{IM} and \acs{SC} tumours show the microenvironments to be morphologically distinct (figure~\ref{imsc}).\todo[backgroundcolor=red!20!white]{add a couple of sentences about differences in morphology}.
 \ac{dOE-MRI} was applied to mice bearing both \acs{SC} and \acs{IM} tumours to evaluate whether tumour implant site affects baseline oxygenation. 
 As shown in figure~\ref{OEP8boxplot}, baseline \acs{NCWF} values in \acs{IM} tumours were significantly higher for \acs{IM} tumours compared to \acs{SC} tumours (MannWhitney U = 1.0, p = 0.003).
-The effect size was large with Hedge's \emph{g}= 1.38.
+The effect size was large with Hedge's ${g=1.38}$.
 
 \begin{figure}[htbp]
    \centering
@@ -184,7 +185,7 @@ Tumours in this experiment were treated 24 hours prior to imaging.
 To ensure the \acs{SC} tumours from mice with a double implant were similar to mice with only a single implant, three mice were implanted only with subcutaneous tumours.
 No differences were found (data not shown), so the \acs{SC} tumours from this experiment were pooled together.
 
-When comparing between \acs{SC} baseline and treated groups, there was a statistically significant difference (Mann-Whitney$U = 3.0, p = 0.007$) observed in mean \acs{NCWF} values for control (0.073 $\pm$0.009) vs. B20-treated tumours (0.119 $\pm$0.013) with a large effect size: Hedge's \emph{g}=1.77 (Fig.~\ref{OEP8boxplot}).
+When comparing between \acs{SC} baseline and treated groups, there was a statistically significant difference (Mann-Whitney$U = 3.0, p = 0.007$) observed in mean \acs{NCWF} values for control (0.073 $\pm$0.009) vs. B20-treated tumours (0.119 $\pm$0.013) with a large effect size: Hedge's ${g=1.77}$ (Fig.~\ref{OEP8boxplot}).
 However, no measurable difference in oxygenation was observed for the \acs{IM} tumours after B20 treatment (Mann-Whitney$U = 11.0, p = 0.42$).
 Mean \acs{NCWF} from B20-treated \acs{IM} tumours was 0.137$\pm$0.018, and control \acs{IM} tumours was 0.146$\pm$0.017. 
 Histological images (Fig.~\ref{allHisto}) also suggests that control \acs{IM} tumours have significantly less pimonidazole staining compared to \acs{SC} controls.
@@ -228,19 +229,19 @@ A more widely applicable hypoxia-measuring tool that overcomes the availability,
 
 In this study we have demonstrated the utility of \acs{dOE-MRI} to assess tumour oxygenation changes after administration of B20.
 Though this is not the first report of tumour oxygenation improvements after antiangiogenic drug treatment using MRI methods, we provide clear evidence this change is measurable using only the switching of inhaled gas and no injectable contrast agents.
-Using electron paramagnetic resonance and an injectable paramagnetic tracer (triarylmethyl radical derivatives), Matsumoto et al. mapped increases in the partial pressure of oxygen in tumours after administration of the VEGF inhibiting antiangiogenic agent called Sunitinib.
+Using electron paramagnetic resonance and an injectable paramagnetic tracer (triarylmethyl radical derivatives), Matsumoto et al.\ mapped increases in the partial pressure of oxygen in tumours after administration of the VEGF inhibiting antiangiogenic agent called Sunitinib.
 Two to four days following antiangiogenic treatment with Sunitinib, they reported a transient improvement in oxygenation~\cite{Matsumoto:2011iv}.
-Lemasson et al. obtained estimates of blood oxygen saturation using an ultrasmall super-paramagnetic iron oxide (\acs{USPIO}) contrast agent in a rat gliosarcoma model.
+Lemasson et al.\ obtained estimates of blood oxygen saturation using an ultrasmall super-paramagnetic iron oxide (\acs{USPIO}) contrast agent in a rat gliosarcoma model.
 They reported that after sustained administration ($>$9 consecutive days) of the maximum dose of Sorafenib, oxygen saturation in treated tumours reduced compared to untreated control tumours~\cite{Lemasson:2012dl}.
 In this case, the dose and treatment schedule resulted in excessive pruning of the tumour vasculature to the point where drug and nutrient delivery became limited and tumour oxygenation actually reduced~\cite{Jain:2013jc}.
-In our experiments, with the dose (5 mg/kg) and treatment schedule (single administration 24 or 48h prior to imaging), we expected a vascular normalization effect corresponding to an increase in oxygenation~\cite{Chauhan:2012bm,Jain:2013jc,Huang:2012kn}.
+In our experiments, with the dose (5~mg/kg) and treatment schedule (single administration 24 or 48~h prior to imaging), we expected a vascular normalization effect corresponding to an increase in oxygenation~\cite{Chauhan:2012bm,Jain:2013jc,Huang:2012kn}.
 Despite heterogeneity in amount and levels of oxygen response in the \acs{SC} tumours, we observed an overall increase in oxygenation after administering B20 (figures~\ref{dOEMRImaps},~\ref{aarts3boxplot}, and~\ref{OEP8boxplot}).
 
 In this study we provided evidence that the location of tumour cell implants has a large impact on the microenvironment of the resulting solid tumour.
 Tumour kinetics and responses to chemotherapies differ depending on the implant site and the effect of tumour implantation site is often not considered when assessing drug effect using \emph{in vivo} animal studies~\cite{Arjona:2006ch}.
-Hubbard et al. compared the tumours derived from the VX2 rabbit carcinoma line implanted intramuscularly and intra-abdominally and discovered animals with \acs{IM} tumours had significantly higher levels of calcium compared to animals with intra-abdominal tumours~\cite{Hubbard:1980vf}.
+Hubbard et al.\ compared the tumours derived from the VX2 rabbit carcinoma line implanted intramuscularly and intra-abdominally and discovered animals with \acs{IM} tumours had significantly higher levels of calcium compared to animals with intra-abdominal tumours~\cite{Hubbard:1980vf}.
 This result was attributed to the differences in venous drainage of the two sites.
-In another example, Malave et al. studied the Lewis lung carcinoma model and reported a lower implant success rate for tumours implanted in the flank compared to the foot pad, and a higher rate of metastatic modules for tumours in the flank (indicating a reduced tumour-host immune response)~\cite{Malave:1979ui}.
+In another example, Malave et al.\ studied the Lewis-lung carcinoma model and reported a lower implant success rate for tumours implanted in the flank compared to the foot pad, and a higher rate of metastatic modules for tumours in the flank (indicating a reduced tumour-host immune response)~\cite{Malave:1979ui}.
 Tumour implant site also alters growth kinetics and dramatically different tumour doubling times (in days) has been reported for implants in mouse tail (1.7), foot (1.6), chest (1.2), and leg (0.6)~\cite{Hill:1982ci}.
 For the same amount of cells implanted, our experience is that \acs{IM} tumours typically grow much faster, have a more stable vascular architecture, less hypoxia (pimo staining), and increased vessel density (CD31 \%).
 We attempted to control for this growth rate by injecting fewer cells for the \acs{IM} tumours. 

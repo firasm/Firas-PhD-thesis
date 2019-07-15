@@ -5,19 +5,20 @@
 \label{ch:futurework}
 
 The work presented in this chapter are a collection of preliminary results, alternative analysis methods, and proposed future work. 
+\SARi{you couldn't make it less appealing. This sounds like and odds-and-sods sort of chapter. please market more convincingly. don't use the word collection}
 
-\section{GroupICA}
+\section{Group-ICA}
 
-One of the principal limitations of \acs{ICA} is that it ``does not naturally generalize to a method suitable for drawing inferences about groups of subjects''~\cite{Calhoun:2009jr}.
+One of the principal limitations of \acs{ICA} is that it ``does not naturally generalize to a method suitable for drawing inferences about groups of subjects~\cite{Calhoun:2009jr}.
 In this thesis, we developed a quantification method to mitigate this issue by comparing component weighting factor strength after normalization (Section~\ref{sec:correctionfactor}).
 Calhoun et al., has reviewed several methods for analyzing multiple subjects within a cohort using \acs{ICA} have been proposed~\cite{Calhoun:2009jr}.
 The approach that is most relevant for the data collected for the experiments presented in this thesis (section~\ref{sec:B20_expt1}) is spatial concatenation~\cite{Calhoun:2001jx}.
 Briefly, cohort data for groupICA was constructed by concatenating all 16 slices from the 17 subjects together in the z-dimension.
 Figure~\ref{groupICAschematic} compares group ICA to the standard ICA technique described in Chapter~\ref{ch:oemri1}.
-The same deflation-based \acs{FastICA} (python package \texttt{scikit.sklearn v0.17.1}) was used to analyze the data.
-To ensure the cyclic behaviour of the T$_1$ weighted signal intensity corresponding to the gas challenge appeared in only one component, number of independent components was set to 9.
-Application of \acs{ICA} to the spatially concatenated data produced a single oxygen-enhancing component that matched the temporal pattern of the gas cycling paradigm in all 17 animals(Figure~\ref{groupICA1}). 
-This component appears appears to be smoother than typical extracted oxygen enhancing components because it represents the group response rather than the individual features that exist in each mouse that responds somewhat differently.
+The same deflation-based \acs{FastICA} (python package \texttt{scikit.sklearn}~v0.17.1) was used to analyze the data.
+To ensure the cyclic behaviour of the T$_1$ weighted signal intensity corresponding to the gas challenge appeared in only one component, the number of independent components was set to 9.
+Application of \acs{ICA} to the spatially concatenated data produced a single oxygen-enhancing component that matched the temporal pattern of the gas cycling paradigm in all 17 animals (Figure~\ref{groupICA1}). 
+This component appears to be smoother than typical extracted oxygen enhancing components because it represents the group response rather than the individual features that exist in each mouse that responds somewhat differently.
 
 \begin{figure}[htbp]
    \centering
@@ -57,7 +58,7 @@ Recent work on measuring cycling hypoxia in patients using R$_2^*$~\cite{Panek:2
 Despite the presence of cycling hypoxia in many regions of the SCCVII tumours, O$_2$-enhancing regions in \acs{dOE-MRI} maps are generally in agreement with well perfused areas of histology images.
 In particular, concentrated oxygen-responsive regions within a \acs{dOE-MRI} map correspond to highly vascular, perfused regions in matching histology images.
 Voxels anti-correlated with the O$_2$ stimulus (O$_2$ refractory, green) typically correspond with pimonidazole staining but there are instances of mismatch (Figures~\ref{fig_sccvii}, ~\ref{fig_hct116}, and ~\ref{fig_perfusion}).
-In addition to cycling hypoxia, there may be possible mismatch between the sensitivities of pimonidazole and dOE-MRI and other oxygen sensing modalities (described in Horsman et al NRC 2012).
+In addition to cycling hypoxia, there may be possible mismatch between the sensitivities of pimonidazole and dOE-MRI and other oxygen sensing modalities (described in \highlight[comment={no ref?}]{Horsman et al.\ NRC 2012)}.
 Success of dOE-MRI will ultimately depend on its validation as a clinically useful measure of tumour hypoxia.
 
 To assess this phenomenon, a pilot study was carried out to determine whether this cycling hypoxia can be measured with \acs{dOE-MRI}.

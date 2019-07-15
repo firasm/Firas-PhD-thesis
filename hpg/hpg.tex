@@ -63,7 +63,7 @@ HPG was derivatized with p-NH2-benzyl-DOTA (Macrocyclics, Dallas, TX, USA) at 20
 The biological half-life of HPG-Gd (with no fluorescent tag) in mice has previously been examined in biodistribution studies and was reported as 32.6 h (20).
 HPG-GdF was administered as a 6 $\mu$L/g bolus dose from 100 mg/mL (0.2 mM) using an intravenous (i.v.) catheter; therefore, the administered molar dose of HPG was 1.2 nmol/g and that of the chelated Gd(III) was 240-360 nmol/g (determined according to an estimated 200-300 chelates per HPG molecule (20)).
 Assuming a blood volume of 5\% of mouse body weight, peak blood concentration of \acs{HPG-GdF} is 24$\mu$M.
-This value has been used to normalize relative tissue concentrations (Fig.~\ref{hpgpaper1:fig2}(B)) and to calculate the fractional plasma volume (fPV; see Section 2.4).
+This value has been used to normalize relative tissue concentrations (Fig.~\ref{hpgpaper1:fig2}(B)) and to calculate the fractional plasma volume (\acs{fPV}; see Section 2.4).\todo{add proper ref here}
 The relaxivity of \acs{HPG-GdF} has previously been measured and reported to be 1075 mM$^{-1}$s$^{-1}$1, which is approximately 300 times greater than that of Gadovist (3.58 mM$^{-1}$1 s$^{-1}$1)~\cite{Saatchi:2012hc}.
 Gadovist (Bayer Healthcare, Toronto, ON, Canada; 607.4 \acs{Da}) was administered by i.v.\ catheter as a 5 $\mu$L/g bolus dose from 60 mM solution, for an administered molar dose of Gadovist of 300 nmol/g.
 All in-scanner i.v.\ injections were performed using a power injector at a rate of 1 mL/min.
@@ -93,13 +93,15 @@ Difference maps of relaxation rates $\Delta$R$_1=1/$T$_1$(post-contrast) - 1/T$_
 Animals received two \acs{DCE-MRI} scans 24--48h apart, with Gadovist administered and scanned at the first session and \acs{HPG-GdF} administered and scanned at the subsequent session with tumours collected for histological processing at about 60-min post administration of their \acs{HPG-GdF}.
 
 \begin{figure}[htbp]
- \begin{center}
- \includegraphics[width=\textwidth]{hpg/hpg-paper1-images/hpg_fig2-bat.png}
- \caption{MR-derived parameters to measure vascular function using \acs{HPG-GdF}: bolus arrival time (\acs{BAT}), fractional plasma volume (\acs{fPV}) and apparent permeability-surface area product (\acs{aPS}). (A) Sample curve showing change in concentration of \acs{CA} as a function of scan time. 
+ %\begin{center}
+ \includegraphics[width=0.9\textwidth]{hpg/hpg-paper1-images/hpg_fig2-bat.png}
+ \caption{MR-derived parameters to measure vascular function using \acs{HPG-GdF}: bolus arrival time (\acs{BAT}), fractional plasma volume (\acs{fPV}) and apparent permeability-surface area product (\acs{aPS}). 
+ (A) Example of how the control theory procedure was applied to determine \acs{BAT} on a sample enhancement curve showing change in concentration of \acs{CA} as a function of scan time. 
  %The first violation (circle) is identified by Rule (1) at Frame 31, corresponding to a \acs{BAT} of t = 77.5 s. The centre (mean) and upper (UCL) and lower (LCL) control limits ($\pm$3 SDs) are drawn for reference. 
- Sample \acs{BAT} parameter maps from \acs{HPG-GdF} and Gadovist obtained from the same HT29 xenograft imaged 24h apart show that \acs{HPG-GdF} is slower to arrive; both \acs{CA}s arrive most quickly at the tumour margins. (B) \acs{HPG-GdF} enhancement curve from which the \acs{fPV} is derived as the concentration at the start relative to the plasma concentration. The \acs{aPS} is the slope of the enhancement after the bolus arrival. The concentration curves are shown as ratio of tissue concentration to blood peak concentration (24~$\mu$M) (C) The fraction of MR-measured \acs{HPG-GdF} \acs{BAT}-enhancing voxels has a negative association with the proportion of necrotic tissue determined in histological sections.}
+ (B) \acs{HPG-GdF} enhancement curve from which the \acs{fPV} is derived as the concentration at the start relative to the plasma concentration. The \acs{aPS} is the slope of the enhancement after the bolus arrival. 
+ The concentration curves are shown as ratio of tissue concentration to blood peak concentration (24~$\mu$M) (C) The fraction of MR-measured \acs{HPG-GdF} \acs{BAT}-enhancing voxels has a negative association with the proportion of necrotic tissue determined in histological sections.}
  \label{hpgpaper1:fig2}
- \end{center}
+ %\end{center}
 \end{figure}
 
 \subsection{MRI data analysis}
@@ -109,6 +111,7 @@ T$_1$ and flip-angle maps were calculated from variable flip-angle data with a s
 The same method was extended to provide time-dependent T$_1$ and concentration-time in DCE data series.
 Areas under the curves (AUCs) were numerically integrated starting from the bolus arrival time, or, for tumour-averaged AUC, starting from the common injection time point and extended to the indicated time points (1 and 37 min).
 Bolus arrival time (BAT) is the time when detectable signal enhancement begins for a voxel (Fig.~\ref{hpgpaper1:fig2}(A)) due to contrast agent arrival.
+\acs{BAT} maps from \acs{HPG-GdF} and Gadovist obtained from the same HT29 xenograft imaged 24h apart show that \acs{HPG-GdF} is slower to arrive; both \acs{CA}s arrive most quickly at the tumour margins (Fig.~\ref{hpgpaper1:fig2}(A)). 
 Based on the control-chart decision criterion and the Western Electric decision rules from MATLAB’s statistical toolbox~\cite{Shewhart:1931tq}, voxel enhancement was detected as a positive change from baseline signal for three consecutive timepoints (frames) (i) in the same direction, (ii) starting 5 s before the time of injection or later and (iii) for at least 10\% of all timepoints following initial change of signal away from baseline.
 Therefore, voxels with a finite \acs{BAT} and for which at least 10\% of the following intensities were classified as enhancing by the \acs{BAT} criteria were called enhancing voxels, whereas all other voxels were labeled as non-enhancing.
 
@@ -133,10 +136,10 @@ The centre line (mean of baseline) and upper and lower control limits ($\pm$3 SD
 The arterial input function (AIF) for this model was determined previously by our laboratory using a projection-based method~\cite{Moroz:2013ee}.
 
 \acs{HPG-GdF} A two-parameter linear model was applied~\cite{Pathak:2005gu}.
-Two parameters were used to characterize the \acs{MCA} time curves: (1) the rapid increase at the time of injection (related to the \acs{fPV}) and (2) the slope of the later enhancement (aPS) (Fig.~\ref{hpgpaper1:fig2}(B)).
+Two parameters were used to characterize the \acs{MCA} time curves: (1) the rapid increase at the time of injection (related to the \acs{fPV}) and (2) the slope of the later enhancement (\acs{aPS}) (Fig.~\ref{hpgpaper1:fig2}(B)).
 The relative plasma volume could be determined from the ratio of concentrations in the voxel of interest to the concentration in whole blood in the seconds after injection, since extra-vascular spread of the agent was negligible at this time.
-The slope of the concentration time curve following contrast arrival is proportional to the permeability-surface area product (PS) when the assumption of a permeability-limited environment is valid.
-However, in the highly variable tumour microenvironment, extravasation of contrast agent may deplete the intra-vascular concentration appreciably in conditions of high permeability, which would increase the relative contribution of perfusion to the composite measure of PS.
+The slope of the concentration time curve following contrast arrival is proportional to the permeability-surface area product (\acs{PS}) when the assumption of a permeability-limited environment is valid.
+However, in the highly variable tumour microenvironment, extravasation of contrast agent may deplete the intra-vascular concentration appreciably in conditions of high permeability, which would increase the relative contribution of perfusion to the composite measure of \acs{PS}.
 To stress that the interpretation of this slope value depends on the assumption of a permeability-limited environment, we term the slope the apparent permeability-surface area product (\acs{aPS})~\cite{DaldrupLink:2004gy,Dafni:2002kb}.
 
 \subsection{Histology}
@@ -152,14 +155,6 @@ Perfused vessel fraction (PF) was calculated as the proportion of \acs{CD31}-pos
 Data for individual tumours were displayed as mean $\pm$ SEM values.
 HPG-GdF extravasation was assessed by its distance from blood vessels: pixels from the \acs{HPG-GdF} fluorescence image were sorted according to their distance from vascular objects and the average \acs{HPG-GdF} fluorescence intensity was reported.
 
-\begin{figure}[htbp]
- \begin{center}
- \includegraphics[width=\textwidth]{hpg/hpg-paper1-images/hpg_fig3-hpgdistribution.png}
- \caption{Accumulation and distribution of \acs{HPG-GdF} in HT29 xenografts. (A) T$_1$-weighted MR-RARE images show signal enhancement at 40-min that increases with longer exposures (HT29 tumours outlined in red). (B) Quantitative analysis of \acs{HPG-GdF} distribution relative to \acs{CD31}-positive vessels shows extravasation of \acs{HPG-GdF} and distribution away from vessels to a limited distance, with a maximum at 7 days. (C) Whole tumour maps of \acs{HPG-GdF} (red) in relation to vasculature (blue) show that at early (2 min) timepoints \acs{HPG-GdF} is primarily overlapped with vasculature, but by 60-min there is substantial heterogeneity, where some vessels have greater amounts of perivascular \acs{HPG-GdF} than others. \acs{HPG-GdF} accumulates over several days but does so heterogeneously, and does not distribute through tumour tissue even after prolonged exposures.}
- \label{hpgpaper1:fig3}
- \end{center}
-\end{figure}
-
 \section{Results}
 
 \subsection{HPG-GdF accumulates in tumour tissue in the extravascular space but does not distribute far from vasculature}
@@ -168,7 +163,16 @@ Averaged data from whole HT29 tumour xenograft images obtained using MRI and his
 \acs{HPG-GdF} fluorescence was detectable within or very near to \acs{CD31}-labeled tumour vessels as early as 2-min following contrast agent injection (Fig.~\ref{hpgpaper1:fig3}(B), (C)).
 More \acs{HPG-GdF} fluorescence accumulated in histological tumour sections over time, but very little agent was observed at distances farther than 40 $\mu$m from the vasculature, even at 7 and 15 days (Fig.~\ref{hpgpaper1:fig3}(B), (C)).
 By 60 min there was extravascular accumulation of \acs{HPG-GdF} around some vessels, but considerable inter-vessel heterogeneity was observed.
-Some vessels showed no \acs{HPG-GdF} fluorescence (Fig.~\ref{hpgpaper1:fig3}(C)). 
+Some vessels showed no \acs{HPG-GdF} fluorescence (Fig.~\ref{hpgpaper1:fig3}(C)).
+Fig.~\ref{hpgpaper1:fig3}(C) also shows that \acs{HPG-GdF} accumulates over several days but does so heterogeneously, and does not distribute through tumour tissue even after prolonged exposures.
+
+\begin{figure}[htbp]
+% \begin{center}
+ \includegraphics[width=0.9\textwidth]{hpg/hpg-paper1-images/hpg_fig3-hpgdistribution.png}
+ \caption{(A) T$_1$-weighted \acs{RARE} images show signal enhancement at 40-min that increases with longer exposures (tumours outlined in red). (B) Quantitative histology shows \acs{HPG-GdF} extravasation and distribution gradually increasing with time (2-min to 7 days). (C) Whole tumour maps of \acs{HPG-GdF} (red) and vasculature (blue) show that at early (2 min) timepoints \acs{HPG-GdF} is primarily overlapped with vasculature, but by 60-min there is substantial heterogeneity, where some vessels have greater amounts of perivascular \acs{HPG-GdF} than others.}
+ \label{hpgpaper1:fig3}
+% \end{center}
+\end{figure}
 
 \subsection{Bolus arrival time (BAT) for \acs{HPG-GdF} as a screen for viable tissue}
 
@@ -180,11 +184,11 @@ A negative association was seen between the histological necrosis fraction and t
 For subsequent analysis of vascular function, only voxels enhancing with \acs{HPG-GdF} using the \acs{BAT} criteria were evaluated.
 
 \begin{figure}[htbp]
- \begin{center}
+ %\begin{center}
  \includegraphics[width=\textwidth]{hpg/hpg-paper1-images/hpg_fig4-ht29.png}
- \caption{Vascular function in HT29 xenografts. Whole-slice maps are presented for individual HT29 tumours (T01-T05, vertical columns) for parameters derived from MR imaging of Gadovist (BAT, AUGC60, K$^{trans}$), MR imaging of \acs{HPG-GdF} (\acs{BAT}, \acs{fPV}, \acs{aPS}, AUGC60) and histological imaging (necrosis). Good slice matching between imaging sessions is achieved using implanted fiducial marker tubes, an example of which is shown for tumour T01, row 1, where the arrow points to the dark region where the tube is resting between the tumour and the back of the animal.}
+ \caption{Individual HT29 tumour (T01-05) slice maps are presented for parameters derived using Gadovist (\acs{BAT}, \acs{\acs{AUGC$_{60}$}$_{60}$}, \acs{K$^{trans}$}), \acs{HPG-GdF} (\acs{BAT}, \acs{fPV}, \acs{aPS}, \acs{\acs{AUGC$_{60}$}$_{60}$}) and histological imaging of necrosis.}
  \label{hpgpaper1:fig4}
- \end{center}
+ %\end{center}
 \end{figure}
 
 \subsection{Fractional plasma volume (\acs{fPV}) and apparent permeability-surface area product (\acs{aPS}) as measures of vascular function}
@@ -201,12 +205,9 @@ Therefore, both \acs{fPV} and \acs{aPS} played important roles contributing to o
 \begin{figure}[htbp]
  \begin{center}
  \includegraphics[width=\textwidth]{hpg/hpg-paper1-images/hpg_fig5-ht29fpv.png}
- \caption{fPv and \acs{aPS} in HT29 xenograft.
- Whole-slice parameter maps are presented for HT29 tumour (T01) with the corresponding histological image depicting \acs{CD31} stained vessels (blue) and \acs{HPG-GdF} native fluorescence (red).
- A region with high \acs{aPS} values that does not correspond to high \acs{fPV} is magnified (A) and compared with a region having high \acs{fPV} that does not correspond to high \acs{aPS} (B).
+ \caption{\acs{fPV} and \acs{aPS} parameter maps for an HT29 tumour (T01) are shown with corresponding histological image depicting \acs{CD31}-stained vessels (blue) and \acs{HPG-GdF} native fluorescence (red).
  The high \acs{fPV} region has notably greater vascular density, and \acs{HPG-GdF} is clearly seen overlapping with vessels (black) or accumulating in the extravascular space.
- The high \acs{aPS} region also has \acs{HPG-GdF} in the extravascular space.
- The dynamic MR-derived parameters are better able to illustrate the functional features of tumour vasculature than are the static histological data, which only reflects the environment at a single, terminal endpoint (C).}
+ A region with high \acs{aPS} that does not correspond to high \acs{fPV} is magnified (A) and compared with a high \acs{fPV} region that does not correspond to high \acs{aPS} (B).}
  \label{hpgpaper1:fig5}
  \end{center}
 \end{figure}
@@ -234,11 +235,11 @@ This effect can be seen in the histological images of the compared tumour models
 
 \subsection{MRI analysis of \acs{HPG-GdF} in HCT116 and HT29 xenografts: \acs{BAT}, \acs{fPV} and aPS}
 
-Administration of neither Gadovist nor \acs{HPG-GdF} was useful in detecting the difference in vascular function between HCT116 and HT29 tumours using the initial area under the gadolinium concentration curve (AUGC), as the slice-averaged means were not significantly different between tumour groups (AUGC for Gadovist in HCT116 was $5.09\pm 0.83$~mM$\cdot$s and AUGC for Gadovist in HT29 was $7.68\pm 1.66$~mM$\cdot$s, ${p>0.05}$; AUGC for \acs{HPG-GdF} in HCT116 was $6.41\pm 1.71\times 10^{-3}$~mM$\cdot$s and that in HT29 was $9.62\pm 1.64\times 10^{-3}$~mM$\cdot$s, ${p>0.05}$) (data summarized in Tables 2 and 3).
+Administration of neither Gadovist nor \acs{HPG-GdF} was useful in detecting the difference in vascular function between HCT116 and HT29 tumours using the initial area under the gadolinium concentration curve (\acs{AUGC$_{60}$}), as the slice-averaged means were not significantly different between tumour groups (\acs{AUGC$_{60}$} for Gadovist in HCT116 was $5.09\pm 0.83$~mM$\cdot$s and \acs{AUGC$_{60}$} for Gadovist in HT29 was $7.68\pm 1.66$~mM$\cdot$s, ${p>0.05}$; \acs{AUGC$_{60}$} for \acs{HPG-GdF} in HCT116 was $6.41\pm 1.71\times 10^{-3}$~mM$\cdot$s and that in HT29 was $9.62\pm 1.64\times 10^{-3}$~mM$\cdot$s, ${p>0.05}$) (data summarized in Tables 2 and 3).
 \SARi{you sure you shouldn't refer to tables through references rather than absolute numbers 2 and 3?)}
-Similarity between models was also observed qualitatively in the parameter maps with AUGC or K$^{trans}$ overlaid on T$_1$-RARE images shown in Figs.
+Similarity between models was also observed qualitatively in the parameter maps with \acs{AUGC$_{60}$} or K$^{trans}$ overlaid on T$_1$-RARE images shown in Figs.
 \ref{hpgpaper1:fig4} and \ref{hpgpaper1:fig7}.
-Both tumour models show higher AUGC values in the tumour margins for both contrast agents.
+Both tumour models show higher \acs{AUGC$_{60}$} values in the tumour margins for both contrast agents.
 
 \begin{figure}[htbp]
  \begin{center}
@@ -286,7 +287,7 @@ If extravasation of \acs{HPG-GdF} only occurs in vessels that are permeable, and
 \begin{figure}[htbp]
  \begin{center}
  \includegraphics[width=\textwidth]{hpg/hpg-paper1-images/hpg_fig7-hct116.png}
- \caption{Vascular function in HCT116 xenografts. Whole-slice maps are presented for individual HCT116 tumours (T01-T05, vertical columns) for parameters derived from MR imaging of Gadovist (BAT, AUGC60, K$^{trans}$), MR imaging of \acs{HPG-GdF} (\acs{BAT}, \acs{fPV}, \acs{aPS}, AUGC60) and histological imaging (necrosis).}
+ \caption{Vascular function in HCT116 xenografts. Whole-slice maps are presented for individual HCT116 tumours (T01-T05, vertical columns) for parameters derived from MR imaging of Gadovist (BAT, \acs{\acs{AUGC$_{60}$}$_{60}$}, K$^{trans}$), MR imaging of \acs{HPG-GdF} (\acs{BAT}, \acs{fPV}, \acs{aPS}, \acs{\acs{AUGC$_{60}$}$_{60}$}) and histological imaging (necrosis).}
  \label{hpgpaper1:fig7}
  \end{center}
 \end{figure}

@@ -11,7 +11,7 @@
 Hypoxia is a well-established component of the tumour microenvironment, arising most often as tumour cell proliferation outpaces the growth of new vasculature.
 Tumour hypoxia is an indicator of poor prognosis and is responsible for tumour resistance to radiotherapy and some chemotherapies, but is also a potentially useful target for novel anti-cancer drugs~\cite{Wilson:2011jp}.
 Assessing tumour hypoxia in the clinical setting is challenging largely due to the invasive nature of biopsy-dependent techniques and the limited capacity and high expense of the more favoured, non-invasive PET imaging of hypoxia tracers~\cite{Horsman:2012kw}.
-The utility of screening patients for hypoxia was demonstrated retrospectively in trials of the hypoxic cytotoxin tirapazamine, where those patients with greater PET-imaged hypoxia experienced greater benefit ~\cite{Rischin:2006fz}.
+The utility of screening patients for hypoxia was demonstrated retrospectively in trials of the hypoxic cytotoxin tirapazamine, where those patients with greater PET-imaged hypoxia experienced greater benefit~\cite{Rischin:2006fz}.
 However, subsequent trials of drugs targeting hypoxia, including those for evofosfamide that failed to show clinical benefit, have not used hypoxia imaging to stratify patients.
 A practical, widely applicable, and non-invasive imaging method is urgently required as a biomarker to monitor tumour hypoxia in many contexts, and is crucial to the development and clinical evaluation of future hypoxia-targeting drugs.
 
@@ -25,7 +25,7 @@ OE-MRI continues to suffer from low \ac{SNR} and it has not found routine clinic
 Typical imaging times for existing OE-MRI methods range from 20-45 minutes often making it impractical for easy inclusion in experimental protocols. 
 An MRI technique measuring tumour oxygenation that is sensitive, fast, flexible, repeatable, and non-invasive has the potential to significantly impact the clinical fields of radiation biology and hypoxia drug targeting.
 In this study, we present a new dynamic OE-MRI (dOE-MRI) method that allows extraction of very small dynamic signal changes in T$_1$W images by inducing step changes in the inspired oxygen through a repeated, cycling gas challenge.
-To isolate the signal component that matches cycling gas, a machine-learning approach called independent component analysis ( \ac{ICA}) is used to analyze MR images as first proposed by McKeown at al~\cite{McKeown:1998wo}.
+To isolate the signal component that matches cycling gas, a machine-learning approach called independent component analysis (\ac{ICA}) is used to analyze MR images as first proposed by McKeown at al~\cite{McKeown:1998wo}.
  \ac{ICA} is a form of blind source separation algorithm that separates the additive signals on the basis of the statistical independence of individual components~\cite{Hyvarinen:2000vk}.
 With the application of a cycling oxygen challenge and processing the data using \ac{ICA}, our \ac{dOE-MRI} approach represents a significant improvement in the sensitivity and application of MRI for measuring tumour oxygenation, making it more practical for wide application.
 % ======================================================================
@@ -34,10 +34,10 @@ With the application of a cycling oxygen challenge and processing the data using
 \subsection{Mice and tumours}
 
 All animal experimental procedures were carried out in compliance with the guidelines of the Canadian Council for Animal Care and were approved by the institutional Animal Care Committee. 
-Female NRG mice were implanted with murine squamous cell carcinoma SCCVII tumours (5 x 10$^5 $cells in 50 $\mu$l serum-free media; cells provided by Dr.\ J Evans) or with human colorectal carcinoma HCT-116, human ovarian carcinoma SKOV3 or human breast carcinoma BT-474 tumours (each as 10 x 10$^6$ cells in 50 $\mu$l serum-free media; cell lines obtained from the American Type Culture Collection) and were imaged when the largest tumour diameters reached approximately 8-10 mm.
+Female NRG mice were implanted with murine squamous cell carcinoma SCCVII tumours ($5 \times 10^5 $cells in 50~$\mu$l serum-free media; cells provided by Dr.\ J Evans) or with human colorectal carcinoma HCT-116, human ovarian carcinoma SKOV3 or human breast carcinoma BT-474 tumours (each as $10 \times 10^6$ cells in 50~$\mu$l serum-free media; cell lines obtained from the American Type Culture Collection) and were imaged when the largest tumour diameters reached approximately 8-10~mm.
 Mice were anesthetized with isoflurane for the duration of imaging sessions until euthanasia, and were positioned supine on the custom surface coil apparatus.
-Throughout the imaging session, a small animal monitoring system (SAII Instruments, Stony Brook, NY, USA) was used to monitor respiration rate, varying between 80-100 breaths per minute, and body temperature, maintained at 36.8 $\pm$ 0.5$^\circ$C using a continuous airflow heater.
-All animals were injected with 60 mg/kg pimonidazole hydrochloride (HypoxyProbe) 30-min prior to imaging to label hypoxic cells and were euthanized within 15-min of imaging completion.
+Throughout the imaging session, a small animal monitoring system (SAII Instruments, Stony Brook, NY, USA) was used to monitor respiration rate, varying between 80-100 breaths per minute, and body temperature, maintained at $36.8 \pm 0.5^\circ$C using a continuous airflow heater.
+All animals were injected with 60~mg/kg pimonidazole hydrochloride (HypoxyProbe) 30~min prior to imaging to label hypoxic cells and were euthanized within 15~min of imaging completion.
 Tumours were embedded and frozen in optimum cutting temperature medium (OCT; Tissue-TEK).
 
 %\subsection{Immunohistochemistry, image acquisition and analysis}
@@ -53,8 +53,8 @@ Tumours were embedded and frozen in optimum cutting temperature medium (OCT; Tis
 \label{doemri_mrianalysis1}
 All MRI experiments were performed at the UBC MRI Research Centre on a 7T Bruker BioSpec 70/30 scanner at room temperature with a volume transmit coil and custom surface receive coil.
 Each imaging session began with pilot axial and coronal T$_2$W scans for tumour localization and slice prescription.
-Eight contiguous axial slices (1mm thickness) were acquired with an in-plane field of view of 3.84 cm x 1.92 cm and a matrix size of 128 x 64.
-Dynamic oxygen-enhanced MRI (dOE-MRI) scans were acquired with a 2D multi-slice FLASH-based sequence with TE/TR = 2.67ms/66.7 ms, $\alpha$ = 40$^\circ$, temporal resolution of 4.3s with 198 repetitions for a total scan time of about 14 minutes.
+Eight contiguous axial slices (1~mm thickness) were acquired with an in-plane field of view of 3.84~cm$\times$1.92~cm and a matrix size of 128$\times$64.
+Dynamic oxygen-enhanced MRI (dOE-MRI) scans were acquired with a 2D multi-slice FLASH-based sequence with TE/TR = 2.67/66.7, $\alpha=40^\circ$, temporal resolution of 4.3~s with 198 repetitions for a total scan time of about 14~min.
 The spatial resolution and geometry for all scans in the imaging session were matched and an experienced operator outlined the tumour on each slice of the anatomy MR images to construct the region of interest (ROI) for each animal.
 
 \noindent\textbf{Gas challenge during MRI:} tumour-bearing mice began the \ac{dOE-MRI} gas challenge breathing medical air and were switched between 100\% oxygen and medical air in two-minute intervals.
@@ -62,8 +62,11 @@ This paradigm continued for three cycles over a total of fourteen minutes; gases
 
 \subsection{MRI Data Analysis}
 \label{doemri_mrianalysis2}
-\textbf{dOE-MRI maps:} A suite of in-house software was developed using the python machine learning library scikit-learn~\cite{Pedregosa:2011tv}, specifically \texttt{sklearn.decomposition.Fast \ac{ICA}}\todo[backgroundcolor=green]{Have to figure out how to line break properly here} based on the technique described by Hyvarinen~\cite{Hyvarinen:2000vk}.
-The Fast \ac{ICA} algorithm is applied to serially acquired T$_1$W images and the output is a paired set of components and weighting factors for each voxel in the dataset.
+\textbf{dOE-MRI maps:} A suite of in-house software was developed based on the technique described by Hyvarinen~\cite{Hyvarinen:2000vk}.
+Specifically the python machine learning library scikit-learn, \texttt{sklearn.decomposition.FastICA}, was used~\cite{Pedregosa:2011tv}.
+%%
+%A suite of in-house software was developed using the python machine learning library scikit-learn~\cite{Pedregosa:2011tv}, specifically \texttt{sklearn.decomposition.Fast \ac{ICA}}\todo[backgroundcolor=green]{Have to figure out how to line break properly here} based on the technique described by Hyvarinen~\cite{Hyvarinen:2000vk}.
+The Fast\ac{ICA} algorithm is applied to serially acquired T$_1$W images and the output is a paired set of components and weighting factors for each voxel in the dataset.
 Extracted independent components are not ordered and while the component selection can be automated, in this study an observer was assigned to select the appropriate component (Figure~\ref{technique}).
 The number of independent components for each imaging session was chosen by the operator and ranged from 4-9 to ensure the cyclic behaviour of the T$_1$W signal intensity corresponding to the gas challenge appeared in only one component. 
 The \ac{dOE-MRI} maps were obtained by dividing the \ac{ICA} weighting-factor maps by the mean signal-intensity maps to obtain a spatial map for the strength of a particular voxel's contribution to the component of interest ($c_4$ in Figure~\ref{technique}).
@@ -124,7 +127,7 @@ Panels B and C are correlation maps whereas A is the \ac{dOE-MRI} map from \ac{I
 \label{sec:numComponents}
 dOE-MRI maps from \ac{ICA} applied serially after varying the number of components ($m$) from 3 to 12 are shown in Figure~\ref{numComponents}.
 The component of the signal that corresponds to the T$_1$W signal intensity increase due to the cycling oxygen is quite prominent and independent of the number of components selected.
-Two examples are shown, with a low and high degree of variability measured in the extracted components~\todo[backgroundcolor=red!20!white]{SAR: very unsatisfying not the be told why there is a high and low variability version here. How come, what's the difference, what does it mean?}.
+Two examples are shown, with a low and high degree of variability measured in the extracted components~\todo[backgroundcolor=red!20!white]{SAR: very unsatisfying not to be told why there is a high and low variability version here. How come, what's the difference, what does it mean?}.
 In both cases, the corresponding \ac{dOE-MRI} maps show the same O$_2$-positive and O$_2$-negative regions.
 
 \begin{figure}[htbp]
@@ -155,15 +158,14 @@ Voxel-wise plots of each map are correlated to the full dataset and a linear reg
 \label{sec:interleave}
 To investigate the subsampling limit of \ac{ICA}, Figure~\ref{subSample} shows the \ac{dOE-MRI} maps for progressively more severe undersampling.
 O$_2$-positive and O$_2$-negative regions are repeatable for all maps (plot in Figure~\ref{subSample}) until subsample 5, where only 40 of the 200 available data points were used.
-The original data was acquired at a temporal resolution of 4.3s but at subsample 5, the effective temporal resolution goes to 21.3s. 
+The original data was acquired at a temporal resolution of 4.3~s but at subsample 5, the effective temporal resolution goes to 21.3~s. 
 In other words, temporal resolution could be sacrificed for \ac{SNR} simply by averaging.
-More usefully, the additional time can be repurposed to interleave other scans for multi-parametric imaging within a \ac{dOE-MRI} scan.
+More usefully, the additional time can be repurposed to interleave other scans for multi-parametric imaging within an \ac{dOE-MRI} scan.
 Details of this are discussed in section~\ref{futurework:expandingdOEMRI_T2*}. 
-
-\begin{figure}[htbp]
+\begin{figure}[tbhp]
    \centering
    \includegraphics[width=\textwidth]{oemri_thesis1/oemri_thesis1-images/technical_subsample.pdf} % requires the graphicx package
-   \caption{dOE-MRI maps and associated component traces of differently sampled data. To achieve different levels of subsampling, the raw data was spliced and then \ac{ICA} was applied. The oxygenation maps look very similar between different subsample factors. Temporal resolution and number of points were 4.3 s and 200 points (subsample 1), 8.5 s and 100 points (subsample 2), 12.8s and 67 points (subsample 3), 17.1s and 50 points (subsample 4), 21.3s and 40 points (subsample 5), and 25.12s and 34 points (subsample 6).}
+   \caption{dOE-MRI maps and associated component traces of differently sampled data. To achieve different levels of subsampling, the raw data was spliced and then \ac{ICA} was applied. The oxygenation maps look very similar between different subsample factors. Temporal resolution and number of points were 4.3~s and 200 points (subsample 1), 8.5~s and 100 points (subsample 2), 12.8~s and 67 points (subsample 3), 17.1~s and 50 points (subsample 4), 21.3~s and 40 points (subsample 5), and 25.12~s and 34 points (subsample 6).}
    \label{subSample}
 \end{figure}
 
@@ -172,6 +174,7 @@ Details of this are discussed in section~\ref{futurework:expandingdOEMRI_T2*}.
 Figure~\ref{Sfig_components} shows the extracted independent components and their corresponding weighting factor maps for an application of \ac{ICA} on a OE-MRI scan.
 Extracted components typically have a mix of high and low frequency responses and may include temperature drifts, breathing artefacts and other motion. 
 Additional physiological monitoring data is needed for a more thorough analysis of the other independent components and whether they can aid our understanding of the mechanism of action.
+\SARi{all the speculation in the figure caption should be moved to the text}
 
 \begin{figure}[htbp]
    \centering
@@ -200,7 +203,7 @@ s = \frac{\sqrt{N_{ref}}}{\sqrt{N}}
 A reference sampling frequency should be chosen and in this study, it was chosen to be 0.24s$^{-1}$ (corresponding to N=198 images over the cycling oxygen).
 
 Gas delivered to mice switches between room air and 100\% oxygen in two minute cycles, for a total of 14 minutes.
- \ac{ICA} extracts the tissue response to the delivered oxygen, and four periods of room air interspersed with three periods of oxygen can be modelled mathematically using a general Heaviside function:
+\ac{ICA} extracts the tissue response to the delivered oxygen, and four periods of room air interspersed with three periods of oxygen can be modelled mathematically using a general Heaviside function:
 
 \begin{equation}
 y(t) =
@@ -253,7 +256,7 @@ Furthermore, presupposing a particular oxygen response function biases the ident
 
 The unambiguous match of the identified component with the periods of the gas cycles increases the confidence that the small T$_1$W signal changes result from increased oxygen dissolved in the plasma and interstitial tissue fluids.
 Maps from other extracted components (Appendix Figure~\ref{Sfig_components}) exhibit spatial patterns that could provide clues to the signal sources but associating meaning to them is challenging and would require additional data.
-For example, even moderate shifts in temperature could drive a measurable change in T$_1$W signal during the timecourse, and a physiological monitoring system that is time-synced to the MR acquisition could illuminate this confounding variable. 
+For example, even moderate shifts in temperature could drive a measurable change in T$_1$W signal during the timecourse, and a physiological monitoring system that is temporally synchronized to the MR acquisition could illuminate this confounding variable. 
 Nevertheless, we have established reliability of the technique by comparing maps from each cycle of the gas challenge to the map incorporating data from all three oxygen-cycles and have found no significant differences.
 In fact, the strong correlations between \ac{dOE-MRI} maps from each of the individual cycles of the gas challenge (Figure~\ref{fig_repeatability}) show that it is feasible to assess tissue oxygenation within 6 minutes.
 Performing this analysis again with three-fold (Figure~\ref{fig_repeatability}) and six-fold (Appendix~\ref{sec:interleave}) temporally under-sampled data suggests that there is sufficient \ac{SNR} to successfully extract the oxygen responsive component  with even a subset of the data.
@@ -266,9 +269,9 @@ Should it arise in other contexts it could possibly be mitigated by extending th
 The potential for creating a hyperoxia steady state by modulating oxygen duration is discussed further by Losert et al. ~\cite{Losert:2002gt}.
 
 Depending on the application of \ac{dOE-MRI}, quantitative O$_2$-positive and O$_2$-negative fractions can be obtained from \ac{dOE-MRI} maps as shown in this study, by deploying group \ac{ICA} techniques~\cite{Calhoun:2009jr}, or setting significance thresholds using a t-test~\cite{Greicius:2004ck} and computing z-scores~\cite{McKeown:1998wd}.
-To help understand the oxygen dynamics in tumours, including the effect of hemoglobin with T$_2^*$-mapping, fitting exponential recovery and decay curves to the extracted oxygen response curves may provide additional insights as originally proposed by Losert et al. in the brain~\cite{Losert:2002gt}.
-In a promising study, White et al. has shown that OE-MRI may be very relevant in developing prognostic factors to predict tumour response to hypofractionation by stratifying tumours that may benefit from oxygen breathing during irradiation~\cite{White:2016fz}.
-Featherstone et al. have recently explored pre-clinical datasets using feature-extraction and clustering analysis and this may prove fruitful in understanding the behavior of subregions within a tumour microenvironment~\cite{Featherstone:2018cn}.
+To help understand the oxygen dynamics in tumours, including the effect of hemoglobin with T$_2^*$-mapping, fitting exponential recovery and decay curves to the extracted oxygen response curves may provide additional insights as originally proposed by Losert et al.\ in the brain~\cite{Losert:2002gt}.
+In a promising study, White et al.\ has shown that OE-MRI may be very relevant in developing prognostic factors to predict tumour response to hypofractionation by stratifying tumours that may benefit from oxygen breathing during irradiation~\cite{White:2016fz}.
+Featherstone et al.\ have recently explored pre-clinical datasets using feature-extraction and clustering analysis and this may prove fruitful in understanding the behavior of subregions within a tumour microenvironment~\cite{Featherstone:2018cn}.
 Future work to evaluate the utility of \ac{dOE-MRI} will ultimately depend on its context-dependent validation as a relevant measure of tumour hypoxia to dynamically characterize the clinically relevant oxygen status of tumours, relating this information to treatment sensitivities and outcomes.
 
 % ======================================================================
@@ -278,5 +281,5 @@ In this study we extend existing oxygen-enhanced MRI techniques by adding a cycl
 This \ac{dOE-MRI} method presents significant improvements to the sensitivity and applicability of OE-MRI where small changes in T$_1$W signal intensity arising from cycling respiratory challenges can be separated robustly. Traditional quantitative T$_1$-mapping techniques have longer imaging times and are impractical for OE-MRI due to \ac{SNR} and time constraints.
 \ac{dOE-MRI} with \ac{ICA} is clinically translatable as the sequence acquisition is relatively short and most centres already have access to dynamic T$_1$W MRI acquisitions that many patients already routinely receive. 
 Therefore \ac{dOE-MRI} is an exciting, non-invasive and widely available technique for assessing tumour oxygenation that could provide a crucial tool in the field of radiation oncology and in the development of treatments targeting the tumour microenvironment.
-
+\SARi{reads like copied directly from a paper. A more appropriate conclusion at the end of a chapter would point the way fwd to the next chapters.}
 \endinput

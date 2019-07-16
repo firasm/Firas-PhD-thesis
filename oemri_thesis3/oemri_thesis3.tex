@@ -77,7 +77,7 @@ The \ac{dOE-MRI} maps were obtained by dividing the \ac{ICA} weighting-factor ma
 In these \ac{dOE-MRI} maps, voxels are coloured to indicate the amount by which a given pixel intensity time course is modulated by the oxygen-related component. 
 Final normalized \ac{dOE-MRI} maps were obtained by dividing each pixel of the component map for each animal with the mean signal-intensity over time of the corresponding pixel in the \ac{dOE-MRI} scan. 
 Mean normalized component weighting factor (\acs{NCWF}) are reported as a marker for tumour oxygenation with high values indicating increased oxygenation while negative values suggest decreased oxygenation or increased levels of hypoxia. 
-Mann-WhitneyU parametric t-tests are used to assess the difference between experimental groups and Hedge's $g$ was calculated to determine effect size when the t-test was significant ($p<0.05$).
+Mann-Whitney U non-parametric tests are used to assess the difference between experimental groups and Hedge's $g$ was calculated to determine effect size when the t-test was significant ($p<0.05$).
 The green-white-purple colour spectrum depicts the degree to which voxels respond to the cycled gas challenge.
 Purple indicates O$_2$-positive voxels whose time course exhibits a higher and more positive contribution from the corresponding \ac{ICA} component, representing an increase in T$_1$W signal intensity in response to the supplied 100\% oxygen, and corresponding to areas with excess dissolved oxygen.
 O$_2$-negative voxels that show a decrease in T$_1$W signal intensity with a negative contribution from the corresponding \ac{ICA} component under 100\% oxygen breathing are depicted as green. 
@@ -129,7 +129,7 @@ Experiment & Mice & TR/ms & Slices & Repetitions & temporal resolution/ms\\
 Visual inspection of \ac{dOE-MRI} parameter maps in Figure~\ref{dOEMRImaps} show that treatment of SCCVII tumours with the anti-angiogenic agent B20 resulted in an increased oxygenation compared to untreated controls.
 Tumours in this experiment were treated 48 hours prior to imaging.
 Group differences are shown in Figure~\ref{aarts3boxplot} as a standard box plot; Eight control tumours had a mean \acs{NCWF} value of 0.037$\pm$0.011 and nine treated tumours had a mean of 0.094$\pm$0.037.
-This difference was statistically significantly different (Mann-Whitney$U = 11 , p = 0.0092$) and the effect size was large with Hedge's ${g=1.08}$.
+This difference was statistically significantly different (Mann-Whitney $U = 11 , p = 0.0092$) and the effect size was large with Hedge's ${g=1.08}$.
 Considerable heterogeneity was observed between mice and within a single slice (Fig.~\ref{dOEMRImaps}).
 A histogram of voxels within tumour \acs{ROI}s for all mice is shown in Fig.~\ref{aarts3boxplot}B.
 
@@ -161,7 +161,7 @@ Figure~\ref{tumourVolumes} shows no statistically significant difference in tumo
 Across 10 animals and 23 tumours in total, the mean across all groups was $V = 424 \pm 41 mm^3$ (mean $\pm$ sem). 
 %Histological sections of the \acs{IM} and \acs{SC} tumours show the microenvironments to be morphologically distinct (figure~\ref{imsc}).\todo[backgroundcolor=red!20!white]{add a couple of sentences about differences in morphology}.
 \ac{dOE-MRI} was applied to mice bearing both \acs{SC} and \acs{IM} tumours to evaluate whether tumour implant site affects baseline oxygenation. 
-As shown in figure~\ref{OEP8boxplot}, baseline \acs{NCWF} values in \acs{IM} tumours were significantly higher for \acs{IM} tumours compared to \acs{SC} tumours (MannWhitney U = 1.0, p = 0.003).
+As shown in figure~\ref{OEP8boxplot}, baseline \acs{NCWF} values in \acs{IM} tumours were significantly higher for \acs{IM} tumours compared to \acs{SC} tumours (Mann-Whitney U = 1.0, p = 0.003).
 The effect size was large with Hedge's ${g=1.38}$.
 
 \begin{figure}[htbp]
@@ -180,23 +180,23 @@ The effect size was large with Hedge's ${g=1.38}$.
 
 \subsection{Effects of B20 are dependent on the tumour microenvironment and baseline oxygenation}
 
-We investigated whether the effects of antiangiogenic agents are dependent on different tumour microenvironments, mice were implanted with both \acs{IM} and \acs{SC} tumours. 
+To investigate whether the effects of antiangiogenic agents are dependent on different tumour microenvironments, mice were implanted with both \acs{IM} and \acs{SC} tumours. 
 Tumours in this experiment were treated 24 hours prior to imaging.
 To ensure the \acs{SC} tumours from mice with a double implant were similar to mice with only a single implant, three mice were implanted only with subcutaneous tumours.
 No differences were found (data not shown), so the \acs{SC} tumours from this experiment were pooled together.
 
-When comparing between \acs{SC} baseline and treated groups, there was a statistically significant difference (Mann-Whitney$U = 3.0, p = 0.007$) observed in mean \acs{NCWF} values for control (0.073 $\pm$0.009) vs. B20-treated tumours (0.119 $\pm$0.013) with a large effect size: Hedge's ${g=1.77}$ (Fig.~\ref{OEP8boxplot}).
-However, no measurable difference in oxygenation was observed for the \acs{IM} tumours after B20 treatment (Mann-Whitney$U = 11.0, p = 0.42$).
+When comparing between \acs{SC} baseline and treated groups, there was a statistically significant difference (Mann-Whitney $U = 3.0, p = 0.007$) observed in mean \acs{NCWF} values for control (0.073 $\pm$0.009) vs. B20-treated tumours (0.119 $\pm$0.013) with a large effect size: Hedge's ${g=1.77}$ (Fig.~\ref{OEP8boxplot}).
+However, no measurable difference in oxygenation was observed for the \acs{IM} tumours after B20 treatment (Mann-Whitney $U = 11.0, p = 0.42$).
 Mean \acs{NCWF} from B20-treated \acs{IM} tumours was 0.137$\pm$0.018, and control \acs{IM} tumours was 0.146$\pm$0.017. 
 Histological images (Fig.~\ref{allHisto}) also suggests that control \acs{IM} tumours have significantly less pimonidazole staining compared to \acs{SC} controls.
 Furthermore, reduction in pimonidazole staining between control and treated \acs{IM} tumours is much lower compared to \acs{SC} tumours.
-This provides clear evidence that the effects of B20 are highly dependent on the tumour microenvironment, and \acs{dOE-MRI} is sensitive to these differences.
+This provides clear evidence that the effects of B20 are dependent on the tumour microenvironment, and \acs{dOE-MRI} is sensitive to these differences.
 
 \begin{figure}[htbp]
    \centering
    \includegraphics[width=\textwidth]{oemri_thesis3/oemri_thesis3-images/4_oep8_IMSC_b20_sanitized_dOEMRI.png} % requires the graphicx package
    \caption{\textbf{A)} Boxplot with four groups, 5mg/kg B20 treated and control mice with both \acs{SC} and \acs{IM} tumours.
-   Differences between control \acs{SC} and \acs{IM} tumours, as well as control \acs{SC} and treated \acs{SC} tumours are statistically significant (Mann-WhitneyU test; p $<$0.005, marked as **).
+   Differences between control \acs{SC} and \acs{IM} tumours, as well as control \acs{SC} and treated \acs{SC} tumours are statistically significant (Mann-Whitney U test; p $<$0.005, marked as **).
    There was no significantly difference in treated and control \acs{IM} tumours.
    \textbf{B)} Voxel density distributions of \acs{NCWF} for \acs{SC} (top) and \acs{IM} (bottom) treated and control tumours.
    Density distribution (i.e. normalized histograms) are shown rather than voxel counts due to uneven group size. 
@@ -219,7 +219,7 @@ This provides clear evidence that the effects of B20 are highly dependent on the
 % Bits and pieces from the latest grant pulled into this first paragraph
 Hypoxic tumour cells may arise due to proliferation of cancer cells outpacing the growth of new vasculature, increasing the separation between blood vessels and forcing cells beyond the diffusion distance of oxygen from the blood supply. 
 An alternative route to hypoxia is the consequence of poor flow, which can result in hypoxic tumour tissue due to depleted oxygen supply in the flowing blood or due to intermittent flow of poorly formed vessels. 
-Tumour microenvironments are dynamic and highly heterogeneous, with variable vascular function and patterns and degrees of hypoxia.
+Tumour microenvironments are dynamic and highly heterogeneous, with variable vascular function and patterns of hypoxia.
 However, the importance of hypoxia in tumours is well validated and undisputed; a meta-analysis of tumours from multiple origins found a consistent relationship between greater hypoxia in tumours and poorer outcomes with radiotherapy~\cite{Horsman:2012kw}.
 While many techniques exist for measuring hypoxia in tumours, none have become clinical routine mainly owing to their expense, poor sensitivity and specificity, limited availability or their invasive nature~\cite{Colliez:2017fc,Baumann:2016gr}. 
 For example, Eppendorf electrodes are sensitive and specific, and are a gold standard of measuring tissue hypoxia, but they are highly invasive, limited by sampling, and are not widely available. 

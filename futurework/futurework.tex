@@ -62,7 +62,7 @@ In addition to cycling hypoxia, there may be possible mismatch between the sensi
 Success of dOE-MRI will ultimately depend on its validation as a clinically useful measure of tumour hypoxia.
 
 To assess this phenomenon, a pilot study was carried out to determine whether this cycling hypoxia can be measured with \acs{dOE-MRI}.
-In 2 SCCVII xenografts mice, rather than the standard protocol of 3 cycles of air-oxygen switches, ten consecutive air-oxygen switches were used.
+In a small pilot cohort of SCCVII xenografts mice ($n=2$), rather than the standard protocol of three cycles of air-oxygen switches, ten consecutive air-oxygen switches were used.
 \acs{ICA} was applied to each cycle of the sequences separately (as described in section~\ref{fig_repeatability}).
 Figure~\ref{longcycles} shows the results from a tumour including a \acs{dOE-MRI} map (\ref{longcycles}A), a standard deviation map (\ref{longcycles}B), and a coefficient of variation map (\ref{longcycles}C).
 The standard deviation and coefficient of variation maps are surrogate measures of cycling hypoxia as they highlight regions of the tumour that show the highest degree of deviation or variation over the ten cycles.
@@ -73,6 +73,7 @@ Unfortunately, these results remain un-validated because we were not able to ass
 One way to assess cycling hypoxia using histology is to use two separate hypoxia stains (such as EF5 and pimonidazole) and inject them intravenously 30-60 minutes apart.
 Imaging the two stains and mapping the differences could confirm the presence or absence of cycling hypoxia. 
 A subsequent experiment where the \acs{dOE-MRI} analysis is repeated in more animals alongside the dual hypoxia histological markers would help confirm this finding.
+\SARi{Not sure whey B and C show different results. Shouldn't they be very comparable? There is the diagonal ridge in C that's missing on B.}
 
 \begin{figure}[htbp]  
    \centering
@@ -83,7 +84,7 @@ A subsequent experiment where the \acs{dOE-MRI} analysis is repeated in more ani
 
 \section{Exploring the link between perfusion and oxygenation}
 
-One SCCVII and one HCT-116 tumour-bearing mouse were catheterized and injected with 30mM solution of Gd-DTPA for \acs{DCE-MRI} at a rate of 1mL/min using a power injector at a dose of 5$\mu$L/g.
+One SCCVII and one HCT-116 tumour-bearing mouse were catheterized and injected with 30-mM solution of Gd-DTPA for \acs{DCE-MRI} at a rate of 1~mL/min using a power injector at a dose of 5~$\mu$L/g.
 
 \noindent\textbf{Perfusion maps:} Signal intensity timecourse from the DCE-MRI map was first normalized to the mean signal intensity pre-injection.
 Area under the first 60 seconds of the normalized signal intensity enhancement curve after the injection was calculated (\acs{AUC}$_{60}$) using the composite Simpson's Rule (\texttt{scipy.integrate.simps}).
@@ -112,7 +113,7 @@ A large patch of necrosis, as identified in histological section in figure~\ref{
 
 For a variety of reasons, the past 5-10 years have seen a gradual resurgence of oxygen-enhanced MRI and renewed interest to refine and better understand the mechanism of action.
 One important strategy to elucidate the mechanism of oxygen as a contrast agent is to rely on the \acs{BOLD} effect. 
-Little et al. have recently shown that simultaneous acquisition of T$_1$ and T$_2^*$ images improves the specificity of oxygen-enhanced MRI~\cite{Little:2018iu}.
+Little et al.\ have recently shown that simultaneous acquisition of T$_1$ and T$_2^*$ images improves the specificity of oxygen-enhanced MRI~\cite{Little:2018iu}.
 Here we outline how our technique using \acs{ICA} can be expanded to include T$_2^*$ imaging, and what the additional information will be used for.
 
 T$_2^*$ imaging would utilize the Blood Oxygen Level Dependent (\acs{BOLD}) effect, which can measure shifts in hemoglobin saturation through changes in T$_2^*$ and therefore assess tumour perfusion without the need for injectable contrast agents. 
@@ -151,7 +152,7 @@ x_i = \sum_{j}^{L} a_{ij} \circ s_j
 \end{equation}
 
 where $\circ$ indicates an element-wise product. 
-An algorithm suggested by Rafique et al. in 2016 solves the implementation problem and makes it available as FastIVA~\cite{Rafique:2016cf}.
+An algorithm suggested by Rafique et al.\ in 2016 solves the implementation problem and makes it available as FastIVA~\cite{Rafique:2016cf}.
 It would be worthwhile to explore \acs{IVA} as an extension to \acs{ICA} once the T$_1$ and T$_2^*$ weighted data is acquired.
 
 %\begin{figure}[htbp]

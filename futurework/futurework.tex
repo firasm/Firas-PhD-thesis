@@ -7,14 +7,14 @@
 The work presented in this chapter are a collection of preliminary results, alternative analysis methods, and proposed future work. 
 \SARi{you couldn't make it less appealing. This sounds like and odds-and-sods sort of chapter. please market more convincingly. don't use the word collection}
 
-\section{Group-ICA}
+\section{Group ICA}
 
 One of the principal limitations of \acs{ICA} is that it ``does not naturally generalize to a method suitable for drawing inferences about groups of subjects~\cite{Calhoun:2009jr}.
 In this thesis, we developed a quantification method to mitigate this issue by comparing component weighting factor strength after normalization (Section~\ref{sec:correctionfactor}).
 Calhoun et al., has reviewed several methods for analyzing multiple subjects within a cohort using \acs{ICA} have been proposed~\cite{Calhoun:2009jr}.
 The approach that is most relevant for the data collected for the experiments presented in this thesis (section~\ref{sec:B20_expt1}) is spatial concatenation~\cite{Calhoun:2001jx}.
-Briefly, cohort data for groupICA was constructed by concatenating all 16 slices from the 17 subjects together in the z-dimension.
-Figure~\ref{groupICAschematic} compares group ICA to the standard ICA technique described in Chapter~\ref{ch:oemri1}.
+Briefly, cohort data for Group ICA was constructed by concatenating all 16 slices from the 17 subjects together in the z-dimension.
+Figure~\ref{groupICAschematic} compares Group ICA to the standard ICA technique described in Chapter~\ref{ch:oemri1}.
 The same deflation-based \acs{FastICA} (python package \texttt{scikit.sklearn}~v0.17.1) was used to analyze the data.
 To ensure the cyclic behaviour of the T$_1$ weighted signal intensity corresponding to the gas challenge appeared in only one component, the number of independent components was set to 9.
 Application of \acs{ICA} to the spatially concatenated data produced a single oxygen-enhancing component that matched the temporal pattern of the gas cycling paradigm in all 17 animals (Figure~\ref{groupICA1}). 
@@ -22,19 +22,20 @@ This component appears to be smoother than typical extracted oxygen enhancing co
 
 \begin{figure}[htbp]
    \centering
-   \includegraphics[width=\textwidth]{futurework/futurework-images/groupICA_schematic.pdf} % requires the graphicx package
-   \caption{Comparison of the standard ICA technique and groupICA. The main difference is in the pre-processing of the MRI data comprising spatial coordinates ($x,y,z$) and temporal information ($t$). GroupICA datasets are prepared by spatially concatenating all animals together ($n$). The output of the ICA techniques also differs: in standard ICA each application produces a set of independent components whereas in groupICA only a single set of independent components is produced.
+   \includegraphics[width=0.8\textwidth]{futurework/futurework-images/groupICA_schematic.pdf} % requires the graphicx package
+   \caption{Comparison of the standard ICA technique and Group ICA. The main difference is in the pre-processing of the MRI data comprising spatial coordinates ($x,y,z$) and temporal information ($t$). Group ICA datasets are prepared by spatially concatenating all animals together ($n$). The output of the ICA techniques also differs: in standard ICA each application produces a set of independent components whereas in Group ICA only a single set of independent components is produced.
    \label{groupICAschematic}}
 \end{figure}
 
 Upon selection of the single oxygen enhancing component, reshaping the resultant weighting-factor maps to the original matrix size provided inter-subject comparable data.
 Final normalized \acs{dOE-MRI} maps were obtained by dividing each pixel of the component map for each animal with the mean signal-intensity over time of the corresponding pixel in the dOE-MRI scan.
 Corresponding \acs{dOE-MRI} are comparable to the methods presented in Chapter~\ref{ch:oemri3} and conclusions of the B20 effect still hold with this analysis method.
+One major disadvantage of applying \acs{ICA} only once to multiple animals is that the extracted component averages out any individual features.
 
 \begin{figure}[htbp]
    \centering
    \includegraphics[width=\textwidth]{futurework/futurework-images/ISMRM2019_AARTS3_groupICA_OEcomponent.png} % requires the graphicx package
-   \caption{Extracted oxygen enhancing component from \acs{ICA} applied to the spatially concatenated cohort data. One major disadvantage of applying \acs{ICA} only once to multiple animals is that the extracted component averages out any individual features.
+   \caption{Extracted oxygen enhancing component from \acs{ICA} applied to the spatially concatenated cohort data.
    \label{groupICA1}}
 \end{figure}
 
@@ -49,7 +50,7 @@ Further work should include characterizing additional tumour models with varying
 The presence of hypoxia in tumours is known to exhibit microregional and temporal heterogeneity.
 The process of cells going through periods of oxygen-starvation and then subsequently being re-oxygenated has been termed cyclic hypoxia~\cite{Dewhirst:2009de,Bayer:2011js, Bayer:2012kb}.
 A leading cause of cycling hypoxia is the variable flux of red blood cells through the abnormal tumour vasculature on time scales of minutes to hours.
-There is some evidence of as there are clear mismatches between pimonidazole staining and perfusion markers (Figure~\ref{fig_perfusion}).
+There is some evidence of cycling hypoxia in our data as there are clear mismatches between pimonidazole staining and perfusion markers (Figure~\ref{fig_perfusion}).
 The SCCVII tumour model has specifically been shown to be afflicted by cycling hypoxia as early as  1986~\cite{Chaplin:1986iz}.
 It is therefore not surprising that \acs{dOE-MRI} is sensitive to these changes in this tumour model, and provides the first non-invasive data suggesting cycling hypoxia on the relatively short timeline of less than 15 minutes.
 The clinical importance of intermittent hypoxia is unclear largely due to poor availability of techniques to measure it in humans~\cite{Michiels:2016hv}. 
@@ -58,8 +59,8 @@ Recent work on measuring cycling hypoxia in patients using R$_2^*$~\cite{Panek:2
 Despite the presence of cycling hypoxia in many regions of the SCCVII tumours, O$_2$-enhancing regions in \acs{dOE-MRI} maps are generally in agreement with well perfused areas of histology images.
 In particular, concentrated oxygen-responsive regions within a \acs{dOE-MRI} map correspond to highly vascular, perfused regions in matching histology images.
 Voxels anti-correlated with the O$_2$ stimulus (O$_2$ refractory, green) typically correspond with pimonidazole staining but there are instances of mismatch (Figures~\ref{fig_sccvii}, ~\ref{fig_hct116}, and ~\ref{fig_perfusion}).
-In addition to cycling hypoxia, there may be possible mismatch between the sensitivities of pimonidazole and dOE-MRI and other oxygen sensing modalities (described in \highlight[comment={no ref?}]{Horsman et al.\ NRC 2012)}.
-Success of dOE-MRI will ultimately depend on its validation as a clinically useful measure of tumour hypoxia.
+In addition to cycling hypoxia, there may be possible mismatch between the sensitivities of pimonidazole and dOE-MRI and other oxygen sensing modalities (described in \cite{Horsman:2012kw}).
+Success of \acs{dOE-MRI} will ultimately depend on its validation as a clinically useful measure of tumour hypoxia.
 
 To assess this phenomenon, a pilot study was carried out to determine whether this cycling hypoxia can be measured with \acs{dOE-MRI}.
 In a small pilot cohort of SCCVII xenografts mice ($n=2$), rather than the standard protocol of three cycles of air-oxygen switches, ten consecutive air-oxygen switches were used.
@@ -162,8 +163,14 @@ It would be worthwhile to explore \acs{IVA} as an extension to \acs{ICA} once th
 %   \label{extractions}
 %\end{figure}
 
+\section{Conclusions}
 
-
+The \acs{dOE-MRI} method presented in the preceding chapters presents significant improvements to the sensitivity, speed, and applicability of existing \acs{OE-MRI} techniques. 
+We showed that small changes in T$_1$W signal intensity arising from cycling respiratory challenges can be separated robustly using \acs{ICA}. 
+Traditional quantitative T$_1$-mapping techniques have longer imaging times and are impractical for \acs{OE-MRI} due to \acs{SNR} and time constraints.
+\acs{dOE-MRI} with \acs{ICA} is clinically translatable as the sequence acquisition is relatively short and most centres already have access to dynamic T$_1$W MRI acquisitions that many patients already routinely receive. 
+Therefore \acs{dOE-MRI} is an exciting, non-invasive and widely available technique for assessing tumour oxygenation that could provide a crucial tool in the field of radiation oncology and in the development of treatments targeting the tumour microenvironment.
+We look forward to the opening of exciting avenues by \acs{dOE-MRI} in the areas of drug development, patient stratification, and treatment monitoring. 
 
 
 \endinput

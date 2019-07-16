@@ -36,7 +36,7 @@ With the application of a cycling oxygen challenge and processing the data using
 All animal experimental procedures were carried out in compliance with the guidelines of the Canadian Council for Animal Care and were approved by the institutional Animal Care Committee. 
 Female NRG mice were implanted with murine squamous cell carcinoma SCCVII tumours ($5 \times 10^5 $cells in 50~$\mu$l serum-free media; cells provided by Dr.\ J Evans) or with human colorectal carcinoma HCT-116, human ovarian carcinoma SKOV3 or human breast carcinoma BT-474 tumours (each as $10 \times 10^6$ cells in 50~$\mu$l serum-free media; cell lines obtained from the American Type Culture Collection) and were imaged when the largest tumour diameters reached approximately 8-10~mm.
 Mice were anesthetized with isoflurane for the duration of imaging sessions until euthanasia, and were positioned supine on the custom surface coil apparatus.
-Throughout the imaging session, a small animal monitoring system (SAII Instruments, Stony Brook, NY, USA) was used to monitor respiration rate, varying between 80-100 breaths per minute, and body temperature, maintained at $36.8 \pm 0.5^\circ$C using a continuous airflow heater.
+Throughout the imaging session, a small animal monitoring system (SA Instruments Inc., Stony Brook, NY, USA) was used to monitor respiration rate, varying between 80-100 breaths per minute, and body temperature, maintained at $36.8 \pm 0.5^\circ$C using a continuous airflow heater.
 All animals were injected with 60~mg/kg pimonidazole hydrochloride (HypoxyProbe) 30~min prior to imaging to label hypoxic cells and were euthanized within 15~min of imaging completion.
 Tumours were embedded and frozen in optimum cutting temperature medium (OCT; Tissue-TEK).
 
@@ -64,8 +64,6 @@ This paradigm continued for three cycles over a total of fourteen minutes; gases
 \label{doemri_mrianalysis2}
 \textbf{dOE-MRI maps:} A suite of in-house software was developed based on the technique described by Hyvarinen~\cite{Hyvarinen:2000vk}.
 Specifically the python machine learning library scikit-learn, \texttt{sklearn.decomposition.FastICA}, was used~\cite{Pedregosa:2011tv}.
-%%
-%A suite of in-house software was developed using the python machine learning library scikit-learn~\cite{Pedregosa:2011tv}, specifically \texttt{sklearn.decomposition.Fast \acs{ICA}}\todo[backgroundcolor=green]{Have to figure out how to line break properly here} based on the technique described by Hyvarinen~\cite{Hyvarinen:2000vk}.
 The Fast\acs{ICA} algorithm is applied to serially acquired T$_1$W images and the output is a paired set of components and weighting factors for each voxel in the dataset.
 Extracted independent components are not ordered and while the component selection can be automated, in this study an observer was assigned to select the appropriate component (Figure~\ref{technique}).
 The number of independent components for each imaging session was chosen by the operator and ranged from 4-9 to ensure the cyclic behaviour of the T$_1$W signal intensity corresponding to the gas challenge appeared in only one component. 
@@ -173,13 +171,15 @@ Details of this are discussed in section~\ref{futurework:expandingdOEMRI_T2*}.
 
 Figure~\ref{Sfig_components} shows the extracted independent components and their corresponding weighting factor maps for an application of \acs{ICA} on a OE-MRI scan.
 Extracted components typically have a mix of high and low frequency responses and may include temperature drifts, breathing artefacts and other motion. 
+For instance, c$_4$ is clearly the component of interest here as the cycling pattern is not present in any other component. 
+We speculate that c$_1$ corresponds to a temperature drift over the course of the scan and c$_3$ is likely related to a breathing motion artefact. 
+Component 2 is a relatively weak spurious signal fairly low in magnitude with no obvious spatial or temporal pattern. 
 Additional physiological monitoring data is needed for a more thorough analysis of the other independent components and whether they can aid our understanding of the mechanism of action.
-\SARi{all the speculation in the figure caption should be moved to the text}
 
 \begin{figure}[htbp]
    \centering
    \includegraphics[width=0.9\textwidth]{oemri_thesis1/oemri_thesis1-images/fig_components.pdf} % requires the graphicx package
-   \caption{Plots of the four components extracted from \acs{ICA} are shown (($||c_i||=1, \forall i $) along with the corresponding  weighting factor maps (normalized to mean voxel wise mean signal intensity). Note that c$_4$ is clearly the component of interest here as the cycling pattern is not present in any other component. We speculate that c$_1$ corresponds to a temperature drift over the course of the scan and c$_3$ is likely related to a breathing motion artefact. Component 2 is a relatively weak spurious signal fairly low in magnitude with no obvious spatial or temporal pattern. Further investigation is required to explore the underlying physiological response (if any) of the other components.
+   \caption{Plots of the four components extracted from \acs{ICA} are shown (($||c_i||=1, \forall i $) along with the corresponding  weighting factor maps (normalized to mean voxel wise mean signal intensity).
    \label{Sfig_components}}
 \end{figure}
 
@@ -208,20 +208,19 @@ Gas delivered to mice switches between room air and 100\% oxygen in two minute c
 \begin{equation}
 y(t) =
   \begin{cases}
-                                   +b & \text{if $t\geq \frac{3a}{7}$} \\
-                                   -b & \text{if $t< \frac{4a}{7}$} \\
+                                   +b & \text{if $t\geq \frac{4T}{7}$} \\
+                                   -b & \text{if $t< \frac{4T}{7}$} \\
   \end{cases},
 \end{equation}
 
-For N data points, each $t_i = \frac{ia}{N}$.
-
+where $T$ is the total imaging time and $T/7$ is the time for a single segment of the gas challenge.
 The Fast \acs{ICA} algorithm places a condition on the norm of the extracted component $y(t)$,
 
 \begin{equation}
-\sqrt{\sum_{i=1}^{N} \Bigl|y(t_i)\Bigr|^2} %\coloneqq 1.
+\sqrt{\sum_{i=1}^{N} \Bigl|y(t_i)\Bigr|^2} = 1.
 \end{equation}
 
-Simplifying the expression above for our $y(t)$, we have:
+Simplifying the expression above for our $y(t)$ (the Heaviside function), we have:
 \begin{align}
 1 = \sqrt{b^2 \sum_{i=1}^{N} 1^2} \nonumber \\
 b = N^{-\frac{1}{2}}
@@ -235,13 +234,6 @@ s = \frac{\sqrt{198}}{\sqrt{N}}
 \end{align}
 
 This scaling factor was applied to all \acs{dOE-MRI} maps used in this study to retain information about the level of response to the supplied oxygen across scans with different sampling frequencies.
-
-%\begin{figure}[htbp]
-%   \centering
-%   \includegraphics[width=0.6\textwidth]{oemri2/oemri2-images/schematic.png} % requires the graphicx package
-%   \caption{example caption}
-%   \label{dOEMRImaps}
-%\end{figure}
 
 %======================================================================
 \section{Discussion}
@@ -269,7 +261,6 @@ Should it arise in other contexts it could possibly be mitigated by extending th
 The potential for creating a hyperoxia steady state by modulating oxygen duration is discussed further by Losert et al. ~\cite{Losert:2002gt}.
 
 Depending on the application of \acs{dOE-MRI}, quantitative O$_2$-positive and O$_2$-negative fractions can be obtained from \acs{dOE-MRI} maps as shown in this study, by deploying group \acs{ICA} techniques~\cite{Calhoun:2009jr}, or setting significance thresholds using a t-test~\cite{Greicius:2004ck} and computing z-scores~\cite{McKeown:1998wd}.
-To help understand the oxygen dynamics in tumours, including the effect of hemoglobin with T$_2^*$-mapping, fitting exponential recovery and decay curves to the extracted oxygen response curves may provide additional insights as originally proposed by Losert et al.\ in the brain~\cite{Losert:2002gt}.
 In a promising study, White et al.\ has shown that OE-MRI may be very relevant in developing prognostic factors to predict tumour response to hypofractionation by stratifying tumours that may benefit from oxygen breathing during irradiation~\cite{White:2016fz}.
 Featherstone et al.\ have recently explored pre-clinical datasets using feature-extraction and clustering analysis and this may prove fruitful in understanding the behavior of subregions within a tumour microenvironment~\cite{Featherstone:2018cn}.
 Future work to evaluate the utility of \acs{dOE-MRI} will ultimately depend on its context-dependent validation as a relevant measure of tumour hypoxia to dynamically characterize the clinically relevant oxygen status of tumours, relating this information to treatment sensitivities and outcomes.
@@ -277,9 +268,10 @@ Future work to evaluate the utility of \acs{dOE-MRI} will ultimately depend on i
 % ======================================================================
 \section{Conclusions}
 % ======================================================================
-In this study we extend existing oxygen-enhanced MRI techniques by adding a cycling element to the respiratory challenge and using a blind-source separation signal processing technique ( \acs{ICA}) to extract the oxygen responsive component and responding voxels.
-This \acs{dOE-MRI} method presents significant improvements to the sensitivity and applicability of OE-MRI where small changes in T$_1$W signal intensity arising from cycling respiratory challenges can be separated robustly. Traditional quantitative T$_1$-mapping techniques have longer imaging times and are impractical for OE-MRI due to \acs{SNR} and time constraints.
-\acs{dOE-MRI} with \acs{ICA} is clinically translatable as the sequence acquisition is relatively short and most centres already have access to dynamic T$_1$W MRI acquisitions that many patients already routinely receive. 
-Therefore \acs{dOE-MRI} is an exciting, non-invasive and widely available technique for assessing tumour oxygenation that could provide a crucial tool in the field of radiation oncology and in the development of treatments targeting the tumour microenvironment.
-\SARi{reads like copied directly from a paper. A more appropriate conclusion at the end of a chapter would point the way fwd to the next chapters.}
+In this study we extend existing oxygen-enhanced MRI techniques by adding a cycling element to the respiratory challenge and using a blind-source separation signal processing technique (\acs{ICA}) to extract the oxygen responsive component and responding voxels.
+In the following chapters, we advance development and application of the technique and further refine it. 
+In chapter~\ref{ch:oemri2} we attempt to validate \acs{dOE-MRI} measurements \emph{in vivo} using pimonidazole, a histological tumour hypoxia marker.
+To further explore the oxygen dynamics in tumours we also characterized the oxygen replenishment curve as originally proposed by Losert et al.\ in the brain~\cite{Losert:2002gt}.
+In chapter~\ref{ch:oemri3} we deploy the technique to assess tumour oxygenation changes following treatment with bevacizumab, an antiangiogenic agent.
+
 \endinput

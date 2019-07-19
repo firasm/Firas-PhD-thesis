@@ -20,12 +20,12 @@ This effect has been termed `Vascular Normalization` and does not just rely upon
 Considerable evidence has been presented in the literature in support of the vascular normalization window~\cite{Jain:2005gk,Viallard:2017ck,Martin:2019io}.
 MRI techniques such as dynamic susceptibility contrast MRI, arterial spin labeling, and \acs{DCE-MRI} have all been used to obtain surrogate parameters of the effects of vascular normalization.
 \todo{fix this firas}including cerebral blood volume and flow (CBV, CBF), \acs{K$^{trans}$}, \acs{$v_e$}, and \acs{$v_p$} ~\todo[backgroundcolor=red!20!white]{add a couple of refs here, check Gerstner 2008}.
-\acs{DCE-MRI} vessel permeability is typically measured using \acs{K$^{trans}$}, the volume transfer constant and is dependent on both vascular permeability and capillary surface area (related to blood flow) ~\cite{Tofts:1999we}. 
+\acs{DCE-MRI} vessel permeability is typically measured using \acs{K$^{trans}$}, the volume transfer constant and is dependent on both vascular permeability and capillary surface area (related to blood flow)~\cite{Tofts:1999we}. 
 Unfortunately, because permeability and flow are highly coupled in the measurement of \acs{K$^{trans}$}~\cite{Tofts:1999we}.
 This limitation motivated this work to determine whether a high molecular weight agent such as \acs{HPG-GdF} could be used for measuring vessel permeability without the confounding effects of blood flow.
 
 The binding of vascular endothelial growth factors (\acs{VEGF}) to the \acs{VEGF} receptor is a key driver of angiogenesis.
-bevacizumab - marketed clinically under `Avastin\textsuperscript{\textcopyright}' - is a monoclonal antibody that binds VEGF extracellularly, preventing the interaction of of \acs{VEGF} to its receptors and inhibits angiogenesis. 
+Bevacizumab - marketed clinically under `Avastin\textsuperscript{\textcopyright}' - is a monoclonal antibody that binds VEGF extracellularly, preventing the interaction of of \acs{VEGF} to its receptors and inhibits angiogenesis. 
 Amongst others, bevacizumab has been used clinically to treat breast, colon, colorectal, lung, brain, ovarian and cervical cancers~\cite{Genentech:2019th}. 
 \acs{VEGF} ablation has been shown to at least temporarily reduce vascular permeability and increase tumour oxygenation in some models~\cite{OConnor:2012ie}.
 We hypothesized that treatment with a \acs{VEGF} inhibitor will result in a decrease of vessel permeability measured with \acs{DCE-MRI} using HPG-GdF.
@@ -66,7 +66,7 @@ Nuclear density was stained using Hoechst 33342 (Thermofisher) and imaged at 380
 Sections were imaged using a system of tiling adjacent microscope fields of view at a resolution of 0.75 $\mu$m/pixel~\cite{Kyle:2007ch}.
 Using ImageJ~\cite{Collins:2007jr} and user-supplied algorithms, images were superimposed and manually cropped to tumour tissue boundaries with staining artifacts and necrosis removed.
 False color images were constructed in ImageJ by converting greyscale images to color and overlaying selected layers: \acs{HPG-GdF} (red), Hoechst 33342 (grey), CD31 (blue), carbocyanine (cyan), pimonidazole (green).
-Positive fluorescent staining for each slice is reported as a mean, and the median group intensity $I$ (range 0-255) is reported for pimonidazole ($I_{pimo}$), \acs{HPG-GdF} ($I_{hpg}$) and CD31 ($I_{CD31}$)~\todo[backgroundcolor=red!20!white]{remove CD31 if not showing in results}.
+Positive fluorescent staining for each slice is reported as a mean, and the median group intensity $I$ (range 0-255) is reported for pimonidazole ($I_{pimo}$), \acs{HPG-GdF} ($I_{hpg}$).% and CD31 ($I_{CD31}$)~\todo[backgroundcolor=red!20!white]{remove CD31 if not showing in results}.
 
 \section{Results}
 
@@ -106,7 +106,7 @@ Data for individual tumours as well as the group differences are shown in figure
   \centering
   \includegraphics[width=\textwidth]{hpg/hpg-B20-images/hpg_allHisto.pdf} 
   \captionsetup{width=\linewidth}
-  \caption{all histo pimo}
+  \caption{Histological sections shown for 6 control and 6 treated tumours, with four slices per tumour. All sections are stained for pimonidazole (green) and \acs{HPG-GdF} (red).}
   \label{hpg:allHisto}
 \end{figure}
 
@@ -116,7 +116,7 @@ Apparent permeability-surface area product (\acs{aPS}) is a parameter that captu
 Figure~\ref{hpgB20:mriparams} shows the group differences and the median value of the B20-treated group (aPS$_{Md}$ = $1\times10^{-4}$) was significantly lower than the control group (aPS$_{Md}$ = $6.5\times10^{-5}$); Mann-Whitney $U = 3$, $p = 0.01$.
 
 Histological staining of \acs{HPG-GdF} fluorescence matched relatively well with areas of high \acs{aPS} values as shown in figure~\ref{hpg:aPShistoEC}, however there are also areas where aPS is moderate or high but \acs{HPG-GdF} fluorescence is not present in high concentrations. 
-Group differences in \acs{HPG-GdF} accumulation were also present histologically as \acs{HPG-GdF} fluorescence intensity was markedly decreased in the B20-treated tumours ($I_{hpg} = 12.7$) compared to the controls ($I_{hpg} = 11.0$); a Mann-Whitney $U$~test indicated the difference was significant $U = 52$, $p = 9\times10^{-6}$.
+Group differences in \acs{HPG-GdF} accumulation were also present histologically as \acs{HPG-GdF} fluorescence intensity was markedly decreased in the B20-treated tumours ($I_{hpg} = 12.7$) compared to the controls ($I_{hpg} = 11.0$); a Mann-Whitney $U$~test indicated the difference was significant, $U = 52$, $p = 9\times10^{-6}$.
 Aggregate voxel distributions of \acs{aPS} values in Figure~\ref{hpgB20:accumulation} also shows a clear reduction in \acs{aPS} in the treatment group. Figure~\ref{hpg:aPShistoEC} shows the \acs{aPS} parametric maps from \acs{DCE-MRI} alongisde approximate slice matched histology sections from the same tumours.
 Patterns observed in the quantitative analysis of the data are also evident in MRI and histology images: following treatment with B20, there is a marked reduction in blood vessel permeability measured by \acs{aPS} and a reduction in \acs{HPG-GdF} accumulation histologically measured by native fluorescence of the contrast agent.
 
@@ -154,25 +154,25 @@ These low molecular weight agents are essential for many applications including 
 However, there is a strong coupling of blood flow and vessel permeability in standard \acs{DCE-MRI} models parameter interpretation varies based on the tumour microenvironment~\cite{Gerstner:2008ba}.
 For instance, in regions of high permeability, the movement of the contrast agent is limited by blood flow so \acs{K$^{trans}$} primarily measures blood flow.
 When applied in regimes of low permeability, the small molecular weight contrast agent cannot extravasate from vessels so \acs{K$^{trans}$} primarily measures vessel permeability~\cite{Tofts:1999we}.
-Contrast agent size affects measures of vascular permeability and low molecular weight agents result in underestimations of vessel permeability ~\cite{deLussanet:2005cb}.
+Contrast agent size affects measures of vascular permeability and low molecular weight agents result in underestimations of vessel permeability~\cite{deLussanet:2005cb}.
 For applications where distinguishing between blood flow and vessel permeability is important, low molecular weight agents cannot be used.
 
 The principal advantage of high molecular weight contrast agents is their intravascular nature so blood flow is removed as a contributing factor of the measurement.
 There is also an inverse relationship between size of the contrast agent and MR signal enhancement because larger molecules diffuse slower and extravasate less.
 The reduction in signal enhancement is partially compensated for by the increased relaxivity of the larger agent arising from more Gd-chelates attached to the molecule and a lower tumbling rate~\cite{Barrett:2006jx}.
-We have previously shown that the relaxivity of ~\acs{HPG-GdF} is 300 times larger than standard \acs{DCE-MRI} contrast agents but the agent extravasates only a few micrometers from nearby vessels~\cite{Baker:2015cob}, leading to an overall reduction in signal enhancement.
-In summary, the larger the contrast agent, the less signal enhancement there is in the MR images and \acs{HPG-GdF} has a molecular weight of 583 kDa.
-This is considerably larger than common biocompatible high molecular weight agents that range from 20-92 kDa~\cite{Barrett:2006jx} and to our knowledge, \acs{HPG-GdF} is the largest agent with which a permeability measure has been obtained.
+We have previously shown that the relaxivity of \acs{HPG-GdF} is 300 times larger than standard \acs{DCE-MRI} contrast agents but the agent extravasates only a few micrometers from nearby vessels~\cite{Baker:2015cob}, leading to an overall reduction in signal enhancement.
+Consequently, the larger the contrast agent, the less signal enhancement there is in the MR images.
+At a molecular weight of 583 \acs{kDa}, \acs{HPG-GdF} is considerably larger than common biocompatible high molecular weight agents that range from 20-92 kDa~\cite{Barrett:2006jx} and to our knowledge, is the largest agent with which a permeability measure has been obtained.
 
 This study provides another application for the high molecular weight agent \acs{HPG-GdF} in exploring the tumour microenvironment and the effects of vascular normalization.
 \acs{AUC}$_{60}$ of the signal intensity represents presence of HPG in the blood 60s after injection was also significantly lower in the treated mice which indicates the antiangiogenic treatment altered the tumour vasculature.
 There is considerably less variability in the enhancement curves of the treated tumours as shown in Figure~\ref{hpg:aPShistoEC},providing strong evidence for B20 normalizing the vasculature.
 The vascular normalization hypothesis suggests that after treatment with an antiangiogenic therapy, the overall vessel permeability and the number of vessels will decrease.
-Our study has provided evidence for a decrease in vessel permeability through \acs{aPS} and a decrease in accumulation of \acs{HPG-GdF} through \acs{AUC}$_{60}$ (See figure~\ref{hpgB20:mriparams}).
+As summarized in Figure~\ref{hpgB20:mriparams}, our study has provided evidence for a decrease in vessel permeability (reduced \acs{aPS}) as well as a decrease in accumulation of \acs{HPG-GdF} (reduced \acs{AUC}$_{60}$).
 Additionally, we also showed a dramatic reduction in hypoxia (measured by pimonidazole staining) in the treated group. 
-Existing MRI techniques do not permit measurement of oxygenation \emph{in vivo} despite an unmet clinical need~\cite{Horsman:2012kw}.
 
-\todo[backgroundcolor=red!20!white]{Transition needs some work here} While the SCCVII cell line is a murine model, it is ideal for validating non-invasive MRI as it has almost no necrosis present due to its vascular architecture.
+A limitation of this study is that the model cell line used was a murine tumour model which may have limited potential for translation.
+However, this tumour model is ideal for validating non-invasive MRI as it has no necrosis present due to its vascular architecture.
 Necrosis is a potential confounding factor in macromolecular contrast agent imaging studies as large areas of necrosis and empty space result in pooling of the agent in non-viable areas.
 Consequently in SCCVII tumours, any fluorescence present on cryosections has extravasated from nearby vessels and can be quantified as shown in figure~\ref{hpgB20:accumulation}.
 Figure~\ref{hpg:allHisto} shows low inter-tumour slice variability in average staining intensity of \acs{HPG-GdF} fluorescence, but considerable heterogeneity exists between tumours and not all tumours responded consistently.
@@ -195,7 +195,8 @@ Nevertheless, validation with histological images is a positive sign that the me
 
 We have shown that \acs{aPS} and \acs{AUC}$_{60}$ decreases after administration of B20.
 Lower accumulation of \acs{HPG-GdF} following treatment was confirmed by histology via direct \acs{HPG-GdF} fluorescence imaging.
-Blood vessels of treated tumours appear to be less permeable as a result of the anti-angiogenic drug.
+Blood vessels of treated tumours appear to be less permeable, and tumour hypoxia was markedly reduced as a result of the anti-angiogenic drug.
+Unfortunately, existing MRI techniques do not permit measurement of oxygenation \emph{in vivo} despite an unmet clinical need~\cite{Horsman:2012kw}.
 Our results indicate that \acs{HPG-GdF} has potential applications in assessing effects of antiangiogenic agents on blood vessel permeability and function.
 Future work will include a panel of tumours with more diverse tumour microenvironments to evaluate its utility in more clinically relevant tumour models.
 While it is unclear that macromolecular contrast agents will become standard clinically, they are a very useful tool to improve our understanding of the tumour microenvironment and to develop novel drugs for cancer.

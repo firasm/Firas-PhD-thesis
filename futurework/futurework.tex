@@ -45,6 +45,25 @@ In this thesis a limited number of tumours models were studied (SCCVII, BT-474, 
 In section~\ref{sec:lognormalfitting_results} we observed that $\sigma_f$ in the SCCVII tumours discriminated between the rapidly growing SCCVII tumours and the other two models.
 Further work should include characterizing additional tumour models with varying tumour microenvironments, and also comparison of the oxygen signal decay curves (i.e. when the gas is switched back to room air) as well as the enhancement curves.
 
+%%%%%%%%%% 
+%%% Rescued from oemri validation chapter - stefan doesn't really like this. 
+%\subsection{Extracting the cycling component via \acs{ICA} is independent of number of components}
+%\label{sec:numComponents}
+Another interesting feature of the \acs{ICA} extraction process is that for our application, the number of components prescribed rarely matters in separating out the oxygen-responsive component.
+\acs{dOE-MRI} maps from \acs{ICA} applied serially after varying the number of components ($m$) from 3 to 12 are shown in Figure~\ref{numComponents}.
+The component of the signal that corresponds to the T$_1$W signal intensity increase due to the cycling oxygen is quite prominent and independent of the number of components selected.
+Two examples are shown, with a low and high degree of variability measured in the extracted components.
+It is currently an open question how the presence or absence of noise affects the extraction process. 
+In any event, it is instructive to consider the best-case and worst-case scenarios for the independent component as it may have implications when performing fits.
+In both cases, the corresponding \acs{dOE-MRI} maps show the same O$_2$-positive and O$_2$-negative regions.
+
+\begin{figure}[htbp]
+   \centering
+   \includegraphics[width=\textwidth]{future-work/futurework-images/technical_numComponents.pdf} % requires the graphicx package
+   \caption{Two animals were chosen to demonstrate the effect of the number of components ($m$) on the \acs{dOE-MRI} maps. The low variability example shows no discernible difference in the extracted component anywhere from $m=3$ to $m=12$. The high variability example shows considerably more noise in the extracted component, but the same overall trend. The corresponding \acs{dOE-MRI} maps for both the low variability and high variability examples show almost no difference in the oxygenation maps.}
+   \label{numComponents}
+\end{figure}
+
 \section{dOE-MRI maps of 10 consecutive air/\texorpdfstring{O$_2$}{O2} switches are stable}
 
 The presence of hypoxia in tumours is known to exhibit microregional and temporal heterogeneity.
@@ -86,8 +105,8 @@ A subsequent experiment where the \acs{dOE-MRI} analysis is repeated in more ani
 
 One SCCVII and one HCT-116 tumour-bearing mouse were catheterized and injected with 30-mM solution of Gd-DTPA for \acs{DCE-MRI} at a rate of 1~mL/min using a power injector at a dose of 5~$\mu$L/g.
 
-\noindent\textbf{Perfusion maps:} Signal intensity timecourse from the DCE-MRI map was first normalized to the mean signal intensity pre-injection.
-Area under the first 60 seconds of the normalized signal intensity enhancement curve after the injection was calculated (\acs{AUC}$_{60}$) using the composite Simpson's Rule (\texttt{scipy.integrate.simps}).
+\noindent\textbf{Perfusion maps:} Signal intensity timecourse from the \acs{DCE-MRI} data was first normalized to the mean signal intensity pre-injection.
+The composite Simpson's Rule (\texttt{scipy.integrate.simps}) was used to calculate the area under the first 60 seconds (\acs{AUC}$_{60})$) of the normalized signal intensity enhancement curve after the injection was calculated.
 A binary ground-truth perfusion map was constructed by classifying all voxels with AUC$_{60} > 0$ as perfused and everything else as unperfused.
 
 Where \ac{dOE-MRI} and DCE-MRI scans were acquired in the same SCCVII and HCT-116 tumour-bearing mice,  maps of oxygenation status were compared to \acs{AUC}$_{60}$ perfusion maps, as shown in Figure~\ref{fig_perfusion}.

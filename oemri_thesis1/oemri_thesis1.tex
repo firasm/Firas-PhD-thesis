@@ -121,20 +121,6 @@ Panels B and C are correlation maps whereas A is the \acs{dOE-MRI} map from \acs
    \label{fig_correlation}}
 \end{figure}
 
-\subsection{Extracting the cycling component via \acs{ICA} is independent of number of components}
-\label{sec:numComponents}
-dOE-MRI maps from \acs{ICA} applied serially after varying the number of components ($m$) from 3 to 12 are shown in Figure~\ref{numComponents}.
-The component of the signal that corresponds to the T$_1$W signal intensity increase due to the cycling oxygen is quite prominent and independent of the number of components selected.
-Two examples are shown, with a low and high degree of variability measured in the extracted components~\todo[backgroundcolor=red!20!white]{SAR: very unsatisfying not to be told why there is a high and low variability version here. How come, what's the difference, what does it mean?}.
-In both cases, the corresponding \acs{dOE-MRI} maps show the same O$_2$-positive and O$_2$-negative regions.
-
-\begin{figure}[htbp]
-   \centering
-   \includegraphics[width=\textwidth]{oemri_thesis1/oemri_thesis1-images/technical_numComponents.pdf} % requires the graphicx package
-   \caption{Two animals were chosen to demonstrate the effect of the number of components ($m$) on the \acs{dOE-MRI} maps. The low variability example shows no discernible difference in the extracted component anywhere from $m=3$ to $m=12$. The high variability example shows considerably more noise in the extracted component, but the same overall trend. The corresponding \acs{dOE-MRI} maps for both the low variability and high variability examples show almost no difference in the oxygenation maps.}
-   \label{numComponents}
-\end{figure}
-
 \subsection{Variability of response in individual oxygen cycles}
 
 A full \acs{dOE-MRI} sequence involved three cycles of oxygen but to assess the potential for shortening the sequence we also separately applied \acs{ICA} to each of the three oxygen cycles independently.

@@ -48,7 +48,7 @@ Further work should include characterizing additional tumour models with varying
 %%%%%%%%%% 
 %%% Rescued from oemri validation chapter - stefan doesn't really like this. 
 %\subsection{Extracting the cycling component via \acs{ICA} is independent of number of components}
-%\label{sec:numComponents}
+\label{sec:numComponents}
 Another interesting feature of the \acs{ICA} extraction process is that for our application, the number of components prescribed rarely matters in separating out the oxygen-responsive component.
 \acs{dOE-MRI} maps from \acs{ICA} applied serially after varying the number of components ($m$) from 3 to 12 are shown in Figure~\ref{numComponents}.
 The component of the signal that corresponds to the T$_1$W signal intensity increase due to the cycling oxygen is quite prominent and independent of the number of components selected.
@@ -59,7 +59,7 @@ In both cases, the corresponding \acs{dOE-MRI} maps show the same O$_2$-positive
 
 \begin{figure}[htbp]
    \centering
-   \includegraphics[width=\textwidth]{future-work/futurework-images/technical_numComponents.pdf} % requires the graphicx package
+   \includegraphics[width=\textwidth]{futurework/futurework-images/technical_numComponents.pdf} % requires the graphicx package
    \caption{Two animals were chosen to demonstrate the effect of the number of components ($m$) on the \acs{dOE-MRI} maps. The low variability example shows no discernible difference in the extracted component anywhere from $m=3$ to $m=12$. The high variability example shows considerably more noise in the extracted component, but the same overall trend. The corresponding \acs{dOE-MRI} maps for both the low variability and high variability examples show almost no difference in the oxygenation maps.}
    \label{numComponents}
 \end{figure}

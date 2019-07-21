@@ -50,40 +50,38 @@ Tumours were embedded and frozen in optimum cutting temperature medium (OCT; Tis
 All animal experimental procedures were carried out in compliance with the guidelines of the Canadian Council for Animal Care and were approved by the institutional Animal Care Committee.
 
 \subsection{Immunohistochemistry}
-Co-planar MRI slices and histological sections were obtained by imaging perpendicular to the longest tumour axis in MRI and serial-step 10-$\mu m$ cryosections were cut at 0.5-mm intervals in the same plane.
-Slides were then fixed in acetone-methanol for 10~min and whole sections were immunohistochemically stained~\cite{Kalra:2017is} for CD31 (PECAM; visualized using secondaries labeled with Alexa 647~nm) to label blood vessels, and for pimonidazole (HypoxyProbe-1; visualized using secondary labeled with Alexa 546~nm) to label hypoxic cells. Sections were then stained using Hoechst 33342 (bisbenzimide) to label all cell nuclei.
-Whole-tumour sections were imaged using a robotic fluorescence microscope (Zeiss Axioimager Z1), a cooled, monochrome CCD camera (Retiga 4000R; QImaging), a motorized slide loader and xy stage (Ludl Electronic Products) and customized ImageJ software~\cite{Collins:2007jr}. 
-Adjacent microscope fields of view were tiled such that images of entire tumour cryosections were captured at a resolution of 1.5~$\mu$m/pixel. 
-Using anatomical landmarks and accumulated thicknesses of serial-step sections as estimates of distances from the edges of whole tumours, sections were chosen to match the MR slices. 
-ImageJ and user-supplied algorithms were used to super impose digital images which were then manually cropped to tumour tissue boundaries with staining artifacts removed. 
-A threshold was applied to images to identify positive pimonidazole staining, and the number of positive pixels was determined as a percentage of the total number of pixels in the tumour image. 
-Overlaid greyscale images were converted to false colour for visualization with pimonidazole as green and CD31 as magenta.
+As previously described in Section~\ref{doemri_histo}.
 
 \subsection{MR Imaging}
-Imaging was performed using a 7T scanner (Bruker Biospec) with a transmit quadrature volume coil and a custom built surface receive coil. 
-An axial RARE image was acquired to localize the tumour (T$_E$/T$_R$=10.7/4250, RARE factor 8) and a T$_1$ map was acquired using the Look-Locker method. We acquired
-\acs{dOE-MRI} scans using a 2D multi-slice FLASH-based sequence for a total scan time of about 14~min.
-During the \ac{dOE-MRI} scan, breathing gas was alternated between medical air and 100\% oxygen every 2 minutes using a 3-channel gas mixer (CWE, Philadelphia, USA) for a total of 3 air-oxygen-air cycles.
+As previously described in Section~\ref{doemri_mrianalysis1}.
 All scans were acquired with the same spatial resolution and geometry and an experienced operator outlined the tumour on each slice of the RARE image to construct the region of interest (\acs{ROI}) for each animal and then transferred to all other scans.
 Tumour volumes were measured by multiplying individual voxel volume ($0.3\times 0.3\times 0.1$~mm$^3$) and the count of total number of voxels included within the manually drawn \acs{ROI}.
 
+% Imaging was performed using a 7T scanner (Bruker Biospec) with a transmit quadrature volume coil and a custom built surface receive coil. 
+% An axial RARE image was acquired to localize the tumour (T$_E$/T$_R$=10.7/4250, RARE factor 8) and a T$_1$ map was acquired using the Look-Locker method. We acquired
+% \acs{dOE-MRI} scans using a 2D multi-slice FLASH-based sequence for a total scan time of about 14~min.
+% During the \ac{dOE-MRI} scan, breathing gas was alternated between medical air and 100\% oxygen every 2 minutes using a 3-channel gas mixer (CWE, Philadelphia, USA) for a total of 3 air-oxygen-air cycles.
+
 \subsection{\ac{dOE-MRI} Analysis}
-A suite of in-house software was developed using the python machine learning library scikit-learn~\cite{Pedregosa:2011tv}, specifically \texttt{sklearn.decomposition.FastICA} based on the technique described by Hyvarinen~\cite{Hyvarinen:2000vk}.
-The Fast\ac{ICA} algorithm is applied to serially acquired T$_1$W images and the output is a paired set of components and weighting factors for each voxel in the dataset.
-The deflation-based Fast\ac{ICA} (python package scikit.sklearn v0.17.1) was used to analyze the data. 
-Extracted independent components are not ordered and while the component selection can be automated, in this study an observer was assigned to select the appropriate component.
-The number of independent components for each imaging session was chosen by the operator and ranged from 4-9 to ensure the cyclic behaviour of the T$_1$W signal intensity corresponding to the gas challenge appeared in only one component. 
-The \ac{dOE-MRI} maps were obtained by dividing the \ac{ICA} weighting-factor maps by the mean signal-intensity maps to obtain a spatial map for the strength of a particular voxel's contribution to the component of interest.
-In these \ac{dOE-MRI} maps, voxels are coloured to indicate the amount by which a given pixel intensity time course is modulated by the oxygen-related component. 
+
+As previously described in Section~\ref{doemri_mrianalysis2}.
+%%%%
+% A suite of in-house software was developed using the python machine learning library scikit-learn~\cite{Pedregosa:2011tv}, specifically \texttt{sklearn.decomposition.FastICA} based on the technique described by Hyvarinen~\cite{Hyvarinen:2000vk}.
+% The Fast\ac{ICA} algorithm is applied to serially acquired T$_1$W images and the output is a paired set of components and weighting factors for each voxel in the dataset.
+% The deflation-based Fast\ac{ICA} (python package scikit.sklearn v0.17.1) was used to analyze the data. 
+% Extracted independent components are not ordered and while the component selection can be automated, in this study an observer was assigned to select the appropriate component.
+% The number of independent components for each imaging session was chosen by the operator and ranged from 4-9 to ensure the cyclic behaviour of the T$_1$W signal intensity corresponding to the gas challenge appeared in only one component. 
+% The \ac{dOE-MRI} maps were obtained by dividing the \ac{ICA} weighting-factor maps by the mean signal-intensity maps to obtain a spatial map for the strength of a particular voxel's contribution to the component of interest.
+Briefly, in these \ac{dOE-MRI} maps, voxels are coloured to indicate the amount by which a given pixel intensity time course is modulated by the oxygen-related component.
+To compare \ac{dOE-MRI} maps between mice with different temporal resolutions, a scaling factor was applied as discussed previously (see section~\ref{sec:correctionfactor}).
 Final normalized \ac{dOE-MRI} maps were obtained by dividing each pixel of the component map for each animal with the mean signal-intensity over time of the corresponding pixel in the \ac{dOE-MRI} scan. 
 Mean normalized component weighting factor (\acs{NCWF}) are reported as a marker for tumour oxygenation with high values indicating increased oxygenation while negative values suggest decreased oxygenation or increased levels of hypoxia. 
-Mann-Whitney U non-parametric tests are used to assess the difference between experimental groups and Hedge's $g$ was calculated to determine effect size when the t-test was significant ($p<0.05$).
-The green-white-purple colour spectrum depicts the degree to which voxels respond to the cycled gas challenge.
-Purple indicates O$_2$-positive voxels whose time course exhibits a higher and more positive contribution from the corresponding \ac{ICA} component, representing an increase in T$_1$W signal intensity in response to the supplied 100\% oxygen, and corresponding to areas with excess dissolved oxygen.
-O$_2$-negative voxels that show a decrease in T$_1$W signal intensity with a negative contribution from the corresponding \ac{ICA} component under 100\% oxygen breathing are depicted as green. 
-Regions whose T$_1$W signal intensity time courses responds only weakly or not at all to the gas challenge are shown in white hues.
-A feature of Fast\ac{ICA} is that the norm of each component is normalized to 1 ($||c_i||=1, \forall i$) and the corresponding weighting factor map carries the scaling factor.
-To compare \ac{dOE-MRI} maps between mice with different temporal resolutions, a scaling factor was applied as discussed previously (see section~\ref{sec:correctionfactor}).
+Mann-Whitney U non-parametric tests are used to assess the difference between experimental groups and Hedge's $g$ was calculated to determine effect size when $p<0.05$.
+%The green-white-purple colour spectrum depicts the degree to which voxels respond to the cycled gas challenge.
+%Purple indicates O$_2$-positive voxels whose time course exhibits a higher and more positive contribution from the corresponding \ac{ICA} component, representing an increase in T$_1$W signal intensity in response to the supplied 100\% oxygen, and corresponding to areas with excess dissolved oxygen.
+%O$_2$-negative voxels that show a decrease in T$_1$W signal intensity with a negative contribution from the corresponding \ac{ICA} component under 100\% oxygen breathing are depicted as green. 
+%Regions whose T$_1$W signal intensity time courses responds only weakly or not at all to the gas challenge are shown in white hues.
+%A feature of Fast\ac{ICA} is that the norm of each component is normalized to 1 ($||c_i||=1, \forall i$) and the corresponding weighting factor map carries the scaling factor.
 
 \subsection{Experiment Summaries}
 General methods common to both experiments have been described above, below are implementation details for each of the two separate experiments presented in this study.
@@ -92,7 +90,7 @@ General methods common to both experiments have been described above, below are 
 \label{sec:B20_expt1}
 \noindent\textbf{Animals}: Seventeen (17) mice were implanted for this experiment with eight left untreated and nine mice treated with 5mg/kg mouse anti-VEGF antibody (B20-4.1.1, Genentech) 48 hours prior to imaging.
 
-\noindent\textbf{MRI}: Axial \ac{dOE-MRI} scans were acquired with 90 repetitions using a 2D FLASH based sequence with TE/TR=2.67/133 ms, flip angle $\alpha$=40$^\circ$, 16 slices each 1mm thick, FOV of 3.84cm x 2.16 cm, encoding matrix of 128x72, and a temporal resolution of 9.6s for a total scan time of about 14 minutes.
+\noindent\textbf{MRI}: Axial \ac{dOE-MRI} scans were acquired with 90 repetitions using a 2D FLASH based sequence with T$_E$/T$_R$=2.67/133 ms, flip angle $\alpha$=40$^\circ$, 16 slices each 1mm thick, FOV of 3.84cm x 2.16 cm, encoding matrix of 128x72, and a temporal resolution of 9.6s for a total scan time of about 14 minutes.
 
 \subsubsection{Experiment 2: Assessing oxygenation changes in intramuscular and subcutaneous tumours Anti-VEGF ablation therapy in \acs{IM} vs. \acs{SC} tumours}
 \noindent\textbf{Animals}: Thirteen (13) mice were used in this experiment. 
@@ -109,14 +107,14 @@ Table~\ref{scanparams} summarizes the key differences in the acquisition paramet
 
 \begin{table}[]
 \centering
-\begin{tabular}{c|r|r|r|r|c}
-Experiment & Mice & TR/ms & Slices & Repetitions & temporal resolution/ms\\
+\begin{tabular}{c|c|c|c|c|c}
+Experiment & Mice & TR/ms & Slices & Repetitions & Temporal resolution (ms)\\
 \hline
  1 & 17& 133 & 16 & 90  & 9.6  \\
  2 & 5 & 133 & 16 & 110 & 8.5  \\
  2 & 8 & 83  & 10 & 140 & 6.7 \\
 \end{tabular}
-\caption{Scan Parameters}
+\caption{Summary of scan parameters for the experiments used in this study.}
 \label{scanparams}
 \end{table}
 

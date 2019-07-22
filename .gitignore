@@ -20,3 +20,5 @@ diss.pdf
 *.synctex.gz
 *.synctex.gz*
 diss.upa
+*.loc
+*.soc

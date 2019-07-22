@@ -4,8 +4,10 @@
 \chapter{Future Work}
 \label{ch:futurework}
 
-The work presented in this chapter are a collection of preliminary results, alternative analysis methods, and proposed future work. 
-\SARi{you couldn't make it less appealing. This sounds like and odds-and-sods sort of chapter. please market more convincingly. don't use the word collection}
+\section{Introduction}
+
+The work presented in this chapter provides a blueprint to continue the \acs{dOE-MRI} project and explore several avenues of research.
+The level of maturity of each section varies and all attempts have been made to motivate and guide the reader through the methods, results, and their implications.
 
 \section{Group ICA}
 
@@ -39,7 +41,7 @@ One major disadvantage of applying \acs{ICA} only once to multiple animals is th
    \label{groupICA1}}
 \end{figure}
 
-\subsection{Further investigation of the characteristic oxygen response curve}
+\section{Further investigation of the characteristic oxygen response curve}
 
 In this thesis a limited number of tumours models were studied (SCCVII, BT-474, and HCT-116) so it was difficult to generalize whether modeling of the oxygen response curve is characteristic of the tumour environment or model. 
 In section~\ref{sec:lognormalfitting_results} we observed that $\sigma_f$ in the SCCVII tumours discriminated between the rapidly growing SCCVII tumours and the other two models.
@@ -105,11 +107,11 @@ A subsequent experiment where the \acs{dOE-MRI} analysis is repeated in more ani
 
 One SCCVII and one HCT-116 tumour-bearing mouse were catheterized and injected with 30-mM solution of Gd-DTPA for \acs{DCE-MRI} at a rate of 1~mL/min using a power injector at a dose of 5~$\mu$L/g.
 
-\noindent\textbf{Perfusion maps:} Signal intensity timecourse from the \acs{DCE-MRI} data was first normalized to the mean signal intensity pre-injection.
+Signal intensity timecourse from the \acs{DCE-MRI} data was first normalized to the mean signal intensity pre-injection.
 The composite Simpson's Rule (\texttt{scipy.integrate.simps}) was used to calculate the area under the first 60 seconds (\acs{AUC}$_{60})$) of the normalized signal intensity enhancement curve after the injection was calculated.
 A binary ground-truth perfusion map was constructed by classifying all voxels with AUC$_{60} > 0$ as perfused and everything else as unperfused.
 
-Where \ac{dOE-MRI} and DCE-MRI scans were acquired in the same SCCVII and HCT-116 tumour-bearing mice,  maps of oxygenation status were compared to \acs{AUC}$_{60}$ perfusion maps, as shown in Figure~\ref{fig_perfusion}.
+Where \acs{dOE-MRI} and DCE-MRI scans were acquired in the same SCCVII and HCT-116 tumour-bearing mice,  maps of oxygenation status were compared to \acs{AUC}$_{60}$ perfusion maps, as shown in Figure~\ref{fig_perfusion}.
 Mean \acs{AUC}$_{60}$ for the well-perfused SCCVII tumour was 22 $\pm$ 16 \%$\cdot$s and for the comparatively poorly perfused HCT-116 tumour was 7$\pm$ 7 \%$\cdot$s.
 Well-oxygenated O$_2$-positive regions generally correspond to perfused, high \acs{AUC}$_{60}$ areas in both SCCVII and HCT-116 tumours.
 A large patch of necrosis, as identified in histological section, in the HCT-116 tumour was also extremely poorly perfused; such large patches of necrosis were not present in the SCCVII tumour.
@@ -122,7 +124,7 @@ A large patch of necrosis, as identified in histological section in figure~\ref{
 \begin{figure}[htbp]
    \centering
    \includegraphics[width=\textwidth]{futurework/futurework-images/fig_perfusion.png} % requires the graphicx package
-   \caption{\ac{dOE-MRI} maps and DCE-MRI \acs{AUC}$_{60}$maps and slice-matched histology sections of SCCVII and HCT-116 tumours. Large regions marked as purple in the \ac{dOE-MRI} maps are O$_2$-positive and also correspond to regions that have high \acs{AUC}$_{60}$ values (yellow). Green or O$_2$-negative regions from the \acs{dOE-MRI} map are often consistent with unperfused regions in the \acs{AUC}$_{60}$ (black), but there are regions of mismatch. Histology images stained with pimonidazole (green) and CD31 (purple) are shown for corresponding sections.
+   \caption{\acs{dOE-MRI} maps and DCE-MRI \acs{AUC}$_{60}$maps and slice-matched histology sections of SCCVII and HCT-116 tumours. Large regions marked as purple in the \acs{dOE-MRI} maps are O$_2$-positive and also correspond to regions that have high \acs{AUC}$_{60}$ values (yellow). Green or O$_2$-negative regions from the \acs{dOE-MRI} map are often consistent with unperfused regions in the \acs{AUC}$_{60}$ (black), but there are regions of mismatch. Histology images stained with pimonidazole (green) and CD31 (purple) are shown for corresponding sections.
    \label{fig_perfusion}}
 \end{figure}
 

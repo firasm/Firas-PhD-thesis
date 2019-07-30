@@ -54,15 +54,17 @@ Further work should include characterizing additional tumour models with varying
 Another interesting feature of the \acs{ICA} extraction process is that for our application, the number of components prescribed rarely matters in separating out the oxygen-responsive component.
 \acs{dOE-MRI} maps from \acs{ICA} applied serially after varying the number of components ($m$) from 3 to 12 are shown in Figure~\ref{numComponents}.
 The component of the signal that corresponds to the T$_1$W signal intensity increase due to the cycling oxygen is quite prominent and independent of the number of components selected.
+This analysis is presented to ensure that the number of components selected had no bearing on the extracted ICA component.
 Two examples are shown, with a low and high degree of variability measured in the extracted components.
-It is currently an open question how the presence or absence of noise affects the extraction process. 
-In any event, it is instructive to consider the best-case and worst-case scenarios for the independent component as it may have implications when performing fits.
+The two animals presented here were selected to exhbit the full range of variability in extracted components.
+Figure~\ref{numComponents} shows the the best- and worst-case scenarios for the extracted independent component as it may have implications when performing fits.
 In both cases, the corresponding \acs{dOE-MRI} maps show the same O$_2$-positive and O$_2$-negative regions.
+An important future work is to explore how the presence or absence of noise affects the extraction process.
 
 \begin{figure}[htbp]
    \centering
    \includegraphics[width=\textwidth]{futurework/futurework-images/technical_numComponents.pdf} % requires the graphicx package
-   \caption{Two animals were selected to explore the effect of the number of components ($m$) on the \acs{dOE-MRI} maps. This analysis is presented to ensure that the number of components selected had no bearing on the extracted ICA component. The two animals presented here were selected to exhbit the full range of variability in extracted components. The low variability example shows no discernible difference in the extracted component anywhere from $m=3$ to $m=12$. The high variability example shows considerably more noise in the extracted component, but the same overall trend. The corresponding \acs{dOE-MRI} maps for both the low variability and high variability examples show almost no difference in the oxygenation maps.}
+   \caption{Two animals were selected to explore the effect of the number of components ($m$) on the \acs{dOE-MRI} maps. The two animals presented here were selected to exhbit the full range of variability in extracted components. The low variability example shows no discernible difference in the extracted component anywhere from $m=3$ to $m=12$. The high variability example shows considerably more noise in the extracted component, but the same overall trend. The corresponding \acs{dOE-MRI} maps for both the low variability and high variability examples show almost no difference in the oxygenation maps.}
    \label{numComponents}
 \end{figure}
 

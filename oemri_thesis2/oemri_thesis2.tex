@@ -167,12 +167,13 @@ More consistent is that O$_2$-positive voxels do not typically correspond to tis
 In general, the more necrotic HCT-116 tumours have fewer oxygenated (O$_2$-positive) regions and significantly more hypoxic (O$_2$-negative) regions in the \ac{dOE-MRI} maps, compared to the SCCVII tumours that have no necrosis. 
 Pimonidazole labeling is heterogeneously dispersed within regions of viable tissue containing tumour blood vessels for both SCCVII tumours, Figure~\ref{fig_sccvii}, and HCT-116 tumours, which typically have greater amounts of necrosis, Figure~\ref{fig_hct116}.
 Figure~\ref{histo_correlations} shows the fraction of negative \ac{dOE-MRI} voxels correlated with the histological hypoxic fraction. 
-For SCCVII tumours (n=9) there was an excellent correlation, with Pearson's r = 0.91 (\textit{p}=0.0016). 
-However the correlation in the HCT-116 tumours (n=6) was poor, with r=0.13 (\textit{p}=0.81). 
+For SCCVII tumours (n=9) there was good correlation (Pearson's $r = 0.76$) when using all tumours but it is important to note that one particular tumour had a much higher histological hypoxic and negative \acs{dOE-MRI} voxel fraction.
+Excluding this tumour and its three slices, the correlation dropped to $r=0.14$.
+The correlation in the HCT-116 tumours (n=6) was similarly poor, with $r=0.037$. 
 
 \begin{figure}[htbp]
    \includegraphics[width=\textwidth]{oemri_thesis1/oemri_thesis2-images/histocorrel3.pdf} % requires the graphicx package % note for Firas: I changed the aspect ratio of this figure slightly
-   \caption{The proportion of negative \ac{dOE-MRI} voxels is plotted against the histological hypoxic fractions with Pearson's r = 0.91 for SCCVII tumours and r = 0.13 for HCT-116 tumours. Each point is a multi-slice tumour average. Correlations done with multiple slices
+   \caption{The proportion of negative \ac{dOE-MRI} voxels is plotted against the histological hypoxic fractions with Pearson's $r=0.76$ for SCCVII tumours ($r=0.14$ after excluding tumour with high hypoxic fraction) and $r=0.037$ for HCT-116 tumours. Each point is a slice average.
    \label{histo_correlations}}
 \end{figure}
 
@@ -207,9 +208,12 @@ While only $\sigma_f$ appears to be useful in delineating tumour models, $v_f$ a
   
 A limitation of OE-MRI is the difficulty in interpreting areas that do not show a reduction in T$_1$ as they may be either dead tissues that are \textit{unperfused and not oxygenated} or living, viable tissues that are \textit{perfused but not oxygenated} due to poor oxygen content of the supplying vessels. 
 The latter population are of greater interest to the oncology community as it is these hypoxic but viable cells that have significant influence on treatment outcomes~\cite{Horsman:2016go}. 
-The \ac{dOE-MRI} technique presented here successfully correlates tumour oxygenation \ac{dOE-MRI} and histology measures in SCCVII tumours but, despite improvements to sensitivity, a similar quantitative comparison in the HCT-116 tumour line showed poorer association (Fig.~\ref{histo_correlations}). 
-This is likely attributable to the much higher amounts of necrosis typical of the HCT-116 model relative to SCCVII (Figs.~\ref{fig_sccvii} and \ref{fig_hct116}).
-Mitigations to this limitation have been explored elsewhere and generally require a perfusion mask or $T_2^*$ - either technique can be added to the OE-MRI method proposed here to exclude necrosis and further improve sensitivity of the technique.
+Though the \ac{dOE-MRI} technique presented here did not successfully correlate with histological hypoxic fractions, there is promise in the technique to map oxygenation in tumours in the absence of necrosis (Fig.~\ref{histo_correlations}). 
+Additionally, it is challenging to compare to \emph{in vivo} measures of oxygenation with pimonidazole staining intensity. 
+Further work is needed to refine the techniques so that \acs{dOE-MRI} measures better correlate with histological indices of hypoxia. 
+% tumour oxygenation \ac{dOE-MRI} and histology measures in SCCVII tumours but, despite improvements to sensitivity, 
+A quantitative comparison in the HCT-116 tumour line showed poorer association with \acs{dOE-MRI} oxygenation status likely attributable to the much higher amounts of necrosis typical of the HCT-116 model relative to SCCVII (Figs.~\ref{fig_sccvii} and \ref{fig_hct116}).
+Mitigations to this limitation have been explored elsewhere and generally require a perfusion mask or $T_2^*$ - either technique can be added to the method proposed here to exclude necrosis and further improve sensitivity of the technique.
 
 Application of existing OE-MRI techniques across a range of tumour models with varying perfusion characteristics has yielded mixed success without masking for perfused tissue.
 For instance, O'Connor reported that in the highly perfused 786-0-R tumour lines, 85-96\% of all imaged tumour voxels were deemed to be oxygen-enhancing~\cite{OConnor:2016ee}.

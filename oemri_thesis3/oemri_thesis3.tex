@@ -26,7 +26,7 @@ We hypothesized that \ac{dOE-MRI} with group-\ac{ICA} can detect \ac{VEGF} ablat
 
 \acs{VEGF} is a key regulator of angiogenesis as the \acs{VEGF} molecule is rate-limiting in normal and pathological growth of blood vessels.
 Bevacizumab is a monocolonal antibody that binds \acs{VEGF} and inhibits growth of blood vessels~\cite{Ferrara:2004fa} and inhibits tumour growth.
-It is marketed for clinical use under the name Avastin$^{\tiny{\textrm{\textcopyright}}}$ (Genentech Inc., California, USA) on tumours and its effects and outcomes have been widely reported~\cite{Keating:2014gt, Pavlidis:2013bj, Barnett:2013bt, Kumler:2014gb}.
+It is marketed for clinical use for tumours under the name Avastin$^{\tiny{\textrm{\textcopyright}}}$ (Genentech Inc., California, USA) and its effects and outcomes have been widely reported~\cite{Keating:2014gt, Pavlidis:2013bj, Barnett:2013bt, Kumler:2014gb}.
 Tumour xenografts receiving monocolonal antibodies to VEGF have consistently shown reductions in quantitative perfusion parameters from a variety of non-invasive imaging modalities including \acs{DCE-US}~\cite{Wang:2015bb}, \acs{DCE-MRI}~\cite{OConnor:2009cg}, and micro PET~\cite{Nagengast:2007hx}.
 For \ac{DCE-US}, Wang et al.\ reported a significant reduction in peak enhancement, area under the curve, relative blood volume, and relative blood flow just 24 hours after a treatment of 10~mg/kg of bevacizumab~\cite{Wang:2015bb}.  
 Several \ac{DCE-MRI} animal and human studies have shown reductions in \acs{K$^{trans}$}, \acs{$v_p$}, and \acs{$v_e$} after administration of antiangiogenic agents, including bevacizumab~\cite{Yang:2018hz}.
@@ -35,7 +35,7 @@ Tumour growth delay data also clearly indicates that growth is slowed after trea
 It is well established that after treatment with antiangiogenic agents, the normalized vasculature is characterized by a reduction in vessel permeability, tortuosity, greater coverage by pericytes and a more normal basement membrane~\cite{Jain:2005gk}. 
 These morphological changes often result in functional changes as well including decreased interstitial fluid pressure, increased tumour oxygenation, and improved delivery of nutrients (and drugs)~\cite{Jain:2005gk}.
 Bevacizumab is an expensive drug with many adverse effects~\cite{Keating:2014gt} so selective targeting of patients that are most likely to benefit from it should reduce unnecessary toxicity of ineffective therapies and improve its overall cost-effectiveness~\cite{Barnett:2013bt}.
-In this study, we present an exciting application of our non-invasive imaging-based technique with no requirement for an exogenous contrast agent to assess tumour oxygenation before and after treatment with bevacizumab.
+In this study, we present an application of \acs{dOE-MRI} to assess tumour oxygenation before and after treatment with bevacizumab.
 
 % ======================================================================
 \section{Methods}
@@ -127,7 +127,7 @@ Experiment & Mice & TR/ms & Slices & Repetitions & Temporal resolution (ms)\\
 Visual inspection of \ac{dOE-MRI} parameter maps in Figure~\ref{dOEMRImaps} show that treatment of SCCVII tumours with the anti-angiogenic agent B20 resulted in an increased oxygenation compared to untreated controls.
 Tumours in this experiment were treated 48 hours prior to imaging.
 Group differences are shown in Figure~\ref{aarts3boxplot} as a standard box plot; Eight control tumours had a mean \acs{NCWF} value of 0.037$\pm$0.011 and nine treated tumours had a mean of 0.094$\pm$0.037.
-This difference was statistically significantly different (Mann-Whitney $U = 11 , p = 0.0092$) and the effect size was large with Hedge's ${g=1.08}$.
+This difference was statistically significant (Mann-Whitney $U = 11 , p = 0.0092$) and the effect size was large with Hedge's ${g=1.08}$.
 Considerable heterogeneity was observed between mice and within a single slice (Fig.~\ref{dOEMRImaps}).
 A histogram of voxels within tumour \acs{ROI}s for all mice is shown in Fig.~\ref{aarts3boxplot}B.
 
@@ -147,7 +147,7 @@ A histogram of voxels within tumour \acs{ROI}s for all mice is shown in Fig.~\re
    \includegraphics[width=\textwidth]{oemri_thesis3/oemri_thesis3-images/2_aarts3_b20_boxplot_dOEMRI.png} % requires the graphicx package
    \caption{A) Group differences of the normalized mean \acs{NCWF} are shown in a boxplot.
    Each dot represents the mean value of a mouse with the controls in blue and treated in green.
-   The differences are statistically significantly different (p=0.0092) with a large effect size (Hedge's g = 1.08).
+   The differences are statistically significant (p=0.0092) with a large effect size (Hedge's g = 1.08).
    B) Density distributions of all voxels shows treated tumours shifting towards increased responsiveness to delivered oxygen (higher \acs{NCWF}).}
    \label{aarts3boxplot}
 \end{figure}
@@ -221,7 +221,7 @@ Tumour microenvironments are dynamic and highly heterogeneous, with variable vas
 However, the importance of hypoxia in tumours is well validated and undisputed; a meta-analysis of tumours from multiple origins found a consistent relationship between greater hypoxia in tumours and poorer outcomes with radiotherapy~\cite{Horsman:2012kw}.
 While many techniques exist for measuring hypoxia in tumours, none have become clinical routine mainly owing to their expense, poor sensitivity and specificity, limited availability or their invasive nature~\cite{Colliez:2017fc,Baumann:2016gr}. 
 For example, Eppendorf electrodes are sensitive and specific, and are a gold standard of measuring tissue hypoxia, but they are highly invasive, limited by sampling, and are not widely available. 
-The accelerated radiotherapy, carbogen and nicotinamide (ARCON) trial demonstrated benefit in hypoxic tumours assessed retroactively using pimonidazole labeling of biopsy samples~\cite{Kaanders:2002wl}. 
+Patients in the ARCON (accelerated radiotherapy, carbogen and nicotinamide) trial with hypoxic tumours (assessed retroactively using pimonidazole labeling of biopsy samples) demonstrated a treatment benefit~\cite{Kaanders:2002wl}.
 However, immunohistochemical analyses of markers of hypoxia such as pimonidazole are invasive and do not sample the entire tumour.
 A more widely applicable hypoxia-measuring tool that overcomes the availability, expense, invasiveness, sensitivity and specificity hurdles would be of high value for stratifying patients in hypoxia-targeted trials, prognostic imaging as well as for monitoring response to treatment. 
 
@@ -239,7 +239,7 @@ In this study we provided evidence that the location of tumour cell implants has
 Tumour kinetics and responses to chemotherapies differ depending on the implant site and the effect of tumour implantation site is often not considered when assessing drug effect using \emph{in vivo} animal studies~\cite{Arjona:2006ch}.
 Hubbard et al.\ compared the tumours derived from the VX2 rabbit carcinoma line implanted intramuscularly and intra-abdominally and discovered animals with \acs{IM} tumours had significantly higher levels of calcium compared to animals with intra-abdominal tumours~\cite{Hubbard:1980vf}.
 This result was attributed to the differences in venous drainage of the two sites.
-In another example, Malave et al.\ studied the Lewis-lung carcinoma model and reported a lower implant success rate for tumours implanted in the flank compared to the foot pad, and a higher rate of metastatic modules for tumours in the flank (indicating a reduced tumour-host immune response)~\cite{Malave:1979ui}.
+In another example, Malave et al.\ studied the Lewis-lung carcinoma model and reported a lower implant success rate for tumours implanted in the flank compared to the foot pad, and a higher rate of metastatic nodules for tumours in the flank (indicating a reduced tumour-host immune response)~\cite{Malave:1979ui}.
 Tumour implant site also alters growth kinetics and dramatically different tumour doubling times (in days) has been reported for implants in mouse tail (1.7), foot (1.6), chest (1.2), and leg (0.6)~\cite{Hill:1982ci}.
 For the same amount of cells implanted, our experience is that \acs{IM} tumours typically grow much faster, have a more stable vascular architecture, less hypoxia (pimo staining), and increased vessel density (CD31 \%).
 We attempted to control for this growth rate by injecting fewer cells for the \acs{IM} tumours. 

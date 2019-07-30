@@ -62,7 +62,7 @@ In both cases, the corresponding \acs{dOE-MRI} maps show the same O$_2$-positive
 \begin{figure}[htbp]
    \centering
    \includegraphics[width=\textwidth]{futurework/futurework-images/technical_numComponents.pdf} % requires the graphicx package
-   \caption{Two animals were chosen to demonstrate the effect of the number of components ($m$) on the \acs{dOE-MRI} maps. The low variability example shows no discernible difference in the extracted component anywhere from $m=3$ to $m=12$. The high variability example shows considerably more noise in the extracted component, but the same overall trend. The corresponding \acs{dOE-MRI} maps for both the low variability and high variability examples show almost no difference in the oxygenation maps.}
+   \caption{Two animals were selected to explore the effect of the number of components ($m$) on the \acs{dOE-MRI} maps. This analysis is presented to ensure that the number of components selected had no bearing on the extracted ICA component. The two animals presented here were selected to exhbit the full range of variability in extracted components. The low variability example shows no discernible difference in the extracted component anywhere from $m=3$ to $m=12$. The high variability example shows considerably more noise in the extracted component, but the same overall trend. The corresponding \acs{dOE-MRI} maps for both the low variability and high variability examples show almost no difference in the oxygenation maps.}
    \label{numComponents}
 \end{figure}
 
@@ -108,18 +108,13 @@ A subsequent experiment where the \acs{dOE-MRI} analysis is repeated in more ani
 One SCCVII and one HCT-116 tumour-bearing mouse were catheterized and injected with 30-mM solution of Gd-DTPA for \acs{DCE-MRI} at a rate of 1~mL/min using a power injector at a dose of 5~$\mu$L/g.
 
 Signal intensity timecourse from the \acs{DCE-MRI} data was first normalized to the mean signal intensity pre-injection.
-The composite Simpson's Rule (\texttt{scipy.integrate.simps}) was used to calculate the area under the first 60 seconds (\acs{AUC}$_{60})$) of the normalized signal intensity enhancement curve after the injection was calculated.
+A numerical integration technique that relies on quadratic polynomials to approximate functions (Simpson's Rule, scipy.integrate.simps) was used to calculate the area under the first 60 seconds (\acs{AUC}$_{60}$) of the normalized signal intensity enhancement curve.
 A binary ground-truth perfusion map was constructed by classifying all voxels with AUC$_{60} > 0$ as perfused and everything else as unperfused.
 
 Where \acs{dOE-MRI} and DCE-MRI scans were acquired in the same SCCVII and HCT-116 tumour-bearing mice,  maps of oxygenation status were compared to \acs{AUC}$_{60}$ perfusion maps, as shown in Figure~\ref{fig_perfusion}.
 Mean \acs{AUC}$_{60}$ for the well-perfused SCCVII tumour was 22 $\pm$ 16 \%$\cdot$s and for the comparatively poorly perfused HCT-116 tumour was 7$\pm$ 7 \%$\cdot$s.
 Well-oxygenated O$_2$-positive regions generally correspond to perfused, high \acs{AUC}$_{60}$ areas in both SCCVII and HCT-116 tumours.
 A large patch of necrosis, as identified in histological section, in the HCT-116 tumour was also extremely poorly perfused; such large patches of necrosis were not present in the SCCVII tumour.
-
-Where \acs{dOE-MRI} and \acs{DCE-MRI} scans were acquired in the same SCCVII and HCT-116 tumour-bearing mice,  maps of oxygenation status were compared to \acs{AUC}$_{60}$ perfusion maps, as shown in Figure~\ref{fig_perfusion}.
-Mean \acs{AUC}$_{60}$ for the well-perfused SCCVII tumour was 22 $\pm$ 16 \%$\cdot$s and for the comparatively poorly perfused HCT-116 tumour was 7$\pm$ 7 \%$\cdot$s.
-Well-oxygenated O$_2$-positive regions generally correspond to perfused, high \acs{AUC}$_{60}$ areas in both SCCVII and HCT-116 tumours.
-A large patch of necrosis, as identified in histological section in figure~\ref{fig_perfusion}, in the HCT-116 tumour was also extremely poorly perfused; such large patches of necrosis were not present in the SCCVII tumour.
 
 \begin{figure}[htbp]
    \centering
@@ -142,7 +137,7 @@ Applying an oxygen challenge also shifts the haemoglobin saturation and, thus, t
 The expected behaviour of a joint change in T$_1$ and T$_2^*$ in response to a gas challenge, and how this can be interpreted to reflect tumour oxygenation is based on data from recent work by Little~\cite{Little:2018iu} and Waterton et al.~\cite{OConnor:2019fc}. 
 
 The altered T$_2^*$ provides a robust measure of areas with functioning vasculature. 
-Subsequently, \acs{dOE-MRI} maps can be masked using the $\Delta$T$_2^*$ maps to exclude unperfused regions and enable improved \acs{SNR} for T$_1$-weighted signals, resulting in a completely endogenous technique to assess tumour oxygenation. 
+Subsequently, \acs{dOE-MRI} maps can be masked using the $\Delta$T$_2^*$ maps to exclude unperfused regions resulting in a completely endogenous technique to assess tumour oxygenation. 
 OE-MRI T$_1$-weighted signal more directly reflects oxygen amounts in plasma and tissues and is more applicable for measuring tumour oxygenation as it relates to radiotherapy.
 Without sacrificing the information obtained from T$_1$-weighted signal intensity in our current work, we propose to extract both T$_1$-weighted signal intensity and T$_2^*$ simultaneously using a dynamic, multi-gradient echo in place of a dynamic FLASH sequence. 
 The cycling gas challenge in combination with \acs{ICA} improvement to T$_1$-weighted oxygen-enhanced imaging will also be applicable to T$_2^*$.
@@ -157,7 +152,7 @@ While the temporal resolution of the multi-gradient echo technique is lower, the
 \begin{figure}[htbp]
    \centering
    \includegraphics[width=\textwidth]{futurework/futurework-images/grantfig4_MGE_schematic.png} % requires the graphicx package
-   \caption{Schematic of the current and proposed acquisition and analysis for \acs{dOE-MRI} with combined R$_1$ and R$_2$ imaging.
+   \caption{Schematic of the current and proposed acquisition and analysis for \acs{dOE-MRI} with combined R$_1$ and R$_2^*$ imaging.
    \label{MGE_schematic}}
 \end{figure}
 

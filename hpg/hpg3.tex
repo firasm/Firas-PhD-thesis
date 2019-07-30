@@ -28,7 +28,7 @@ Unfortunately, modeling of the kinetics of low molecular gadolinium-based agents
 This limitation motivated this work to determine whether a high molecular weight agent such as \acs{HPG-GdF} could be used for measuring vessel permeability without the confounding effects of blood flow.
 
 The binding of vascular endothelial growth factors (\acs{VEGF}) to the \acs{VEGF} receptor is a key driver of angiogenesis.
-Bevacizumab - marketed clinically under `Avastin\textsuperscript{\textcopyright}' - is a monoclonal antibody that binds VEGF extracellularly, preventing the interaction of of \acs{VEGF} to its receptors and inhibits angiogenesis. 
+Bevacizumab - marketed clinically as `Avastin\textsuperscript{\textcopyright}' - is a monoclonal antibody that binds VEGF extracellularly, preventing the interaction of the \acs{VEGF} molecule with its receptors and inhibits angiogenesis. 
 Amongst others, bevacizumab has been used clinically to treat breast, colon, colorectal, lung, brain, ovarian and cervical cancers~\cite{Genentech:2019th}. 
 \acs{VEGF} ablation has been shown to at least temporarily reduce vascular permeability and increase tumour oxygenation in some models~\cite{OConnor:2012ie}.
 We hypothesized that treatment with a \acs{VEGF} inhibitor will result in a decrease of vessel permeability measured with \acs{DCE-MRI} using \acs{HPG-GdF}.
@@ -49,6 +49,8 @@ Tumours were embedded and frozen in optimum cutting temperature medium (OCT; Tis
 \subsection{MRI}
 MRI experiments were performed at the UBC MRI Research Centre on a 7T Bruker Biospec 70/30 scanner at room temperature with a combination volume (transmit)/surface (receive) coil.
 Macromolecular contrast agent hyperbranched polyglycerol \acs{HPG-GdF}, 500 kDa) was synthesized as previously described~\cite{Saatchi:2012hc,Saatchi:2012gc} and administered as a 6 $\mu$L/g bolus dose from 100 mg/mL (0.2 mM).
+\acs{DCE-MRI} data was collected at a time resolution of 4.27 s (FLASH; TR/TE = 66.7/2.67s; FA = 40$^\circ$, NR = 250).
+The matrix size was 128 x 64 x 6 with a field-of-view of 38.4 x 19.2 x 6 mm, resulting in an in-plane spatial resolution of 0.3 x 0.3 mm and a slice-thickness of 1 mm.
 Regions of interest (\acs{ROI}) were drawn on T2-weighted RARE images to outline the tumour using ImageJ (NIH, Maryland, USA) and all other MR analysis was performed using Python.
 A two-parameter linear model was applied to characterize \acs{HPG-GdF} signal-intensity curves for \acs{fPV} determined by the rapid increase at time of injection and for \acs{aPS} calculated as the slope of later enhancement similar to what was described in section~\ref{hpgpaper1_methods}.
 Area Under the Curve (\acs{AUC}) for \acs{HPG-GdF} was determined using the signal intensity curves from the injection time point to 60s.

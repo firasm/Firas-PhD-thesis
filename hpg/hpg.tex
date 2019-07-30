@@ -24,7 +24,7 @@ Size of \acs{MCA}s is often reported both in molecular weight (\acs{kDa}) and lo
 \acs{MCA}s under development range considerably, but dextran-based agents have been proposed from 15 \acs{kDa}-3820 \acs{kDa}~\cite{Barrett:2006jx}. 
 Particles less than 5 nm in size have been found to leak rapidly from tumour vasculature, whereas those in the 5-8 nm range are limited to leaking from hyperpermeable vessels; those greater than 8 nm are thought to have minimal leakage~\cite{Kobayashi:2004vq,Sato:2001tt}.
 The most commonly used \acs{MCA}s in preclinical research are albumin based (90 \acs{kDa}); however, these are not translatable to the clinic due to immunogenicity concerns~\cite{Ogan:1987tg}.
-Signal enhancement is linked to contrast agent concentration within the tumour blood vessels at early time points after injection for intravascular \acs{MCA}s so plasma volumes (\acs{$v_p$}).
+For intravascular \acs{MCA}s, signal enhancement is linked to contrast agent concentration within the tumour blood vessels at early time points after injection.
 Rates of \acs{MCA} leakage from hyperpermeable vessels may then be modelled to evaluate permeability, since extravascular accumulation of the agents will manifest as increased enhancement in repeat images~\cite{Ogan:1987tg,Turetschek:2004bw}.
 This analysis is dependent on the assumption that the \acs{MCA}s have unidirectional flow and do not leak back into the plasma, and that the concentration in the plasma is constant, creating a permeability-limited environment.
 In this study we investigated a multi-modal, high \acs{MW} contrast agent, \acs{HPG-GdF}: hyperbranched polyglycerol molecules doubly labeled with Gd-DOTA and a fluorescent marker.
@@ -44,7 +44,7 @@ In this work, we employed comprehensive histological methods to investigate the 
 Female NOD-SCID mice were bred and housed in institutional animal facilities; experiments in this study were approved by the Animal Care Committee of the University of British Columbia.
 Fiducial markers were constructed of PE-50 polyethylene tubing (inner diameter, 0.58mm) and filled with paraffin wax and saline, creating an MR-visible interface~\cite{Bains:2009hh}.
 Marker tubes were implanted subcutaneously in the sacral region of mice, in a craniocaudal orientation, 2 days prior to subcutaneous implantation of tumours.
-Both histological and MR modalities imaged slices in the plane perpendicular to the marker tube to minimize angular differences between serial MR image slices obtained over multiple sessions, and for corresponding cryosections in histological processing.
+Both histology and MR slices are imaged in the plane perpendicular to the marker tube to minimize angular differences between serial MR image slices obtained over multiple sessions, and for corresponding cryosections in histological processing.
 HCT116 or HT29 human colorectal carcinoma cells obtained from the American Type Culture Collection (ATCC) were implanted near the fiducial tubes such that the tumours grew around the tubes.
 Tumours were used when diameters reached 8-12 mm.
 Mice were anaesthetized with isoflurane for the duration of imaging sessions.
@@ -99,6 +99,7 @@ Animals received two \acs{DCE-MRI} scans 24--48h apart, with Gadovist administer
  %The first violation (circle) is identified by Rule (1) at Frame 31, corresponding to a \acs{BAT} of t = 77.5 s. The centre (mean) and upper (UCL) and lower (LCL) control limits ($\pm$3 SDs) are drawn for reference. 
  (B) \acs{HPG-GdF} enhancement curve from which the \acs{fPV} is derived as the concentration at the start relative to the plasma concentration. The \acs{aPS} is the slope of the enhancement after the bolus arrival. 
  The concentration curves are shown as ratio of tissue concentration to blood peak concentration (24~$\mu$M).
+ Insets within the plots are schematics of our interpretation of the situation at particular time-points and are not measured values.
  (C) The fraction of MR-measured \acs{HPG-GdF} \acs{BAT}-enhancing voxels has a negative association with the proportion of necrotic tissue determined in histological sections.}
  \label{hpgpaper1:fig2}
  %\end{center}
@@ -115,8 +116,8 @@ Bolus arrival time (BAT) is the time when detectable signal enhancement begins f
 Based on the control-chart decision criterion and the Western Electric decision rules from MATLAB’s statistical toolbox~\cite{Shewhart:1931tq}, voxel enhancement was detected as a positive change from baseline signal for three consecutive timepoints (frames) (i) in the same direction, (ii) starting 5 s before the time of injection or later and (iii) for at least 10\% of all timepoints following initial change of signal away from baseline.
 Therefore, voxels with a finite \acs{BAT} and for which at least 10\% of the following intensities were classified as enhancing by the \acs{BAT} criteria were called enhancing voxels, whereas all other voxels were labeled as non-enhancing.
 
-A change from baseline was determined to have occurred
-when any one of the following inclusion criteria were met:
+A former lab member developed a set of criteria based on control theory as part of their masters thesis~\cite{McPhee:2012ei}.
+A change from baseline was determined to have occurred when any one of the following inclusion criteria were met:
 
 \begin{enumerate}
 	\item any point fell outside of 3 SDs from the average baseline concentration, or
@@ -131,7 +132,7 @@ The centre line (mean of baseline) and upper and lower control limits ($\pm$3 SD
 \subsubsection{Pharmacokinetic modeling of DCE-MRI data}
 
 \textit{Gadovist}: The extended Tofts model was used and three parameters resulted: \acs{K$^{trans}$}, \acs{$v_e$}, and \acs{$v_p$}~\cite{Sourbron:2011ce}.
-The arterial input function (AIF) for this model was determined previously by our laboratory using a projection-based method~\cite{Moroz:2013ee}.
+The arterial input function (AIF) for this model was determined previously by our laboratory using a projection-based method~\cite{Moroz:2013ee} and is a four-mouse population average.
 
 \acs{HPG-GdF} A two-parameter linear model was applied~\cite{Pathak:2005gu}.
 Two parameters were used to characterize the \acs{MCA} time curves: (1) the rapid increase at the time of injection (related to the \acs{fPV}) and (2) the slope of the later enhancement (\acs{aPS}) (Fig.~\ref{hpgpaper1:fig2}(B)).

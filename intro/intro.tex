@@ -89,7 +89,7 @@ We begin with some basic principles of MRI.
 \section{Principles of Magnetic Resonance Imaging}
 
 In biological specimens, water is by far the most abundant molecule in the body and the hydrogen atoms ($^{1}$H) in water are central to MR imaging.
-Other MR-active atoms include $^{13}$C, $^{19}$F, $^{23}$Na and $^{31}$P, but these are rare and not often used.
+Other MR-active nuclei include $^{13}$C, $^{19}$F, $^{23}$Na and $^{31}$P, but these are rare and not often used.
 The molecular mass of a water molecule (H$_2$O) is approximately 18 g/mol and its density is 1 g/mL so in 1L, there are approximately 3$\times10^{25}$ molecules of water.
 At the atomic level, each molecule of water consists of one oxygen atom (eight protons, neutrons, and electrons) as well as two hydrogen nuclei (a neutron and proton).
 An intrinsic quantum mechanical property of fundamental particles such as the proton, neutron, and electron is that they posses angular momentum.
@@ -106,7 +106,7 @@ We will model the hydrogen atom with a net magnetic moment as a small bar magnet
 If a spinning bar magnet is placed in an external magnetic field, the magnetic moment vector of the bar magnet will precess, or rotate about the new magnetic field with a frequency known as the Larmor frequency:
 
 \begin{equation}
-	\omega = \gamma \vec{\mathbf{B_0}}
+	\vec{\mathbf{\omega}} = \gamma \vec{\mathbf{B_0}}
 \end{equation}
 
 The proportionality factor $\gamma$ is the gyromagnetic ratio and is nuclei-dependent and for protons, $\gamma = 42 MhZ /T$.
@@ -121,12 +121,12 @@ Annotations were added to the simulated images, used with permission from Hanson
 	\label{spinsB0B1}
 \end{figure}
 
-The quantity of interest in MRI is the net magnetic moment resulting from the protons (individual bar magnets).
-This vector is typically referred to as the magnetization vector $\vec{\mathbf{M}}$ and comprises MRI signal and its manipulation and interactions with the surrounding environment ultimately lead to the images produced.
-Because the magnets are tumbling around in the bucket of water due to thermal motion, they are pointed in nearly every direction (figure~\ref{spinsB0B1}A) and $\vec{\mathbf{M}} = 0$.
-If we now put this bucket of water into an MRI scanner with a main magnetic field strength $\vec{\mathbf{B_0}} = 7$ Tesla, there is a slight tendency of individual protons to align with the main magnetic field $\vec{\mathbf{B}}$ (along z axis, see figure~\ref{spinsB0B1}B).
-Consequently the magnetization vector $\vec{\mathbf{M}}$ now aligns with $\vec{\mathbf{B_0}}$.
-If $\vec{\mathbf{M}}$ is split into its components (along the x, y, and z axes), the longitudinal magnetization component $\mathbf{M_z} = M_0$ and the transverse magnetization component $\mathbf{M_{x,y}} = 0$.
+The quantity of interest in MRI is the net magnetic moment  $\vec{\mathbf{M}}$, and this is the summation of all the individual magnetic moments present in the hydrogen nuclei. 
+$\vec{\mathbf{M}}$ is the quantity that is measured and ultimately leads to the images produced.
+Figure~\ref{spinsB0B1}A shows a schematic of the situation; for visualization, individual magnetic moments from the protons are localized to originate from the same central point.
+Since the water molecules are tumbling around due to thermal motion, the proton magnetic moments are oriented randomly they are pointed in nearly every direction and there is no net magnetic moment (figure~\ref{spinsB0B1}A).
+If we now put these water molecules into an MRI scanner and switch on a main magnetic field of strength $\vec{\mathbf{B_0}} = 7$ Tesla, there is a slight tendency of protons to align with the main magnetic field $\vec{\mathbf{B}}$ (along z axis, see figure~\ref{spinsB0B1}B), and a net magnetization vector $\vec{\mathbf{M}}$ is present.
+$\vec{\mathbf{M}}$ aligns with $\vec{\mathbf{B_0}}$ and the longitudinal component $\mathbf{M_z} = M_0$ while the transverse component $\mathbf{M_{x,y}} = 0$ (in the x-y plane).
 $\vec{\mathbf{M}}$ is many orders of magnitude smaller than the external magnetic field so the MR signal cannot be measured when it is aligned with the external main magnetic field $\vec{\mathbf{B}}$. 
 Applying a radiofrequency (RF) pulse $\vec{\mathbf{B_1}}$ at the Larmor frequency results in a torque applied to $\vec{\mathbf{M}}$, causing it to `tip' down into the transverse (x-y) plane (figure~\ref{spinsB0B1}C).
 
@@ -134,7 +134,7 @@ Interacting nuclei exchange energy with both the surrounding environment (spin-l
 The time it takes for $\mathbf{M_z}$ to return to its equilibrium value $\vec{\mathbf{M_0}}$ from 0, is characterized by the time T$_1$,
 
 \begin{equation}
-	M_z = M_z(1-e^{-t/T_1})
+	M_z = M_0(1-e^{-t/T_1})
 	\label{T1}
 \end{equation}
 
@@ -158,7 +158,7 @@ Paramagnetism is defined as the intrinsic tendency for a material to become magn
 By far the most common element used as a contrast agent (tracer) in MRI is Gadolinium as it is strongly paramagnetic due to its seven unpaired electrons.
 Because electrons are much smaller than protons but have the spins, they have a significantly higher gyromagnetic ratio.
 The unbalanced electrons in the gadolinium shell or bonding orbital result in a strong net magnetic moment, which interacts with hydrogen nuclei and dramatically reduces the longitudinal relaxation time T$_1$ (and to a lesser extent T$_2$).
-Unfortunately, free Gadolinium ions are poorly tolerated by the body so they need to be attached to an organic chelating agent~\cite{DeLeonRodriguez:2015bl}.
+Unfortunately, free Gadolinium ions are toxic so they need to be attached to an organic chelating agent~\cite{DeLeonRodriguez:2015bl}.
 
 The ability for a contrast agent to affect the T$_1$ relaxation time is given by its relaxivity $r_1$, obtained from the following equation:
 
@@ -175,12 +175,12 @@ Through the use of a paramagnetic contrast agent, \acs{DCE-MRI} techniques incre
 However the true value of \acs{DCE-MRI} comes from extracting physiologically relevant information from the body. 
 In applications of cancer imaging, \acs{DCE-MRI} has been extremely successful in diagnostics, treatment monitoring, assessing severity of pathologies, distingushing between tumour models and types, improving our understanding of tumour metastases, and development of drugs.
 
-Health Canada has approved eight gadolinium-based contrast agents for use in humans and they are less have molecular weights less than 1 \acs{kDa} that readily traverses the endothelium but not the cell membrane~\cite{WalkerSamuel:2006ch}. 
+Health Canada has approved eight gadolinium-based contrast agents for use in humans and they have molecular weights less than 1 \acs{kDa} that readily traverses the endothelium but not the cell membrane~\cite{WalkerSamuel:2006ch}. 
 This property allows modeling of the vascular dynamics of the tumour but because the contrast agent is small, perfusion and permeability cannot be decoupled without extremely fast imaging and accurate knowledge of the arterial input function (\acs{AIF})\cite{Sourbron:2011ce}.
 Choosing a kinetic model to fit the data requires some prior knowledge about the organ or system in question. 
 For instance, the blood-brain barrier in the brain dramatically alters the contrast agent kinetics. 
 Similarly, in leaky tumours the extravascular contrast agents typically used in \acs{DCE-MRI} leak out (and back in) of vasculature considerably faster than in other tissues. 
-Sourbron et al.\ demand that choice of a tracer kinetic model should provide a link between relevant physiological parameters and measured data~\cite{Sourbron:2011ce}. 
+Sourbron et al.\ postulate that choice of a tracer kinetic model should provide a link between relevant physiological parameters and measured data~\cite{Sourbron:2011ce}. 
 
 The most widely used model in \acs{DCE-MRI} is the extended Toft's model, which is valid in highly perfused tissues and weakly vascularized tissues with a well-mixed extravascular extracellular space ($v_e$)~\cite{Sourbron:2013jz}.
 Figure~\ref{XTofts} provides a graphical description of this two compartment model,and its mathematical representation is:

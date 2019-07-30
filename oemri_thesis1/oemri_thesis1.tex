@@ -18,16 +18,7 @@ A practical, widely applicable, and non-invasive imaging method is urgently requ
 % this used to be the interlude
 % START of the interlude
 \section{Theory}
-To explore the mechanism of action for the OE-MRI signal, it is useful to first understand the delivery of oxygen from inspired air to tissues. 
-The primary mode of oxygen delivery to tissue is the haemoglobin (\acs{Hb}) molecule as it carries and delivers 98\% of the oxygen in the body. 
-Over 250 million \acs{Hb} molecules are found in a typical red blood cell and each \acs{Hb} molecule has four binding sites for oxygen molecules. 
-The binding affinity of \acs{Hb} to bind ${O_2}$ increases 
-
-The binding affinity for ${O_2}$ drastically increases for subsequent oxygen molecules that bind to \acs{Hb} as the conformation of the \acs{Hb} molecule changes to increase binding affinity for the next oxygen, a phenomenon called cooperativity. 
-Similarly, when the partial pressure of ${O_2}$ drops, the \acs{Hb} molecule changes conformation  and bound ${O_2}$ is released in a reversible process.
-
 \subsection{Physiology}
-
 The primary mode of oxygen delivery to tissue is the haemoglobin (\acs{Hb}) molecule as it carries and delivers 98\% of the oxygen in the body. 
 Over 250 million \acs{Hb} molecules are found in a typical red blood cell and each \acs{Hb} molecule has four binding sites for oxygen molecules. 
 The binding affinity for ${O_2}$ drastically increases for subsequent oxygen molecules that bind to \acs{Hb} as the conformation of the \acs{Hb} molecule changes to increase binding affinity for the next oxygen, a phenomenon called cooperativity. 
@@ -40,7 +31,7 @@ The dissociation of oxygen from haemoglobin molecules is well described by the o
  \label{HBdis}
 \end{figure}	
 
-Upon inspiration of atmospheric air (p$_{O_2}$ = 160 mmHg), gas exchange in the pulmonary capillary beds occurs in the alveoli of the lungs (Fig~\ref{mmhg}).
+Upon inspiration of atmospheric air (p$_{O_2}$ = 160 mmHg), gas exchange in the pulmonary capillary beds occurs in the alveoli of the lungs (Figure~\ref{mmhg}).
 Incoming venous blood with a low oxygen tension ($p_{O_2}$ = 40 mmHg) is oxygenated as haemoglobin molecules readily bind available oxygen. 
 As the oxygenated blood leaves the alveoli and moves through the systemic arteries, it has an oxygen tension of 100 mmHg. 
 The oxygenated blood then travels from the arteries to the systemic capillary bed and the local oxygen tension drops from 100 to 40 mmHg.
@@ -60,7 +51,7 @@ Conversely, small changes in p$_{O_2}$ in capillary beds should result in quick 
     The $p_{O_2}$ of inhaled ambient air is 160 mmHg, and this is breathed in to the lungs.
     Oxygen diffuses out of the alveoli into the surrounding capillaries and binds to Hb due to the pressure gradient (capillary $p_{O_2}$ is 40 mmHg).
     This oxygenated blood ($p_{O_2}$ = 100mmHg) now enters the heart and is pumped through the body, with the Hb releasing oxygen through capillaries due again to the pressure gradient (tissue $p_{O_2}$ is $<$ 40 mmHg)~\cite{OpenStaxBio:2016uu}. 
-    Textbook content produced by OpenStax Biology is licensed under a \href{https://creativecommons.org/licenses/by/4.0/}{CC-BY 4.0 license}}
+    Textbook content produced by OpenStax Biology is licensed under a \href{https://creativecommons.org/licenses/by/4.0/}{CC-BY 4.0 license}.}
     \label{mmhg}
 \end{figure}
 
@@ -77,7 +68,7 @@ Importantly, OE-MRI does not yield any information about unperfused regions and 
 The oxygen status of healthy tissue is fairly well regulated in normal tissue and every cell in the body is at most 150$\mu$m away from a blood vessel. 
 In tumours however, the vascular network is chaotic and the growth patterns of vessels are abnormal leading to a defective and leaky endothelium~\cite{McDonald:2002ut}. 
 Irregular diameters of tumour vessels, abnormal branching patterns and porous vessel walls all contribute to an increase in vessel permeability and pockets of hypoxic tissue. 
-While $O_2$ tension is by far the largest factor in determining Hb staturation, the oxygen status in tumours is not well characterized due to the dysregulated physiological factors such as temperature, pH, and carbon dioxide concentration. 
+Although $pO_2$ and $pCO_2$ are by far the largest factors in determining Hb staturation, related factors such as pH and temperature also play a role.
 Furthermore, these hypoxic regions are heterogeneous, transient, and drastically differ between tumour models. 
 In a mammary adenocarcinoma mouse tumour model, Sorg et al. used spectral imaging with an implanted window chamber to show that upon breathing 100\% oxygen, the \acs{Hb} saturation in the tumour vascular network increases from 20-30\% up to 70-80\% while the \acs{Hb} saturation in the normal vascular network does not change appreciably~\cite{Sorg:2008eg}.
 
@@ -102,7 +93,7 @@ OE-MRI continues to suffer from low \acs{SNR} and it has not found routine clini
 Typical imaging times for existing OE-MRI methods range from 20-45 minutes often making it impractical for easy inclusion in experimental protocols. 
 An MRI technique measuring tumour oxygenation that is sensitive, fast, flexible, repeatable, and non-invasive has the potential to significantly impact the clinical fields of radiation biology and hypoxia drug targeting.
 In this study, we present a new dynamic OE-MRI (dOE-MRI) method that allows extraction of very small dynamic signal changes in T$_1$W images by inducing step changes in the inspired oxygen through a repeated, cycling gas challenge.
-To isolate the signal component that matches cycling gas, a machine-learning approach called independent component analysis (\acs{ICA}) is used to analyze MR images as first proposed by McKeown at al~\cite{McKeown:1998wo}.
+To isolate the signal component that matches cycling gas, a blind source separation approach called independent component analysis (\acs{ICA}) is used to analyze MR images as first proposed by McKeown at al~\cite{McKeown:1998wo}.
 \acs{ICA} is a form of blind source separation algorithm that separates the additive signals on the basis of the statistical independence of individual components~\cite{Hyvarinen:2000vk}.
 With the application of a cycling oxygen challenge and processing the data using \acs{ICA}, our \acs{dOE-MRI} approach represents a significant improvement in the sensitivity and application of MRI for measuring tumour oxygenation, making it more practical for wide application.
 % ======================================================================
@@ -110,8 +101,7 @@ With the application of a cycling oxygen challenge and processing the data using
 % ======================================================================
 \subsection{Mice and tumours}
 
- 
-Female NRG mice were implanted with murine squamous cell carcinoma SCCVII tumours ($5 \times 10^5 $cells in 50~$\mu$l serum-free media; cells provided by Dr.\ J Evans) or with human colorectal carcinoma HCT-116, human ovarian carcinoma SKOV3 or human breast carcinoma BT-474 tumours (each as $10 \times 10^6$ cells in 50~$\mu$l serum-free media; cell lines obtained from the American Type Culture Collection) and were imaged when the largest tumour diameters reached approximately 8-10~mm.
+Female NRG (NOD rag gamma) mice were implanted with murine squamous cell carcinoma (SCCVII; 5x10$^5$ cells in 50 $\mu$l serum-free media; cells provided by Dr.\ J. Evans) in the dorsal subcutaneous region.
 Mice were anaesthetized with isoflurane for the duration of imaging sessions until euthanasia, and were positioned supine on the custom surface coil apparatus.
 Throughout the imaging session, a small animal monitoring system (SA Instruments Inc., Stony Brook, NY, USA) was used to monitor respiration rate, varying between 80-100 breaths per minute, and body temperature, maintained at $36.8 \pm 0.5^\circ$C using a continuous airflow heater.
 All animals were injected with 60~mg/kg pimonidazole hydrochloride (HypoxyProbe) 30~min prior to imaging to label hypoxic cells and were euthanized within 15~min of imaging completion.
@@ -147,12 +137,13 @@ The number of independent components for each imaging session was chosen by the 
 The \acs{dOE-MRI} maps were obtained by dividing the \acs{ICA} weighting-factor maps by the mean signal-intensity maps to obtain a spatial map for the strength of a particular voxel's contribution to the component of interest ($c_4$ in Figure~\ref{technique}).
 In these \acs{dOE-MRI} maps, voxels are coloured to indicate the amount by which a given pixel intensity timecourse is modulated by the oxygen-related component.  
 The green-white-purple colour spectrum depicts the degree to which voxels respond to the cycled gas challenge.
-Purple indicates O$_2$-positive voxels whose timecourse exhibits a higher and more positive contribution from the corresponding \acs{ICA} component, representing an increase in T$_1$W signal intensity in response to the supplied 100 \% oxygen, and corresponding to areas with excess dissolved oxygen. 
+Purple indicates O$_2$-positive voxels whose timecourse exhibits a higher and more positive contribution from the corresponding \acs{ICA} component, representing an increase in T$_1$W signal intensity in response to the supplied 100 \% oxygen. 
 O$_2$-negative voxels that show a decrease in T$_1$W signal intensity with a negative contribution from the corresponding \acs{ICA} component under 100 \% oxygen breathing are depicted as green. 
 Regions whose T$_1$W signal intensity timecourses responds only weakly or not at all to the gas challenge are shown in white hues.
 Fraction of voxels that are negative on \acs{dOE-MRI} maps were correlated with the histological hypoxic fraction using Pearson's r.
 
 \noindent\textbf{OE-MRI without \acs{ICA}:} To assess whether or not \acs{ICA} was necessary to create oxygenation maps, the MR signal intensity data was correlated with two modeled paradigms: 1) a square wave which corresponds to the concentration of delivered oxygen; 2) a synthetic hemodynamic response function (HDRF) created by convolving a square wave with an exponential ($\tau=0.32$ms).
+The value of $\tau$ was determined by manually fitting a portion of the ICA-extracted oxygen-enhancing component to the HDRF with a range of $\tau$ values.
 Correlations were calculated voxel by voxel using:
 
 \begin{equation}
@@ -173,8 +164,8 @@ The slice-averaged timecourse has much less noise compared to the individual vox
 
 To retain spatial information and improve the sensitivity of the technique, \acs{ICA} was applied to the same dataset and in this example, four independent components were extracted (Figure~\ref{technique}C). 
 Each individual independent component is scaled such that its norm is one ($||c_i||=1, \forall i $).
-Corrupting influences such as temperature drifts are often present and produce slowly increasing or decreasing trends (for e.g., $c_1$), artefacts resulting from slight sub-pixel motion near the edges of the tumour ($c_2$) and breathing artefacts corresponding to short-lived spikes ($c_3$).
 Only one extracted component follows the step function of the oxygen challenge and positively identifies an effect of oxygen breathing (c$_4$).
+Speculations for the source of the other components is provided in Figure~\ref{Sfig_components}.
 \begin{figure}[htbp]
    \includegraphics[width=\textwidth]{oemri_thesis1/oemri_thesis1-images/fig1_technique.pdf} % requires the graphicx package
    \caption{(A) T$_2$W MRI of a tumour xenograft at 7T and (B) the corresponding T$_1$W signal-time traces of a single voxel (solid yellow) and whole-tumour slice ROI (dotted black) during gas cycling at two-minute intervals of air (x axis; blue) and O$_2$ (x axis;yellow).
@@ -194,7 +185,7 @@ However, the map generated from correlating a square wave led to consistent unde
    \includegraphics[width=\textwidth]{oemri_thesis1/oemri_thesis1-images/fig3_correlation.pdf} % requires the graphicx package
    \caption{(A) \acs{dOE-MRI} map of an SCCVII tumour where purple voxels contribute strongly to the extracted component using \acs{ICA} in the T$_1$W signal timecourses. 
 Green voxels in the \acs{dOE-MRI} map have a strong contribution of the inverse extracted component. Pearson's r-maps are shown correlating the raw time-signal voxel by voxel with a square wave (B), and an exponential convoluted with a square wave called the hemodynamic response function (HDRF) (C).
-Panels B and C are correlation maps whereas A is the \acs{dOE-MRI} map from \acs{ICA}
+Panels B and C are correlation maps whereas A is the \acs{dOE-MRI} map from \acs{ICA}. Note the low correlation coefficients (on the order of $10^{-3}$) are characteristic of the extremely low amplitude of the oxygen cycling compared to other competing effects.
    \label{fig_correlation}}
 \end{figure}
 
@@ -242,7 +233,8 @@ Additional physiological monitoring data is needed for a more thorough analysis 
 \begin{figure}[htbp]
    \centering
    \includegraphics[width=\textwidth]{oemri_thesis1/oemri_thesis1-images/fig_components.pdf} % requires the graphicx package
-   \caption{Plots of the four components extracted from \acs{ICA} are shown (($||c_i||=1, \forall i $) along with the corresponding  weighting factor maps (normalized to mean voxel wise mean signal intensity).
+   \caption{Plots of the four components extracted from \acs{ICA} are shown (($||c_i||=1, \forall i $) along with the corresponding  weighting factor maps (normalized to mean voxel wise mean signal intensity). Corrupting influences such as temperature drifts are often present and produce slowly increasing or decreasing trends (for e.g., $c_1$) and breathing artefacts corresponding to short-lived spikes ($c_3$). No explanation could be found for $c_2$.
+No $c_1$
    \label{Sfig_components}}
 \end{figure}
 
@@ -303,7 +295,7 @@ This scaling factor was applied to all \acs{dOE-MRI} maps used in this study to 
 % ======================================================================
 
 In this study, we presented an improved method for OE-MRI that employs two synergistic techniques to achieve higher speed and greater sensitivity.
-First, a repeated gas challenge was used to probe tissue response by introducing an independent signal modulation unrelated to nuisance contributions such as temperature drifts and motion.
+First, a repeated gas challenge was used to probe tissue response by introducing an independent signal modulation unrelated to spurious contributions such as temperature drifts and motion.
 A repeating gas challenge improved the detection sensitivity of small amplitude signal changes that are typical of oxygen-enhanced MRI.
 Second, a repeating signal modulation enabled further improved sensitivity through the use of \acs{ICA}, a signal processing technique to isolate source signals - T$_1$W changes due solely to the cycling oxygen - without knowledge of the tissue response (Figure~\ref{technique}).
 While it is possible to generate correlation maps of the oxygen cycling paradigm with T$_1$W signal changes that appear very similar to \acs{dOE-MRI} maps, an \emph{a-priori} assumption of a response function is required for this approach (Figure~\ref{fig_correlation}).

@@ -8,10 +8,10 @@
 \section{Introduction}
 % ======================================================================
 
-Recently our group has proposed a new technique,\ac{dOE-MRI} to assess tumour oxygenation in vivo using MRI~\cite{Moosvi:2018ca}.
-In this chapter we first extend the technique to characterize the extracted oxygen enhancing component used in \ac{DCE-US} experiments.
-This model is then fit to the extracted \ac{ICA} components to assess the feasibility of using the fit parameters as biomarkers of oxygen response.
-Finally we validate the method in tumour xenografts and compare \ac{dOE-MRI} maps to slice-matched histological sections.
+Recently our group has proposed a new technique,\acs{dOE-MRI} to assess tumour oxygenation in vivo using MRI~\cite{Moosvi:2018ca}.
+In this chapter we first extend the technique to characterize the extracted oxygen enhancing component used in \acs{DCE-US} experiments.
+This model is then fit to the extracted \acs{ICA} components to assess the feasibility of using the fit parameters as biomarkers of oxygen response.
+Finally we validate the method in tumour xenografts and compare \acs{dOE-MRI} maps to slice-matched histological sections.
 
 \subsection{Theory: Modelling oxygen response}
 \label{sec:lognormalfitting_theory}
@@ -50,7 +50,7 @@ F(z, t)=\frac{A}{2} \cdot \operatorname{erfc}\left(\frac{\ln (z / t)-u_{f}}{\sig
 Where A is defined as the total vascular area, z represents the spatial displacement of oxygen through the blood stream, $\mu_f$ is the mean velocity and $\sigma_f$ is the standard deviation of the velocity distributions. 
 The velocity $v$ was transformed for convenience to $z/t$ to facilitate integration over the slice thickness $z$.
 
-This lognormal flow profile model has been used to describe the replenishment of microbubbles injected into the blood stream in \ac{DCE-US}~\cite{Hudson:2009jv}.
+This lognormal flow profile model has been used to describe the replenishment of microbubbles injected into the blood stream in \acs{DCE-US}~\cite{Hudson:2009jv}.
 The generalized representation of the replenishment time-intensity signal requires two components: an ultrasound beam-specific profile that is weighted in the z-direction due to a non-uniform slice profile and the flow profile. 
 The expression is,
 
@@ -59,7 +59,7 @@ S(t) = \int_{V} B(x,y,z) \cdot F(x,y,z,t) \cdot dV
 \end{equation}
 
 where $B(x,y,z) = 1$ in MRI because of relatively uniform slice profiles. 
-Integrating over the imaging plane ($x,y$) and assuming a slice thickness of 1mm ($z$), the final model for fitting \ac{dOE-MRI} data becomes,
+Integrating over the imaging plane ($x,y$) and assuming a slice thickness of 1mm ($z$), the final model for fitting \acs{dOE-MRI} data becomes,
 
 \begin{equation}
 S(t)= \left[\frac{A}{2}\left(z \operatorname{erfc}\left(\frac{\ln \left(z/t\right)-\mu_f}{\sqrt{2} \sigma_f}\right)-t e^{\sigma_f^{2} / 2+\mu_f} \operatorname{erf}\left(\frac{\sigma_f^{2}+\mu_f-\log \left(z/t\right)}{\sqrt{2} \sigma_f}\right)\right)\right]_{z=0}^{z=1mm}
@@ -67,12 +67,15 @@ S(t)= \left[\frac{A}{2}\left(z \operatorname{erfc}\left(\frac{\ln \left(z/t\righ
 \end{equation}
 
 Where A is defined as the total vascular area, $\mu_f$ is the mean velocity and $\sigma_f$ is the standard deviation of the velocity distributions. 
+Since this is a generalized model that relies solely on the lognormal flow profiles of blood vessels, it is also applicable for \acs{dOE-MRI} data.
+Excess inhaled oxyen that dissolves in the plasma acts as a contrast agent that enters the imaging plane.
+The model makes no assumption about the type of contrast agent, mechanism of enhancement, nor kinetics of the agent in describing the ``replenishment'' of signal so it was applied to a portion of the ICA-extracted oxygen-enhancing component.
 
 % ======================================================================
 \section{Methods}
 % ======================================================================
 \subsection{Animals}
-Female NRG (NOD rag gamma) mice were implanted with murine squamous cell carcinoma (SCCVII; 5x10$^5$ cells in 50 $\mu$l serum-free media; cells provided by Dr.\ J. Evans) in the dorsal subcutaneous region.
+Female NRG (NOD rag gamma) mice were implanted with murine squamous cell carcinoma SCCVII tumours ($5\times 10^5$cells in 50~$\mu$l serum-free media; cells provided by Dr.\ J Evans) or with human colorectal carcinoma HCT-116, human ovarian carcinoma SKOV3 or human breast carcinoma BT-474 tumours (each as $10\times10^6$ cells in 50~$\mu$l serum-free media; cell lines obtained from the American Type Culture Collection) and were imaged when the largest tumour diameters reached approximately 8-10~mm.
 All mice were injected with 60 mg/kg pimonidazole hydrochloride (HypoxyProbe) 30-min prior to imaging to label hypoxic cells and were euthanized within 15-min of imaging completion.
 Mice were anaesthetized with isoflurane using 1.5-2.0\% isoflurane for the duration of MR imaging sessions until euthanasia, and were positioned supine on the custom surface coil apparatus.
 Throughout the imaging session, a small animal monitoring system (SA Instruments Inc., Stony Brook, NY, USA) was used to monitor respiration rate, varying between 80-100 breaths per minute, and body temperature, maintained at 36.8 $\pm$ 0.5$^\circ$C using a continuous airflow heater. 
@@ -82,27 +85,27 @@ Tumours were embedded and frozen in optimum cutting temperature medium (OCT; Tis
 \subsection{Immunohistochemistry}
 \label{doemri_histo}
 Co-planar MRI slices and histological sections were obtained by imaging perpendicular to the longest tumour axis in MRI and serial-step 10 $\mu m$ cryosections were cut at 0.5-mm intervals in the same plane.
-Slides were then fixed in acetone-methanol for 10-min and whole sections were immunohistochemically stained~\cite{Kalra:2017is} for \ac{CD31} (visualized using secondaries labeled with Alexa 647nm) to label blood vessels, and for pimonidazole (HypoxyProbe-1; visualized using secondary labeled with Alexa 546nm) to label hypoxic cells. 
+Slides were then fixed in acetone-methanol for 10-min and whole sections were immunohistochemically stained~\cite{Kalra:2017is} for \acs{CD31} (visualized using secondaries labeled with Alexa 647nm) to label blood vessels, and for pimonidazole (HypoxyProbe-1; visualized using secondary labeled with Alexa 546nm) to label hypoxic cells. 
 Sections were then stained using Hoechst 33342 (bisbenzimide) to label all cell nuclei.
 Whole-tumour sections were imaged using a robotic fluorescence microscope (Zeiss Axioimager Z1), a cooled, monochrome CCD camera (Retiga 4000R; QImaging), a motorized slide loader and x-y stage (Ludl Electronic Products) and customized ImageJ software~\cite{Collins:2007jr}. 
 Adjacent microscope fields of view were tiled such that images of entire tumour cryosections were captured at a resolution of 1.5 $\mu m$/pixel. 
 Using anatomical landmarks and accumulated thicknesses of serial-step sections as estimates of distances from the edges of whole tumours, sections were chosen to match the MR slices. 
 ImageJ and user-supplied algorithms were used to super impose digital images which were then manually cropped to tumour tissue boundaries with staining artifacts removed. 
 A threshold was applied to images to identify positive pimonidazole staining, and the number of positive pixels was determined as a percentage of the total number of pixels in the tumour image. 
-Overlaid greyscale images were converted to false colour for visualization with pimonidazole as green and \ac{CD31} as magenta.
+Overlaid greyscale images were converted to false colour for visualization with pimonidazole as green and \acs{CD31} as magenta.
 
 \subsection{MR Imaging}
 As previously described in Section~\ref{doemri_mrianalysis1}.
 
-\subsection{\ac{dOE-MRI} Analysis}
+\subsection{\acs{dOE-MRI} Analysis}
 
 As previously described in Section~\ref{doemri_mrianalysis2}.
 
 \subsection{Model Fitting}
 \label{sec:lognormalfitting_methods}
-Equation~\ref{lognormalFitEquation} was fit to the first 100 seconds of the \ac{ICA} component trace after oxygen was first delivered to the mouse. 
+Equation~\ref{lognormalFitEquation} was fit to the first 100 seconds of the \acs{ICA} component trace after oxygen was first delivered to the mouse. 
 Model fitting was done with the \texttt{LMFIT} package~\cite{Newville:2019jt} using the Levenberg-Marquardt method.
-A free fit parameter was added corresponding to a vertical offset to account for the \ac{ICA} component starting below 0. 
+A free fit parameter was added corresponding to a vertical offset to account for the \acs{ICA} component starting below 0. 
 For each fit, three parameters describe the shape of the oxygen response: A (vascular area), $\mu_f$ (mean velocity) and $\sigma_f$ (standard deviation) of the velocity distributions.
 A sample fit using equation~\ref{lognormalFitEquation} is shown in figure~\ref{fig:lognormal_sample}.
 
@@ -118,17 +121,17 @@ A sample fit using equation~\ref{lognormalFitEquation} is shown in figure~\ref{f
 \section{Results}
 % ======================================================================
 %%%%%%%%%%%%%%%%% ############ BEGIN *versatile* section from paper 1 ############ 
-\subsection{ICA enabled \ac{dOE-MRI} detects variable oxygenation in a range of tumour models}
+\subsection{ICA enabled \acs{dOE-MRI} detects variable oxygenation in a range of tumour models}
 \label{sec:rangeModels}
 Tumours of human and murine origin and comprising a variety of tumour microenvironments were imaged, including fast growing, highly vascularized murine squamous cell (SCCVII) and human ovarian carcinomas (SKOV3), slower growing and well vascularized human breast cancer (BT-474), as well as a relatively fast growing but more poorly vascularized human colon colorectal carcinoma (HCT-116).
-The inter-model heterogeneity of the tumours is reflected in the mean fraction of negative voxels in the \ac{dOE-MRI} maps, which were 46 $\pm$ 6\% for BT-474, 36$\pm$3\% for HCT-116, 31$\pm$5\% for SCCVII, and 14$\pm$4\% for SKOV3 tumours. 
+The inter-model heterogeneity of the tumours is reflected in the mean fraction of negative voxels in the \acs{dOE-MRI} maps, which were 46 $\pm$ 6\% for BT-474, 36$\pm$3\% for HCT-116, 31$\pm$5\% for SCCVII, and 14$\pm$4\% for SKOV3 tumours. 
 Considerable intra-tumour heterogeneity is also observed within some models, particularly the BT474.
-\ac{dOE-MRI} maps representing the mean fraction of negative voxels are shown for each tumour type in Figure~\ref{versatile}.
+\acs{dOE-MRI} maps representing the mean fraction of negative voxels are shown for each tumour type in Figure~\ref{versatile}.
 \begin{figure}[htbp]
    \centering
    \includegraphics[width=\textwidth]{oemri_thesis1/oemri_thesis1-images/fig2_versatile.pdf} % requires the graphicx package
-   \caption{Top: \ac{dOE-MRI} maps for four tumour models HCT-116, BT-474, SCCVII, and SKOV3 are shown. Chosen slices are representative of the mean percent negative \ac{dOE-MRI} fraction for the respective tumour model.
-Bottom: The box-whisker plot shows the quartiles of percent negative \ac{dOE-MRI} voxels for all imaged tumours.
+   \caption{Top: \acs{dOE-MRI} maps for four tumour models HCT-116, BT-474, SCCVII, and SKOV3 are shown. Chosen slices are representative of the mean percent negative \acs{dOE-MRI} fraction for the respective tumour model.
+Bottom: The box-whisker plot shows the quartiles of percent negative \acs{dOE-MRI} voxels for all imaged tumours.
 \label{versatile}}
 \end{figure}
 %%%%%%%%%%%%%%%%% ############ END *versatile* section from paper 1########### 
@@ -159,14 +162,14 @@ The SKOV3 tumours were not considered as part of this analysis due to low sample
 
 %%%%%%%%%%%%%%%%% ############ BEGIN *histo validation* section from paper 1 ############ 
 
-\subsection{\ac{dOE-MRI} maps correspond to matched histology sections}
+\subsection{\acs{dOE-MRI} maps correspond to matched histology sections}
 \label{sec:histoSections}
-Tumour tissue cryosections obtained to match MR imaging slices were stained for vasculature (\ac{CD31}) and regions of pimonidazole-labeled hypoxia and are compared side-by-side; Figures~\ref{fig_sccvii} and~\ref{fig_hct116} provide five examples for each of SCCVII and HCT-116 tumour models for detailed review.
-Generally, in corresponding \ac{dOE-MRI} maps for both tumour models O$_2$-positive voxels align with the most oxygenated regions of histology sections, where pimonidazole labeling is absent, however many areas of mismatch are also observed. 
+Tumour tissue cryosections obtained to match MR imaging slices were stained for vasculature (\acs{CD31}) and regions of pimonidazole-labeled hypoxia and are compared side-by-side; Figures~\ref{fig_sccvii} and~\ref{fig_hct116} provide five examples for each of SCCVII and HCT-116 tumour models for detailed review.
+Generally, in corresponding \acs{dOE-MRI} maps for both tumour models O$_2$-positive voxels align with the most oxygenated regions of histology sections, where pimonidazole labeling is absent, however many areas of mismatch are also observed. 
 More consistent is that O$_2$-positive voxels do not typically correspond to tissues identified as hypoxic in the histology sections (i.e. labeled with pimonidazole).
-In general, the more necrotic HCT-116 tumours have fewer oxygenated (O$_2$-positive) regions and significantly more hypoxic (O$_2$-negative) regions in the \ac{dOE-MRI} maps, compared to the SCCVII tumours that have no necrosis. 
+In general, the more necrotic HCT-116 tumours have fewer O$_2$-positive regions and significantly more O$_2$-negative regions in the \acs{dOE-MRI} maps, compared to the SCCVII tumours that have no necrosis. 
 Pimonidazole labeling is heterogeneously dispersed within regions of viable tissue containing tumour blood vessels for both SCCVII tumours, Figure~\ref{fig_sccvii}, and HCT-116 tumours, which typically have greater amounts of necrosis, Figure~\ref{fig_hct116}.
-Figure~\ref{histo_correlations} shows the fraction of negative \ac{dOE-MRI} voxels correlated with the histological hypoxic fraction. 
+Figure~\ref{histo_correlations} shows the fraction of negative \acs{dOE-MRI} voxels correlated with the histological hypoxic fraction. 
 For SCCVII tumours (n=9) there was good correlation (Pearson's $r = 0.76$) when using all tumours but it is important to note that one particular tumour had a much higher histological hypoxic and negative \acs{dOE-MRI} voxel fraction.
 Excluding this tumour and its three slices, the correlation dropped to $r=0.14$.
 The correlation in the HCT-116 tumours (n=6) was similarly poor, with $r=0.037$. 
@@ -180,13 +183,13 @@ The correlation in the HCT-116 tumours (n=6) was similarly poor, with $r=0.037$.
 \begin{figure}[htbp]
    \centering
    \includegraphics[width=0.9\textwidth]{oemri_thesis1/oemri_thesis1-images/fig6_sccvii.pdf} % requires the graphicx package
-   \caption{SCCVII murine tumours with slice-matched histological images depicting pimonidazole-labeled hypoxia (green) and \ac{CD31}-stained vasculature (purple) are shown next to the \ac{dOE-MRI} parameter maps similarly colored with O$_2$-positive (purple) and O$_2$-negative (green) areas. Corresponding \ac{ICA} extracted components are also shown.
+   \caption{SCCVII murine tumours with slice-matched histological images depicting pimonidazole-labeled hypoxia (green) and \acs{CD31}-stained vasculature (purple) are shown next to the \acs{dOE-MRI} parameter maps similarly colored with O$_2$-positive (purple) and O$_2$-negative (green) areas. Corresponding \acs{ICA} extracted components are also shown.
    \label{fig_sccvii}}
 \end{figure}
 \begin{figure}[htbp]
    \centering
    \includegraphics[width=0.9\textwidth]{oemri_thesis1/oemri_thesis1-images/fig7_hct116.pdf} % requires the graphicx package
-   \caption{HCT-116 human colorectal xenografts with slice-matched histological images depicting pimonidazole-labeled hypoxia (green) and \ac{CD31}-stained vasculature (purple) are shown next to the \ac{dOE-MRI} parameter maps similarly colored with O$_2$-positive (purple) and O$_2$-negative (green) areas. Corresponding \ac{ICA} extracted components are also shown.
+   \caption{HCT-116 human colorectal xenografts with slice-matched histological images depicting pimonidazole-labeled hypoxia (green) and \acs{CD31}-stained vasculature (purple) are shown next to the \acs{dOE-MRI} parameter maps similarly colored with O$_2$-positive (purple) and O$_2$-negative (green) areas. Corresponding \acs{ICA} extracted components are also shown.
    \label{fig_hct116}}
 \end{figure}
 
@@ -196,9 +199,11 @@ The correlation in the HCT-116 tumours (n=6) was similarly poor, with $r=0.037$.
 \section{Discussion}
 % ======================================================================
 
-Using the \ac{dOE-MRI} technique, we found that an oxygen-enhancing component was extracted successfully in all imaged animals across a range of tumour models and environments (Figure~\ref{versatile}).
-In this study we also modelled the oxygen response curves in the tumour vasculature by deploying models developed in \ac{DCE-US} and adapting them for \ac{dOE-MRI}.
-Fitting equation~\ref{lognormalFitEquation} to the oxygen response curves results in three physiologically relevant parameters.
+Using the \acs{dOE-MRI} technique, we found that an oxygen-enhancing component was extracted successfully in all imaged animals across a range of tumour models and environments (Figure~\ref{versatile}).
+In this study we also modelled the oxygen response curves in the tumour vasculature by deploying models developed in \acs{DCE-US} and adapting them for \acs{dOE-MRI}.
+Fitting equation~\ref{lognormalFitEquation} to the oxygen response curves results in three physiologically relevant parameters though their applicability with oxygen as a contrast agent has not yet been established.
+Additional work is needed to explore how interpretation of these parameters may change when the contrast agent is intravascular. 
+Nevertheless, a phenomenological fit of this model to our data provides interesting insights and use of the model over a standard exponential function is supported by the Akaike information criterion (data not shown).
 Unsurprisingly, the vascular area $A$ and the mean velocity $v_f$ do not appear to be vary between the three tumour models studied(Figure~\ref{fig:lognormal_CHB}).
 The third parameter $\sigma_f$ is the standard deviation of the velocity distribution and is related to the structural organization and morphology of the vascular network~\cite{Hudson:2009jv}.
 Thus, we hypothesized that the oxygen response curves and in particular, $\sigma_f$ may capture information about the vascular organization in different tumour models.
@@ -208,10 +213,10 @@ While only $\sigma_f$ appears to be useful in delineating tumour models, $v_f$ a
   
 A limitation of OE-MRI is the difficulty in interpreting areas that do not show a reduction in T$_1$ as they may be either dead tissues that are \textit{unperfused and not oxygenated} or living, viable tissues that are \textit{perfused but not oxygenated} due to poor oxygen content of the supplying vessels. 
 The latter population are of greater interest to the oncology community as it is these hypoxic but viable cells that have significant influence on treatment outcomes~\cite{Horsman:2016go}. 
-Though the \ac{dOE-MRI} technique presented here did not successfully correlate with histological hypoxic fractions, there is promise in the technique to map oxygenation in tumours in the absence of necrosis (Fig.~\ref{histo_correlations}). 
+Though the \acs{dOE-MRI} technique presented here did not successfully correlate with histological hypoxic fractions, there is promise in the technique to map oxygenation in tumours in the absence of necrosis (Fig.~\ref{histo_correlations}). 
 Additionally, it is challenging to compare to \emph{in vivo} measures of oxygenation with pimonidazole staining intensity. 
 Further work is needed to refine the techniques so that \acs{dOE-MRI} measures better correlate with histological indices of hypoxia. 
-% tumour oxygenation \ac{dOE-MRI} and histology measures in SCCVII tumours but, despite improvements to sensitivity, 
+% tumour oxygenation \acs{dOE-MRI} and histology measures in SCCVII tumours but, despite improvements to sensitivity, 
 A quantitative comparison in the HCT-116 tumour line showed poorer association with \acs{dOE-MRI} oxygenation status likely attributable to the much higher amounts of necrosis typical of the HCT-116 model relative to SCCVII (Figs.~\ref{fig_sccvii} and \ref{fig_hct116}).
 Mitigations to this limitation have been explored elsewhere and generally require a perfusion mask or $T_2^*$ - either technique can be added to the method proposed here to exclude necrosis and further improve sensitivity of the technique.
 
@@ -224,13 +229,13 @@ In more recent work, Little et al. showed oxygen enhancement in tumours with a h
 Linnik et al. reported excellent correlation between percentage of ``negative AUC$_{OE}$'' ($O_2$-negative) voxels and percentage of hypoxic areas in the highly vascular preclinical U87MG tumour xenografts~\cite{Linnik:2013hf}.
 A second approach for differentiating between viable but hypoxic regions and unperfused dead tissues, is to combine OE-MRI with $T_2^*$W acquisition and the BOLD effect to classify regions~\cite{Little:2018iu,Zhao:2015ez,White:2016fz,Burrell:2013je,Yang:2018vo} that show both effects. 
 Excess oxygen in the blood will induce changes in Hb saturation, which alter the T2* resulting in a robust measure of areas with functioning vasculature. 
-Conceivably, the saved acquisition time achieved with under-sampling T$_1$W \ac{dOE-MRI} suggests that $T_2^*$W images could also be acquired to concurrently assess the blood oxygen level dependent (BOLD) response. 
+Conceivably, the saved acquisition time achieved with under-sampling T$_1$W \acs{dOE-MRI} suggests that $T_2^*$W images could also be acquired to concurrently assess the blood oxygen level dependent (BOLD) response. 
 
 Within the relatively short 14-minute imaging time, both the HCT-116 and SCCVII tumours show only minor changes in the oxygenation maps between cycles (Figure~\ref{fig_correlation}).
 In longer imaging sessions, or during administration of an intervention, these same tumours may exhibit varying oxygenation patterns between cycles.
 Periods of oxygen-starvation and re-oxygenation in tumours have been termed intermittent hypoxia and can arise due to temporary vessel occlusions~\cite{Dewhirst:2009de,Bayer:2011js}.
 Recent work on measuring intermittent hypoxia in patients using R$_2^*$~\cite{Panek:2017ge} shows that interest in this phenomenon continues but the importance of intermittent hypoxia in tumours is unclear largely due to poor availability of techniques to measure it in the clinic~\cite{Michiels:2016hv}.
-The relatively short imaging time for \ac{dOE-MRI} makes assessing temporal oxygenation changes possible within a timescale on the order of minutes by comparing correlation maps generated from sequential cycles.
+The relatively short imaging time for \acs{dOE-MRI} makes assessing temporal oxygenation changes possible within a timescale on the order of minutes by comparing correlation maps generated from sequential cycles.
 
 Typically, histological validation of MR data is done by collapsing rich histology data into a single metric, such as a hypoxic fraction, with whole-tumour or single-slice average comparisons.
 While this is sometimes a useful validation approach, it may not reflect the highly heterogeneous patterns of hypoxia that are known to vary spatially and temporally, even within the same tumour, as well as between tumour types as highlighted in Figures~\ref{histo_correlations}-\ref{fig_hct116}. 
@@ -240,14 +245,14 @@ A range of oxygenation levels are likely to be present in the highly heterogeneo
 This refers to measurable tumour oxygenation levels that are biomarkers of physiologically meaningful phenomena, including patient prognosis or tumour sensitivity to treatments, such as immunotherapy or radiotherapy. The relevant oxygenation status for any biomarker of interest may include levels spanning from moderate to severely hypoxic. 
 Pimonidazole has been demonstrated as a clinically relevant marker of hypoxia, but poor or inconsistent correlation with pimonidazole, as we have seen in our imaged tumours, does not exclude other measures of tumour oxygenation from potential utility.
 
-Measurable pimonidazole-adduct formation occurs when the O$_2$ tension in the vicinity drops below 10 mmHg~\cite{Gross:1995wq} but in \ac{dOE-MRI}, O$_2$-positive voxels are extracted as excess oxygen dissolves in the plasma and interstitial tissue fluid to decrease T$_1$.
+Measurable pimonidazole-adduct formation occurs when the O$_2$ tension in the vicinity drops below 10 mmHg~\cite{Gross:1995wq} but in \acs{dOE-MRI}, O$_2$-positive voxels are extracted as excess oxygen dissolves in the plasma and interstitial tissue fluid to decrease T$_1$.
 Voxels where T$_1$ has significantly increased has previously been correlated to poorly perfused regions and likely corresponds to hypoxic regions where the excess oxygen is picked up by deoxyhemoglobin molecules~\cite{Linnik:2013hf,Burrell:2013je,Remmele:2012df}.
 The exact mechanism for a T$_1$ increase as a result of oxygen inhalation has not yet been confirmed~\cite{Zhao:2015ez,Linnik:2013hf}, however, based on careful work of Silvennonin et al., characterizing behavior of T$_1$ in fresh bovine blood~\cite{Silvennoinen:2003gn}, we speculate the corresponding T$_1$W signal decrease may arise due to the conversion of deoxyhemoglobin to hemoglobin in the perfused vessels of hypoxic regions .
-O$_2$-positive regions in \ac{dOE-MRI} maps are generally in good agreement with well perfused areas of histology images for both HCT-116 and SCCVII tumours, as shown in Figures~\ref{fig_sccvii} and~\ref{fig_hct116}.
-Voxels exhibiting signal reduction with the O$_2$ stimulus in \ac{dOE-MRI} maps (O$_2$-negative, green) typically correspond with histology (pimonidazole, green) but not all pimonidazole-labeled regions appear as O$_2$-negative voxels.
-Similarly, \ac{CD31}-stained tumour regions are not exclusively O$_2$-positive in the \ac{dOE-MRI} maps because not all tumour vessels are perfused.
+O$_2$-positive regions in \acs{dOE-MRI} maps are generally in good agreement with well perfused areas of histology images for both HCT-116 and SCCVII tumours, as shown in Figures~\ref{fig_sccvii} and~\ref{fig_hct116}.
+Voxels exhibiting signal reduction with the O$_2$ stimulus in \acs{dOE-MRI} maps (O$_2$-negative, green) typically correspond with histology (pimonidazole, green) but not all pimonidazole-labeled regions appear as O$_2$-negative voxels.
+Similarly, \acs{CD31}-stained tumour regions are not exclusively O$_2$-positive in the \acs{dOE-MRI} maps because not all tumour vessels are perfused.
 In fact many perfused blood vessels are only intermittently perfused and consequently, the measurement of hypoxia is time-sensitive.
-Mismatches between \ac{dOE-MRI} and histology may be attributed in part to the different sensitivities and detection thresholds for measuring hypoxia and oxygenation in the \ac{dOE-MRI} and histology-based modalities, as well as potential mismatch between the timing of pimonidazole-labeling and \ac{dOE-MRI} data acquisition. 
+Mismatches between \acs{dOE-MRI} and histology may be attributed in part to the different sensitivities and detection thresholds for measuring hypoxia and oxygenation in the \acs{dOE-MRI} and histology-based modalities, as well as potential mismatch between the timing of pimonidazole-labeling and \acs{dOE-MRI} data acquisition. 
 
 %\subsection{random snippets}
 %O$_2$ positive or O$_2$-negative fractions are immune to this phenomenon, information about the level of response can be retained simply by applying the scaling factor when comparing scans at different temporal resolutions
@@ -255,10 +260,10 @@ Mismatches between \ac{dOE-MRI} and histology may be attributed in part to the d
 \section{Conclusions}
 % ======================================================================
 
-In this chapter, we have validated the \ac{dOE-MRI} technique by comparing oxygenation maps with pimonidazole stained histology images. 
+In this chapter, we have validated the \acs{dOE-MRI} technique by comparing oxygenation maps with pimonidazole stained histology images. 
 The versatility of the technique was apparent due to its applicability in multiple tumour models; though, the presence of large necrotic areas in tumours poses some challenges when comparing oxygenation status with pimonidazole staining.
-We have also shown that the lognormal velocity profile model from \ac{DCE-US} is applicable to oxygen response curves obtained from \ac{ICA} and \ac{dOE-MRI} and the parameter $\sigma_f$ is useful in quantifying the vascular morphology of tumours.
-\ac{dOE-MRI} assesses tumour oxygenation fairly reliably \emph{in vivo} and the next application is to see whether the technique is sensitive to oxygenation changes brought on by chemotherapies.
+We also applied the lognormal velocity profile model from \acs{DCE-US} to oxygen response curves obtained from \acs{ICA} and \acs{dOE-MRI} and the parameter $\sigma_f$ is useful in quantifying the vascular morphology of tumours.
+\acs{dOE-MRI} assesses tumour oxygenation fairly reliably \emph{in vivo} and the next application is to see whether the technique is sensitive to oxygenation changes brought on by chemotherapies.
 
 % ======================================================================
  %\section{References}

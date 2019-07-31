@@ -13,7 +13,7 @@ There is an urgent need for the development of new imaging biomarkers to aid in 
 There has been considerable interest in the potential of predictive biomarkers for early assessment of tumour therapies. 
 In this thesis, we aim to develop imaging-based biomarkers to explore the tumour microenvironment.
 
-\subsection{Cancer biomarkers and targets} 
+\section{Cancer biomarkers and targets} 
 
 Hanahan and Weinberg catalogued a vast array of factors that contribute to tumour growth and provided a framework for understanding of diseases that result in abnormal cell growth~\cite{Hanahan:2000wo,Hanahan:2011gu}.
 These ``hallmarks of cancer'' are ``essential alterations in cell physiology that collectively dictate malignant growth in tumours''~\cite{Hanahan:2000wo}.
@@ -57,7 +57,7 @@ Histology requires biopsy samples and patient comfort aside, biopsies only sampl
 The lack of functional information from biopsies as well as the practical challenges of obtaining longitudinal biopsy samples make non-invasive imaging a promising technique to complement and potentially reduce unneeded biopsies.
 Angiogenesis is especially suitable for analysis with MRI due to its exquisite soft-tissue contrast, ability to image deep into the body, and finally its utility in assessing vascular function using injectable contrast agents.
 
-\subsection{Need for non-invasive imaging}
+\section{Need for non-invasive imaging}
 Non-invasive imaging methods are proving indispensable for studying angiogenesis \emph{in vivo} as they provide researchers with quantitative information about blood flow, vascular permeability, vessel density, vessel function and blood volume~\cite{McDonald:2003cm}.
 Imaging modalities such as computed tomography (CT), magnetic resonance imaging (MRI), positron emission tomography (PET), single photon emission computed tomography (SPECT) and ultrasound (US), have all been proposed for studying angiogenesis~\cite{Laking:2006ij}.
 Each modality is optimal for probing a particular aspect of biomarkers. 
@@ -99,19 +99,18 @@ For convenience it is useful to change our reference frame to a rotating referen
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{./intro/intro-images/HansonMRI.pdf}
-	\caption[Spins getting tipped with an RF pulse]{The net magnetization vector M$_0$ is tipped to the transverse axis with an RF pulse so the signal can be measured. 
-Annotations were added to the simulated images, used with permission from Hanson et al. 
-(\cite{Hanson:2008tp})}
+	\caption{A) a collection of protons with magnetic moments are represented by arrows pointing in the direction of the magnetic moment, starting from a common starting point (centre). B) After switching on a main magnetic field $\vec{\mathbf{B_0}}$, the net magnetic moment $\vec{\mathbf{M}}$ slightly aligns with $\vec{\mathbf{B_0)}}$ because a larger fraction of spins point in the direction of the main magnetic field (in the rotating frame). C) The net magnetization moment is tipped to the transverse axis with an RF pulse $\vec{\mathbf{B_1}}$ so the signal can be measured. 
+Annotations were added to the simulated images produced by Hanson et al.(\cite{Hanson:2008tp}), used with permission from Wiley and Sons.}
 	\label{spinsB0B1}
 \end{figure}
 
-The quantity of interest in MRI is the net magnetic moment  $\vec{\mathbf{M}}$, and this is the summation of all the individual magnetic moments present in the hydrogen nuclei. 
+The quantity of interest in MRI is the net magnetic moment  $\vec{\mathbf{M}}$, and this is the summation of all individual magnetic moments present in the hydrogen nuclei. 
 $\vec{\mathbf{M}}$ is the quantity that is measured and ultimately leads to the images produced.
 Figure~\ref{spinsB0B1}A shows a schematic of the situation; for visualization, individual magnetic moments from the protons are localized to originate from the same central point.
 Since the water molecules are tumbling around due to thermal motion, the proton magnetic moments are oriented randomly they are pointed in nearly every direction and there is no net magnetic moment (figure~\ref{spinsB0B1}A).
 If we now put these water molecules into an MRI scanner and switch on a main magnetic field of strength $\vec{\mathbf{B_0}} = 7$ Tesla, there is a slight tendency of protons to align with the main magnetic field $\vec{\mathbf{B}}$ (along z axis, see figure~\ref{spinsB0B1}B), and a net magnetization vector $\vec{\mathbf{M}}$ is present.
 $\vec{\mathbf{M}}$ aligns with $\vec{\mathbf{B_0}}$ and the longitudinal component $\mathbf{M_z} = M_0$ while the transverse component $\mathbf{M_{x,y}} = 0$ (in the x-y plane).
-$\vec{\mathbf{M}}$ is many orders of magnitude smaller than the external magnetic field so the MR signal cannot be measured when it is aligned with the external main magnetic field $\vec{\mathbf{B}}$. 
+$\vec{\mathbf{M}}$ is many orders of magnitude smaller than the external magnetic field so the MR signal cannot be measured when it is aligned with the external main magnetic field $\vec{\mathbf{B_0)}}$. 
 Applying a radiofrequency (RF) pulse $\vec{\mathbf{B_1}}$ at the Larmor frequency results in a torque applied to $\vec{\mathbf{M}}$, causing it to `tip' down into the transverse (x-y) plane (figure~\ref{spinsB0B1}C).
 
 Interacting nuclei exchange energy with both the surrounding environment (spin-lattice interaction) as well as neighbouring nuclei (spin-spin interaction), and $\vec{\mathbf{M}}$ relaxes back to its equilibrium value. 

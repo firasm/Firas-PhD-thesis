@@ -55,11 +55,11 @@ Another interesting feature of the \acs{ICA} extraction process is that for our 
 \acs{dOE-MRI} maps from \acs{ICA} applied serially after varying the number of components ($m$) from 3 to 12 are shown in Figure~\ref{numComponents}.
 The component of the signal that corresponds to the T$_1$W signal intensity increase due to the cycling oxygen is quite prominent and independent of the number of components selected.
 This analysis is presented to ensure that the number of components selected had no bearing on the extracted ICA component.
-Two examples are shown, with a low and high degree of variability measured in the extracted components.
-The two animals presented here were selected to exhbit the full range of variability in extracted components.
-Figure~\ref{numComponents} shows the the best- and worst-case scenarios for the extracted independent component as it may have implications when performing fits.
+Two examples are shown in Figure~\ref{numComponents} that were selected to exhbit the variability (low on the left of Figure~\ref{numComponents} and high on the right) in extracted components in a single experiment.
 In both cases, the corresponding \acs{dOE-MRI} maps show the same O$_2$-positive and O$_2$-negative regions.
-An important future work is to explore how the presence or absence of noise affects the extraction process.
+Interestingly, in the high variability case, when $m = 10$, the ICA algorithm was not able to extract the oxygen-enhancing component.
+Exploring how the presence or absence of noise affects the extraction process would be useful in further development of the technique.
+There may be implications worth exploring in how the variability in the extracted component actually provides information about the underlying tumour microenvironment.
 
 \begin{figure}[htbp]
    \centering

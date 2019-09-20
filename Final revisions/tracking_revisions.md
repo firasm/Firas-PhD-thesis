@@ -4,7 +4,8 @@
 
 - [ ] {JD} you say that the time it takes all nuclei to relax back to M0 is T1. This is incorrect. 
 
-- [ ] {JD} there is reference missing on pdf page 34
+- [X] {JD} there is reference missing on pdf page 34
+	- Fixed by recompiling document
 
 - [ ] {JD} The introduction to Chapter 2, or somewhere, should have some comments about the relevance of the tumor model. Models with implanted tumor cells, on the whole, do not have a vasculature that models the human version of the cancer. The vessels usually grow faster, are more chaotic in structure, leakier and have no intrinsic blood flow regulation. They can be used to study methods of assessing leakiness, but are very poor when it comes to studying blood flow modifiers. They are of variable relevance when studying drugs that impact permeability. This should be noted in a thesis.
 

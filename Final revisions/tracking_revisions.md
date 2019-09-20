@@ -35,7 +35,7 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 
 - [ ] {JD} Sometimes figure calls are not in the same format—ie capitalized or not.
 
--As you are changing oxygen as a way of assessing tumors using the deoxyhemoglobin as a contrast agent, you might also note one of the first papers to do this. It also has useful information on problems of applying multiecho gradient echo in this experiment. Changes in oxygenation of intracranial tumors with carbogen: A BOLD MRI and EPR oximetry study Jeff F. Dunn et al. 2002 https://doi.org/10.1002/jmri.10192
+- [ ] {JD} As you are changing oxygen as a way of assessing tumors using the deoxyhemoglobin as a contrast agent, you might also note one of the first papers to do this. It also has useful information on problems of applying multiecho gradient echo in this experiment. Changes in oxygenation of intracranial tumors with carbogen: A BOLD MRI and EPR oximetry study Jeff F. Dunn et al. 2002 https://doi.org/10.1002/jmri.10192
 
 
 ## Stefan's comments
@@ -110,3 +110,10 @@ How many voxels do you need to do good deconvolution of the oxygen related signa
 - [ ] {RR} can you defend number of animals
 
 - [ ] {VS} did you measure the temperature and did it correspond. not generally true
+
+### To address contributions
+- turn table into a figure
+- add sentences confirming HPG was better than Gd
+- revise contributions to say i did modeling
+
+- put it in

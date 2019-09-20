@@ -40,8 +40,8 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 
 ## Stefan's comments
 
-- [ ] {RR} 4 instances of "Appendix" appear but there is no appendix
-	- Fixed in 
+- [X] {RR} 4 instances of "Appendix" appear but there is no appendix
+	- Fixed in 18af069
 
 - [ ] {RR} describe and defend MR sequences: 2d spoiled GE, not in the thesis
 

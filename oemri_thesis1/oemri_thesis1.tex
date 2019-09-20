@@ -196,7 +196,7 @@ Separate \acs{dOE-MRI} maps, as well as voxel-wise correlation plots of a repres
 Pearson's r ranged from 0.79 to 0.87 for a similar analysis in a representative HCT-116 tumour.
 
 The stability of the independent component extraction was assessed by undersampling the full timecourse threefold prior to application of \acs{ICA}, and a high correlation between the \acs{dOE-MRI} maps from full and three-fold undersampled timecourses is observed (Figure~\ref{fig_repeatability}E; Pearson's r = 0.84). 
-In Appendix~\ref{sec:interleave}, further undersampling up to a factor of six is shown with minor differences in the \acs{dOE-MRI} map.
+In Section~\ref{sec:interleave}, further undersampling up to a factor of six is shown with minor differences in the \acs{dOE-MRI} map.
 
 \begin{figure}[htbp]
    \centering
@@ -248,7 +248,7 @@ Here we present an improved quantification method of \acs{dOE-MRI} data that cap
 
 Since each extracted \acs{ICA} component is scaled such that its norm is one ($||c_i||=1, \forall i $), weighting factor maps are only directly comparable between scans if \acs{dOE-MRI} images are acquired at the same sampling frequency over the duration of the cycling oxygen (14 minutes).
 However, holding the sampling frequency fixed over different experiments is not practical as imaging tumours of different sizes require modification of the field of view and consequently, temporal and spatial resolutions.
-A scaling factor (equation~\ref{correctionfactor}; derived in the Appendix) must be applied to scale component map values so they can be compared between scans of different temporal resolutions,
+A scaling $s$ factor must be applied to scale component map values so they can be compared between scans of different temporal resolutions,
 
 \begin{equation}
 s = \frac{\sqrt{N_{ref}}}{\sqrt{N}}
@@ -302,11 +302,11 @@ While it is possible to generate correlation maps of the oxygen cycling paradigm
 Furthermore, presupposing a particular oxygen response function biases the identification of responding O$_2$-positive voxels (Figure~\ref{fig_correlation}) underscoring the need for a model-free approach to extracting the oxygen-responding component.
 
 The unambiguous match of the identified component with the periods of the gas cycles increases the confidence that the small T$_1$W signal changes result from increased oxygen dissolved in the plasma and interstitial tissue fluids.
-Maps from other extracted components (Appendix Figure~\ref{Sfig_components}) exhibit spatial patterns that could provide clues to the signal sources but associating meaning to them is challenging and would require additional data.
+Maps from other extracted components (Figure~\ref{Sfig_components}) exhibit spatial patterns that could provide clues to the signal sources but associating meaning to them is challenging and would require additional data.
 For example, even moderate shifts in temperature could drive a measurable change in T$_1$W signal during the timecourse, and a physiological monitoring system that is temporally synchronized to the MR acquisition could illuminate this confounding variable. 
 Nevertheless, we have established reliability of the technique by comparing maps from each cycle of the gas challenge to the map incorporating data from all three oxygen-cycles and have found no significant differences.
 In fact, the strong correlations between \acs{dOE-MRI} maps from each of the individual cycles of the gas challenge (Figure~\ref{fig_repeatability}) show that it is feasible to assess tissue oxygenation within 6 minutes.
-Performing this analysis again with three-fold (Figure~\ref{fig_repeatability}) and six-fold (Appendix~\ref{sec:interleave}) temporally under-sampled data suggests that there is sufficient \acs{SNR} to successfully extract the oxygen responsive component  with even a subset of the data.
+Performing this analysis again with three-fold (Figure~\ref{fig_repeatability}) and six-fold (Section~\ref{sec:interleave}) temporally under-sampled data suggests that there is sufficient \acs{SNR} to successfully extract the oxygen responsive component  with even a subset of the data.
 
 dOE-MRI offers a versatile technique where the duration of the cycles and gas challenge, temporal resolution and desired signal-to-noise can be modified based on the imaging objectives, which could include investigating intermittent perfusion or intervention-mediated changes in the tumour microenvironment. 
 Of note, supplying excess oxygen to hypoxic tumour cells over time has the potential for increasing the baseline oxygen concentration, effectively reducing the hypoxic fraction and altering the tumour microenvironment~\cite{Linnik:2013hf}.

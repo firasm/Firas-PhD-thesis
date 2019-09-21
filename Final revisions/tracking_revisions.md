@@ -11,7 +11,7 @@
 
 - [ ] {JD} When using RARE, can you put in the parameters so people can reproduce this (echo times, number of echoes or rare factor, average echo time). I’m confused about the T1, RARE, FLASH use etc on page 17 of the pdf in methods. It seems to talk about RARE and qualitative T1 then launches into T1 calibration. This is just a sentence flow problem as I think you switching to FLASH.
 
-- [ ] {JD} Make sure all abbreviations and terms in figures are defined in the figure legend, even if the abbreviation is normal in your field. For instance, Fig 2.2, the words violation and LCL.
+- [X] {JD} Make sure all abbreviations and terms in figures are defined in the figure legend, even if the abbreviation is normal in your field. For instance, Fig 2.2, the words violation and LCL.
 	- Fixed in 3a56e53
 
 - [ ] {JD} On pdf page 46 in methods, it says the relaxivity units are mM-11s-11. What is the extra 1? It looks like a formatting error.

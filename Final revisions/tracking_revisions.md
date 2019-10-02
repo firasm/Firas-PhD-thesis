@@ -67,6 +67,9 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 
 - [ ] {VS} how robust are your result? etc ; if it’s a physicist thesis it needs more rigor.
 
+- [ ] {RR} Need period at the end of equation 5.2
+
+- [ ] {RR} missing quotation marks in section 8.2, first sentence
 
 ### QUESTIONS FOR/FROM THE DEFENCE
 Stefan Reinsberg (supervisor+ext questions)

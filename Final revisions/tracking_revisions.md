@@ -88,10 +88,16 @@ Stefan Reinsberg (supervisor+ext questions)
 
 - [ ] revise contributions to add my fitting/modeling of extended tofts model
 
-## Comments/suggestions/questions I am not planning on addressing in the text/answered during the defence
-
+## Things I (Firas) wasn't going to comment on but SAR thinks should
 - [ ] {TS} why ICA not fourier transform? 
 	Ans was -> signal to noise. TS not buying that
+	SAR: you could insert a general comparison of sensitivity and SNR in Fourier Transform to rationalize why ICA is better. This can appear in a discussion.
+	
+- [ ] {RR} ICA part: operator chooses number of components? how do you make the decision around n? [why have variable components at all?] SAR: I think it would make sense to formalize the process of choosing the numbers of components. This is an oft-raised points and needs addressing.
+
+
+
+## Comments/suggestions/questions I am not planning on addressing in the text/answered during the defence
 
 - [ ] {JD/XX} Since the dOE-MRI did not always relate to pimonidazole staining in specific parts of the tumor (although it did overall change in the direction that the magnitude of staining did), how can you justify saying that it is a measure of oxygenation? Isn’t that too specific given the variability of your coregistration with pimonidizole?
 	-> drug effect,
@@ -133,6 +139,5 @@ How many voxels do you need to do good deconvolution of the oxygen related signa
 
 - [ ] {RR} key question: goal is measuring tumour oxygenation. how do you defend a qualitative
 
-- [ ] {RR} ICA part: operator chooses number of components? how do you make the decision around n? [why have variable components at all?]
 
 - [ ] {RR} how do you interpret these components and their meaning, defend the speculation of T variation is it breathing?

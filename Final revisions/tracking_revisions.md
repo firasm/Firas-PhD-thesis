@@ -47,7 +47,6 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 
 - [ ] {JD} As you are changing oxygen as a way of assessing tumors using the deoxyhemoglobin as a contrast agent, you might also note one of the first papers to do this. It also has useful information on problems of applying multiecho gradient echo in this experiment. Changes in oxygenation of intracranial tumors with carbogen: A BOLD MRI and EPR oximetry study Jeff F. Dunn et al. 2002 https://doi.org/10.1002/jmri.10192
 
-
 ## Stefan's comments
 
 - [X] {RR} 4 instances of "Appendix" appear but there is no appendix
@@ -62,41 +61,15 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 
 - [ ] {RR} confused by how many switches: in one place you say one works, in another it doesn't
 
-- [ ] {RR} ICA part: operator chooses number of components? how do you make the decision around n? [why have variable components at all?]
-
-- [ ] {RR} how do you interpret these components and their meaning, defend the speculation of T variation is it breathing?
-
-- [ ] {RR} key question: goal is measuring tumour oxygenation.how do you defend a qualitative
-
 - [ ] {VS} more method development; 
 
 - [ ] {VS} write more like physicists, very little ; 
 
 - [ ] {VS} how robust are your result? etc ; if it’s a physicist thesis it needs more rigor.
 
-- [ ] {VS} how relevant is this model of HPG for humans? would your model work with other agents?
-
-- [ ] {VS} how do you validate aPS?
-
-- [ ] {VS} technique depend on tumour models? yes there is some dependence.
-
-- [ ] {VS} how universal is you O2 model?
-
-- [ ] {VS} what pre-processing of data?
-
-- [ ] {VS} meaning of negative responding regions?
-
-- [ ] {PK} talking about T2star: what do you expect?
-
-- [ ] {PK} independent vector analysis?
-
 
 ### QUESTIONS FOR/FROM THE DEFENCE
 Stefan Reinsberg (supervisor+ext questions)
-
-- [ ] {JD} XX Describe T2 using a vector diagram on the board. What proportion of T2 relaxation has occurred by time T2? (I expect someone will ask, what is T1, T2 or T2* so I’m just making sure they do)
-
-- [ ] {JD} You validated your contrast agent, HPT-GdF in one tumor, (HCT116, in Chapter 2) but then used it in a research project in other tumors in Chapter 3. How do you know the method transfers to these other tumors? You noted that the function of the contrast agent would relate to vessel diameter and the size of compounds that leak. Don’t you need good data on sizes of compounds that would leak in the other tumors?
 
 - [ ] {XX} In Chapter 3 you note that vessel function doesn’t relate well to trastuzumab distribution. You then conclude that “our data suggest that the tumor microenvironment and tissue- and vessel-level barriers to drug distribution could effectively limit access of drug”. Did your data in any way support this conclusion or is this conclusion just what you expected to find?
 
@@ -104,27 +77,59 @@ Stefan Reinsberg (supervisor+ext questions)
 
 - [ ] {JD/XX} As you are changing oxygen and deoxyhemoglobin content at the same time while measuring T1w signal, and both can change T1, can you note how each would change T1 and how you can conclude that the changes you see are due to deoxyhemoglobin?
 
-- [ ] {RR/JD} What barriers do you see in implementing the oxygen MRI method into the clinic?
-How many voxels do you need to do good deconvolution of the oxygen related signal? What I the spatial resolution of your measurement? How, apart from pimonidazole, might you validate the idea that areas that change well have different perfusion and oxygenation than areas that don’t change well (If I understand you link between the changes and the oxygenation).
-	-> ????
+- [ ] turn table into a figure in HPG chapter
 
-- [ ] {JD/XX} Since the dOE-MRI did not always relate to pimonidazole staining in specific parts of the tumor (although it did overall change in the direction that the magnitude of staining did), how can you justify saying that it is a measure of oxygenation? Isn’t that too specific given the variability of your coregistration with pimonidizole?
-	-> drug effect,
+- [ ] add sentences confirming HPG was better than Gd
+
+### To address contributions section
+
+- [ ] revise contributions to add my fitting/modeling of extended tofts model
+
+## Comments/suggestions/questions I am not planning on addressing in the text/answered during the defence
 
 - [ ] {TS} why ICA not fourier transform? 
 	Ans was -> signal to noise. TS not buying that
+
+- [ ] {JD/XX} Since the dOE-MRI did not always relate to pimonidazole staining in specific parts of the tumor (although it did overall change in the direction that the magnitude of staining did), how can you justify saying that it is a measure of oxygenation? Isn’t that too specific given the variability of your coregistration with pimonidizole?
+	-> drug effect,
 
 - [ ] {TS} pulse oximeter and gating/triggering? 
 	Ans was -> gating not ideal.
 
 - [ ] {RR} how did you decide on the duty cycle of oxygen challenge?
+
 - [ ] {RR} can you defend number of animals
 
 - [ ] {VS} did you measure the temperature and did it correspond. not generally true
 
-### To address contributions section
-- turn table into a figure
-- add sentences confirming HPG was better than Gd
-- revise contributions to say i did modeling
+- [ ] {RR/JD} What barriers do you see in implementing the oxygen MRI method into the clinic?
+How many voxels do you need to do good deconvolution of the oxygen related signal? What I the spatial resolution of your measurement? How, apart from pimonidazole, might you validate the idea that areas that change well have different perfusion and oxygenation than areas that don’t change well (If I understand you link between the changes and the oxygenation).
+	-> ????
 
-- put it in
+- [ ] {JD} You validated your contrast agent, HPT-GdF in one tumor, (HCT116, in Chapter 2) but then used it in a research project in other tumors in Chapter 3. How do you know the method transfers to these other tumors? You noted that the function of the contrast agent would relate to vessel diameter and the size of compounds that leak. Don’t you need good data on sizes of compounds that would leak in the other tumors?
+
+- [ ] {JD} XX Describe T2 using a vector diagram on the board. What proportion of T2 relaxation has occurred by time T2? (I expect someone will ask, what is T1, T2 or T2* so I’m just making sure they do)
+
+
+- [ ] {PK} talking about T2star: what do you expect?
+
+- [ ] {PK} independent vector analysis?
+
+- [ ] {VS} how relevant is this model of HPG for humans? would your model work with other agents?
+
+- [ ] {VS} how do you validate aPS?
+
+- [ ] {VS} technique depend on tumour models? 
+	- yes there is some dependence.
+
+- [ ] {VS} how universal is you O2 model?
+
+- [ ] {VS} what pre-processing of data?
+
+- [ ] {VS} meaning of negative responding regions?
+
+- [ ] {RR} key question: goal is measuring tumour oxygenation. how do you defend a qualitative
+
+- [ ] {RR} ICA part: operator chooses number of components? how do you make the decision around n? [why have variable components at all?]
+
+- [ ] {RR} how do you interpret these components and their meaning, defend the speculation of T variation is it breathing?

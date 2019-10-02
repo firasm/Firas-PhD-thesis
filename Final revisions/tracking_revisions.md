@@ -10,23 +10,29 @@
 
 - [ ] {JD} The introduction to Chapter 2, or somewhere, should have some comments about the relevance of the tumor model. Models with implanted tumor cells, on the whole, do not have a vasculature that models the human version of the cancer. The vessels usually grow faster, are more chaotic in structure, leakier and have no intrinsic blood flow regulation. They can be used to study methods of assessing leakiness, but are very poor when it comes to studying blood flow modifiers. They are of variable relevance when studying drugs that impact permeability. This should be noted in a thesis.
 
-- [ ] {JD} When using RARE, can you put in the parameters so people can reproduce this (echo times, number of echoes or rare factor, average echo time). I’m confused about the T1, RARE, FLASH use etc on page 17 of the pdf in methods. It seems to talk about RARE and qualitative T1 then launches into T1 calibration. This is just a sentence flow problem as I think you switching to FLASH.
+- [X] {JD} When using RARE, can you put in the parameters so people can reproduce this (echo times, number of echoes or rare factor, average echo time). I’m confused about the T1, RARE, FLASH use etc on page 17 of the pdf in methods. It seems to talk about RARE and qualitative T1 then launches into T1 calibration. This is just a sentence flow problem as I think you switching to FLASH.
+	- Fixed in e72f501; added details about RARE scans, fixed sentence flow to make it clear the separation between qualitative scans and quantitative mapping
 
 - [X] {JD} Make sure all abbreviations and terms in figures are defined in the figure legend, even if the abbreviation is normal in your field. For instance, Fig 2.2, the words violation and LCL.
 	- Fixed in 3a56e53
 
-- [ ] {JD} On pdf page 46 in methods, it says the relaxivity units are mM-11s-11. What is the extra 1? It looks like a formatting error.
+- [X] {JD} On pdf page 46 in methods, it says the relaxivity units are mM-11s-11. What is the extra 1? It looks like a formatting error.
+	- Fixed in 37c610f
 
-- [ ] {JD} How do you know DiOC7 does not get beyond endothelial cells? If it does, it is not as good a vessel marker.
+- [X] {JD} How do you know DiOC7 does not get beyond endothelial cells? If it does, it is not as good a vessel marker.
+	- Fixed in 57758d2; added a reference also. Given enough time, carbocyanine freely diffuses throughout the tumour tissue but with a limited exposure time (less than 5 minutes), it serves as a good vessel perfusion marker \cite{Trotter:1989cs}.
 
 - [ ] {JD} It is noted early in the discussion of Chapter 2 that vascular agents need to be the right size to distribute within an optimal period of time. Given that this agent was tested in an animal tumor, what is the relationship between vessel morphometrics and “leakage pore size” in the animal tumor vs a human tumor? Shouldn’t this be discussed before saying it is a good agent?
 
-- [ ] {JD} I am very much not a fan of paragraphs that approach or exceed one page. This makes the text very hard to read. This was more of an issue in the early chapters.
+- [X] {JD} I am very much not a fan of paragraphs that approach or exceed one page. This makes the text very hard to read. This was more of an issue in the early chapters.
+	- Agreed. Fixed in 6726c42
 
-- [ ] {JD} Sentences that end paragraphs should often provide some summary, conclusion or linkage to the next paragraph. Sentences that start a paragraph should also provide some overview of what the reader expects. Some of the writing lacks this. I note it in Chapter 2. For instance, here is the first sentence of one paragraph. “Without this information, analysis may be restricted to regions of tissues at the tumour margins where hot spots of vascularization are observed histologically,
+- [X] {JD} Sentences that end paragraphs should often provide some summary, conclusion or linkage to the next paragraph. Sentences that start a paragraph should also provide some overview of what the reader expects. Some of the writing lacks this. I note it in Chapter 2. For instance, here is the first sentence of one paragraph. “Without this information, analysis may be restricted to regions of tissues at the tumour margins where hot spots of vascularization are observed histologically,
 and tissue is assumed to be viable in the MR image [56, 63].” This is a reasonable sentence but not a good first sentence in a paragraph.
+	- Fixed throughout in 6726c42; This was a matter of poorly placed paragraph breaks, and bad sentence flow. 
 
-- [ ] {JD} In chapter 3 it says it will “use HPG-GdF to investigate the distribution of Trastuzumab.” This isn’t technically correct. It is looking at both but you are not using the contrast agent to detect Trastuzumab distribution.
+- [X] {JD} In chapter 3 it says it will “use HPG-GdF to investigate the distribution of Trastuzumab.” This isn’t technically correct. It is looking at both but you are not using the contrast agent to detect Trastuzumab distribution.
+	- Fixed in 3d23a46; clarified chapter title to make it clear the agent is being used to detect the drug directly.
 
 - [ ] {JD} It was unclear how many animals were in Chapter 5. If you only present data on 2-5 why split chapter 5 and 6. It was unclear how well component 4 related to O2 between different tumors and how variable the data were.
 
@@ -36,7 +42,8 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 
 - [ ] {JD} The ICA analysis coupled with the oxygen pulse and the sensitive T1 mapping provides a novel, interesting and relevant new method for monitoring tumors. You noted that ‘cycling’ hypoxia was hard to detect. Since these tumors are unlikely to have vessel flow regulation, you could reduce blood pressure, which will reduce the flow to the tumor and should increase the hypoxic regions. This is just a thought, it is not a request to add this to your thesis.
 
-- [ ] {JD} Sometimes figure calls are not in the same format—ie capitalized or not.
+- [x] {JD} Sometimes figure calls are not in the same format—ie capitalized or not.
+	- Fixed in 413faaf, d7ed72b, f793d12
 
 - [ ] {JD} As you are changing oxygen as a way of assessing tumors using the deoxyhemoglobin as a contrast agent, you might also note one of the first papers to do this. It also has useful information on problems of applying multiecho gradient echo in this experiment. Changes in oxygenation of intracranial tumors with carbogen: A BOLD MRI and EPR oximetry study Jeff F. Dunn et al. 2002 https://doi.org/10.1002/jmri.10192
 
@@ -48,7 +55,8 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 
 - [ ] {RR} describe and defend MR sequences: 2d spoiled GE, not in the thesis
 
-- [ ] {RR} why time resolution 2.24s: (is it always that? 2.4 on p 31)
+- [X] {RR} why time resolution 2.24s: (is it always that? 2.4 on p 31)
+	- This was a typo, temporal resolution is 2.24s fixed in e72f501
 
 - [ ] {RR} switching to OEMRI: summarize novel contribution
 
@@ -114,7 +122,7 @@ How many voxels do you need to do good deconvolution of the oxygen related signa
 
 - [ ] {VS} did you measure the temperature and did it correspond. not generally true
 
-### To address contributions
+### To address contributions section
 - turn table into a figure
 - add sentences confirming HPG was better than Gd
 - revise contributions to say i did modeling

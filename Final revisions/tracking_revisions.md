@@ -45,7 +45,9 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 - [x] {JD} Sometimes figure calls are not in the same format—ie capitalized or not.
 	- Fixed in 413faaf, d7ed72b, f793d12
 
-- [ ] {JD} As you are changing oxygen as a way of assessing tumors using the deoxyhemoglobin as a contrast agent, you might also note one of the first papers to do this. It also has useful information on problems of applying multiecho gradient echo in this experiment. Changes in oxygenation of intracranial tumors with carbogen: A BOLD MRI and EPR oximetry study Jeff F. Dunn et al. 2002 https://doi.org/10.1002/jmri.10192
+- [X] {JD} As you are changing oxygen as a way of assessing tumors using the deoxyhemoglobin as a contrast agent, you might also note one of the first papers to do this. It also has useful information on problems of applying multiecho gradient echo in this experiment. Changes in oxygenation of intracranial tumors with carbogen: A BOLD MRI and EPR oximetry study Jeff F. Dunn et al. 2002 https://doi.org/10.1002/jmri.10192
+	- Fixed in 2a6b4b1
+	- Added this reference in oemri chapter 1 and in the future work section
 
 ## Stefan's comments
 
@@ -67,9 +69,11 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 
 - [ ] {VS} how robust are your result? etc ; if it’s a physicist thesis it needs more rigor.
 
-- [ ] {RR} Need period at the end of equation 5.2
+- [X] {RR} Need period at the end of equation 5.2
+	- Fixed in 2f1cd12.
 
-- [ ] {RR} missing quotation marks in section 8.2, first sentence
+- [X] {RR} missing quotation marks in section 8.2, first sentence
+	- Fixed in 35d8ca0.
 
 ### QUESTIONS FOR/FROM THE DEFENCE
 Stefan Reinsberg (supervisor+ext questions)

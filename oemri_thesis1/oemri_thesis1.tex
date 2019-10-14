@@ -63,7 +63,11 @@ The net increase in dissolved oxygen results in a dramatic and measurable decrea
 This change is reversed soon after the patient is switched back to breathing atmospheric air as excess oxygen is expelled or metabolized. 
 Perfused tumour regions (i.e regions that already have a high \acs{Hb}-O$_2$ saturation) will see a measurable decrease in T$_1$. 
 The perfused regions that do not show a decrease in T$_1$ must therefore be hypoxic~\cite{OConnor:2016ee}. 
-Importantly, OE-MRI does not yield any information about unperfused regions and in that region, there are likely to be pockets of viable (but hypoxic) tissue.
+Importantly, \acs{OE-MRI} does not yield any information about unperfused regions and in that region, there are likely to be pockets of viable (but hypoxic) tissue.
+Though outside the scope of this study, blood-oxygen level dependent (\acs{BOLD}) imaging may provide insight into these regions by exploiting the paramagnetic properties of deoxyhaemoglobin. 
+Dunn et al. explored the use of deoxyhaemoglobin as a contrast agent by coupling \acs{BOLD} imaging with a modification to the inhaled gas (carbogen) in intracranial rat tumours~\cite{Dunn:2002ji}.
+This study~\cite{Dunn:2002ji}, and others since then~\cite{Little:2018iu,Yang:2019cz,Hallac:2014cb,Zhao:2015ez} have established that T$_2^*$ increases as tumour oxygenation improves using a variety of breathing gases.
+Section~\ref{futurework:expandingdOEMRI_T2*} outlines this technique in more detail and how it could be used with \acs{dOE-MRI} to obtain a more complete picture of the tumour microenvironment.
 
 The oxygen status of healthy tissue is fairly well regulated in normal tissue and every cell in the body is at most 150$\mu$m away from a blood vessel. 
 In tumours however, the vascular network is chaotic and the growth patterns of vessels are abnormal leading to a defective and leaky endothelium~\cite{McDonald:2002ut}. 
@@ -85,7 +89,7 @@ In a mammary adenocarcinoma mouse tumour model, Sorg et al. used spectral imagin
 
 The T$_1$-shortening property of oxygen dissolved in fluid has been known since 1955~\cite{Chiarotti:1955kf} and pioneering work by Young et al. showed that oxygen acts as a paramagnetic contrast agent by demonstrating its ability to reduce T$_1$ upon inhalation~\cite{Young:1981vf}. 
 Inhalation of 100\% oxygen has also been shown to elicit strong T$_1$ effects in the kidney\cite{Jones:2002dh}, spleen\cite{Tadamura:1997vc} and the poorly oxygenated retina~\cite{Berkowitz:2001uz}. 
-Subsequent oxygen-enhanced MRI (OE-MRI) efforts have included either acquisition of quantitative T$_1$ maps before and after oxygen breathing, or acquiring dynamic T$_1$-weighted (T1W) signal intensity images and calculating $\Delta$T$_1$ during periods of oxygen inhalation.
+Subsequent oxygen-enhanced MRI (\acs{OE-MRI}) efforts have included either acquisition of quantitative T$_1$ maps before and after oxygen breathing, or acquiring dynamic T$_1$-weighted (T1W) signal intensity images and calculating $\Delta$T$_1$ during periods of oxygen inhalation.
 The subtle but measurable influence of tissue oxygenation on T$_1$ in tumours has been reported by O'Connor~\cite{OConnor:2016ee,OConnor:2009ku,OConnor:2009bp,Little:2018iu}, Mason~\cite{Zhao:2015ez,White:2016fz,Hallac:2014cb}, Gallez~\cite{Jordan:2012do}, and others~\cite{Tadamura:1997vc,McGrath:2008kx,Kershaw:2010ha,Linnik:2013hf}. 
 However, due to the changes in T$_1$ that arise as oxygen dissolves in the plasma and interstitial fluid being quite small, T$_1$ maps have poor sensitivity and application of OE-MRI techniques in cancer has yielded mixed success.
 OE-MRI continues to suffer from low \acs{SNR} and it has not found routine clinical use largely because isolating small signal changes due to dissolved O$_2$ is a challenge~\cite{OConnor:2016ee, Zhao:2015ez}.
@@ -294,7 +298,7 @@ This scaling factor was applied to all \acs{dOE-MRI} maps used in this study to 
 \section{Discussion}
 % ======================================================================
 
-In this study, we presented an improved method for OE-MRI that employs two synergistic techniques to achieve higher speed and greater sensitivity.
+In this study, we presented an improved method for \acs{OE-MRI} that employs two synergistic techniques to achieve higher speed and greater sensitivity.
 First, a repeated gas challenge was used to probe tissue response by introducing an independent signal modulation unrelated to spurious contributions such as temperature drifts and motion.
 A repeating gas challenge improved the detection sensitivity of small amplitude signal changes that are typical of oxygen-enhanced MRI.
 Second, a repeating signal modulation enabled further improved sensitivity through the use of \acs{ICA}, a signal processing technique to isolate source signals - T$_1$W changes due solely to the cycling oxygen - without knowledge of the tissue response (Figure~\ref{technique}).
@@ -308,7 +312,7 @@ Nevertheless, we have established reliability of the technique by comparing maps
 In fact, the strong correlations between \acs{dOE-MRI} maps from each of the individual cycles of the gas challenge (Figure~\ref{fig_repeatability}) show that it is feasible to assess tissue oxygenation within 6 minutes.
 Performing this analysis again with three-fold (Figure~\ref{fig_repeatability}) and six-fold (Section~\ref{sec:interleave}) temporally under-sampled data suggests that there is sufficient \acs{SNR} to successfully extract the oxygen responsive component  with even a subset of the data.
 
-dOE-MRI offers a versatile technique where the duration of the cycles and gas challenge, temporal resolution and desired signal-to-noise can be modified based on the imaging objectives, which could include investigating intermittent perfusion or intervention-mediated changes in the tumour microenvironment. 
+\acs{dOE-MRI} offers a versatile technique where the duration of the cycles and gas challenge, temporal resolution and desired signal-to-noise can be modified based on the imaging objectives, which could include investigating intermittent perfusion or intervention-mediated changes in the tumour microenvironment. 
 Of note, supplying excess oxygen to hypoxic tumour cells over time has the potential for increasing the baseline oxygen concentration, effectively reducing the hypoxic fraction and altering the tumour microenvironment~\cite{Linnik:2013hf}.
 This would result in voxels becoming more oxygen responsive over progressive oxygen cycles and would depend on the tumour characteristics as well as the duration of the oxygen challenge.
 This was not observed on the time scales in our study when using \acs{ICA} to extract changes in T$_1$W signal intensity just due to the gas challenge. 

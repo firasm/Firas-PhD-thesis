@@ -100,12 +100,22 @@ In this study, we present a new dynamic OE-MRI (dOE-MRI) method that allows extr
 To isolate the signal component that matches cycling gas, a blind source separation approach called independent component analysis (\acs{ICA}) is used to analyze MR images as first proposed by McKeown at al~\cite{McKeown:1998wo}.
 \acs{ICA} is a form of blind source separation algorithm that separates the additive signals on the basis of the statistical independence of individual components~\cite{Hyvarinen:2000vk}.
 With the application of a cycling oxygen challenge and processing the data using \acs{ICA}, our \acs{dOE-MRI} approach represents a significant improvement in the sensitivity and application of MRI for measuring tumour oxygenation, making it more practical for wide application.
+
 % ======================================================================
 \section{Methods}
 % ======================================================================
+
+This section of the thesis introduces and describes the \acs{dOE-MRI} technique and discusses technical details of the technique. 
+Its characteristics are described in sections~\ref{res1},\ref{res2},\ref{res5}.
+An analysis of robustness is done in section~\ref{res4}, repeatability in section~\ref{sec:correctionfactor}, and variability in section~\ref{res3}.
+Ninety-one ICA extractions were done in a total of eighty-one (N=81; some mice had two distinct tumours) mice that were scanned in a variety of experimental conditions.
+Multiple tumour lines are explored in Chapter~\ref{ch:oemri2} and a tumour treatment study is discussed in Chapter~\ref{ch:oemri3}.
+Below methods for the \acs{dOE-MRI} technique are discussed, and subsequent chapters will refer to these details and provide amendments as needed. 
+
 \subsection{Mice and tumours}
 
 Female NRG (NOD rag gamma) mice were implanted with murine squamous cell carcinoma (SCCVII; 5x10$^5$ cells in 50 $\mu$l serum-free media; cells provided by Dr.\ J. Evans) in the dorsal subcutaneous region.
+These mice and tumours are shown in all figures in this chapter except figure~\ref{fig_scored_extractions}, which contains the aggregate data across all \acs{dOE-MRI} experiments).
 Mice were anaesthetized with isoflurane for the duration of imaging sessions until euthanasia, and were positioned supine on the custom surface coil apparatus.
 Throughout the imaging session, a small animal monitoring system (SA Instruments Inc., Stony Brook, NY, USA) was used to monitor respiration rate, varying between 80-100 breaths per minute, and body temperature, maintained at $36.8 \pm 0.5^\circ$C using a continuous airflow heater.
 All animals were injected with 60~mg/kg pimonidazole hydrochloride (HypoxyProbe) 30~min prior to imaging to label hypoxic cells and were euthanized within 15~min of imaging completion.
@@ -156,11 +166,27 @@ r = \frac{\Sigma^n_{i=1} (x_i - \bar{x}) (y_i - \bar{y})}{\sqrt{\Sigma^n_{i=1} (
 where $x$ is the model paradigm and $y$ is the T$_1$W signal intensity timecourse.
 The resulting correlation maps are estimates of the strength of the input paradigms with the acquired signal intensity.
 
+\subsection{Quality Scores}
+
+A coarse qualitative scoring system was developed to evaluate the quality of the ICA component from all 91 extractions.
+The scored extractions are shown in figure~\ref{fig_scored_extractions}.
+This is similar to the Gleason score that radiologists use to predict the aggressiveness of prostate cancer by looking at tissue biopsies.
+The levels of the scoring system and the associated explanations were:
+
+\begin{itemize}
+\item Unusable: These extractions were removed from consideration as they do not correspond to the cycling paradigm in a meaningful way.
+\item Poor: In these cases, the extracted component corresponds to the cycling paradigm, but either due to imaging noise, motion, or notably different physiological response, the extracted component is noisy.
+\item Satisfactory: A distinct pattern matching the cycling gas paradigm is present and recognizable.
+\item Good: These extractions contain trends other than the cycling paradigm, and there is some variability in the ``humps'' 
+\item Ideal/perfect: These extractions are ideal and show the presence of a strong cycling component with very little noise, and approximately equal ``humps''
+\end{itemize}
+
 % ======================================================================
 \section{Results}
 % ======================================================================
 
 \subsection{\texorpdfstring{\acs{ICA}}{ICA} isolates small changes in \texorpdfstring{T$_1$}{T1}W signal intensity}
+\label{res1}
 
 An example signal intensity vs.\ time curve is shown for a whole slice ROI compared with a single voxel (Figure~\ref{technique}B).
 A mean signal intensity increase is seen for both the whole slice and the individual voxel during each of the oxygen periods of the cycle, however the magnitude of $\Delta SI$ for the individual voxel is about 10\% and the noise is of the same order of magnitude.
@@ -178,6 +204,8 @@ Speculations for the source of the other components is provided in Figure~\ref{S
 \end{figure}
 
 \subsection{dOE-MRI with \acs{ICA} does not require assumption of a response function}
+\label{res2}
+
 To determine whether \acs{dOE-MRI} maps obtained with a model-free \acs{ICA} approach (Figure~\ref{fig_correlation}A) are comparable to maps assuming mathematical models of the response, alternative oxygenation status correlation maps were constructed (Figure~\ref{fig_correlation}B and C). 
 In Figure~\ref{fig_correlation}B and C, two example mathematical models - a square wave and the estimated hemodynamic response function (HDRF) - are correlated to the voxel-by-voxel raw time signal. 
 Regions most correlated with the input paradigm remained purple in both alternative maps generated from modelled response functions.
@@ -194,6 +222,7 @@ Panels B and C are correlation maps whereas A is the \acs{dOE-MRI} map from \acs
 \end{figure}
 
 \subsection{Variability of response in individual oxygen cycles}
+\label{res3}
 
 A full \acs{dOE-MRI} sequence involved three cycles of oxygen but to assess the potential for shortening the sequence we also separately applied \acs{ICA} to each of the three oxygen cycles independently.
 Separate \acs{dOE-MRI} maps, as well as voxel-wise correlation plots of a representative SCCVII tumour, are shown in Figure~\ref{fig_repeatability} with Pearson's r$_{all-1}$=0.74,r$_{all-2}$=0.86,r$_{all-3}$=0.84.
@@ -208,6 +237,22 @@ In Section~\ref{sec:interleave}, further undersampling up to a factor of six is 
    \caption{The \acs{dOE-MRI} map including the full dataset of all three cycles (A) is compared to each of the three gas cycles separately (B,C,D), and to a map that temporally undersamples by selecting every third datapoint from the full dataset (E).
 Voxel-wise plots of each map are correlated to the full dataset and a linear regression with Pearson's r is shown.
    \label{fig_repeatability}}
+\end{figure}
+
+\subsection{Quality of extracted component}
+\label{res4}
+
+Across 91 extractions, figure~\ref{fig_scored_extractions} shows the quality of the extraction process for each dataset.
+A quality score of 1 was given only five times, and a score of 2 was given sixteen times (out of 91).
+Only data with a quality score of 1 was discarded from analysis, and in the studies presented in this thesis, no data was was discarded.
+A quality score of five, four, and three was awarded thirty-three, twenty-two, and fifteen times, respectively. 
+
+\begin{figure}[htbp]
+   \centering
+   \includegraphics[width=\textwidth]{oemri_thesis1/oemri_thesis1-images/fig_scored_extractions.pdf} % requires the graphicx package
+   \caption{All ninety-one \acs{dOE-MRI} extractions shown with the quality scores (1=unusable to 5=ideal) and the number of tumours shown in parentheses.
+   Colours represent the different scores with 1 in dark green, 2 in orange 3 in blue, 4 in purple, and 5 in lime green.
+   \label{fig_scored_extractions}}
 \end{figure}
 
 \subsection{dOE-MRI can be extended by interleaving other scans between each repetition}
@@ -226,6 +271,7 @@ Details of this are discussed in section~\ref{futurework:expandingdOEMRI_T2*}.
 \end{figure}
 
 \subsection{Exploring other independent components extracted using \acs{ICA}}
+\label{res5}
 
 Figure~\ref{Sfig_components} shows the extracted independent components and their corresponding weighting factor maps for an application of \acs{ICA} on a OE-MRI scan.
 Extracted components typically have a mix of high and low frequency responses and may include temperature drifts, breathing artefacts and other motion. 
@@ -305,7 +351,14 @@ Second, a repeating signal modulation enabled further improved sensitivity throu
 While it is possible to generate correlation maps of the oxygen cycling paradigm with T$_1$W signal changes that appear very similar to \acs{dOE-MRI} maps, an \emph{a-priori} assumption of a response function is required for this approach (Figure~\ref{fig_correlation}).
 Furthermore, presupposing a particular oxygen response function biases the identification of responding O$_2$-positive voxels (Figure~\ref{fig_correlation}) underscoring the need for a model-free approach to extracting the oxygen-responding component.
 
-The unambiguous match of the identified component with the periods of the gas cycles increases the confidence that the small T$_1$W signal changes result from increased oxygen dissolved in the plasma and interstitial tissue fluids.
+A robustness analysis of all ninety-one extractions is shown in figure~\ref{fig_scored_extractions}.
+The technique appears quite robust as over 75\% of the tumours imaged had a quality score of ``satisfactory'' or higher.
+Only five datasets were excluded from subsequent analysis (quality score of 1).
+Typical reasons for a score of 1 (unusable or no extracted component) were excessive motion or poor SNR but in some cases it was difficult to explain poor extraction.
+Further work is needed to explore whether the poor extraction is due to an actual physiological response (or lack thereof), histologically distinct tumour microenvironment, excessive motion, or MR signal/noise considerations.
+Indeed, it may be interesting to further investigate the tumours/animals that do not appear to respond to the oxygen stimulus in a consistent and expected way.
+
+However, the unambiguous match of the identified components for a vast majority of the extracted components with the periods of the gas cycles increases the confidence that the small T$_1$W signal changes result from increased oxygen dissolved in the plasma and interstitial tissue fluids.
 Maps from other extracted components (Figure~\ref{Sfig_components}) exhibit spatial patterns that could provide clues to the signal sources but associating meaning to them is challenging and would require additional data.
 For example, even moderate shifts in temperature could drive a measurable change in T$_1$W signal during the timecourse, and a physiological monitoring system that is temporally synchronized to the MR acquisition could illuminate this confounding variable. 
 Nevertheless, we have established reliability of the technique by comparing maps from each cycle of the gas challenge to the map incorporating data from all three oxygen-cycles and have found no significant differences.

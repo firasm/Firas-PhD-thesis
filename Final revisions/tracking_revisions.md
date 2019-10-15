@@ -34,7 +34,8 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 - [X] {JD} In chapter 3 it says it will “use HPG-GdF to investigate the distribution of Trastuzumab.” This isn’t technically correct. It is looking at both but you are not using the contrast agent to detect Trastuzumab distribution.
 	- Fixed in 3d23a46; clarified chapter title to make it clear the agent is being used to detect the drug directly.
 
-- [ ] {JD} It was unclear how many animals were in Chapter 5. If you only present data on 2-5 why split chapter 5 and 6. It was unclear how well component 4 related to O2 between different tumors and how variable the data were.
+- [X] {JD} It was unclear how many animals were in Chapter 5. If you only present data on 2-5 why split chapter 5 and 6. It was unclear how well component 4 related to O2 between different tumors and how variable the data were.
+	- Addressed in 21c211a.
 
 - [ ] {JD} In chapter 6 you validated the dOE-MRI against pimonidazole. I found the visual relationships very unconvincing if you are trying to say that there is low pimonidazole where there is high response to inspired O2. Yet you say that we have validated the dOE-MRI by comparing oxygenation maps with pimonidazole staining. Is there any quantitate way you can make the comparison that could involve statistics or an indication of variability?
 
@@ -64,10 +65,13 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 - [ ] {RR} confused by how many switches: in one place you say one works, in another it doesn't
 
 - [ ] {VS} more method development; 
+	- Partially addressed in 21c211a for OE-MRI
 
-- [ ] {VS} write more like physicists, very little ; 
+- [ ] {VS} write more like physicists, very little {-----?}; 
 
-- [ ] {VS} how robust are your result? etc ; if it’s a physicist thesis it needs more rigor.
+- [X] {VS} how robust are your result? etc ; if it’s a physicist thesis it needs more rigor.
+	- Showed all 91 extractions and scored them based on quality.
+	- Addressed in 21c211a.
 
 - [X] {RR} Need period at the end of equation 5.2
 	- Fixed in 2f1cd12.

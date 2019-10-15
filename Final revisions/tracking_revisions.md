@@ -8,8 +8,6 @@
 - [X] {JD} there is reference missing on pdf page 34
 	- Fixed by recompiling document ed89419
 
-- [ ] {JD} The introduction to Chapter 2, or somewhere, should have some comments about the relevance of the tumor model. Models with implanted tumor cells, on the whole, do not have a vasculature that models the human version of the cancer. The vessels usually grow faster, are more chaotic in structure, leakier and have no intrinsic blood flow regulation. They can be used to study methods of assessing leakiness, but are very poor when it comes to studying blood flow modifiers. They are of variable relevance when studying drugs that impact permeability. This should be noted in a thesis.
-
 - [X] {JD} When using RARE, can you put in the parameters so people can reproduce this (echo times, number of echoes or rare factor, average echo time). I’m confused about the T1, RARE, FLASH use etc on page 17 of the pdf in methods. It seems to talk about RARE and qualitative T1 then launches into T1 calibration. This is just a sentence flow problem as I think you switching to FLASH.
 	- Fixed in e72f501; added details about RARE scans, fixed sentence flow to make it clear the separation between qualitative scans and quantitative mapping
 
@@ -21,8 +19,6 @@
 
 - [X] {JD} How do you know DiOC7 does not get beyond endothelial cells? If it does, it is not as good a vessel marker.
 	- Fixed in 57758d2; added a reference also. Given enough time, carbocyanine freely diffuses throughout the tumour tissue but with a limited exposure time (less than 5 minutes), it serves as a good vessel perfusion marker \cite{Trotter:1989cs}.
-
-- [ ] {JD} It is noted early in the discussion of Chapter 2 that vascular agents need to be the right size to distribute within an optimal period of time. Given that this agent was tested in an animal tumor, what is the relationship between vessel morphometrics and “leakage pore size” in the animal tumor vs a human tumor? Shouldn’t this be discussed before saying it is a good agent?
 
 - [X] {JD} I am very much not a fan of paragraphs that approach or exceed one page. This makes the text very hard to read. This was more of an issue in the early chapters.
 	- Agreed. Fixed in 6726c42
@@ -37,12 +33,6 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 - [X] {JD} It was unclear how many animals were in Chapter 5. If you only present data on 2-5 why split chapter 5 and 6. It was unclear how well component 4 related to O2 between different tumors and how variable the data were.
 	- Addressed in 21c211a.
 
-- [ ] {JD} In chapter 6 you validated the dOE-MRI against pimonidazole. I found the visual relationships very unconvincing if you are trying to say that there is low pimonidazole where there is high response to inspired O2. Yet you say that we have validated the dOE-MRI by comparing oxygenation maps with pimonidazole staining. Is there any quantitate way you can make the comparison that could involve statistics or an indication of variability?
-
-- [ ] In chapter 7, you study how dOE-MRI changes with VEGF ablation-induced changes to oxygenation in SCCVII tumors. Differences in response to O2 were observed between treatment groups and tumor injection locations. These differences are described as changes in oxygenation. The pimonidazole shows changes in oxygenation but the maps of dOE-MRI are not usually very close. Can you say that changes in contrast agent really correlate with changes in oxygenation.
-
-- [ ] {JD} The ICA analysis coupled with the oxygen pulse and the sensitive T1 mapping provides a novel, interesting and relevant new method for monitoring tumors. You noted that ‘cycling’ hypoxia was hard to detect. Since these tumors are unlikely to have vessel flow regulation, you could reduce blood pressure, which will reduce the flow to the tumor and should increase the hypoxic regions. This is just a thought, it is not a request to add this to your thesis.
-
 - [x] {JD} Sometimes figure calls are not in the same format—ie capitalized or not.
 	- Fixed in 413faaf, d7ed72b, f793d12
 
@@ -50,24 +40,11 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 	- Fixed in 2a6b4b1
 	- Added this reference in oemri chapter 1 and in the future work section
 
-## Stefan's comments
-
 - [X] {RR} 4 instances of "Appendix" appear but there is no appendix
 	- Fixed in 18af069
 
-- [ ] {RR} describe and defend MR sequences: 2d spoiled GE, not in the thesis
-
 - [X] {RR} why time resolution 2.24s: (is it always that? 2.4 on p 31)
 	- This was a typo, temporal resolution is 2.24s fixed in e72f501
-
-- [ ] {RR} switching to OEMRI: summarize novel contribution
-
-- [ ] {RR} confused by how many switches: in one place you say one works, in another it doesn't
-
-- [ ] {VS} more method development; 
-	- Partially addressed in 21c211a for OE-MRI
-
-- [ ] {VS} write more like physicists, very little {-----?}; 
 
 - [X] {VS} how robust are your result? etc ; if it’s a physicist thesis it needs more rigor.
 	- Showed all 91 extractions and scored them based on quality.
@@ -79,8 +56,26 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 - [X] {RR} missing quotation marks in section 8.2, first sentence
 	- Fixed in 35d8ca0.
 
-### QUESTIONS FOR/FROM THE DEFENCE
-Stefan Reinsberg (supervisor+ext questions)
+- [ ] {JD} The introduction to Chapter 2, or somewhere, should have some comments about the relevance of the tumor model. Models with implanted tumor cells, on the whole, do not have a vasculature that models the human version of the cancer. The vessels usually grow faster, are more chaotic in structure, leakier and have no intrinsic blood flow regulation. They can be used to study methods of assessing leakiness, but are very poor when it comes to studying blood flow modifiers. They are of variable relevance when studying drugs that impact permeability. This should be noted in a thesis.
+
+- [ ] {JD} It is noted early in the discussion of Chapter 2 that vascular agents need to be the right size to distribute within an optimal period of time. Given that this agent was tested in an animal tumor, what is the relationship between vessel morphometrics and “leakage pore size” in the animal tumor vs a human tumor? Shouldn’t this be discussed before saying it is a good agent?
+
+- [ ] {JD} In chapter 6 you validated the dOE-MRI against pimonidazole. I found the visual relationships very unconvincing if you are trying to say that there is low pimonidazole where there is high response to inspired O2. Yet you say that we have validated the dOE-MRI by comparing oxygenation maps with pimonidazole staining. Is there any quantitate way you can make the comparison that could involve statistics or an indication of variability?
+
+- [ ] {JD} In chapter 7, you study how dOE-MRI changes with VEGF ablation-induced changes to oxygenation in SCCVII tumors. Differences in response to O2 were observed between treatment groups and tumor injection locations. These differences are described as changes in oxygenation. The pimonidazole shows changes in oxygenation but the maps of dOE-MRI are not usually very close. Can you say that changes in contrast agent really correlate with changes in oxygenation.
+
+- [ ] {JD} The ICA analysis coupled with the oxygen pulse and the sensitive T1 mapping provides a novel, interesting and relevant new method for monitoring tumors. You noted that ‘cycling’ hypoxia was hard to detect. Since these tumors are unlikely to have vessel flow regulation, you could reduce blood pressure, which will reduce the flow to the tumor and should increase the hypoxic regions. This is just a thought, it is not a request to add this to your thesis.
+
+- [ ] {RR} switching to OEMRI: summarize novel contribution
+
+- [ ] {RR} confused by how many switches: in one place you say one works, in another it doesn't
+
+- [ ] {RR} describe and defend MR sequences: 2d spoiled GE, not in the thesis
+
+- [ ] {VS} more method development; 
+	- Partially addressed in 21c211a for OE-MRI
+
+- [ ] {VS} write more like physicists, very little {-----?}; 
 
 - [ ] {XX} In Chapter 3 you note that vessel function doesn’t relate well to trastuzumab distribution. You then conclude that “our data suggest that the tumor microenvironment and tissue- and vessel-level barriers to drug distribution could effectively limit access of drug”. Did your data in any way support this conclusion or is this conclusion just what you expected to find?
 
@@ -92,60 +87,10 @@ Stefan Reinsberg (supervisor+ext questions)
 
 - [ ] add sentences confirming HPG was better than Gd
 
-### To address contributions section
-
 - [ ] revise contributions to add my fitting/modeling of extended tofts model
 
-## Things I (Firas) wasn't going to comment on but SAR thinks should
 - [ ] {TS} why ICA not fourier transform? 
 	Ans was -> signal to noise. TS not buying that
 	SAR: you could insert a general comparison of sensitivity and SNR in Fourier Transform to rationalize why ICA is better. This can appear in a discussion.
 	
 - [ ] {RR} ICA part: operator chooses number of components? how do you make the decision around n? [why have variable components at all?] SAR: I think it would make sense to formalize the process of choosing the numbers of components. This is an oft-raised points and needs addressing.
-
-
-
-## Comments/suggestions/questions I am not planning on addressing in the text/answered during the defence
-
-- [ ] {JD/XX} Since the dOE-MRI did not always relate to pimonidazole staining in specific parts of the tumor (although it did overall change in the direction that the magnitude of staining did), how can you justify saying that it is a measure of oxygenation? Isn’t that too specific given the variability of your coregistration with pimonidizole?
-	-> drug effect,
-
-- [ ] {TS} pulse oximeter and gating/triggering? 
-	Ans was -> gating not ideal.
-
-- [ ] {RR} how did you decide on the duty cycle of oxygen challenge?
-
-- [ ] {RR} can you defend number of animals
-
-- [ ] {VS} did you measure the temperature and did it correspond. not generally true
-
-- [ ] {RR/JD} What barriers do you see in implementing the oxygen MRI method into the clinic?
-How many voxels do you need to do good deconvolution of the oxygen related signal? What I the spatial resolution of your measurement? How, apart from pimonidazole, might you validate the idea that areas that change well have different perfusion and oxygenation than areas that don’t change well (If I understand you link between the changes and the oxygenation).
-	-> ????
-
-- [ ] {JD} You validated your contrast agent, HPT-GdF in one tumor, (HCT116, in Chapter 2) but then used it in a research project in other tumors in Chapter 3. How do you know the method transfers to these other tumors? You noted that the function of the contrast agent would relate to vessel diameter and the size of compounds that leak. Don’t you need good data on sizes of compounds that would leak in the other tumors?
-
-- [ ] {JD} XX Describe T2 using a vector diagram on the board. What proportion of T2 relaxation has occurred by time T2? (I expect someone will ask, what is T1, T2 or T2* so I’m just making sure they do)
-
-
-- [ ] {PK} talking about T2star: what do you expect?
-
-- [ ] {PK} independent vector analysis?
-
-- [ ] {VS} how relevant is this model of HPG for humans? would your model work with other agents?
-
-- [ ] {VS} how do you validate aPS?
-
-- [ ] {VS} technique depend on tumour models? 
-	- yes there is some dependence.
-
-- [ ] {VS} how universal is you O2 model?
-
-- [ ] {VS} what pre-processing of data?
-
-- [ ] {VS} meaning of negative responding regions?
-
-- [ ] {RR} key question: goal is measuring tumour oxygenation. how do you defend a qualitative
-
-
-- [ ] {RR} how do you interpret these components and their meaning, defend the speculation of T variation is it breathing?

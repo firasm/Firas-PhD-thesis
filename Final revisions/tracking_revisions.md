@@ -8,7 +8,7 @@
 - [X] {JD} there is reference missing on pdf page 34
 	- Fixed by recompiling document ed89419
 
-- [X] {JD} When using RARE, can you put in the parameters so people can reproduce this (echo times, number of echoes or rare factor, average echo time). I’m confused about the T1, RARE, FLASH use etc on page 17 of the pdf in methods. It seems to talk about RARE and qualitative T1 then launches into T1 calibration. This is just a sentence flow problem as I think you switching to FLASH.
+- [X] {JD} When using RARE, can you put in the parameters so people can reproduce this (echo times, 	number of echoes or rare factor, average echo time). I’m confused about the T1, RARE, FLASH use etc on page 17 of the pdf in methods. It seems to talk about RARE and qualitative T1 then launches into T1 calibration. This is just a sentence flow problem as I think you switching to FLASH.
 	- Fixed in e72f501; added details about RARE scans, fixed sentence flow to make it clear the separation between qualitative scans and quantitative mapping
 
 - [X] {JD} Make sure all abbreviations and terms in figures are defined in the figure legend, even if the abbreviation is normal in your field. For instance, Fig 2.2, the words violation and LCL.

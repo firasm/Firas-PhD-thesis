@@ -59,35 +59,9 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 - [X] {XX} In Chapter 3 you note that vessel function doesn’t relate well to trastuzumab distribution. You then conclude that “our data suggest that the tumor microenvironment and tissue- and vessel-level barriers to drug distribution could effectively limit access of drug”. Did your data in any way support this conclusion or is this conclusion just what you expected to find?
 	- Addressed in 68301fb.
 
-
-- [ ] {JD} The introduction to Chapter 2, or somewhere, should have some comments about the relevance of the tumor model. Models with implanted tumor cells, on the whole, do not have a vasculature that models the human version of the cancer. The vessels usually grow faster, are more chaotic in structure, leakier and have no intrinsic blood flow regulation. They can be used to study methods of assessing leakiness, but are very poor when it comes to studying blood flow modifiers. They are of variable relevance when studying drugs that impact permeability. This should be noted in a thesis.
-
-- [ ] {JD} It is noted early in the discussion of Chapter 2 that vascular agents need to be the right size to distribute within an optimal period of time. Given that this agent was tested in an animal tumor, what is the relationship between vessel morphometrics and “leakage pore size” in the animal tumor vs a human tumor? Shouldn’t this be discussed before saying it is a good agent?
-
-- [ ] {JD} In chapter 6 you validated the dOE-MRI against pimonidazole. I found the visual relationships very unconvincing if you are trying to say that there is low pimonidazole where there is high response to inspired O2. Yet you say that we have validated the dOE-MRI by comparing oxygenation maps with pimonidazole staining. Is there any quantitate way you can make the comparison that could involve statistics or an indication of variability?
-
-- [ ] {JD} In chapter 7, you study how dOE-MRI changes with VEGF ablation-induced changes to oxygenation in SCCVII tumors. Differences in response to O2 were observed between treatment groups and tumor injection locations. These differences are described as changes in oxygenation. The pimonidazole shows changes in oxygenation but the maps of dOE-MRI are not usually very close. Can you say that changes in contrast agent really correlate with changes in oxygenation.
-
-- [ ] {JD} The ICA analysis coupled with the oxygen pulse and the sensitive T1 mapping provides a novel, interesting and relevant new method for monitoring tumors. You noted that ‘cycling’ hypoxia was hard to detect. Since these tumors are unlikely to have vessel flow regulation, you could reduce blood pressure, which will reduce the flow to the tumor and should increase the hypoxic regions. This is just a thought, it is not a request to add this to your thesis.
-
-- [ ] {RR} switching to OEMRI: summarize novel contribution
-
-- [ ] {RR} confused by how many switches: in one place you say one works, in another it doesn't
-
-- [ ] {RR} describe and defend MR sequences: 2d spoiled GE, not in the thesis
-
-- [ ] {VS} more method development; 
-	- Partially addressed in 21c211a for OE-MRI
+## High Effort
 
 - [ ] {VS} write more like physicists, very little {-----?}; 
-
-- [ ] {XX} In chapter 4, you note that HPG-GdF was reduced post treatment. One of your conclusions is that large molecular weight contrast agents are useful in such studies. Since you did not also include a study with a lower molecular weight agent, can you conclude that the large agent was specifically a good agent?
-
-- [ ] {JD/XX} As you are changing oxygen and deoxyhemoglobin content at the same time while measuring T1w signal, and both can change T1, can you note how each would change T1 and how you can conclude that the changes you see are due to deoxyhemoglobin?
-
-- [ ] turn table into a figure in HPG chapter
-
-- [ ] add sentences confirming HPG was better than Gd
 
 - [ ] revise contributions to add my fitting/modeling of extended tofts model
 
@@ -95,4 +69,38 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 	Ans was -> signal to noise. TS not buying that
 	SAR: you could insert a general comparison of sensitivity and SNR in Fourier Transform to rationalize why ICA is better. This can appear in a discussion.
 	
-- [ ] {RR} ICA part: operator chooses number of components? how do you make the decision around n? [why have variable components at all?] SAR: I think it would make sense to formalize the process of choosing the numbers of components. This is an oft-raised points and needs addressing.
+- [ ] {RR} ICA part: operator chooses number of components? how do you make the decision around n? [why have variable components at all?] SAR: I think it would make sense to formalize the process of choosing the numbers of components. This is an oft-raised points and needs addressing.
+
+## Moderate Effort
+
+- [ ] {XX} In chapter 4, you note that HPG-GdF was reduced post treatment. One of your conclusions is that large molecular weight contrast agents are useful in such studies. Since you did not also include a study with a lower molecular weight agent, can you conclude that the large agent was specifically a good agent?
+
+- [ ] {JD} The introduction to Chapter 2, or somewhere, should have some comments about the relevance of the tumor model. Models with implanted tumor cells, on the whole, do not have a vasculature that models the human version of the cancer. The vessels usually grow faster, are more chaotic in structure, leakier and have no intrinsic blood flow regulation. They can be used to study methods of assessing leakiness, but are very poor when it comes to studying blood flow modifiers. They are of variable relevance when studying drugs that impact permeability. This should be noted in a thesis.
+
+- [ ] {JD} In chapter 6 you validated the dOE-MRI against pimonidazole. I found the visual relationships very unconvincing if you are trying to say that there is low pimonidazole where there is high response to inspired O2. Yet you say that we have validated the dOE-MRI by comparing oxygenation maps with pimonidazole staining. Is there any quantitate way you can make the comparison that could involve statistics or an indication of variability?
+
+- [ ] {JD} In chapter 7, you study how dOE-MRI changes with VEGF ablation-induced changes to oxygenation in SCCVII tumors. Differences in response to O2 were observed between treatment groups and tumor injection locations. These differences are described as changes in oxygenation. The pimonidazole shows changes in oxygenation but the maps of dOE-MRI are not usually very close. Can you say that changes in contrast agent really correlate with changes in oxygenation.
+
+- [ ] {RR} describe and defend MR sequences: 2d spoiled GE, not in the thesis
+
+- [ ] turn table into a figure in HPG chapter
+
+- [ ] {VS} more method development; 
+	- Partially addressed in 21c211a for OE-MRI
+
+- [ ] {JD/XX} As you are changing oxygen and deoxyhemoglobin content at the same time while measuring T1w signal, and both can change T1, can you note how each would change T1 and how you can conclude that the changes you see are due to deoxyhemoglobin?
+
+
+## Low effort
+
+- [ ] {JD} It is noted early in the discussion of Chapter 2 that vascular agents need to be the right size to distribute within an optimal period of time. Given that this agent was tested in an animal tumor, what is the relationship between vessel morphometrics and “leakage pore size” in the animal tumor vs a human tumor? Shouldn’t this be discussed before saying it is a good agent?
+	- Resolve by saying this is for drug and method development not translating to humans
+
+- [ ] add sentences confirming HPG was better than Gd
+
+- [ ] {JD} The ICA analysis coupled with the oxygen pulse and the sensitive T1 mapping provides a novel, interesting and relevant new method for monitoring tumors. You noted that ‘cycling’ hypoxia was hard to detect. Since these tumors are unlikely to have vessel flow regulation, you could reduce blood pressure, which will reduce the flow to the tumor and should increase the hypoxic regions. This is just a thought, it is not a request to add this to your thesis.
+	- Resolve by adding to future work
+
+- [ ] {RR} switching to OEMRI: summarize novel contribution
+
+- [ ] {RR} confused by how many switches: in one place you say one works, in another it doesn't

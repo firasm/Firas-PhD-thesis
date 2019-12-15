@@ -56,6 +56,10 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 - [X] {RR} missing quotation marks in section 8.2, first sentence
 	- Fixed in 35d8ca0.
 
+- [X] {XX} In Chapter 3 you note that vessel function doesn’t relate well to trastuzumab distribution. You then conclude that “our data suggest that the tumor microenvironment and tissue- and vessel-level barriers to drug distribution could effectively limit access of drug”. Did your data in any way support this conclusion or is this conclusion just what you expected to find?
+	- Addressed in 68301fb.
+
+
 - [ ] {JD} The introduction to Chapter 2, or somewhere, should have some comments about the relevance of the tumor model. Models with implanted tumor cells, on the whole, do not have a vasculature that models the human version of the cancer. The vessels usually grow faster, are more chaotic in structure, leakier and have no intrinsic blood flow regulation. They can be used to study methods of assessing leakiness, but are very poor when it comes to studying blood flow modifiers. They are of variable relevance when studying drugs that impact permeability. This should be noted in a thesis.
 
 - [ ] {JD} It is noted early in the discussion of Chapter 2 that vascular agents need to be the right size to distribute within an optimal period of time. Given that this agent was tested in an animal tumor, what is the relationship between vessel morphometrics and “leakage pore size” in the animal tumor vs a human tumor? Shouldn’t this be discussed before saying it is a good agent?
@@ -76,8 +80,6 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 	- Partially addressed in 21c211a for OE-MRI
 
 - [ ] {VS} write more like physicists, very little {-----?}; 
-
-- [ ] {XX} In Chapter 3 you note that vessel function doesn’t relate well to trastuzumab distribution. You then conclude that “our data suggest that the tumor microenvironment and tissue- and vessel-level barriers to drug distribution could effectively limit access of drug”. Did your data in any way support this conclusion or is this conclusion just what you expected to find?
 
 - [ ] {XX} In chapter 4, you note that HPG-GdF was reduced post treatment. One of your conclusions is that large molecular weight contrast agents are useful in such studies. Since you did not also include a study with a lower molecular weight agent, can you conclude that the large agent was specifically a good agent?
 

@@ -61,7 +61,10 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 
 ## High Effort
 
-- [ ] {VS} write more like physicists, very little {-----?}; 
+- [ ] {RR} describe and defend MR sequences: 2d spoiled GE, not in the thesis
+
+- [ ] {VS} more method development; write more like physicists, 
+	- Partially addressed in 21c211a for OE-MRI
 
 - [ ] revise contributions to add my fitting/modeling of extended tofts model
 
@@ -77,7 +80,8 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 	- This was already adequately addressed in the first paragraph of the discussion, but I have also added a sentence linking back to previous work from chapter 2.
 	- Addressed in 772b98b
 
-- [ ] {JD} The introduction to Chapter 2, or somewhere, should have some comments about the relevance of the tumor model. Models with implanted tumor cells, on the whole, do not have a vasculature that models the human version of the cancer. The vessels usually grow faster, are more chaotic in structure, leakier and have no intrinsic blood flow regulation. They can be used to study methods of assessing leakiness, but are very poor when it comes to studying blood flow modifiers. They are of variable relevance when studying drugs that impact permeability. This should be noted in a thesis.
+- [X] {JD} The introduction to Chapter 2, or somewhere, should have some comments about the relevance of the tumor model. Models with implanted tumor cells, on the whole, do not have a vasculature that models the human version of the cancer. The vessels usually grow faster, are more chaotic in structure, leakier and have no intrinsic blood flow regulation. They can be used to study methods of assessing leakiness, but are very poor when it comes to studying blood flow modifiers. They are of variable relevance when studying drugs that impact permeability. This should be noted in a thesis.
+	- Addressed in 9b85dc8
 
 - [X] {JD} In chapter 6 you validated the dOE-MRI against pimonidazole. I found the visual relationships very unconvincing if you are trying to say that there is low pimonidazole where there is high response to inspired O2. Yet you say that we have validated the dOE-MRI by comparing oxygenation maps with pimonidazole staining. Is there any quantitate way you can make the comparison that could involve statistics or an indication of variability?
 	- Addressed in 138b953
@@ -87,19 +91,13 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 - [X] {JD} In chapter 7, you study how dOE-MRI changes with VEGF ablation-induced changes to oxygenation in SCCVII tumors. Differences in response to O2 were observed between treatment groups and tumor injection locations. These differences are described as changes in oxygenation. The pimonidazole shows changes in oxygenation but the maps of dOE-MRI are not usually very close. Can you say that changes in contrast agent really correlate with changes in oxygenation.
 	- Addressed in aa28e9b.
 
-- [ ] {RR} describe and defend MR sequences: 2d spoiled GE, not in the thesis
-
 - [X] turn table into a figure in HPG chapter
 	- Not going to do this as it doesn't make sense. Only one parameter (aPS) will actually show a difference. Made this more prominent in the discussion (9e3b3b4)
-
-- [ ] {VS} more method development; 
-	- Partially addressed in 21c211a for OE-MRI
 
 - [X] {JD/XX} As you are changing oxygen and deoxyhemoglobin content at the same time while measuring T1w signal, and both can change T1, can you note how each would change T1 and how you can conclude that the changes you see are due to deoxyhemoglobin?
 	- We hypothesize that the changes we see are due to deoxyhemoglobin; further development of the technique to do interleaved T1 and T2* is required to confirm this.
 	- Added a sentence about how T1/T2/T2* changes upon conversion of dHb to Hb
 	- Addressed in d41965b
-
 
 ## Low effort
 

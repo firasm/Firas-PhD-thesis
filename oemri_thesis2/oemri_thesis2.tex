@@ -11,7 +11,7 @@
 Recently our group has proposed a new technique,\acs{dOE-MRI} to assess tumour oxygenation in vivo using MRI~\cite{Moosvi:2018ca}.
 In this chapter we first extend the technique to characterize the extracted oxygen enhancing component used in \acs{DCE-US} experiments.
 This model is then fit to the extracted \acs{ICA} components to assess the feasibility of using the fit parameters as biomarkers of oxygen response.
-Finally we validate the method in tumour xenografts and compare \acs{dOE-MRI} maps to slice-matched histological sections.
+Finally compare \acs{dOE-MRI} maps of tumour xenografts to slice-matched histological sections.
 
 \subsection{Theory: Modelling oxygen response}
 \label{sec:lognormalfitting_theory}
@@ -252,7 +252,11 @@ O$_2$-positive regions in \acs{dOE-MRI} maps are generally in good agreement wit
 Voxels exhibiting signal reduction with the O$_2$ stimulus in \acs{dOE-MRI} maps (O$_2$-negative, green) typically correspond with histology (pimonidazole, green) but not all pimonidazole-labeled regions appear as O$_2$-negative voxels.
 Similarly, \acs{CD31}-stained tumour regions are not exclusively O$_2$-positive in the \acs{dOE-MRI} maps because not all tumour vessels are perfused.
 In fact many perfused blood vessels are only intermittently perfused and consequently, the measurement of hypoxia is time-sensitive.
-Mismatches between \acs{dOE-MRI} and histology may be attributed in part to the different sensitivities and detection thresholds for measuring hypoxia and oxygenation in the \acs{dOE-MRI} and histology-based modalities, as well as potential mismatch between the timing of pimonidazole-labeling and \acs{dOE-MRI} data acquisition. 
+Mismatches between \acs{dOE-MRI} and histology may be attributed in part to the different sensitivities and detection thresholds for measuring hypoxia and oxygenation in the \acs{dOE-MRI} and histology-based modalities, as well as potential mismatch between the timing of pimonidazole-labeling and \acs{dOE-MRI} data acquisition.
+A current limitation of validating \acs{dOE-MRI} maps is that visual matching of purple regions in \acs{dOE-MRI} maps and ``non-green'' regions in histology sections requires some mental gymnastics and a trained eye.
+Collapsing the rich spatial information to a tumour or slice mean is not an option so future work is needed to fully validate this relationship in a rigorous manner.
+A proposed experiment and analysis pipeline would require robust matching of MRI and histological sections followed by deformable image registration to map MRI regions onto histology sections with image re-sampling as needed.
+This would permit microregional analyses and quantitative validation of \acs{dOE-MRI} oxygenation maps accounting for spatial heterogeneity.
 
 %\subsection{random snippets}
 %O$_2$ positive or O$_2$-negative fractions are immune to this phenomenon, information about the level of response can be retained simply by applying the scaling factor when comparing scans at different temporal resolutions
@@ -260,7 +264,7 @@ Mismatches between \acs{dOE-MRI} and histology may be attributed in part to the 
 \section{Conclusions}
 % ======================================================================
 
-In this chapter, we have validated the \acs{dOE-MRI} technique by comparing oxygenation maps with pimonidazole stained histology images. 
+In this chapter, we compared \acs{dOE-MRI} oxygenation with pimonidazole stained histology images and showed that O$_2$-positive regions in dOE-MRI maps generally correspond to pimo-negative regions in histological sections. 
 The versatility of the technique was apparent due to its applicability in multiple tumour models; though, the presence of large necrotic areas in tumours poses some challenges when comparing oxygenation status with pimonidazole staining.
 We also applied the lognormal velocity profile model from \acs{DCE-US} to oxygen response curves obtained from \acs{ICA} and \acs{dOE-MRI} and the parameter $\sigma_f$ is useful in quantifying the vascular morphology of tumours.
 \acs{dOE-MRI} assesses tumour oxygenation fairly reliably \emph{in vivo} and the next application is to see whether the technique is sensitive to oxygenation changes brought on by chemotherapies.

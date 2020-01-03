@@ -186,14 +186,14 @@ However the true value of \acs{DCE-MRI} comes from extracting physiologically re
 In applications of cancer imaging, \acs{DCE-MRI} has been extremely successful in diagnostics, treatment monitoring, assessing severity of pathologies, distingushing between tumour models and types, improving our understanding of tumour metastases, and development of drugs.
 
 Health Canada has approved eight gadolinium-based contrast agents for use in humans and they have molecular weights less than 1 \acs{kDa} that readily traverses the endothelium but not the cell membrane~\cite{WalkerSamuel:2006ch}. 
-This property allows modeling of the vascular dynamics of the tumour but because the contrast agent is small, perfusion and permeability cannot be decoupled without extremely fast imaging and accurate knowledge of the arterial input function (\acs{AIF})\cite{Sourbron:2011ce}.
+This property allows modelling of the vascular dynamics of the tumour but because the contrast agent is small, perfusion and permeability cannot be decoupled without extremely fast imaging and accurate knowledge of the arterial input function (\acs{AIF})\cite{Sourbron:2011ce}.
 Choosing a kinetic model to fit the data requires some prior knowledge about the organ or system in question. 
 For instance, the blood-brain barrier in the brain dramatically alters the contrast agent kinetics. 
 Similarly, in leaky tumours the extravascular contrast agents typically used in \acs{DCE-MRI} leak out (and back in) of vasculature considerably faster than in other tissues. 
 Sourbron et al.\ postulate that choice of a tracer kinetic model should provide a link between relevant physiological parameters and measured data~\cite{Sourbron:2011ce}. 
 
 The most widely used model in \acs{DCE-MRI} is the extended Toft's model, which is valid in highly perfused tissues and weakly vascularized tissues with a well-mixed extravascular extracellular space ($v_e$)~\cite{Sourbron:2013jz}.
-Figure~\ref{XTofts} provides a graphical description of this two compartment model,and its mathematical representation is:
+Figure~\ref{XTofts} provides a graphical description of this two compartment model, and its mathematical representation is:
 
 \begin{equation}
 C(t) = v_p \cdot AIF(t) + K^{trans}e^{-t\frac{K^{trans}}{v_e}} * AIF(t)

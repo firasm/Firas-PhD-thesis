@@ -108,7 +108,7 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 
 ### Outstanding
 
-- [ ] revise contributions to add my fitting/modeling of extended tofts model
+- [ ] {SAR} revise contributions to add my fitting/modeling of extended tofts model
 
 - [ ] {TS} why ICA not fourier transform? 
 	Ans was -> signal to noise. TS not buying that

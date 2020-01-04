@@ -100,15 +100,16 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 	- Addressed in 0d94872
 
 - [X] {RR} describe and defend MR sequences: 2d spoiled GE, not in the thesis
-	- Added in 325f293
+	- Addressed in 325f293
 
 - [X] {VS} more method development; write more like physicists, 
 	- Partially addressed in 21c211a for OE-MRI
-	- Added in 325f293
+	- Addressed in 325f293
+
+- [X] {SAR} revise contributions to add my fitting/modeling of extended tofts model
+	- Addressed in 8898956
 
 ### Outstanding
-
-- [ ] {SAR} revise contributions to add my fitting/modeling of extended tofts model
 
 - [ ] {TS} why ICA not fourier transform? 
 	Ans was -> signal to noise. TS not buying that

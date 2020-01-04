@@ -59,23 +59,6 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 - [X] {XX} In Chapter 3 you note that vessel function doesn’t relate well to trastuzumab distribution. You then conclude that “our data suggest that the tumor microenvironment and tissue- and vessel-level barriers to drug distribution could effectively limit access of drug”. Did your data in any way support this conclusion or is this conclusion just what you expected to find?
 	- Addressed in 68301fb.
 
-## High Effort
-
-- [ ] {RR} describe and defend MR sequences: 2d spoiled GE, not in the thesis
-
-- [ ] {VS} more method development; write more like physicists, 
-	- Partially addressed in 21c211a for OE-MRI
-
-- [ ] revise contributions to add my fitting/modeling of extended tofts model
-
-- [ ] {TS} why ICA not fourier transform? 
-	Ans was -> signal to noise. TS not buying that
-	SAR: you could insert a general comparison of sensitivity and SNR in Fourier Transform to rationalize why ICA is better. This can appear in a discussion.
-	
-- [ ] {RR} ICA part: operator chooses number of components? how do you make the decision around n? [why have variable components at all?] SAR: I think it would make sense to formalize the process of choosing the numbers of components. This is an oft-raised points and needs addressing.
-
-## Moderate Effort
-
 - [X] {XX} In chapter 4, you note that HPG-GdF was reduced post treatment. One of your conclusions is that large molecular weight contrast agents are useful in such studies. Since you did not also include a study with a lower molecular weight agent, can you conclude that the large agent was specifically a good agent?
 	- This was already adequately addressed in the first paragraph of the discussion, but I have also added a sentence linking back to previous work from chapter 2.
 	- Addressed in 772b98b
@@ -91,15 +74,13 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 - [X] {JD} In chapter 7, you study how dOE-MRI changes with VEGF ablation-induced changes to oxygenation in SCCVII tumors. Differences in response to O2 were observed between treatment groups and tumor injection locations. These differences are described as changes in oxygenation. The pimonidazole shows changes in oxygenation but the maps of dOE-MRI are not usually very close. Can you say that changes in contrast agent really correlate with changes in oxygenation.
 	- Addressed in aa28e9b.
 
-- [X] turn table into a figure in HPG chapter
+- [X] {SAR} turn table into a figure in HPG chapter
 	- Not going to do this as it doesn't make sense. Only one parameter (aPS) will actually show a difference. Made this more prominent in the discussion (9e3b3b4)
 
 - [X] {JD/XX} As you are changing oxygen and deoxyhemoglobin content at the same time while measuring T1w signal, and both can change T1, can you note how each would change T1 and how you can conclude that the changes you see are due to deoxyhemoglobin?
 	- We hypothesize that the changes we see are due to deoxyhemoglobin; further development of the technique to do interleaved T1 and T2* is required to confirm this.
 	- Added a sentence about how T1/T2/T2* changes upon conversion of dHb to Hb
 	- Addressed in d41965b
-
-## Low effort
 
 - [X] {JD} It is noted early in the discussion of Chapter 2 that vascular agents need to be the right size to distribute within an optimal period of time. Given that this agent was tested in an animal tumor, what is the relationship between vessel morphometrics and “leakage pore size” in the animal tumor vs a human tumor? Shouldn’t this be discussed before saying it is a good agent?
 	- Resolve by saying this is for drug and method development not translating to humans
@@ -117,3 +98,20 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 
 - [X] {RR} confused by how many switches: in one place you say one works, in another it doesn't
 	- Addressed in 0d94872
+
+- [X] {RR} describe and defend MR sequences: 2d spoiled GE, not in the thesis
+	- Added in 325f293
+
+- [X] {VS} more method development; write more like physicists, 
+	- Partially addressed in 21c211a for OE-MRI
+	- Added in 325f293
+
+### Outstanding
+
+- [ ] revise contributions to add my fitting/modeling of extended tofts model
+
+- [ ] {TS} why ICA not fourier transform? 
+	Ans was -> signal to noise. TS not buying that
+	SAR: you could insert a general comparison of sensitivity and SNR in Fourier Transform to rationalize why ICA is better. This can appear in a discussion.
+	
+- [ ] {RR} ICA part: operator chooses number of components? how do you make the decision around n? [why have variable components at all?] SAR: I think it would make sense to formalize the process of choosing the numbers of components. This is an oft-raised points and needs addressing.

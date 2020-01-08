@@ -156,8 +156,8 @@ O$_2$-negative voxels that show a decrease in T$_1$W signal intensity with a neg
 Regions whose T$_1$W signal intensity timecourses responds only weakly or not at all to the gas challenge are shown in white hues.
 Fraction of voxels that are negative on \acs{dOE-MRI} maps were correlated with the histological hypoxic fraction using Pearson's r.
 
-\noindent\textbf{OE-MRI without \acs{ICA}:} To assess whether or not \acs{ICA} was necessary to create oxygenation maps, the MR signal intensity data was correlated with two modeled paradigms: 1) a square wave which corresponds to the concentration of delivered oxygen; 2) a synthetic hemodynamic response function (HDRF) created by convolving a square wave with an exponential ($\tau=0.32$ms).
-The value of $\tau$ was determined by manually fitting a portion of the ICA-extracted oxygen-enhancing component to the HDRF with a range of $\tau$ values.
+\noindent\textbf{OE-MRI without \acs{ICA}:} To assess whether or not \acs{ICA} was necessary to create oxygenation maps, the MR signal intensity data was correlated with three modelled paradigms: 1) a square wave which corresponds to the concentration of delivered oxygen; 2) a synthetic hemodynamic response function (HDRF) created by convolving a square wave with an exponential ($\tau=0.32$ms); 3) Fourier filtered response curve (details below).
+The value of $\tau$ for the HDRF was determined by manually fitting a portion of the ICA-extracted oxygen-enhancing component to the HDRF with a range of $\tau$ values.
 Correlations were calculated voxel by voxel using:
 
 \begin{equation}
@@ -166,7 +166,11 @@ r = \frac{\Sigma^n_{i=1} (x_i - \bar{x}) (y_i - \bar{y})}{\sqrt{\Sigma^n_{i=1} (
 where $x$ is the model paradigm and $y$ is the T$_1$W signal intensity timecourse.
 The resulting correlation maps are estimates of the strength of the input paradigms with the acquired signal intensity.
 
-\noindent\textbf{OE-MRI with Fourier Filtering:} \todo{Methods for Fourier Transform}
+\noindent\textbf{Fourier filtered response curve:} Frequency-based filtering was applied to the extracted ICA component to isolate the periodicity in the signal intensity response.
+Fourier filtering was applied by first Fourier transforming the extracted ICA component for a single animal. 
+Next, the magnitude of the signal was plotted against the frequency and all but the two highest frequency responses were filtered out.
+Performing an inverse Fourier transform on the Fourier filtered data was considered to be the periodic response curve for the subject.
+This extracted response curve was then correlated with the mean-normalized signal intensity voxel by voxel as described in the preceding paragraph to produce the ``Fourier transform'' correlation map.
 
 \subsection{Quality Scores}
 
@@ -211,6 +215,8 @@ Speculations for the source of the other components is provided in Figure~\ref{S
 To determine whether \acs{dOE-MRI} maps obtained with a model-free \acs{ICA} approach (Figure~\ref{fig_correlation}A) are comparable to maps assuming mathematical models of the response, alternative oxygenation status correlation maps were constructed (Figure~\ref{fig_correlation}B and C). 
 In Figure~\ref{fig_correlation}B and C, two example mathematical models - a square wave and the estimated hemodynamic response function (HDRF) - are correlated to the voxel-by-voxel raw time signal. 
 Regions most correlated with the input paradigm remained purple in both alternative maps generated from modelled response functions.
+Figure~\ref{fig_FT} shows the result of the Fourier filtering process as well as the resulting correlation map for individual slices of a tumour.
+The values of the correlation map from the Fourier-filtered response curve were correlated with the \acs{dOE-MRI} map with Pearson's r = 0.72.
 Particularly when using the HDRF, the alternative oxygenation map showed very similar patterns in the regions demarcated as O$_2$-positive and O$_2$-negative. 
 However, the map generated from correlating a square wave led to consistent underestimation of oxygenation relative to the model-free \acs{dOE-MRI} map.
 
@@ -223,17 +229,12 @@ Panels B and C are correlation maps whereas A is the \acs{dOE-MRI} map from \acs
    \label{fig_correlation}}
 \end{figure}
 
-\subsection{Comparing ICA with the Fourier Transform}
-
-\todo{Results for Fourier Transform}
-
 \begin{figure}[htbp]
    \centering
    \includegraphics[width=\textwidth]{oemri_thesis1/oemri_thesis1-images/final_FT.png} % requires the graphicx package
-   \caption{example caption}
-   \label{fig_FT}
+   \caption{The first row shows the extracted ICA component of a whole tumour. The second row shows the magnitude of the Fourier-transformed signal plotted against frequency in Hz. The two highest frequencies are kept and all other values are set to 0 and this filtered data is inverse Fourier transformed to produce the Fourier-filtered response curve. This response curve is plotted in the third plot. A correlation map (colour bar ranging from -0.01 to +0.01) of the Fourier-filtered response curve with the mean-normalized signal intensity is shown alongside the \acs{dOE-MRI} map (colour bar ranging from -0.15 to +0.15) for comparison.  
+   \label{fig_FT}}
 \end{figure}
-
 
 \subsection{Variability of response in individual oxygen cycles}
 \label{res3}
@@ -362,8 +363,13 @@ In this study, we presented an improved method for \acs{OE-MRI} that employs two
 First, a repeated gas challenge was used to probe tissue response by introducing an independent signal modulation unrelated to spurious contributions such as temperature drifts and motion.
 A repeating gas challenge improved the detection sensitivity of small amplitude signal changes that are typical of oxygen-enhanced MRI.
 Second, a repeating signal modulation enabled further improved sensitivity through the use of \acs{ICA}, a signal processing technique to isolate source signals - T$_1$W changes due solely to the cycling oxygen - without knowledge of the tissue response (Figure~\ref{technique}).
-While it is possible to generate correlation maps of the oxygen cycling paradigm with T$_1$W signal changes that appear very similar to \acs{dOE-MRI} maps, an \emph{a-priori} assumption of a response function is required for this approach (Figure~\ref{fig_correlation}).
-Furthermore, presupposing a particular oxygen response function biases the identification of responding O$_2$-positive voxels (Figure~\ref{fig_correlation}) underscoring the need for a model-free approach to extracting the oxygen-responding component.
+While it is possible to generate correlation maps of the oxygen cycling paradigm with T$_1$W signal changes that appear very similar to \acs{dOE-MRI} maps, an \emph{a-priori} assumption of a response function is required for this approach (Figures~\ref{fig_correlation} and ~\ref{fig_FT}).
+In theory, Fourier-filtering may be useful in isolating the periodicity of the oxygen response on a voxel-by-voxel manner.
+The overall mouse response may then be obtained by averaging the frequency response across the entire tumour.
+However, the individual voxel time courses are quite noisy and the Fourier filtering process is prone to fail, particularly in regions where no oxygen dissolves in the plasma to reduce T$_1$.
+Admittedly, the Fourier-filtered response curve extracted \textbf{after} performing \acs{ICA} is a somewhat contrived exercise.
+However, this analysis very clearly shows that even in the best-case scenario - applying a Fourier Transform on the extracted ICA curve - it is not appropriate to model the oxygen response with a sinusoid.
+Furthermore, presupposing a particular oxygen response function biases the identification of responding O$_2$-positive voxels (Figures~\ref{fig_correlation} and ~\ref{fig_FT}) underscores the need for a model-free approach to extract the oxygen-responding component.
 
 A robustness analysis of all ninety-one extractions is shown in figure~\ref{fig_scored_extractions}.
 The technique appears quite robust as over 75\% of the tumours imaged had a quality score of ``satisfactory'' or higher.

@@ -109,10 +109,8 @@ and tissue is assumed to be viable in the MR image [56, 63].” This is a reason
 - [X] {SAR} revise contributions to add my fitting/modeling of extended tofts model
 	- Addressed in 8898956
 
-### Outstanding
-
-- [ ] {TS} why ICA not fourier transform? 
-	Ans was -> signal to noise. TS not buying that
-	SAR: you could insert a general comparison of sensitivity and SNR in Fourier Transform to rationalize why ICA is better. This can appear in a discussion.
+- [X] {TS} why ICA not fourier transform? 
+	- Addressed in 0f48cec
 	
-- [ ] {RR} ICA part: operator chooses number of components? how do you make the decision around n? [why have variable components at all?] SAR: I think it would make sense to formalize the process of choosing the numbers of components. This is an oft-raised points and needs addressing.
+- [X] {RR} ICA part: operator chooses number of components? how do you make the decision around n? [why have variable components at all?] 
+	- Addressed in 77bfeb4

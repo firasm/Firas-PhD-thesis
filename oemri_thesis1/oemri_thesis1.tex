@@ -167,10 +167,14 @@ where $x$ is the model paradigm and $y$ is the T$_1$W signal intensity timecours
 The resulting correlation maps are estimates of the strength of the input paradigms with the acquired signal intensity.
 
 \noindent\textbf{Fourier filtered response curve:} Frequency-based filtering was applied to the extracted ICA component to isolate the periodicity in the signal intensity response.
-Fourier filtering was applied by first Fourier transforming the extracted ICA component for a single animal. 
-Next, the magnitude of the signal was plotted against the frequency and all but the two highest frequency responses were filtered out.
-Performing an inverse Fourier transform on the Fourier filtered data was considered to be the periodic response curve for the subject.
+Fourier filtering was applied by first Fourier transforming the extracted ICA component for an animal. 
+Next, all but the highest frequency response was filtered out and the magnitude of the signal was plotted against the frequency.
+Finally, an inverse Fourier transform was applied to the filtered data and this was considered to be the periodic response curve for the animal.
 This extracted response curve was then correlated with the mean-normalized signal intensity voxel by voxel as described in the preceding paragraph to produce the ``Fourier transform'' correlation map.
+
+\noindent\textbf{Extracting the periodic signal using Fourier transforms only:} A standard signal processing method was deployed voxel-by-voxel to extract the periodicity in the signal intensity data. 
+First, the MR signal intensity data was normalized to the mean intensity in each voxel.
+Then, this normalized data was Fourier transformed and the intensity at the frequency of interest (selected by Fourier transforming the ICA-extracted component) was visualized voxel-by-voxel.
 
 \subsection{Quality Scores}
 
@@ -209,6 +213,26 @@ Speculations for the source of the other components is provided in Figure~\ref{S
    \label{technique}
 \end{figure}
 
+\subsection{Extracting periodicity of the signal intensity change using a Fourier transform based approach is less sensitive than using \acs{ICA}}
+
+Figure~\ref{FT_histogram} shows the normalized intensities of the frequency of interest in the tumour.
+The normalized mean across all the voxels was 0.07, nearly eighty times lower than the value at the frequency of interest extracted from the ICA component (5.67).
+This indicates the SNR at the voxel level is not high enough to use the Fourier filtering method to extract the periodicity of the signal intensity signal.
+Figure~\ref{FT_maps} shows the spatial patterns of the intensities. 
+Comparing Figure~\ref{FT_maps} and~\ref{fig_FT} shows that the regions of high intensity at the frequency of interest are correspond strongly to the highly O$_2$-positive (purple) regions.
+
+\begin{figure}[htbp]
+   \centering
+   \includegraphics[width=0.65\textwidth]{oemri_thesis1/oemri_thesis1-images/FT_histogram.pdf} % requires the graphicx package
+   \caption{Histogram of all the normalized intensities at the frequency of interest in all the tumour voxels. The intensities were normalized to the value at the frequency of interest extracted from the ICA component (5.67), plotted on the x-axis.\label{FT_histogram}}
+\end{figure}
+
+\begin{figure}[htbp]
+   \centering
+   \includegraphics[width=\textwidth]{oemri_thesis1/oemri_thesis1-images/FT_maps.pdf} % requires the graphicx package
+   \caption{The normalized intensities at the frequency of interest as a spatial map. Higher values in the spatial map are represented as green and low intensity values are dark. \label{FT_maps}}
+\end{figure}
+
 \subsection{dOE-MRI with \acs{ICA} does not require assumption of a response function}
 \label{res2}
 
@@ -232,7 +256,7 @@ Panels B and C are correlation maps whereas A is the \acs{dOE-MRI} map from \acs
 \begin{figure}[htbp]
    \centering
    \includegraphics[width=\textwidth]{oemri_thesis1/oemri_thesis1-images/final_FT.png} % requires the graphicx package
-   \caption{The first row shows the extracted ICA component of a whole tumour. The second row shows the magnitude of the Fourier-transformed signal plotted against frequency in Hz. The two highest frequencies are kept and all other values are set to 0 and this filtered data is inverse Fourier transformed to produce the Fourier-filtered response curve. This response curve is plotted in the third plot. A correlation map (colour bar ranging from -0.01 to +0.01) of the Fourier-filtered response curve with the mean-normalized signal intensity is shown alongside the \acs{dOE-MRI} map (colour bar ranging from -0.15 to +0.15) for comparison.  
+   \caption{The first row shows the extracted ICA component of a whole tumour. The second row shows the magnitude of the Fourier-transformed signal plotted against frequency in Hz. The highest frequency is kept and all other values are set to 0.This filtered data is inverse Fourier transformed to produce the Fourier-filtered response curve. This response curve is plotted in the third plot. A correlation map (colour bar ranging from -0.01 to +0.01) of the Fourier-filtered response curve with the mean-normalized signal intensity is shown alongside the \acs{dOE-MRI} map (colour bar ranging from -0.15 to +0.15) for comparison.  
    \label{fig_FT}}
 \end{figure}
 
@@ -367,6 +391,7 @@ While it is possible to generate correlation maps of the oxygen cycling paradigm
 In theory, Fourier-filtering may be useful in isolating the periodicity of the oxygen response on a voxel-by-voxel manner.
 The overall mouse response may then be obtained by averaging the frequency response across the entire tumour.
 However, the individual voxel time courses are quite noisy and the Fourier filtering process is prone to fail, particularly in regions where no oxygen dissolves in the plasma to reduce T$_1$.
+Similarly, Fourier transforming the signal intensity data voxel-by-voxel and visualizing the spatial map of the intensity at the frequency of interest (Figure~\ref{FT_maps}) suggests the SNR in individual voxels is too low to apply this technique.
 Admittedly, the Fourier-filtered response curve extracted \textbf{after} performing \acs{ICA} is a somewhat contrived exercise.
 However, this analysis very clearly shows that even in the best-case scenario - applying a Fourier Transform on the extracted ICA curve - it is not appropriate to model the oxygen response with a sinusoid.
 Furthermore, presupposing a particular oxygen response function biases the identification of responding O$_2$-positive voxels (Figures~\ref{fig_correlation} and ~\ref{fig_FT}) underscores the need for a model-free approach to extract the oxygen-responding component.

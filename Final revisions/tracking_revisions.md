@@ -3,7 +3,7 @@
 ## Suggestions from the External
 
 - [X] {JD} you say that the time it takes all nuclei to relax back to M0 is T1. This is incorrect. 
-	- Fixed in commit baf4ecc
+	- Fixed in commit [baf4ecc](https://github.com/firasm/Firas-PhD-thesis/commit/baf4ecc)
 
 - [X] {JD} there is reference missing on pdf page 34
 	- Fixed by recompiling document ed89419

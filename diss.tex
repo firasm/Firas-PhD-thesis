@@ -324,8 +324,8 @@
 %\subtitle{If you want a subtitle}
 
 \author{Firas Moosvi}
-\previousdegree{Master of Science, University of Toronto, 2012}
-\previousdegree{Bachelor of Science, University of British Columbia, 2009}
+\previousdegree{MSc, University of Toronto, 2012}
+\previousdegree{BSc, University of British Columbia, 2009}
 
 % What is this dissertation for?
 \degreetitle{Doctor of Philosophy}
@@ -333,10 +333,22 @@
 \institution{The University of British Columbia}
 \campus{Vancouver}
 
-\faculty{The Faculty of Science}
-\department{Physics \& Astronomy}
-\submissionmonth{July}
-\submissionyear{2019}
+\faculty{The Faculty of Graduate and Postdoctoral Studies}
+\department{Physics}
+\submissionmonth{February}
+\submissionyear{2020}
+
+% details of your examining committee
+ \examiningcommittee{Stefan Reinsberg, Physics \& Astronomy}{Supervisor}
+ \examiningcommittee{Piotr Kozlowski, Physics \& Astronomy}%
+     {Supervisory Committee Member}
+ \examiningcommittee{Vesna Sossi, Physics \& Astronomy}{University Examiner}
+ \examiningcommittee{Robert Rohling, Electrical and Computer Engineering}{University Examiner}
+
+ % details of your supervisory committee
+ \supervisorycommittee{Corree Laule, Department of Pathology \& Laboratory Medicine}%
+     {Supervisory Committee Member}
+ \supervisorycommittee{Andrew Minchinton, Department of Integrative Oncology}{Supervisory Committee Member}
 
 %% hyperref package provides support for embedding meta-data in .PDF
 %% files
@@ -374,45 +386,48 @@
 %    1. Title page (mandatory)
 \maketitle
 
-%    2. Abstract (mandatory - maximum 350 words)
+%    1B. Committee page
+\makecommitteepage
+
+%    3. Abstract (mandatory - maximum 350 words)
 \include{abstract}
 \cleardoublepage
 
-%    3. Lay Summary (Effective May 2017, mandatory - maximum 150 words)
+%    4. Lay Summary (Effective May 2017, mandatory - maximum 150 words)
 \include{laysummary}
 \cleardoublepage
 
-%    4. Preface
+%    5. Preface
 \include{preface}
 \cleardoublepage
 
-%    5. Table of contents (mandatory - list all items in the preliminary pages
+%    6. Table of contents (mandatory - list all items in the preliminary pages
 %    starting with the abstract, followed by chapter headings and
 %    subheadings, bibliographies and appendices)
 \tableofcontents
 \cleardoublepage	% required by tocloft package
 
-%    6. List of tables (mandatory if thesis has tables)
+%    7. List of tables (mandatory if thesis has tables)
 \listoftables
 \cleardoublepage	% required by tocloft package
 
-%    7. List of figures (mandatory if thesis has figures)
+%    8. List of figures (mandatory if thesis has figures)
 \listoffigures
 \cleardoublepage	% required by tocloft package
 
-%    8. List of illustrations (mandatory if thesis has illustrations)
-%    9. Lists of symbols, abbreviations or other (optional)
+%    9. List of illustrations (mandatory if thesis has illustrations)
+%    10. Lists of symbols, abbreviations or other (optional)
 
-%   10. Glossary (optional)
+%   11. Glossary (optional)
 \input{glossary}	% always input, since other macros may rely on it
 %\input{acroGlossary}	% always input, since other macros may rely on it
 
 \textspacing		% begin one-half or double spacing
 
-%   11. Acknowledgements (optional)
+%   12. Acknowledgements (optional)
 \include{ack}
 
-%   12. Dedication (optional)
+%   13. Dedication (optional)
 
 % Body of Thesis (not all sections may apply)
 \mainmatter
